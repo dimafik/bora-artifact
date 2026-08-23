@@ -1,0 +1,40 @@
+X1 closed loop: N=21 f=10 cap=8 m=3 targets=[3,10,17] chance=15.0%
+seeds=4 elec=10 delay=200ms
+budget: ~29s/election, attack window 97m
+  daemon gate OK: bt.json 0s old, r=0 cap=9 consistent with f=10
+===== N=21 bring-up =====
+generated crypto-config-orderer-21node.yaml, configtx-21node.yaml, 21node-raft.yaml for N=21 (orderers orderer.example.com, orderer2.example.com, orderer3.example.com, orderer4.example.com, orderer5.example.com, orderer6.example.com, orderer7.example.com, orderer8.example.com, orderer9.example.com, orderer10.example.com, orderer11.example.com, orderer12.example.com, orderer13.example.com, orderer14.example.com, orderer15.example.com, orderer16.example.com, orderer17.example.com, orderer18.example.com, orderer19.example.com, orderer20.example.com, orderer21.example.com)
+org1.example.com
+org2.example.com
+orderers: 21
+[34m2026-08-10 14:41:28.250 KST 0007 INFO[0m [common.tools.configtxgen] [34;1mdoOutputBlock[0m -> Writing genesis block
+ Container orderer18.example.com  Started
+ Container orderer14.example.com  Started
+containers up: 21 orderers
+===== channel join (21 orderers + 2 peers) =====
+  orderer1: Status: 201
+  orderer2: Status: 201
+  orderer3: Status: 201
+  orderer4: Status: 201
+  orderer5: Status: 201
+  orderer6: Status: 201
+  orderer7: Status: 201
+  orderer8: Status: 201
+  orderer9: Status: 201
+  orderer10: Status: 201
+  orderer11: Status: 201
+  orderer12: Status: 201
+  orderer13: Status: 201
+  orderer14: Status: 201
+  orderer15: Status: 201
+  orderer16: Status: 201
+  orderer17: Status: 201
+  orderer18: Status: 201
+  orderer19: Status: 201
+  orderer20: Status: 201
+  orderer21: Status: 201
+  orderers on channel: 21/21
+===== deploy BORA v4 binary + sidecar to 21 orderers =====
+  sidecars: 21/21
+ATTACK_ONSET=1786340760.808798672 targets=[3,10,17]
+T_det=1786340760.845248769

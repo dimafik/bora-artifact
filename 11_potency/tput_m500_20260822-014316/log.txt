@@ -1,0 +1,17 @@
+=== throughput: scale=m500 secs=180 workers=4 ===
+  nodelay            blocks   82 (0.4530 /s)  tx   657/657   (3.630 /s)
+  healthy_white      blocks   59 (0.3224 /s)  tx   238/238   (1.301 /s)
+  pgd_rho_0.0        blocks   52 (0.2826 /s)  tx   235/235   (1.277 /s)
+  pgd_rho_0.3        blocks   60 (0.3279 /s)  tx   251/251   (1.372 /s)
+  pgd_rho_0.6        blocks   59 (0.3207 /s)  tx   239/239   (1.299 /s)
+  pgd_rho_0.8        blocks   60 (0.3297 /s)  tx   248/252   (1.363 /s)
+  attack_class_ar1   blocks   58 (0.3187 /s)  tx   240/240   (1.319 /s)
+TPUT_DONE /d/fabric-d2/results/potency/tput_m500_20260822-014316
+condition,seconds,h0,h1,blocks,blocks_per_s,tx_ok,tx_tried,tx_per_s
+nodelay,181,992,1074,82,0.4530,657,657,3.630
+healthy_white,183,1075,1134,59,0.3224,238,238,1.301
+pgd_rho_0.0,184,1135,1187,52,0.2826,235,235,1.277
+pgd_rho_0.3,183,1188,1248,60,0.3279,251,251,1.372
+pgd_rho_0.6,184,1249,1308,59,0.3207,239,239,1.299
+pgd_rho_0.8,182,1310,1370,60,0.3297,248,252,1.363
+attack_class_ar1,182,1371,1429,58,0.3187,240,240,1.319

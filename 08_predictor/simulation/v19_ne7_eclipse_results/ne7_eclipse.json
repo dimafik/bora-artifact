@@ -1,0 +1,11 @@
+{
+  "experiment": "NE7_eclipse_attack_detection",
+  "n_honest_followers": 1000,
+  "n_eclipsed_followers": 1000,
+  "n_peers_per_follower": 5,
+  "window_L": 16,
+  "auc_linear_avg_rtt": 0.4882869999999999,
+  "auc_cross_observer_variance": 1.0,
+  "auc_memory_ar1": 0.48019900000000004,
+  "interpretation": "Linear avg-RTT close to 0.5 (eclipsed has same RTT magnitude); cross-observer variance feature gives high AUC (eclipse concentrates RTT distribution); AR(1) autocorr also detects uniformity. Bounded blacklist advisor can use either."
+}

@@ -1,0 +1,9 @@
+X1-c cap audit: N=11 f=5 degraded=[3;5;8;11] stop_pool=[2;4;6;7]
+expected cap by k: 4 3 2 1 0 
+settling 40s so the detector sees the degraded set...
+--- k=0: no orderer stopped ---
+--- k=1: stopping orderer2 ---
+--- k=2: stopping orderer4 ---
+--- k=3: stopping orderer6 ---
+--- k=4: stopping orderer7 ---
+restoring stopped orderers...

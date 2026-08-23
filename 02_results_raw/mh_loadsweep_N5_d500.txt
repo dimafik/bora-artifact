@@ -1,0 +1,49 @@
+== N=5 load sweep at +500ms, degraded node leading ==
+  orderer1 -> orderer3 RTT: rtt min/avg/max/mdev = 500.185/500.199/500.215/0.011 ms
+-- concurrency 16 (TX=320) --
+    L2 advisor idle, orderer3 leading:
+      leader=3
+      seed1 blocks=20 height=1290->1310 tps=4.78192 mean_latency_ms=3345.924 client_cpu_max_pct=26 
+      seed2 blocks=20 height=1310->1330 tps=4.78420 mean_latency_ms=3344.328 client_cpu_max_pct=26 
+      seed3 blocks=20 height=1330->1350 tps=4.78995 mean_latency_ms=3340.310 client_cpu_max_pct=26 
+    L3 advisor excludes 3:
+      leader=2
+      seed1 blocks=20 height=1350->1370 tps=6.84957 mean_latency_ms=2335.904 client_cpu_max_pct=26 
+      seed2 blocks=20 height=1370->1390 tps=6.84592 mean_latency_ms=2337.150 client_cpu_max_pct=26 
+      seed3 blocks=20 height=1390->1410 tps=6.83134 mean_latency_ms=2342.138 client_cpu_max_pct=26 
+-- concurrency 32 (TX=640) --
+    L2 advisor idle, orderer3 leading:
+      WARNING: leader=2 not 3
+      leader=2
+      seed1 blocks=20 height=1410->1430 tps=6.85559 mean_latency_ms=4667.712 client_cpu_max_pct=53 
+      seed2 blocks=20 height=1430->1450 tps=6.87978 mean_latency_ms=4651.303 client_cpu_max_pct=52 
+      seed3 blocks=20 height=1450->1470 tps=6.90777 mean_latency_ms=4632.453 client_cpu_max_pct=52 
+    L3 advisor excludes 3:
+      leader=1
+      seed1 blocks=20 height=1470->1490 tps=6.87978 mean_latency_ms=4651.303 client_cpu_max_pct=51 
+      seed2 blocks=20 height=1490->1510 tps=6.84912 mean_latency_ms=4672.121 client_cpu_max_pct=52 
+      seed3 blocks=20 height=1510->1530 tps=6.86185 mean_latency_ms=4663.455 client_cpu_max_pct=52 
+-- concurrency 64 (TX=1280) --
+    L2 advisor idle, orderer3 leading:
+      leader=3
+      seed1 blocks=40 height=1530->1570 tps=12.1187 mean_latency_ms=5281.053 client_cpu_max_pct=99 
+      seed2 blocks=40 height=1570->1610 tps=11.9377 mean_latency_ms=5361.159 client_cpu_max_pct=99 
+      seed3 blocks=40 height=1610->1650 tps=12.3840 mean_latency_ms=5167.917 client_cpu_max_pct=99 
+    L3 advisor excludes 3:
+      leader=1
+      seed1 blocks=20 height=1650->1670 tps=10.3230 mean_latency_ms=6199.728 client_cpu_max_pct=99 
+      seed2 blocks=20 height=1670->1690 tps=10.3559 mean_latency_ms=6180.012 client_cpu_max_pct=100 
+      seed3 blocks=20 height=1690->1710 tps=10.2255 mean_latency_ms=6258.834 client_cpu_max_pct=99 
+-- concurrency 128 (TX=2560) --
+    L2 advisor idle, orderer3 leading:
+      WARNING: leader=5 not 3
+      leader=5
+      seed1 blocks=40 height=1710->1750 tps=18.2507 mean_latency_ms=7013.415 client_cpu_max_pct=100 
+      seed2 blocks=40 height=1750->1790 tps=15.9512 mean_latency_ms=8024.467 client_cpu_max_pct=100 
+      seed3 blocks=42 height=1790->1832 tps=19.8380 mean_latency_ms=6452.231 client_cpu_max_pct=100 
+    L3 advisor excludes 3:
+      leader=2
+      seed1 blocks=42 height=1832->1874 tps=19.5299 mean_latency_ms=6554.022 client_cpu_max_pct=100 
+      seed2 blocks=42 height=1874->1916 tps=20.2367 mean_latency_ms=6325.110 client_cpu_max_pct=100 
+      seed3 blocks=42 height=1916->1958 tps=18.4104 mean_latency_ms=6952.553 client_cpu_max_pct=100 
+== done: /d/fabric-d2/results/mh_loadsweep_N5_d500.txt ==

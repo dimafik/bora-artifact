@@ -1,0 +1,8 @@
+component,duration_ms,energy_J,energy_pct
+Φ_d inference,0.5,0.1,2.7027027027027026
+schedulability check,0.5,0.1,2.7027027027027026
+feature aggregation,1.0,0.2,5.405405405405405
+KZG commit,1.5,0.30000000000000004,8.108108108108109
+PROMOTE RTT,5.0,1.0,27.027027027027025
+AppendEntries quorum,10.0,2.0,54.05405405405405
+TOTAL,18.5,3.7,100.0

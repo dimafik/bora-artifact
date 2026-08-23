@@ -1,0 +1,32 @@
+[
+  {
+    "name": "logistic / window means (linear)",
+    "auc": 0.4882,
+    "params": null
+  },
+  {
+    "name": "logistic / summary stats (linear)",
+    "auc": 1.0,
+    "params": null
+  },
+  {
+    "name": "gradient boosting / summary stats",
+    "auc": 1.0,
+    "params": null
+  },
+  {
+    "name": "MLP 64-32 / flattened window",
+    "auc": 0.9999,
+    "params": 32800
+  },
+  {
+    "name": "logistic / lag-1 autocorrelation",
+    "auc": 1.0,
+    "params": null
+  },
+  {
+    "name": "Multi-Head Transformer (best_mm.pt)",
+    "auc": 0.9345,
+    "params": 141067
+  }
+]

@@ -1,0 +1,226 @@
+[
+ {
+  "name": "std(dRTT) statistic",
+  "params": 0,
+  "differentiable": true,
+  "non_adaptive": 0.9995,
+  "worst_case": 0.2744,
+  "sweep": {
+   "rho_0.0": {
+    "auc": 0.2744,
+    "lr": 0.3,
+    "seed": 0,
+    "init": "white",
+    "autocorr": 0.078,
+    "mean": 7.99,
+    "std": 3.03
+   },
+   "rho_0.8": {
+    "auc": 0.7444,
+    "lr": 0.3,
+    "seed": 0,
+    "init": "white",
+    "autocorr": 0.727,
+    "mean": 8.0,
+    "std": 3.03
+   }
+  },
+  "minutes": 0.0
+ },
+ {
+  "name": "logistic / 40 summary stats",
+  "params": 41,
+  "differentiable": true,
+  "non_adaptive": 1.0,
+  "worst_case": 0.0,
+  "sweep": {
+   "rho_0.0": {
+    "auc": 0.0,
+    "lr": 0.3,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.664,
+    "mean": 8.08,
+    "std": 4.35
+   },
+   "rho_0.8": {
+    "auc": 0.0,
+    "lr": 0.3,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.514,
+    "mean": 8.06,
+    "std": 4.17
+   }
+  },
+  "minutes": 0.0
+ },
+ {
+  "name": "MLP 64-32 / raw window",
+  "params": 32897,
+  "differentiable": true,
+  "non_adaptive": 0.9937,
+  "worst_case": 0.0,
+  "sweep": {
+   "rho_0.0": {
+    "auc": 0.0,
+    "lr": 0.3,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.223,
+    "mean": 7.9,
+    "std": 4.11
+   },
+   "rho_0.8": {
+    "auc": 0.0,
+    "lr": 0.3,
+    "seed": 0,
+    "init": "white",
+    "autocorr": 0.082,
+    "mean": 7.91,
+    "std": 4.07
+   }
+  },
+  "minutes": 0.0
+ },
+ {
+  "name": "1D-CNN",
+  "params": 1969,
+  "differentiable": true,
+  "non_adaptive": 1.0,
+  "worst_case": 0.0,
+  "sweep": {
+   "rho_0.0": {
+    "auc": 0.0,
+    "lr": 0.3,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.545,
+    "mean": 7.98,
+    "std": 4.68
+   },
+   "rho_0.8": {
+    "auc": 0.0,
+    "lr": 0.3,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.357,
+    "mean": 7.98,
+    "std": 4.51
+   }
+  },
+  "minutes": 0.0
+ },
+ {
+  "name": "GRU",
+  "params": 2473,
+  "differentiable": true,
+  "non_adaptive": 1.0,
+  "worst_case": 0.0,
+  "sweep": {
+   "rho_0.0": {
+    "auc": 0.0,
+    "lr": 0.3,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.021,
+    "mean": 7.99,
+    "std": 3.02
+   },
+   "rho_0.8": {
+    "auc": 0.3664,
+    "lr": 0.3,
+    "seed": 0,
+    "init": "white",
+    "autocorr": 0.594,
+    "mean": 8.0,
+    "std": 3.05
+   }
+  },
+  "minutes": 0.0
+ },
+ {
+  "name": "Transformer (ours, retrained)",
+  "params": 141067,
+  "differentiable": true,
+  "non_adaptive": 0.9998,
+  "worst_case": 0.5372,
+  "sweep": {
+   "rho_0.0": {
+    "auc": 0.5372,
+    "lr": 0.3,
+    "seed": 0,
+    "init": "white",
+    "autocorr": 0.163,
+    "mean": 7.99,
+    "std": 2.98
+   },
+   "rho_0.8": {
+    "auc": 0.8216,
+    "lr": 0.3,
+    "seed": 0,
+    "init": "white",
+    "autocorr": 0.729,
+    "mean": 8.0,
+    "std": 3.0
+   }
+  },
+  "minutes": 0.1
+ },
+ {
+  "name": "random forest / summary stats",
+  "params": 2524,
+  "differentiable": false,
+  "non_adaptive": 1.0,
+  "worst_case": 0.7864,
+  "sweep": {
+   "rho_0.0": {
+    "auc": 0.7872,
+    "lr": 0.3,
+    "seed": 0,
+    "init": "ar0.9",
+    "autocorr": -0.361,
+    "mean": 8.09,
+    "std": 4.19
+   },
+   "rho_0.8": {
+    "auc": 0.7864,
+    "lr": 0.3,
+    "seed": 0,
+    "init": "ar0.9",
+    "autocorr": -0.222,
+    "mean": 8.08,
+    "std": 4.09
+   }
+  },
+  "minutes": 0.0
+ },
+ {
+  "name": "k-NN (k=15) / summary stats",
+  "params": 1000,
+  "differentiable": false,
+  "non_adaptive": 0.9999,
+  "worst_case": 0.46,
+  "sweep": {
+   "rho_0.0": {
+    "auc": 0.46,
+    "lr": 0.3,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.664,
+    "mean": 8.08,
+    "std": 4.35
+   },
+   "rho_0.8": {
+    "auc": 0.46,
+    "lr": 0.3,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.514,
+    "mean": 8.06,
+    "std": 4.17
+   }
+  },
+  "minutes": 0.1
+ }
+]

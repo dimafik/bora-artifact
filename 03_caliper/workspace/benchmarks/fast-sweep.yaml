@@ -1,0 +1,22 @@
+test:
+  name: D2-Fast-Sweep
+  description: Focused low-rate sweep (100-400 tps, 20s) for the two-follower regime.
+  workers:
+    number: 4
+  rounds:
+    - label: rate-100
+      txDuration: 20
+      rateControl: {type: fixed-rate, opts: {tps: 100}}
+      workload: {module: workload/createAsset.js}
+    - label: rate-200
+      txDuration: 20
+      rateControl: {type: fixed-rate, opts: {tps: 200}}
+      workload: {module: workload/createAsset.js}
+    - label: rate-300
+      txDuration: 20
+      rateControl: {type: fixed-rate, opts: {tps: 300}}
+      workload: {module: workload/createAsset.js}
+    - label: rate-400
+      txDuration: 20
+      rateControl: {type: fixed-rate, opts: {tps: 400}}
+      workload: {module: workload/createAsset.js}

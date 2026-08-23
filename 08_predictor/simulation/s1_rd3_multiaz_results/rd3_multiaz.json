@@ -1,0 +1,38 @@
+[
+  {
+    "scenario": "vanilla",
+    "n_rounds": 300,
+    "elections_succeeded": 300,
+    "leader_changes": 5,
+    "unique_leaders": 6,
+    "byz_was_leader": true,
+    "byz_leader_count": 50,
+    "p99_rtt_ms": 525.1734948711669,
+    "p99_max_rtt_ms": 532.6727255421698,
+    "median_rtt_ms": 471.585824728871
+  },
+  {
+    "scenario": "byzantine",
+    "n_rounds": 300,
+    "elections_succeeded": 253,
+    "leader_changes": 4,
+    "unique_leaders": 5,
+    "byz_was_leader": false,
+    "byz_leader_count": 0,
+    "p99_rtt_ms": 515.1252509089106,
+    "p99_max_rtt_ms": 522.2429984744845,
+    "median_rtt_ms": 469.21943485205884
+  },
+  {
+    "scenario": "ai_byzantine",
+    "n_rounds": 300,
+    "elections_succeeded": 254,
+    "leader_changes": 4,
+    "unique_leaders": 5,
+    "byz_was_leader": false,
+    "byz_leader_count": 0,
+    "p99_rtt_ms": 524.2452586105617,
+    "p99_max_rtt_ms": 554.4627589384002,
+    "median_rtt_ms": 465.1866370860797
+  }
+]

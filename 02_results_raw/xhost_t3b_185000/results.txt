@@ -1,0 +1,5 @@
+=== concurrent throughput sweep (valid) ===
+  tx/s=6.66 total=6 elapsed=0.90s par=1
+  tx/s=8.11 total=24 elapsed=2.96s par=4
+  tx/s=7.92 total=48 elapsed=6.06s par=8
+  tx/s=7.96 total=72 elapsed=9.05s par=12

@@ -1,0 +1,8 @@
+test:
+  name: loadgen-650
+  workers: {number: 4}
+  rounds:
+    - label: load-650
+      txDuration: 200
+      rateControl: {type: fixed-rate, opts: {tps: 650}}
+      workload: {module: workload/createAsset.js}

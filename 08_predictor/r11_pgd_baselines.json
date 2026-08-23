@@ -1,0 +1,142 @@
+{
+  "linear / 40 summary stats": {
+    "params": 41,
+    "non_adaptive": 0.9999,
+    "worst_case": 0.0502,
+    "sweep": [
+      {
+        "rho_min": 0.0,
+        "auc": 0.0502,
+        "autocorr": -0.009,
+        "mean": 8.0,
+        "std": 3.0
+      },
+      {
+        "rho_min": 0.3,
+        "auc": 0.156,
+        "autocorr": 0.3,
+        "mean": 8.0,
+        "std": 3.0
+      },
+      {
+        "rho_min": 0.6,
+        "auc": 0.5009,
+        "autocorr": 0.6,
+        "mean": 8.0,
+        "std": 3.0
+      },
+      {
+        "rho_min": 0.8,
+        "auc": 0.9695,
+        "autocorr": 0.785,
+        "mean": 8.0,
+        "std": 3.0
+      }
+    ]
+  },
+  "MLP 64-32 / flattened window": {
+    "params": 32897,
+    "non_adaptive": 0.9997,
+    "worst_case": 0.0,
+    "sweep": [
+      {
+        "rho_min": 0.0,
+        "auc": 0.0,
+        "autocorr": -0.029,
+        "mean": 8.0,
+        "std": 3.0
+      },
+      {
+        "rho_min": 0.3,
+        "auc": 0.0004,
+        "autocorr": 0.3,
+        "mean": 8.0,
+        "std": 3.0
+      },
+      {
+        "rho_min": 0.6,
+        "auc": 0.151,
+        "autocorr": 0.6,
+        "mean": 8.0,
+        "std": 3.0
+      },
+      {
+        "rho_min": 0.8,
+        "auc": 0.9624,
+        "autocorr": 0.787,
+        "mean": 8.0,
+        "std": 3.0
+      }
+    ]
+  },
+  "std(dRTT) threshold (0 params)": {
+    "params": 0,
+    "non_adaptive": 0.9993,
+    "worst_case": 0.3553,
+    "sweep": [
+      {
+        "rho_min": 0.0,
+        "auc": 0.3553,
+        "autocorr": 0.102,
+        "mean": 8.0,
+        "std": 3.0
+      },
+      {
+        "rho_min": 0.3,
+        "auc": 0.4459,
+        "autocorr": 0.302,
+        "mean": 8.0,
+        "std": 3.0
+      },
+      {
+        "rho_min": 0.6,
+        "auc": 0.6227,
+        "autocorr": 0.6,
+        "mean": 8.0,
+        "std": 3.0
+      },
+      {
+        "rho_min": 0.8,
+        "auc": 0.9507,
+        "autocorr": 0.788,
+        "mean": 8.0,
+        "std": 3.0
+      }
+    ]
+  },
+  "Transformer (best_mm.pt)": {
+    "params": 141067,
+    "non_adaptive": 0.9049,
+    "worst_case": 0.5003,
+    "sweep": [
+      {
+        "rho_min": 0.0,
+        "auc": 0.5346,
+        "autocorr": 0.737,
+        "mean": 8.0,
+        "std": 3.0
+      },
+      {
+        "rho_min": 0.3,
+        "auc": 0.5003,
+        "autocorr": 0.7,
+        "mean": 8.0,
+        "std": 3.0
+      },
+      {
+        "rho_min": 0.6,
+        "auc": 0.576,
+        "autocorr": 0.743,
+        "mean": 8.0,
+        "std": 3.0
+      },
+      {
+        "rho_min": 0.8,
+        "auc": 0.7531,
+        "autocorr": 0.841,
+        "mean": 8.0,
+        "std": 3.0
+      }
+    ]
+  }
+}

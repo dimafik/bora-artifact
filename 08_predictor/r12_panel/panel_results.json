@@ -1,0 +1,370 @@
+[
+ {
+  "name": "std(dRTT) statistic",
+  "params": 0,
+  "differentiable": true,
+  "non_adaptive": 0.9982,
+  "worst_case": 0.0049,
+  "sweep": {
+   "rho_0.0": {
+    "auc": 0.0049,
+    "lr": 1.0,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.005,
+    "mean": 8.0,
+    "std": 3.07
+   },
+   "rho_0.3": {
+    "auc": 0.0092,
+    "lr": 1.0,
+    "seed": 0,
+    "init": "white",
+    "autocorr": 0.282,
+    "mean": 8.0,
+    "std": 3.07
+   },
+   "rho_0.6": {
+    "auc": 0.0116,
+    "lr": 1.0,
+    "seed": 0,
+    "init": "white",
+    "autocorr": 0.562,
+    "mean": 8.0,
+    "std": 3.06
+   },
+   "rho_0.8": {
+    "auc": 0.0403,
+    "lr": 1.0,
+    "seed": 0,
+    "init": "white",
+    "autocorr": 0.739,
+    "mean": 8.0,
+    "std": 3.06
+   }
+  },
+  "minutes": 4.0
+ },
+ {
+  "name": "logistic / 40 summary stats",
+  "params": 41,
+  "differentiable": true,
+  "non_adaptive": 1.0,
+  "worst_case": 0.0,
+  "sweep": {
+   "rho_0.0": {
+    "auc": 0.0,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.785,
+    "mean": 8.39,
+    "std": 4.38
+   },
+   "rho_0.3": {
+    "auc": 0.0,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.733,
+    "mean": 8.38,
+    "std": 4.43
+   },
+   "rho_0.6": {
+    "auc": 0.0,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.665,
+    "mean": 8.37,
+    "std": 4.47
+   },
+   "rho_0.8": {
+    "auc": 0.0,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.614,
+    "mean": 8.35,
+    "std": 4.49
+   }
+  },
+  "minutes": 9.4
+ },
+ {
+  "name": "MLP 64-32 / raw window",
+  "params": 32897,
+  "differentiable": true,
+  "non_adaptive": 1.0,
+  "worst_case": 0.0,
+  "sweep": {
+   "rho_0.0": {
+    "auc": 0.0,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.475,
+    "mean": 8.27,
+    "std": 7.22
+   },
+   "rho_0.3": {
+    "auc": 0.0,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.461,
+    "mean": 8.26,
+    "std": 7.24
+   },
+   "rho_0.6": {
+    "auc": 0.0,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.448,
+    "mean": 8.26,
+    "std": 7.25
+   },
+   "rho_0.8": {
+    "auc": 0.0,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.44,
+    "mean": 8.26,
+    "std": 7.25
+   }
+  },
+  "minutes": 4.4
+ },
+ {
+  "name": "1D-CNN",
+  "params": 1969,
+  "differentiable": true,
+  "non_adaptive": 1.0,
+  "worst_case": 0.0,
+  "sweep": {
+   "rho_0.0": {
+    "auc": 0.0,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.871,
+    "mean": 8.12,
+    "std": 6.8
+   },
+   "rho_0.3": {
+    "auc": 0.0,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.866,
+    "mean": 8.12,
+    "std": 6.81
+   },
+   "rho_0.6": {
+    "auc": 0.0,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.858,
+    "mean": 8.11,
+    "std": 6.81
+   },
+   "rho_0.8": {
+    "auc": 0.0,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.851,
+    "mean": 8.1,
+    "std": 6.81
+   }
+  },
+  "minutes": 9.4
+ },
+ {
+  "name": "GRU",
+  "params": 2473,
+  "differentiable": true,
+  "non_adaptive": 1.0,
+  "worst_case": 0.0,
+  "sweep": {
+   "rho_0.0": {
+    "auc": 0.0,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.016,
+    "mean": 8.0,
+    "std": 3.05
+   },
+   "rho_0.3": {
+    "auc": 0.0,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "white",
+    "autocorr": 0.256,
+    "mean": 8.0,
+    "std": 3.05
+   },
+   "rho_0.6": {
+    "auc": 0.0001,
+    "lr": 0.3,
+    "seed": 2,
+    "init": "white",
+    "autocorr": 0.495,
+    "mean": 8.0,
+    "std": 3.07
+   },
+   "rho_0.8": {
+    "auc": 0.0141,
+    "lr": 1.0,
+    "seed": 2,
+    "init": "ar0.9",
+    "autocorr": 0.615,
+    "mean": 8.0,
+    "std": 3.09
+   }
+  },
+  "minutes": 22.2
+ },
+ {
+  "name": "Transformer (ours, retrained)",
+  "params": 141067,
+  "differentiable": true,
+  "non_adaptive": 0.9996,
+  "worst_case": 0.472,
+  "sweep": {
+   "rho_0.0": {
+    "auc": 0.472,
+    "lr": 0.1,
+    "seed": 1,
+    "init": "white",
+    "autocorr": 0.113,
+    "mean": 8.0,
+    "std": 3.0
+   },
+   "rho_0.3": {
+    "auc": 0.5214,
+    "lr": 1.0,
+    "seed": 1,
+    "init": "ar0.6",
+    "autocorr": 0.45,
+    "mean": 8.0,
+    "std": 3.0
+   },
+   "rho_0.6": {
+    "auc": 0.5846,
+    "lr": 1.0,
+    "seed": 1,
+    "init": "ar0.6",
+    "autocorr": 0.669,
+    "mean": 8.0,
+    "std": 3.0
+   },
+   "rho_0.8": {
+    "auc": 0.6666,
+    "lr": 1.0,
+    "seed": 2,
+    "init": "ar0.6",
+    "autocorr": 0.822,
+    "mean": 8.0,
+    "std": 3.0
+   }
+  },
+  "minutes": 71.2
+ },
+ {
+  "name": "random forest / summary stats",
+  "params": 8610,
+  "differentiable": false,
+  "non_adaptive": 1.0,
+  "worst_case": 0.4675,
+  "sweep": {
+   "rho_0.0": {
+    "auc": 0.4675,
+    "lr": 0.3,
+    "seed": 2,
+    "init": "ar0.6",
+    "autocorr": -0.777,
+    "mean": 8.41,
+    "std": 4.42
+   },
+   "rho_0.3": {
+    "auc": 0.4699,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "ar0.3",
+    "autocorr": -0.735,
+    "mean": 8.39,
+    "std": 4.43
+   },
+   "rho_0.6": {
+    "auc": 0.4675,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "ar0.3",
+    "autocorr": -0.667,
+    "mean": 8.37,
+    "std": 4.47
+   },
+   "rho_0.8": {
+    "auc": 0.4675,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "ar0.3",
+    "autocorr": -0.615,
+    "mean": 8.36,
+    "std": 4.5
+   }
+  },
+  "minutes": 9.6
+ },
+ {
+  "name": "k-NN (k=15) / summary stats",
+  "params": 20000,
+  "differentiable": false,
+  "non_adaptive": 1.0,
+  "worst_case": 0.5,
+  "sweep": {
+   "rho_0.0": {
+    "auc": 0.5,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.785,
+    "mean": 8.39,
+    "std": 4.38
+   },
+   "rho_0.3": {
+    "auc": 0.5,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.733,
+    "mean": 8.38,
+    "std": 4.43
+   },
+   "rho_0.6": {
+    "auc": 0.5,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.665,
+    "mean": 8.37,
+    "std": 4.47
+   },
+   "rho_0.8": {
+    "auc": 0.5,
+    "lr": 0.1,
+    "seed": 0,
+    "init": "white",
+    "autocorr": -0.614,
+    "mean": 8.35,
+    "std": 4.49
+   }
+  },
+  "minutes": 9.5
+ }
+]

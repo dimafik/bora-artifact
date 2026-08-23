@@ -1,0 +1,7 @@
+=== Long live moment-matched campaign, NON-OVERLAPPING (independent) windows ===
+feed rows: 1629 (n_baseline=120, attack onset row 121); injection 2040 ticks
+windows: pos(o3 attack)=25 (independent, stride=K=60) neg(healthy)=109
+Transformer anomaly  AUC = 0.842
+threshold mean-RTT   AUC = 0.468  (matched marginals: o3 8.42 vs healthy 8.43)
+threshold std-RTT    AUC = 0.391
+o3-attack anomaly mean=0.915  healthy anomaly mean=0.428

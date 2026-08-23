@@ -1,0 +1,1241 @@
+PRISM version 4.8.1
+##### W2 E=3 (election.props: P>=1[F el], P=?[F el], E[rounds]) #####
+PRISM
+=====
+
+Version: 4.8.1
+Date: Fri Jun 12 16:40:17 GMT 2026
+Hostname: dc8fc2e3a0c8
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism election.pm election.props -const NE=3
+
+Parsing model file "election.pm"...
+
+Type:        DTMC
+Modules:     elect
+Variables:   i minv uniq el
+
+Parsing properties file "election.props"...
+
+3 properties:
+(1) P>=1 [ F el ]
+(2) P=? [ F el ]
+(3) R{"rounds"}=? [ F el ]
+
+---------------------------------------------------------------------
+
+Model checking: P>=1 [ F el ]
+Model constants: NE=3
+
+Building model...
+Model constants: NE=3
+
+Computing reachable states...
+
+Reachability (BFS): 5 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Time for model construction: 0.01 seconds.
+
+Warning: Deadlocks detected and fixed in 1 states
+
+Type:        DTMC
+States:      10 (1 initial)
+Transitions: 15
+
+Transition matrix: 52 nodes (3 terminal), 15 minterms, vars: 6r/6c
+
+Probability bound in formula is 0/1 so not computing exact probabilities...
+
+Prob0: 7 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1: 1 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+yes = 10, no = 0, maybe = 0
+
+Property satisfied in 1 of 1 initial states.
+
+Time for model checking: 0.001 seconds.
+
+Result: true
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F el ]
+Model constants: NE=3
+
+Prob0: 7 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1: 1 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+yes = 10, no = 0, maybe = 0
+
+Value in the initial state: 1.0
+
+Time for model checking: 0.001 seconds.
+
+Result: 1.0 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: R{"rounds"}=? [ F el ]
+Model constants: NE=3
+
+Prob0: 7 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1: 1 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+goal = 1, inf = 0, maybe = 9
+
+Computing remaining rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=6, nodes=65] [3.0 KB]
+Adding explicit sparse matrices... [levels=6, num=1, compact] [0.1 KB]
+Creating vector for diagonals... [dist=1, compact] [0.0 KB]
+Creating vector for RHS... [dist=2, compact] [0.0 KB]
+Allocating iteration vectors... [2 x 0.1 KB]
+TOTAL: [3.3 KB]
+
+Starting iterations...
+
+Jacobi: 112 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Value in the initial state: 2.6666615308534816
+
+Time for model checking: 0.001 seconds.
+
+Result: 2.6666615308534816 (+/- 2.2410828234185913E-5 estimated; rel err 8.404076773482831E-6)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+
+##### W3 E=3 (rounds.props) #####
+PRISM
+=====
+
+Version: 4.8.1
+Date: Fri Jun 12 16:40:18 GMT 2026
+Hostname: dc8fc2e3a0c8
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism election_w3.pm rounds.props -const NE=3
+
+Parsing model file "election_w3.pm"...
+
+Type:        DTMC
+Modules:     elect
+Variables:   i minv uniq el
+
+Parsing properties file "rounds.props"...
+
+1 property:
+(1) R{"rounds"}=? [ F el ]
+
+---------------------------------------------------------------------
+
+Model checking: R{"rounds"}=? [ F el ]
+Model constants: NE=3
+
+Building model...
+Model constants: NE=3
+
+Computing reachable states...
+
+Reachability (BFS): 5 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Time for model construction: 0.01 seconds.
+
+Warning: Deadlocks detected and fixed in 2 states
+
+Type:        DTMC
+States:      16 (1 initial)
+Transitions: 29
+
+Transition matrix: 72 nodes (4 terminal), 29 minterms, vars: 6r/6c
+
+Prob0: 7 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1: 1 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+goal = 2, inf = 0, maybe = 14
+
+Computing remaining rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=6, nodes=91] [4.3 KB]
+Adding explicit sparse matrices... [levels=6, num=1, compact] [0.1 KB]
+Creating vector for diagonals... [dist=1, compact] [0.0 KB]
+Creating vector for RHS... [dist=2, compact] [0.0 KB]
+Allocating iteration vectors... [2 x 0.1 KB]
+TOTAL: [4.7 KB]
+
+Starting iterations...
+
+Jacobi: 68 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Value in the initial state: 1.7999981457439818
+
+Time for model checking: 0.002 seconds.
+
+Result: 1.7999981457439818 (+/- 1.490027842328968E-5 estimated; rel err 8.277940984839762E-6)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+
+##### W2 E=4 (election.props: P>=1[F el], P=?[F el], E[rounds]) #####
+PRISM
+=====
+
+Version: 4.8.1
+Date: Fri Jun 12 16:40:18 GMT 2026
+Hostname: dc8fc2e3a0c8
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism election.pm election.props -const NE=4
+
+Parsing model file "election.pm"...
+
+Type:        DTMC
+Modules:     elect
+Variables:   i minv uniq el
+
+Parsing properties file "election.props"...
+
+3 properties:
+(1) P>=1 [ F el ]
+(2) P=? [ F el ]
+(3) R{"rounds"}=? [ F el ]
+
+---------------------------------------------------------------------
+
+Model checking: P>=1 [ F el ]
+Model constants: NE=4
+
+Building model...
+Model constants: NE=4
+
+Computing reachable states...
+
+Reachability (BFS): 6 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Time for model construction: 0.01 seconds.
+
+Warning: Deadlocks detected and fixed in 1 states
+
+Type:        DTMC
+States:      13 (1 initial)
+Transitions: 20
+
+Transition matrix: 64 nodes (3 terminal), 20 minterms, vars: 7r/7c
+
+Probability bound in formula is 0/1 so not computing exact probabilities...
+
+Prob0: 9 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1: 1 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+yes = 13, no = 0, maybe = 0
+
+Property satisfied in 1 of 1 initial states.
+
+Time for model checking: 0.002 seconds.
+
+Result: true
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F el ]
+Model constants: NE=4
+
+Prob0: 9 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1: 1 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+yes = 13, no = 0, maybe = 0
+
+Value in the initial state: 1.0
+
+Time for model checking: 0.001 seconds.
+
+Result: 1.0 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: R{"rounds"}=? [ F el ]
+Model constants: NE=4
+
+Prob0: 9 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1: 1 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+goal = 1, inf = 0, maybe = 12
+
+Computing remaining rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=7, nodes=85] [4.0 KB]
+Adding explicit sparse matrices... [levels=7, num=1, compact] [0.1 KB]
+Creating vector for diagonals... [dist=1, compact] [0.0 KB]
+Creating vector for RHS... [dist=2, compact] [0.0 KB]
+Allocating iteration vectors... [2 x 0.1 KB]
+TOTAL: [4.4 KB]
+
+Starting iterations...
+
+Jacobi: 220 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Value in the initial state: 3.9999872721344043
+
+Time for model checking: 0.001 seconds.
+
+Result: 3.9999872721344043 (+/- 3.394098212300182E-5 estimated; rel err 8.485272530602533E-6)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+
+##### W3 E=4 (rounds.props) #####
+PRISM
+=====
+
+Version: 4.8.1
+Date: Fri Jun 12 16:40:19 GMT 2026
+Hostname: dc8fc2e3a0c8
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism election_w3.pm rounds.props -const NE=4
+
+Parsing model file "election_w3.pm"...
+
+Type:        DTMC
+Modules:     elect
+Variables:   i minv uniq el
+
+Parsing properties file "rounds.props"...
+
+1 property:
+(1) R{"rounds"}=? [ F el ]
+
+---------------------------------------------------------------------
+
+Model checking: R{"rounds"}=? [ F el ]
+Model constants: NE=4
+
+Building model...
+Model constants: NE=4
+
+Computing reachable states...
+
+Reachability (BFS): 6 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Time for model construction: 0.01 seconds.
+
+Warning: Deadlocks detected and fixed in 2 states
+
+Type:        DTMC
+States:      21 (1 initial)
+Transitions: 40
+
+Transition matrix: 84 nodes (4 terminal), 40 minterms, vars: 7r/7c
+
+Prob0: 9 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1: 1 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+goal = 2, inf = 0, maybe = 19
+
+Computing remaining rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=7, nodes=117] [5.5 KB]
+Adding explicit sparse matrices... [levels=7, num=1, compact] [0.2 KB]
+Creating vector for diagonals... [dist=1, compact] [0.0 KB]
+Creating vector for RHS... [dist=2, compact] [0.1 KB]
+Allocating iteration vectors... [2 x 0.2 KB]
+TOTAL: [6.1 KB]
+
+Starting iterations...
+
+Jacobi: 115 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Value in the initial state: 2.2499969736796315
+
+Time for model checking: 0.002 seconds.
+
+Result: 2.2499969736796315 (+/- 1.676116450859928E-5 estimated; rel err 7.449416467964476E-6)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+
+##### W2 E=5 (election.props: P>=1[F el], P=?[F el], E[rounds]) #####
+PRISM
+=====
+
+Version: 4.8.1
+Date: Fri Jun 12 16:40:19 GMT 2026
+Hostname: dc8fc2e3a0c8
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism election.pm election.props -const NE=5
+
+Parsing model file "election.pm"...
+
+Type:        DTMC
+Modules:     elect
+Variables:   i minv uniq el
+
+Parsing properties file "election.props"...
+
+3 properties:
+(1) P>=1 [ F el ]
+(2) P=? [ F el ]
+(3) R{"rounds"}=? [ F el ]
+
+---------------------------------------------------------------------
+
+Model checking: P>=1 [ F el ]
+Model constants: NE=5
+
+Building model...
+Model constants: NE=5
+
+Computing reachable states...
+
+Reachability (BFS): 7 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Time for model construction: 0.011 seconds.
+
+Warning: Deadlocks detected and fixed in 1 states
+
+Type:        DTMC
+States:      16 (1 initial)
+Transitions: 25
+
+Transition matrix: 64 nodes (3 terminal), 25 minterms, vars: 7r/7c
+
+Probability bound in formula is 0/1 so not computing exact probabilities...
+
+Prob0: 11 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1: 1 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+yes = 16, no = 0, maybe = 0
+
+Property satisfied in 1 of 1 initial states.
+
+Time for model checking: 0.001 seconds.
+
+Result: true
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F el ]
+Model constants: NE=5
+
+Prob0: 11 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1: 1 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+yes = 16, no = 0, maybe = 0
+
+Value in the initial state: 1.0
+
+Time for model checking: 0.001 seconds.
+
+Result: 1.0 (exact floating point)
+
+---------------------------------------------------------------------
+
+Model checking: R{"rounds"}=? [ F el ]
+Model constants: NE=5
+
+Prob0: 11 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1: 1 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+goal = 1, inf = 0, maybe = 15
+
+Computing remaining rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=7, nodes=86] [4.0 KB]
+Adding explicit sparse matrices... [levels=7, num=1, compact] [0.1 KB]
+Creating vector for diagonals... [dist=1, compact] [0.0 KB]
+Creating vector for RHS... [dist=2, compact] [0.0 KB]
+Allocating iteration vectors... [2 x 0.1 KB]
+TOTAL: [4.5 KB]
+
+Starting iterations...
+
+Jacobi: 426 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Value in the initial state: 6.399963071746489
+
+Time for model checking: 0.001 seconds.
+
+Result: 6.399963071746489 (+/- 5.9144358507937667E-5 estimated; rel err 9.241359339874712E-6)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+
+##### W3 E=5 (rounds.props) #####
+PRISM
+=====
+
+Version: 4.8.1
+Date: Fri Jun 12 16:40:19 GMT 2026
+Hostname: dc8fc2e3a0c8
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism election_w3.pm rounds.props -const NE=5
+
+Parsing model file "election_w3.pm"...
+
+Type:        DTMC
+Modules:     elect
+Variables:   i minv uniq el
+
+Parsing properties file "rounds.props"...
+
+1 property:
+(1) R{"rounds"}=? [ F el ]
+
+---------------------------------------------------------------------
+
+Model checking: R{"rounds"}=? [ F el ]
+Model constants: NE=5
+
+Building model...
+Model constants: NE=5
+
+Computing reachable states...
+
+Reachability (BFS): 7 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Time for model construction: 0.011 seconds.
+
+Warning: Deadlocks detected and fixed in 2 states
+
+Type:        DTMC
+States:      26 (1 initial)
+Transitions: 51
+
+Transition matrix: 84 nodes (4 terminal), 51 minterms, vars: 7r/7c
+
+Prob0: 11 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1: 1 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+goal = 2, inf = 0, maybe = 24
+
+Computing remaining rewards...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=7, nodes=118] [5.5 KB]
+Adding explicit sparse matrices... [levels=7, num=1, compact] [0.2 KB]
+Creating vector for diagonals... [dist=1, compact] [0.1 KB]
+Creating vector for RHS... [dist=2, compact] [0.1 KB]
+Allocating iteration vectors... [2 x 0.2 KB]
+TOTAL: [6.3 KB]
+
+Starting iterations...
+
+Jacobi: 180 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Value in the initial state: 2.8588164871567354
+
+Time for model checking: 0.002 seconds.
+
+Result: 2.8588164871567354 (+/- 2.8067657372949076E-5 estimated; rel err 9.817929027289207E-6)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+
+##### W2 E=5 Kmax=0 (pfel.props: P[leader within k rounds]) #####
+PRISM
+=====
+
+Version: 4.8.1
+Date: Fri Jun 12 16:40:20 GMT 2026
+Hostname: dc8fc2e3a0c8
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism election_k.pm pfel.props -const NE=5 -const Kmax=0
+
+Parsing model file "election_k.pm"...
+
+Type:        DTMC
+Modules:     elect
+Variables:   i minv uniq el r
+
+Parsing properties file "pfel.props"...
+
+1 property:
+(1) P=? [ F el ]
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F el ]
+Model constants: NE=5,Kmax=0
+
+Building model...
+Model constants: NE=5,Kmax=0
+
+Error: Invalid range (0-0) for variable "r" ("[0..Kmax]", line 14, column 10).
+
+##### W2 E=5 Kmax=1 (pfel.props: P[leader within k rounds]) #####
+PRISM
+=====
+
+Version: 4.8.1
+Date: Fri Jun 12 16:40:20 GMT 2026
+Hostname: dc8fc2e3a0c8
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism election_k.pm pfel.props -const NE=5 -const Kmax=1
+
+Parsing model file "election_k.pm"...
+
+Type:        DTMC
+Modules:     elect
+Variables:   i minv uniq el r
+
+Parsing properties file "pfel.props"...
+
+1 property:
+(1) P=? [ F el ]
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F el ]
+Model constants: NE=5,Kmax=1
+
+Building model...
+Model constants: NE=5,Kmax=1
+
+Computing reachable states...
+
+Reachability (BFS): 13 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Time for model construction: 0.01 seconds.
+
+Warning: Deadlocks detected and fixed in 2 states
+
+Type:        DTMC
+States:      32 (1 initial)
+Transitions: 50
+
+Transition matrix: 80 nodes (3 terminal), 50 minterms, vars: 8r/8c
+
+Prob0: 11 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1: 9 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+yes = 4, no = 5, maybe = 23
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=8, nodes=86] [4.0 KB]
+Adding explicit sparse matrices... [levels=8, num=1, compact] [0.2 KB]
+Creating vector for diagonals... [dist=1, compact] [0.1 KB]
+Creating vector for RHS... [dist=2, compact] [0.1 KB]
+Allocating iteration vectors... [2 x 0.2 KB]
+TOTAL: [4.9 KB]
+
+Starting iterations...
+
+Jacobi: 12 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Value in the initial state: 0.2880859375
+
+Time for model checking: 0.002 seconds.
+
+Result: 0.2880859375 (exact floating point)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+
+##### W2 E=5 Kmax=2 (pfel.props: P[leader within k rounds]) #####
+PRISM
+=====
+
+Version: 4.8.1
+Date: Fri Jun 12 16:40:21 GMT 2026
+Hostname: dc8fc2e3a0c8
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism election_k.pm pfel.props -const NE=5 -const Kmax=2
+
+Parsing model file "election_k.pm"...
+
+Type:        DTMC
+Modules:     elect
+Variables:   i minv uniq el r
+
+Parsing properties file "pfel.props"...
+
+1 property:
+(1) P=? [ F el ]
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F el ]
+Model constants: NE=5,Kmax=2
+
+Building model...
+Model constants: NE=5,Kmax=2
+
+Computing reachable states...
+
+Reachability (BFS): 19 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Time for model construction: 0.01 seconds.
+
+Warning: Deadlocks detected and fixed in 3 states
+
+Type:        DTMC
+States:      48 (1 initial)
+Transitions: 75
+
+Transition matrix: 91 nodes (3 terminal), 75 minterms, vars: 9r/9c
+
+Prob0: 11 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1: 15 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+yes = 6, no = 5, maybe = 37
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=9, nodes=97] [4.5 KB]
+Adding explicit sparse matrices... [levels=9, num=1, compact] [0.3 KB]
+Creating vector for diagonals... [dist=1, compact] [0.1 KB]
+Creating vector for RHS... [dist=2, compact] [0.1 KB]
+Allocating iteration vectors... [2 x 0.4 KB]
+TOTAL: [5.8 KB]
+
+Starting iterations...
+
+Jacobi: 18 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Value in the initial state: 0.399322509765625
+
+Time for model checking: 0.002 seconds.
+
+Result: 0.399322509765625 (exact floating point)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+
+##### W2 E=5 Kmax=3 (pfel.props: P[leader within k rounds]) #####
+PRISM
+=====
+
+Version: 4.8.1
+Date: Fri Jun 12 16:40:21 GMT 2026
+Hostname: dc8fc2e3a0c8
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism election_k.pm pfel.props -const NE=5 -const Kmax=3
+
+Parsing model file "election_k.pm"...
+
+Type:        DTMC
+Modules:     elect
+Variables:   i minv uniq el r
+
+Parsing properties file "pfel.props"...
+
+1 property:
+(1) P=? [ F el ]
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F el ]
+Model constants: NE=5,Kmax=3
+
+Building model...
+Model constants: NE=5,Kmax=3
+
+Computing reachable states...
+
+Reachability (BFS): 25 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Time for model construction: 0.011 seconds.
+
+Warning: Deadlocks detected and fixed in 4 states
+
+Type:        DTMC
+States:      64 (1 initial)
+Transitions: 100
+
+Transition matrix: 92 nodes (3 terminal), 100 minterms, vars: 9r/9c
+
+Prob0: 11 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1: 21 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+yes = 8, no = 5, maybe = 51
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=9, nodes=97] [4.5 KB]
+Adding explicit sparse matrices... [levels=9, num=1, compact] [0.4 KB]
+Creating vector for diagonals... [dist=1, compact] [0.1 KB]
+Creating vector for RHS... [dist=2, compact] [0.1 KB]
+Allocating iteration vectors... [2 x 0.5 KB]
+TOTAL: [6.2 KB]
+
+Starting iterations...
+
+Jacobi: 24 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Value in the initial state: 0.4931783676147461
+
+Time for model checking: 0.003 seconds.
+
+Result: 0.4931783676147461 (exact floating point)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+
+##### W2 E=5 Kmax=4 (pfel.props: P[leader within k rounds]) #####
+PRISM
+=====
+
+Version: 4.8.1
+Date: Fri Jun 12 16:40:21 GMT 2026
+Hostname: dc8fc2e3a0c8
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism election_k.pm pfel.props -const NE=5 -const Kmax=4
+
+Parsing model file "election_k.pm"...
+
+Type:        DTMC
+Modules:     elect
+Variables:   i minv uniq el r
+
+Parsing properties file "pfel.props"...
+
+1 property:
+(1) P=? [ F el ]
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F el ]
+Model constants: NE=5,Kmax=4
+
+Building model...
+Model constants: NE=5,Kmax=4
+
+Computing reachable states...
+
+Reachability (BFS): 31 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Time for model construction: 0.013 seconds.
+
+Warning: Deadlocks detected and fixed in 5 states
+
+Type:        DTMC
+States:      80 (1 initial)
+Transitions: 125
+
+Transition matrix: 106 nodes (3 terminal), 125 minterms, vars: 10r/10c
+
+Prob0: 11 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1: 27 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+yes = 10, no = 5, maybe = 65
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=10, nodes=111] [5.2 KB]
+Adding explicit sparse matrices... [levels=10, num=1, compact] [0.5 KB]
+Creating vector for diagonals... [dist=1, compact] [0.2 KB]
+Creating vector for RHS... [dist=2, compact] [0.2 KB]
+Allocating iteration vectors... [2 x 0.6 KB]
+TOTAL: [7.3 KB]
+
+Starting iterations...
+
+Jacobi: 30 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Value in the initial state: 0.572369247674942
+
+Time for model checking: 0.002 seconds.
+
+Result: 0.572369247674942 (exact floating point)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+
+##### W2 E=5 Kmax=5 (pfel.props: P[leader within k rounds]) #####
+PRISM
+=====
+
+Version: 4.8.1
+Date: Fri Jun 12 16:40:22 GMT 2026
+Hostname: dc8fc2e3a0c8
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism election_k.pm pfel.props -const NE=5 -const Kmax=5
+
+Parsing model file "election_k.pm"...
+
+Type:        DTMC
+Modules:     elect
+Variables:   i minv uniq el r
+
+Parsing properties file "pfel.props"...
+
+1 property:
+(1) P=? [ F el ]
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F el ]
+Model constants: NE=5,Kmax=5
+
+Building model...
+Model constants: NE=5,Kmax=5
+
+Computing reachable states...
+
+Reachability (BFS): 37 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Time for model construction: 0.012 seconds.
+
+Warning: Deadlocks detected and fixed in 6 states
+
+Type:        DTMC
+States:      96 (1 initial)
+Transitions: 150
+
+Transition matrix: 109 nodes (3 terminal), 150 minterms, vars: 10r/10c
+
+Prob0: 11 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1: 33 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+yes = 12, no = 5, maybe = 79
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=10, nodes=114] [5.3 KB]
+Adding explicit sparse matrices... [levels=10, num=1, compact] [0.6 KB]
+Creating vector for diagonals... [dist=1, compact] [0.2 KB]
+Creating vector for RHS... [dist=2, compact] [0.2 KB]
+Allocating iteration vectors... [2 x 0.8 KB]
+TOTAL: [7.9 KB]
+
+Starting iterations...
+
+Jacobi: 36 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Value in the initial state: 0.6391865527257323
+
+Time for model checking: 0.003 seconds.
+
+Result: 0.6391865527257323 (exact floating point)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+
+##### W2 E=5 Kmax=6 (pfel.props: P[leader within k rounds]) #####
+PRISM
+=====
+
+Version: 4.8.1
+Date: Fri Jun 12 16:40:22 GMT 2026
+Hostname: dc8fc2e3a0c8
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism election_k.pm pfel.props -const NE=5 -const Kmax=6
+
+Parsing model file "election_k.pm"...
+
+Type:        DTMC
+Modules:     elect
+Variables:   i minv uniq el r
+
+Parsing properties file "pfel.props"...
+
+1 property:
+(1) P=? [ F el ]
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F el ]
+Model constants: NE=5,Kmax=6
+
+Building model...
+Model constants: NE=5,Kmax=6
+
+Computing reachable states...
+
+Reachability (BFS): 43 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Time for model construction: 0.012 seconds.
+
+Warning: Deadlocks detected and fixed in 7 states
+
+Type:        DTMC
+States:      112 (1 initial)
+Transitions: 175
+
+Transition matrix: 110 nodes (3 terminal), 175 minterms, vars: 10r/10c
+
+Prob0: 11 iterations in 0.01 seconds (average 0.000909, setup 0.00)
+
+Prob1: 39 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+yes = 14, no = 5, maybe = 93
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=10, nodes=118] [5.5 KB]
+Adding explicit sparse matrices... [levels=10, num=1, compact] [0.7 KB]
+Creating vector for diagonals... [dist=1, compact] [0.2 KB]
+Creating vector for RHS... [dist=2, compact] [0.2 KB]
+Allocating iteration vectors... [2 x 0.9 KB]
+TOTAL: [8.5 KB]
+
+Starting iterations...
+
+Jacobi: 42 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Value in the initial state: 0.6955636538623367
+
+Time for model checking: 0.003 seconds.
+
+Result: 0.6955636538623367 (exact floating point)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+
+##### W2 E=5 Kmax=8 (pfel.props: P[leader within k rounds]) #####
+PRISM
+=====
+
+Version: 4.8.1
+Date: Fri Jun 12 16:40:23 GMT 2026
+Hostname: dc8fc2e3a0c8
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism election_k.pm pfel.props -const NE=5 -const Kmax=8
+
+Parsing model file "election_k.pm"...
+
+Type:        DTMC
+Modules:     elect
+Variables:   i minv uniq el r
+
+Parsing properties file "pfel.props"...
+
+1 property:
+(1) P=? [ F el ]
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F el ]
+Model constants: NE=5,Kmax=8
+
+Building model...
+Model constants: NE=5,Kmax=8
+
+Computing reachable states...
+
+Reachability (BFS): 55 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Time for model construction: 0.01 seconds.
+
+Warning: Deadlocks detected and fixed in 9 states
+
+Type:        DTMC
+States:      144 (1 initial)
+Transitions: 225
+
+Transition matrix: 121 nodes (3 terminal), 225 minterms, vars: 11r/11c
+
+Prob0: 11 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1: 51 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+yes = 18, no = 5, maybe = 121
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=11, nodes=126] [5.9 KB]
+Adding explicit sparse matrices... [levels=11, num=1, compact] [0.9 KB]
+Creating vector for diagonals... [dist=1, compact] [0.3 KB]
+Creating vector for RHS... [dist=2, compact] [0.3 KB]
+Allocating iteration vectors... [2 x 1.1 KB]
+TOTAL: [9.7 KB]
+
+Starting iterations...
+
+Jacobi: 54 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Value in the initial state: 0.7832674840484799
+
+Time for model checking: 0.003 seconds.
+
+Result: 0.7832674840484799 (exact floating point)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+
+##### W2 E=5 Kmax=12 (pfel.props: P[leader within k rounds]) #####
+PRISM
+=====
+
+Version: 4.8.1
+Date: Fri Jun 12 16:40:23 GMT 2026
+Hostname: dc8fc2e3a0c8
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism election_k.pm pfel.props -const NE=5 -const Kmax=12
+
+Parsing model file "election_k.pm"...
+
+Type:        DTMC
+Modules:     elect
+Variables:   i minv uniq el r
+
+Parsing properties file "pfel.props"...
+
+1 property:
+(1) P=? [ F el ]
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F el ]
+Model constants: NE=5,Kmax=12
+
+Building model...
+Model constants: NE=5,Kmax=12
+
+Computing reachable states...
+
+Reachability (BFS): 79 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Time for model construction: 0.012 seconds.
+
+Warning: Deadlocks detected and fixed in 13 states
+
+Type:        DTMC
+States:      208 (1 initial)
+Transitions: 325
+
+Transition matrix: 125 nodes (3 terminal), 325 minterms, vars: 11r/11c
+
+Prob0: 11 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1: 75 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+yes = 26, no = 5, maybe = 177
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=11, nodes=133] [6.2 KB]
+Adding explicit sparse matrices... [levels=11, num=1, compact] [1.4 KB]
+Creating vector for diagonals... [dist=1, compact] [0.4 KB]
+Creating vector for RHS... [dist=2, compact] [0.4 KB]
+Allocating iteration vectors... [2 x 1.6 KB]
+TOTAL: [11.7 KB]
+
+Starting iterations...
+
+Jacobi: 78 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Value in the initial state: 0.8901552724744876
+
+Time for model checking: 0.003 seconds.
+
+Result: 0.8901552724744876 (exact floating point)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+
+##### W2 E=5 Kmax=20 (pfel.props: P[leader within k rounds]) #####
+PRISM
+=====
+
+Version: 4.8.1
+Date: Fri Jun 12 16:40:24 GMT 2026
+Hostname: dc8fc2e3a0c8
+Memory limits: cudd=1g, java(heap)=1g
+Command line: prism election_k.pm pfel.props -const NE=5 -const Kmax=20
+
+Parsing model file "election_k.pm"...
+
+Type:        DTMC
+Modules:     elect
+Variables:   i minv uniq el r
+
+Parsing properties file "pfel.props"...
+
+1 property:
+(1) P=? [ F el ]
+
+---------------------------------------------------------------------
+
+Model checking: P=? [ F el ]
+Model constants: NE=5,Kmax=20
+
+Building model...
+Model constants: NE=5,Kmax=20
+
+Computing reachable states...
+
+Reachability (BFS): 127 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Time for model construction: 0.011 seconds.
+
+Warning: Deadlocks detected and fixed in 21 states
+
+Type:        DTMC
+States:      336 (1 initial)
+Transitions: 525
+
+Transition matrix: 144 nodes (3 terminal), 525 minterms, vars: 12r/12c
+
+Prob0: 11 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Prob1: 123 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+yes = 42, no = 5, maybe = 289
+
+Computing remaining probabilities...
+Engine: Hybrid
+
+Building hybrid MTBDD matrix... [levels=12, nodes=152] [7.1 KB]
+Adding explicit sparse matrices... [levels=12, num=1, compact] [2.2 KB]
+Creating vector for diagonals... [dist=1, compact] [0.7 KB]
+Creating vector for RHS... [dist=2, compact] [0.7 KB]
+Allocating iteration vectors... [2 x 2.6 KB]
+TOTAL: [15.9 KB]
+
+Starting iterations...
+
+Jacobi: 126 iterations in 0.00 seconds (average 0.000000, setup 0.00)
+
+Value in the initial state: 0.9717843861800134
+
+Time for model checking: 0.004 seconds.
+
+Result: 0.9717843861800134 (exact floating point)
+
+---------------------------------------------------------------------
+
+Note: There was 1 warning during computation.
+

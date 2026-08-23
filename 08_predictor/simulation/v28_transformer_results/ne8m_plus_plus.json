@@ -1,0 +1,19 @@
+{
+  "experiment": "NE8m++ Transformer adaptive detector on PBFT MM",
+  "model": "encoder-only Transformer (d=32, nhead=4, layers=2)",
+  "n_parameters": 17185,
+  "n_train": 3000,
+  "n_test": 1000,
+  "window_W": 16,
+  "epochs": 30,
+  "test_AUC_transformer": 0.999988,
+  "comparison_with_v23_features": {
+    "Linear (v23)": 0.4911,
+    "AR(1) memory (v23)": 0.5461,
+    "Kurtosis (v23)": 0.5743,
+    "Range/IQR (v23)": 0.53,
+    "Combined higher-order (v23)": 0.502,
+    "TinyTransformer (v28)": 0.999988
+  },
+  "improvement_over_best_v23_fixed_feature": 0.42568799999999996
+}

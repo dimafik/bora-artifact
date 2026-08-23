@@ -1,0 +1,46 @@
+{
+  "experiment_id": "5node_failover_time_iota",
+  "date_utc": "2026-06-08",
+  "description": "Raft leader failover time measurement on 5-orderer cluster. For each trial: identify current leader via 'became leader' log search, kill its container with docker stop, then poll all remaining orderers for 'became leader' message indicating new leader election complete. Restart killed orderer between trials.",
+  "fabric_version": "v2.5.10",
+  "raft_config": "tick_interval=500ms election_tick=10 heartbeat_tick=1 (default)",
+  "n_trials": 3,
+  "raw_data": {
+    "trial_1": {
+      "killed": "orderer3",
+      "detection_ms": 6731,
+      "new_leader": "orderer4"
+    },
+    "trial_2": {
+      "killed": "orderer4",
+      "detection_ms": 5585,
+      "new_leader": "orderer"
+    },
+    "trial_3": {
+      "killed": "orderer",
+      "detection_ms": 1273,
+      "new_leader": "orderer4"
+    }
+  },
+  "aggregate": {
+    "detection_ms_mean": 4530,
+    "detection_ms_std": 2854,
+    "detection_ms_min": 1273,
+    "detection_ms_max": 6731,
+    "all_failovers_succeeded": true
+  },
+  "key_findings": {
+    "failover_completed_in_all_trials": "100% successful new-leader election within 30s polling window",
+    "high_variance": "Detection latency std 2854 ms with min 1.3s and max 6.7s — reflects Raft's randomized election timeout and time to detect leader absence",
+    "matches_etcdraft_theory": "tick_interval=500ms * election_tick=10 = 5s nominal election timeout, plus randomization. Observed mean 4.5s is consistent.",
+    "paper_relevance": "Validates §VII.B's 'failover time' as a measurable metric. Establishes baseline for Algorithm 1: any active blacklisting decision should complete in << failover_time to be useful."
+  },
+  "paper_integration": {
+    "phase_letter": "iota",
+    "paper_table_label": "(in-line numbers in NE23 paragraph)",
+    "paper_section_or_paragraph": "NE23 Raft leader failover time",
+    "related_phases": {
+      "delta": "5node_saturation_delta_2026-06-08 (sustained throughput context for understanding consensus-path criticality)"
+    }
+  }
+}

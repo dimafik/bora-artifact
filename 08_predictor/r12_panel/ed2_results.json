@@ -1,0 +1,252 @@
+{
+ "H1b": [
+  {
+   "name": "std(dRTT) statistic",
+   "params": 0,
+   "cfg": "-",
+   "auc": 0.5567
+  },
+  {
+   "name": "logistic / 40 summary stats",
+   "params": 41,
+   "cfg": "-",
+   "auc": 0.7074
+  },
+  {
+   "name": "random forest / summary stats",
+   "params": 1549084,
+   "cfg": "-",
+   "auc": 0.7063
+  },
+  {
+   "name": "k-NN (k=15) / summary stats",
+   "params": 20000,
+   "cfg": "-",
+   "auc": 0.6725
+  },
+  {
+   "name": "MLP 64-32",
+   "params": 32897,
+   "cfg": "flat/1e-03",
+   "auc": 0.5907
+  },
+  {
+   "name": "1D-CNN",
+   "params": 1985,
+   "cfg": "attn/1e-03",
+   "auc": 0.8463
+  },
+  {
+   "name": "GRU",
+   "params": 2497,
+   "cfg": "attn/1e-03",
+   "auc": 0.8588
+  },
+  {
+   "name": "Transformer (ours)",
+   "params": 143244,
+   "cfg": "attn/3e-04",
+   "auc": 0.8451
+  }
+ ],
+ "H3:ar1": [
+  {
+   "name": "std(dRTT) statistic",
+   "params": 0,
+   "cfg": "-",
+   "auc": 0.999
+  },
+  {
+   "name": "logistic / 40 summary stats",
+   "params": 41,
+   "cfg": "-",
+   "auc": 0.6111
+  },
+  {
+   "name": "random forest / summary stats",
+   "params": 518210,
+   "cfg": "-",
+   "auc": 0.9132
+  },
+  {
+   "name": "k-NN (k=15) / summary stats",
+   "params": 20000,
+   "cfg": "-",
+   "auc": 0.3962
+  },
+  {
+   "name": "MLP 64-32",
+   "params": 32897,
+   "cfg": "flat/1e-03",
+   "auc": 0.4604
+  },
+  {
+   "name": "1D-CNN",
+   "params": 1985,
+   "cfg": "max/1e-03",
+   "auc": 0.8507
+  },
+  {
+   "name": "GRU",
+   "params": 2497,
+   "cfg": "mean/1e-03",
+   "auc": 0.973
+  },
+  {
+   "name": "Transformer (ours)",
+   "params": 143244,
+   "cfg": "attn/1e-03",
+   "auc": 0.7472
+  }
+ ],
+ "H3:burst": [
+  {
+   "name": "std(dRTT) statistic",
+   "params": 0,
+   "cfg": "-",
+   "auc": 0.0065
+  },
+  {
+   "name": "logistic / 40 summary stats",
+   "params": 41,
+   "cfg": "-",
+   "auc": 0.4231
+  },
+  {
+   "name": "random forest / summary stats",
+   "params": 479238,
+   "cfg": "-",
+   "auc": 0.8107
+  },
+  {
+   "name": "k-NN (k=15) / summary stats",
+   "params": 20000,
+   "cfg": "-",
+   "auc": 0.723
+  },
+  {
+   "name": "MLP 64-32",
+   "params": 32897,
+   "cfg": "flat/3e-04",
+   "auc": 0.3602
+  },
+  {
+   "name": "1D-CNN",
+   "params": 1985,
+   "cfg": "max/1e-03",
+   "auc": 0.7189
+  },
+  {
+   "name": "GRU",
+   "params": 2497,
+   "cfg": "mean/1e-03",
+   "auc": 0.912
+  },
+  {
+   "name": "Transformer (ours)",
+   "params": 143244,
+   "cfg": "attn/1e-03",
+   "auc": 0.9216
+  }
+ ],
+ "H3:varshift": [
+  {
+   "name": "std(dRTT) statistic",
+   "params": 0,
+   "cfg": "-",
+   "auc": 0.7515
+  },
+  {
+   "name": "logistic / 40 summary stats",
+   "params": 41,
+   "cfg": "-",
+   "auc": 0.7395
+  },
+  {
+   "name": "random forest / summary stats",
+   "params": 68724,
+   "cfg": "-",
+   "auc": 0.7568
+  },
+  {
+   "name": "k-NN (k=15) / summary stats",
+   "params": 20000,
+   "cfg": "-",
+   "auc": 0.6074
+  },
+  {
+   "name": "MLP 64-32",
+   "params": 32897,
+   "cfg": "flat/1e-03",
+   "auc": 0.7467
+  },
+  {
+   "name": "1D-CNN",
+   "params": 1985,
+   "cfg": "attn/3e-04",
+   "auc": 0.9821
+  },
+  {
+   "name": "GRU",
+   "params": 2497,
+   "cfg": "mean/3e-04",
+   "auc": 0.9976
+  },
+  {
+   "name": "Transformer (ours)",
+   "params": 143244,
+   "cfg": "attn/3e-04",
+   "auc": 0.7167
+  }
+ ],
+ "H3:heavytail": [
+  {
+   "name": "std(dRTT) statistic",
+   "params": 0,
+   "cfg": "-",
+   "auc": 0.9045
+  },
+  {
+   "name": "logistic / 40 summary stats",
+   "params": 41,
+   "cfg": "-",
+   "auc": 0.9948
+  },
+  {
+   "name": "random forest / summary stats",
+   "params": 510766,
+   "cfg": "-",
+   "auc": 0.9938
+  },
+  {
+   "name": "k-NN (k=15) / summary stats",
+   "params": 20000,
+   "cfg": "-",
+   "auc": 0.9727
+  },
+  {
+   "name": "MLP 64-32",
+   "params": 32897,
+   "cfg": "flat/3e-04",
+   "auc": 0.7367
+  },
+  {
+   "name": "1D-CNN",
+   "params": 1985,
+   "cfg": "mean/3e-04",
+   "auc": 1.0
+  },
+  {
+   "name": "GRU",
+   "params": 2497,
+   "cfg": "mean/1e-03",
+   "auc": 0.997
+  },
+  {
+   "name": "Transformer (ours)",
+   "params": 143244,
+   "cfg": "attn/3e-04",
+   "auc": 0.9951
+  }
+ ]
+}

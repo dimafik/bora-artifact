@@ -1,0 +1,144 @@
+---
+# Phase 1 (T+0:10 → T+0:25): Fabric network bootstrap
+# Generates crypto material, distributes, starts containers, creates channel
+- name: Wait for cloud-init
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Wait for /var/run/sched-bft-ready
+      ansible.builtin.wait_for:
+        path: /var/run/sched-bft-ready
+        timeout: 300
+    - name: Verify NTP sync
+      ansible.builtin.command: chronyc tracking
+      register: chrony_out
+      changed_when: false
+      failed_when: "'Leap status     : Normal' not in chrony_out.stdout"
+
+- name: Generate crypto materials on orderer1
+  hosts: orderer1
+  tasks:
+    - name: Run cryptogen
+      ansible.builtin.shell: |
+        cd /opt/fabric
+        cryptogen generate --config=./crypto-config.yaml --output=./crypto-config
+      args: { creates: /opt/fabric/crypto-config/peerOrganizations }
+
+    - name: Generate genesis block
+      ansible.builtin.shell: |
+        cd /opt/fabric
+        configtxgen -profile SchedulableBFTGenesis \
+          -channelID system-channel -outputBlock ./genesis.block
+      args: { creates: /opt/fabric/genesis.block }
+
+    - name: Generate channel artifact
+      ansible.builtin.shell: |
+        cd /opt/fabric
+        configtxgen -profile SchedulableBFTChannel \
+          -outputCreateChannelTx ./mychannel.tx -channelID mychannel
+      args: { creates: /opt/fabric/mychannel.tx }
+
+    - name: Pack crypto + artifacts
+      community.general.archive:
+        path:
+          - /opt/fabric/crypto-config
+          - /opt/fabric/genesis.block
+          - /opt/fabric/mychannel.tx
+        dest: /tmp/fabric-artifacts.tar.gz
+
+    - name: Fetch tarball to controller
+      ansible.builtin.fetch:
+        src: /tmp/fabric-artifacts.tar.gz
+        dest: /tmp/fabric-artifacts.tar.gz
+        flat: true
+
+- name: Distribute artifacts
+  hosts: all:!orderer1
+  tasks:
+    - name: Copy tarball
+      ansible.builtin.copy:
+        src: /tmp/fabric-artifacts.tar.gz
+        dest: /tmp/fabric-artifacts.tar.gz
+
+    - name: Unpack
+      ansible.builtin.unarchive:
+        src: /tmp/fabric-artifacts.tar.gz
+        dest: /opt/fabric/
+        remote_src: true
+
+- name: Start orderers
+  hosts: orderers
+  tasks:
+    - name: Render docker-compose
+      ansible.builtin.template:
+        src: templates/orderer-compose.yml.j2
+        dest: /opt/fabric/orderer-compose.yml
+
+    - name: Bring up orderer container
+      community.docker.docker_compose_v2:
+        project_src: /opt/fabric
+        files: [orderer-compose.yml]
+        state: present
+
+- name: Start peers
+  hosts: orderers:peers   # peer co-located on orderer1-3 + dedicated peer-org4
+  tasks:
+    - name: Render peer compose
+      ansible.builtin.template:
+        src: templates/peer-compose.yml.j2
+        dest: /opt/fabric/peer-compose.yml
+
+    - name: Bring up peer container
+      community.docker.docker_compose_v2:
+        project_src: /opt/fabric
+        files: [peer-compose.yml]
+        state: present
+
+- name: Create channel + join
+  hosts: orderer1
+  tasks:
+    - name: Create mychannel
+      ansible.builtin.shell: |
+        peer channel create -o orderer1:7050 -c mychannel \
+          -f /opt/fabric/mychannel.tx \
+          --tls --cafile $ORDERER_CA
+      args: { creates: /opt/fabric/mychannel.block }
+
+    - name: Join Org1 peer
+      ansible.builtin.shell: |
+        peer channel join -b /opt/fabric/mychannel.block
+
+- name: Join remaining peers
+  hosts: peers:!orderer1
+  tasks:
+    - name: Copy mychannel.block (via local fetch+push)
+      ansible.builtin.copy:
+        src: /tmp/mychannel.block
+        dest: /opt/fabric/mychannel.block
+
+    - name: peer channel join
+      ansible.builtin.shell: |
+        peer channel join -b /opt/fabric/mychannel.block
+
+- name: Install + instantiate chaincode
+  hosts: orderer1
+  tasks:
+    - name: peer lifecycle chaincode package
+      ansible.builtin.shell: |
+        peer lifecycle chaincode package asset_transfer.tar.gz \
+          --path /opt/fabric/chaincodes/asset_transfer \
+          --lang golang --label asset_transfer_1.0
+      args: { creates: /opt/fabric/asset_transfer.tar.gz }
+
+    - name: Install on all peers, approve, commit
+      ansible.builtin.shell: |
+        bash /opt/fabric/scripts/install_chaincode.sh asset_transfer 1.0
+
+- name: Verify all peers see mychannel
+  hosts: peers
+  tasks:
+    - name: peer channel list
+      ansible.builtin.shell: peer channel list
+      register: chlist
+      failed_when: "'mychannel' not in chlist.stdout"
+      changed_when: false

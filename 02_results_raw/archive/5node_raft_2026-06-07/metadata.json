@@ -1,0 +1,129 @@
+{
+  "experiment_id": "5node_raft_concurrency_sweep",
+  "date_utc": "2026-06-07",
+  "description": "Concurrency sweep on 5-orderer Hyperledger Fabric v2.5 Raft cluster, asset-transfer-basic chaincode, CreateAsset workload. Real measurement on Docker Desktop + WSL2 Ubuntu with all 5 orderers joined to channel as consenters.",
+  "fabric_version": "v2.5.10",
+  "docker_version": "27.3.1",
+  "docker_compose_version": "v2.30.3-desktop.1",
+  "fabric_images": {
+    "peer": "hyperledger/fabric-peer:latest",
+    "orderer": "hyperledger/fabric-orderer:latest",
+    "ccenv": "hyperledger/fabric-ccenv:3.1"
+  },
+  "host_os": "Windows 11 + WSL2 Ubuntu 24.04 (kernel 6.6.87.2-microsoft-standard-WSL2)",
+  "host_memory_gb_allocated_to_docker": 16,
+  "network": {
+    "topology": "5-orderer Raft etcdraft consensus, 2 peer orgs (Org1, Org2), 1 peer each",
+    "orderers": [
+      "orderer.example.com:7050  (admin:7053  ops:7055)",
+      "orderer2.example.com:8050 (admin:8053  ops:8055)",
+      "orderer3.example.com:10050 (admin:10053 ops:10055)",
+      "orderer4.example.com:11050 (admin:11053 ops:11055)",
+      "orderer5.example.com:12050 (admin:12053 ops:12055)"
+    ],
+    "peers": [
+      "peer0.org1.example.com:7051 (ops:9444)",
+      "peer0.org2.example.com:9051 (ops:9445)"
+    ],
+    "raft_config": "tick_interval=500ms election_tick=10 heartbeat_tick=1 max_inflight_blocks=5 snapshot_interval=16777216 (default)",
+    "channel": "mychannel"
+  },
+  "channel_verification": "All 5 orderers report consensusRelation=consenter, status=active for mychannel via osnadmin channel list",
+  "chaincode": "asset-transfer-basic Go (basic_1.0, sequence=2)",
+  "workload": "CreateAsset transactions, unique asset_id per invocation, fixed payload (color=red, size=100, owner=alice, value=42)",
+  "measurement_method": "peer chaincode invoke CLI in parallel bash background processes; per-tx start/end timestamps via date +%s%N; per-thread isolated CSV then merged",
+  "endorsement": "Both Org1+Org2 peers (--peerAddresses x2)",
+  "concurrency_levels": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "n_tx_per_thread": 20,
+  "n_seeds": 5,
+  "scripts_used": [
+    "/mnt/d/fabric-d2/up-5node-raft.sh",
+    "/mnt/d/fabric-d2/5node-channel-join.sh",
+    "/mnt/d/fabric-d2/5node-peer-join.sh",
+    "/mnt/d/fabric-d2/concurrency-sweep-v2.sh (positional args: seed n_tx output_root)",
+    "/mnt/d/fabric-d2/run-all-5node.sh",
+    "/mnt/d/fabric-d2/aggregate-5node.py"
+  ],
+  "aggregate_results": {
+    "C=1_sequential": {
+      "TPS_mean": 3.35,
+      "TPS_std": 0.57,
+      "lat_mean_ms": 297.8,
+      "p99_ms_mean": 447.0,
+      "n_seeds": 5,
+      "tx_per_seed": 20
+    },
+    "C=2": {
+      "TPS_mean": 4.27,
+      "TPS_std": 0.47,
+      "lat_mean_ms": 229.1,
+      "p95_ms_mean": 296.8,
+      "p99_ms_mean": 296.8,
+      "n_seeds": 5,
+      "tx_per_seed": 40
+    },
+    "C=4": {
+      "TPS_mean": 9.11,
+      "TPS_std": 1.14,
+      "lat_mean_ms": 205.5,
+      "p95_ms_mean": 305.8,
+      "p99_ms_mean": 311.2,
+      "n_seeds": 5,
+      "tx_per_seed": 80
+    },
+    "C=8": {
+      "TPS_mean": 17.35,
+      "TPS_std": 4.21,
+      "lat_mean_ms": 221.5,
+      "p95_ms_mean": 289.8,
+      "p99_ms_mean": 307.0,
+      "n_seeds": 5,
+      "tx_per_seed": 160
+    },
+    "C=16": {
+      "TPS_mean": 27.91,
+      "TPS_std": 1.73,
+      "lat_mean_ms": 256.1,
+      "p95_ms_mean": 358.6,
+      "p99_ms_mean": 380.6,
+      "n_seeds": 5,
+      "tx_per_seed": 320
+    }
+  },
+  "comparison_to_1node": {
+    "C=1_TPS_diff": "1-node 3.80 vs 5-node 3.35 (-11.8%, expected: extra 4 orderer Raft commit hops)",
+    "C=2_TPS_diff": "1-node 4.59 vs 5-node 4.27 (-7.0%)",
+    "C=4_TPS_diff": "1-node 9.60 vs 5-node 9.11 (-5.1%)",
+    "C=8_TPS_diff": "1-node 15.91 vs 5-node 17.35 (+9.1%)",
+    "C=16_TPS_diff": "1-node 28.98 vs 5-node 27.91 (-3.7%)",
+    "summary": "5-node TPS is within 12% of 1-node across all concurrency levels. Real Raft consensus among 5 orderers adds ~50ms p99 latency overhead at C=1 (sequential) but converges to <30ms gap at C>=4 due to pipelining. Latency variance higher on 5-node (std 0.57 vs 0.07 at C=1) reflecting Raft leader election randomness."
+  },
+  "notes": [
+    "5-orderer Raft genuinely runs Raft consensus (verified via osnadmin showing all 5 as consenters)",
+    "All 5 seeds completed 100% transaction success (0 failures)",
+    "C=8 std=4.21 reflects 1 seed where chaincode launcher was already warm (TPS=24.30) vs others (~14-17)",
+    "C=1 p99=447ms on 5-node vs 361ms on 1-node reflects Raft commit latency on cold path",
+    "Pipelined throughput (C>=8) shows 5-orderer scales similarly to 1-orderer because all 5 orderers commit log entries in parallel after leader establishes quorum",
+    "Raw CSVs in each seed{N}/conc_sweep/c{C}/merged.csv with thread,tx_idx,start_ms,end_ms,latency_ms,status columns"
+  ],
+  "paper_integration": {
+    "phase_letter": "gamma",
+    "paper_table_label": "tab:d2-conc (5-orderer column)",
+    "paper_section_or_paragraph": "Concurrency baseline 1-orderer vs 5-orderer",
+    "related_phases": {
+      "alpha": "1node_raft_baseline_2026-06-07 (1-orderer comparison)",
+      "eta": "5node_caliper_clean_2026-06-07 (high-rate SDK throughput on same 5-orderer cluster)",
+      "delta": "5node_saturation_delta_2026-06-08 (saturation plateau ~530 TPS)",
+      "mu": "5node_extended_conc_2026-06-08 (C=32, 64 native CLI saturation)",
+      "epsilon": "5node_attack_2026-06-07 (orderer-delay attack baseline)",
+      "kappa": "5node_alg1_2026-06-08 (Algorithm 1 simulation)",
+      "iota": "5node_failover_2026-06-08 (Raft leader failover)"
+    }
+  }
+}

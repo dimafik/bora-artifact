@@ -1,0 +1,102 @@
+#!/usr/bin/env bash
+# N-orderer leadership-integrity sweep. Brings up an N-orderer BORA-patched Raft
+# cluster from scratch, then measures the target orderer's (orderer3) forced-
+# election win rate baseline [] vs BORA [3]. Usage: nsweep.sh <N> [seeds] [elections]
+set -u
+N="${1:?need N}"; SEEDS="${2:-2}"; NE="${3:-10}"
+TN=/mnt/d/fabric-d2/fabric-samples/test-network
+BIN=/mnt/d/fabric-d2/results/orderer-bora-v4.bin
+SIDE=/mnt/d/fabric-d2/results/bora-sidecar-v3.bin
+export PATH=/tmp/bin:/mnt/d/fabric-d2/fabric-samples/bin-linux/bin:/usr/local/bin:/usr/bin:/bin
+cd "$TN"
+host(){ [ "$1" = 1 ] && echo orderer || echo "orderer$1"; }
+cont(){ echo "$(host $1).example.com"; }
+gport(){ case $1 in 1)echo 7050;;2)echo 8050;;3)echo 10050;;4)echo 11050;;5)echo 12050;;6)echo 13050;;7)echo 14050;;8)echo 15050;;9)echo 16050;;esac; }
+aport(){ echo $(( $(gport $1) + 3 )); }
+ORD=(); for i in $(seq 1 "$N"); do ORD+=("$(cont $i)"); done
+OUT=/mnt/d/fabric-d2/results/nsweep_N${N}_$(date +%H%M%S); mkdir -p "$OUT"
+
+echo "===== N=$N bring-up ====="
+python3 /mnt/d/fabric-d2/alg1/gen_nnode.py "$N" | tail -1
+COMPOSE_PROJECT_NAME=fabric docker compose -f "${N}node-raft.yaml" down --volumes >/dev/null 2>&1 || true
+COMPOSE_PROJECT_NAME=fabric docker compose -f 5node-raft.yaml down --volumes >/dev/null 2>&1 || true
+# belt-and-suspenders: nuke any surviving fabric_* orderer production volumes (stale CA in channel block)
+for v in $(docker volume ls -q | grep -E "^fabric_orderer"); do docker volume rm "$v" >/dev/null 2>&1 || true; done
+docker network rm fabric_test >/dev/null 2>&1 || true
+rm -rf organizations/ordererOrganizations organizations/peerOrganizations channel-artifacts system-genesis-block
+mkdir -p channel-artifacts
+cryptogen generate --config=./organizations/cryptogen/crypto-config-orderer-${N}node.yaml --output=organizations 2>&1 | tail -1
+cryptogen generate --config=./organizations/cryptogen/crypto-config-org1.yaml --output=organizations 2>&1 | tail -1
+cryptogen generate --config=./organizations/cryptogen/crypto-config-org2.yaml --output=organizations 2>&1 | tail -1
+echo "orderers: $(ls organizations/ordererOrganizations/example.com/orderers/ | wc -l)"
+unset FABRIC_CFG_PATH
+cp configtx/configtx.yaml /tmp/ctx.bak 2>/dev/null || true
+cp configtx/configtx-${N}node.yaml configtx/configtx.yaml
+configtxgen -profile ChannelUsingRaft -outputBlock ./channel-artifacts/mychannel.block -channelID mychannel -configPath ./configtx 2>&1 | grep -iE "writing|panic|error" | tail -2
+cp /tmp/ctx.bak configtx/configtx.yaml 2>/dev/null || true
+[ -f ./channel-artifacts/mychannel.block ] || { echo "GENESIS_FAIL N=$N"; exit 1; }
+export FABRIC_CFG_PATH="$TN/../config"
+COMPOSE_PROJECT_NAME=fabric docker compose -f "${N}node-raft.yaml" up -d 2>&1 | tail -2
+sleep 12
+echo "containers up: $(docker ps --filter name=orderer --format '{{.Names}}' | wc -l) orderers"
+
+echo "===== channel join (${N} orderers + 2 peers) ====="
+OCA=organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+for i in $(seq 1 "$N"); do
+  H=$(host $i); C=organizations/ordererOrganizations/example.com/orderers/${H}.example.com/tls
+  osnadmin channel join --channelID mychannel --config-block ./channel-artifacts/mychannel.block \
+    -o localhost:$(aport $i) --ca-file "$OCA" --client-cert "$C/server.crt" --client-key "$C/server.key" 2>&1 | grep -o "Status: 201\|already exists" | head -1 | sed "s/^/  orderer$i: /"
+done
+sleep 8
+JOINED=0; for i in $(seq 1 "$N"); do
+  H=$(host $i); C=organizations/ordererOrganizations/example.com/orderers/${H}.example.com/tls
+  osnadmin channel list -o localhost:$(aport $i) --ca-file "$OCA" --client-cert "$C/server.crt" --client-key "$C/server.key" 2>&1 | grep -q mychannel && JOINED=$((JOINED+1))
+done
+echo "  orderers on channel: $JOINED/$N"
+
+echo "===== deploy BORA v4 binary + sidecar to $N orderers ====="
+for o in "${ORD[@]}"; do docker cp "$BIN" "$o:/usr/local/bin/orderer.b4" >/dev/null && docker exec "$o" chmod +x /usr/local/bin/orderer.b4; done
+for o in "${ORD[@]}"; do docker exec "$o" sh -c 'mv /usr/local/bin/orderer.b4 /usr/local/bin/orderer'; docker restart "$o" >/dev/null; sleep 10; done
+for o in "${ORD[@]}"; do
+  docker cp "$SIDE" "$o:/tmp/bora-sidecar" >/dev/null 2>&1 || true
+  docker exec "$o" chmod +x /tmp/bora-sidecar
+  docker exec "$o" sh -c 'pkill -f bora-sidecar 2>/dev/null; rm -f /var/run/raft-advisor.sock; printf "%s" "{\"blacklist\":[],\"seq\":1,\"fail_open\":false}" > /tmp/bora-advice.json'
+  docker exec -d "$o" sh -c 'setsid /tmp/bora-sidecar >/tmp/bora-sidecar.log 2>&1 </dev/null'
+done
+sleep 4
+SOK=0; for o in "${ORD[@]}"; do docker exec "$o" sh -c 'test -S /var/run/raft-advisor.sock' && SOK=$((SOK+1)); done
+echo "  sidecars: $SOK/$N"
+
+echo "===== forced-election: target=orderer3, baseline [] vs BORA [3], ${SEEDS}seed x ${NE}elec ====="
+set_all(){ for o in "${ORD[@]}"; do docker exec "$o" sh -c "printf '%s' '{\"blacklist\":$1,\"seq\":1,\"fail_open\":false}' > /tmp/bora-advice.json" 2>/dev/null; done; }
+# Non-destructive heal: in a SINGLE exec per orderer, start the sidecar ONLY if its
+# process is genuinely absent (never pkill a live one; rm the stale socket only when
+# we are about to restart). Tolerates transient docker-exec failures (|| true) so a
+# broken-pipe hiccup can never cascade into killing healthy sidecars.
+heal(){ for o in "${ORD[@]}"; do docker exec -d "$o" sh -c 'cat /proc/[0-9]*/comm 2>/dev/null | grep -q "^bora-sidecar$" || { rm -f /var/run/raft-advisor.sock; setsid /tmp/bora-sidecar >/tmp/bs.log 2>&1 </dev/null; }' 2>/dev/null || true; done; }
+# Read cluster-wide current leader from the globally-latest "Raft leader changed: X -> Y"
+# (INFO-level, etcdraft chain.go). Node id Y == orderer index (consenters listed orderer1..N).
+# Fabric timestamps "YYYY-MM-DD HH:MM:SS.mmm UTC" sort lexicographically by time, so the last
+# line after sorting all orderers' logs is the most recent leadership event. "-> 0" == no leader.
+leader_id(){ local id o all=""; for id in $(seq 1 "$N"); do o=$(cont $id); all+="$(docker logs --tail 400 "$o" 2>&1 | grep -aE 'Raft leader changed: [0-9]+ -> [0-9]+')"$'\n'; done; local y; y=$(printf '%s' "$all" | grep -aE 'Raft leader changed' | sort | tail -1 | grep -aoE '\-> [0-9]+' | grep -aoE '[0-9]+'); echo "${y:-0}"; }
+RUN=/tmp/ns_heal; touch $RUN; ( while [ -f $RUN ]; do heal; sleep 3; done ) & HP=$!
+echo "label,N,seed,o3_wins,elec,live" > "$OUT/results.csv"
+# Force re-election by PAUSING the current leader (cgroup freezer) for > election
+# timeout, then UNPAUSING it. Pause freezes the orderer without killing the exec'd
+# sidecar, and never touches the other orderers -- so suppression stays enforced by
+# the live voters throughout. We read the new leader while the old one is still frozen.
+phase(){ WINS=0; LIVE=0; local k L LC NL; for k in $(seq 1 "$NE"); do
+    L=$(leader_id); [ "$L" = 0 ]&&L=2; LC=$(cont $L)
+    docker pause "$LC" >/dev/null 2>&1; sleep 9
+    NL=$(leader_id)
+    docker unpause "$LC" >/dev/null 2>&1; sleep 4
+    [ "$NL" = 3 ]&&WINS=$((WINS+1)); [ "$NL" != 0 ]&&[ "$NL" != "$L" ]&&LIVE=$((LIVE+1))
+    echo "[$1] e$k: $L->$NL" >> "$OUT/elections.log"; done; }
+for s in $(seq 1 "$SEEDS"); do
+  set_all "[]"; sleep 2; phase "base_s$s"; echo "  N=$N base s$s: o3 $WINS/$NE live $LIVE/$NE" | tee -a "$OUT/summary.txt"
+  echo "base,$N,$s,$WINS,$NE,$LIVE" >> "$OUT/results.csv"
+  set_all "[3]"; sleep 2; phase "bora_s$s"; echo "  N=$N BORA s$s: o3 $WINS/$NE live $LIVE/$NE" | tee -a "$OUT/summary.txt"
+  echo "bora,$N,$s,$WINS,$NE,$LIVE" >> "$OUT/results.csv"
+done
+set_all "[]"; rm -f $RUN; kill $HP 2>/dev/null || true
+echo "NSWEEP_N${N}_DONE"; cat "$OUT/results.csv"

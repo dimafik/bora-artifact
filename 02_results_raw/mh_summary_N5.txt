@@ -1,0 +1,14 @@
+== N=5  TX=320  C=16  seeds: 1 2 3 ==
+-- E1: clean --
+  seed1 attempted=320 committed=320 blocks=20 height=27->47 tps=6.83127 mean_latency_ms=2342.160 client_cpu_max_pct=26 
+  seed2 attempted=320 committed=320 blocks=20 height=47->67 tps=6.82373 mean_latency_ms=2344.749 client_cpu_max_pct=25 
+  seed3 attempted=320 committed=320 blocks=20 height=67->87 tps=6.84068 mean_latency_ms=2338.938 client_cpu_max_pct=26 
+-- E2: +200ms on orderer3, no advisor --
+  orderer1 -> orderer3 RTT: rtt min/avg/max/mdev = 200.177/200.208/200.271/0.037 ms
+  seed1 attempted=320 committed=320 blocks=20 height=87->107 tps=5.84401 mean_latency_ms=2737.835 client_cpu_max_pct=26 
+  seed2 attempted=320 committed=320 blocks=20 height=107->127 tps=5.81546 mean_latency_ms=2751.274 client_cpu_max_pct=26 
+  seed3 attempted=320 committed=320 blocks=20 height=127->147 tps=5.82425 mean_latency_ms=2747.124 client_cpu_max_pct=26 
+== summary in /d/fabric-d2/results/mh_summary_N5.txt ==
+  seed1 attempted=320 committed=320 blocks=20 height=147->167 tps=6.24861 mean_latency_ms=2560.558 client_cpu_max_pct=26 
+  seed2 attempted=320 committed=320 blocks=20 height=167->187 tps=6.27686 mean_latency_ms=2549.033 client_cpu_max_pct=27 
+  seed3 attempted=320 committed=320 blocks=20 height=187->207 tps=6.30140 mean_latency_ms=2539.108 client_cpu_max_pct=26 

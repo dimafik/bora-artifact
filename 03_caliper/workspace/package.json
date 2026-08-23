@@ -1,0 +1,10 @@
+{
+  "name": "caliper-workspace",
+  "version": "1.0.0",
+  "description": "Caliper workspace for D2 Fabric 5-orderer sweep",
+  "main": "index.js",
+  "dependencies": {
+    "@hyperledger/caliper-core": "0.6.0",
+    "@hyperledger/caliper-fabric": "0.6.0"
+  }
+}

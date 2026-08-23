@@ -1,0 +1,7 @@
+condition,wins,n,liveness,advisor_ok,h0,h1,blocks,seconds,blocks_per_s
+healthy_white,5,40,40,40,,,0,1011,0.0000
+pgd_rho_0.0,3,40,40,40,,,0,1066,0.0000
+pgd_rho_0.3,6,40,40,40,,,0,1046,0.0000
+pgd_rho_0.6,2,40,39,40,,,0,1000,0.0000
+pgd_rho_0.8,5,40,40,40,,,0,995,0.0000
+attack_class_ar1,7,40,39,40,,,0,1000,0.0000

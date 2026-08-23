@@ -1,0 +1,10 @@
+train N=5 (8000, 5, 60, 8) ; test N=[5, 7, 9, 11, 21]
+  mlp-concat  lr=3e-04 ep=25  N5=0.832 N7=0.848 N9=0.836 N11=0.855 N21=0.824  | shuffled N5=0.832 N21=0.821  (0.8 min)
+  mlp-concat  lr=1e-03 ep=20  N5=0.845 N7=0.858 N9=0.846 N11=0.863 N21=0.850  | shuffled N5=0.843 N21=0.851  (0.7 min)
+  conv2d      lr=3e-04 ep=15  N5=0.503 N7=0.496 N9=0.502 N11=0.499 N21=0.517  | shuffled N5=0.502 N21=0.516  (0.6 min)
+  conv2d      lr=1e-03 ep= 6  N5=0.508 N7=0.500 N9=0.507 N11=0.502 N21=0.514  | shuffled N5=0.507 N21=0.515  (0.3 min)
+  gru-nodes   lr=3e-04 ep= 8  N5=0.496 N7=0.500 N9=0.490 N11=0.484 N21=0.510  | shuffled N5=0.495 N21=0.510  (0.9 min)
+  gru-nodes   lr=1e-03 ep=25  N5=0.821 N7=0.865 N9=0.865 N11=0.896 N21=0.906  | shuffled N5=0.821 N21=0.908  (2.4 min)
+  attention   lr=3e-04 ep=25  N5=0.853 N7=0.891 N9=0.892 N11=0.909 N21=0.919  | shuffled N5=0.853 N21=0.919  (2.7 min)
+  attention   lr=1e-03 ep= 6  N5=0.502 N7=0.500 N9=0.506 N11=0.501 N21=0.519  | shuffled N5=0.502 N21=0.519  (0.4 min)
+done

@@ -1,0 +1,30 @@
+X1 closed loop: N=9 f=4 cap=2 m=1 targets=[3] chance=12.5%
+seeds=4 elec=10 delay=200ms
+budget: ~20s/election, attack window 69m
+  daemon gate OK: bt.json 0s old, r=0 cap=3 consistent with f=4
+  removing orphan orderer11.example.com (from a previous N>9 run)
+  removing orphan orderer10.example.com (from a previous N>9 run)
+===== N=9 bring-up =====
+generated crypto-config-orderer-9node.yaml, configtx-9node.yaml, 9node-raft.yaml for N=9 (orderers orderer.example.com, orderer2.example.com, orderer3.example.com, orderer4.example.com, orderer5.example.com, orderer6.example.com, orderer7.example.com, orderer8.example.com, orderer9.example.com)
+org1.example.com
+org2.example.com
+orderers: 9
+[34m2026-08-10 12:37:38.501 KST 0007 INFO[0m [common.tools.configtxgen] [34;1mdoOutputBlock[0m -> Writing genesis block
+ Container orderer7.example.com  Started
+ Container orderer9.example.com  Started
+containers up: 9 orderers
+===== channel join (9 orderers + 2 peers) =====
+  orderer1: Status: 201
+  orderer2: Status: 201
+  orderer3: Status: 201
+  orderer4: Status: 201
+  orderer5: Status: 201
+  orderer6: Status: 201
+  orderer7: Status: 201
+  orderer8: Status: 201
+  orderer9: Status: 201
+  orderers on channel: 9/9
+===== deploy BORA v4 binary + sidecar to 9 orderers =====
+  sidecars: 9/9
+ATTACK_ONSET=1786333194.439880278 targets=[3]
+T_det=1786333197.378495861

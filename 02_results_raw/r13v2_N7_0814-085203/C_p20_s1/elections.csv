@@ -1,0 +1,5 @@
+idx,leader_before,leader_after,fp_node,fp_node_won,live,advice_on_orderer1
+1,5,4,1,0,1,
+2,4,5,1,0,1,
+3,5,4,1,0,1,
+4,4,5,1,0,1,

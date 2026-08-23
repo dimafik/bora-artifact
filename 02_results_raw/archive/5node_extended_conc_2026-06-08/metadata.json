@@ -1,0 +1,69 @@
+{
+  "experiment_id": "5node_extended_concurrency_mu",
+  "date_utc": "2026-06-08",
+  "description": "Extended concurrency sweep on 5-orderer Raft cluster: C={1,4,16,32,64}, 3 seeds, 10 tx/thread, peer chaincode invoke CLI workload. Identifies native CLI saturation point.",
+  "fabric_version": "v2.5.10",
+  "n_seeds": 3,
+  "n_tx_per_thread": 10,
+  "concurrency_levels": [
+    1,
+    4,
+    16,
+    32,
+    64
+  ],
+  "aggregate_results": {
+    "C=1": {
+      "TPS_mean": 3.85,
+      "TPS_std": 0.26,
+      "p99_ms_mean": 338.7,
+      "ok_total": 30,
+      "fail_total": 0
+    },
+    "C=4": {
+      "TPS_mean": 14.3,
+      "TPS_std": 0.99,
+      "p99_ms_mean": 250.7,
+      "ok_total": 90,
+      "fail_total": 30
+    },
+    "C=16": {
+      "TPS_mean": 44.65,
+      "TPS_std": 3.87,
+      "p99_ms_mean": 379.7,
+      "ok_total": 360,
+      "fail_total": 120
+    },
+    "C=32": {
+      "TPS_mean": 39.67,
+      "TPS_std": 0.46,
+      "p99_ms_mean": 471.0,
+      "ok_total": 480,
+      "fail_total": 480
+    },
+    "C=64": {
+      "TPS_mean": 46.13,
+      "TPS_std": 0.31,
+      "p99_ms_mean": 716.7,
+      "ok_total": 960,
+      "fail_total": 960
+    }
+  },
+  "key_findings": {
+    "saturation_point_identified": "C=16 is the throughput sweet spot (44.65 TPS). C=32 shows TPS DROP (39.67) with 50% failure rate. C=64 throughput partially recovers but 50% failures persist.",
+    "native_CLI_ceiling": "~45 TPS via peer chaincode invoke CLI on this hardware. To exceed, must use Fabric Gateway SDK (Caliper showed 468 TPS at rate-500).",
+    "p99_latency_growth_with_C": "C=1: 339ms; C=16: 380ms; C=32: 471ms; C=64: 717ms — superlinear after saturation",
+    "matches_caliper_observation": "η Caliper sustained 468 TPS via SDK; native CLI ceiling at 45 TPS — 10× gap attributable to per-invoke CLI startup cost"
+  },
+  "paper_integration": {
+    "phase_letter": "mu",
+    "paper_table_label": "(in-line numbers in NE24 paragraph)",
+    "paper_section_or_paragraph": "NE24 extended concurrency C=32,64",
+    "related_phases": {
+      "alpha": "1node_raft_baseline_2026-06-07 (C=1..16 baseline)",
+      "gamma": "5node_raft_2026-06-07 (5-orderer C=1..16)",
+      "eta": "5node_caliper_clean_2026-06-07 (Fabric Gateway SDK ~468 TPS — 10x above native CLI's ~45 TPS ceiling)",
+      "delta": "5node_saturation_delta_2026-06-08 (530 TPS saturation plateau via SDK — confirms CLI is not the blockchain bottleneck)"
+    }
+  }
+}

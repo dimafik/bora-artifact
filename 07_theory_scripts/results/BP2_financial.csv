@@ -1,0 +1,5 @@
+platform,description,annual_volume_M,miss_cost_usd,baseline_miss_rate_pct,our_miss_rate_pct,annual_misses_avoided_K,annual_savings_M_USD,lifetime_savings_M_USD
+TradeLens,IBM/Maersk shipping document tokenization (legacy),547.5,500,2.5,0.0,13687.5,6843.75,34218.75
+Marco Polo,R3 Corda trade finance LC settlement,12.5,5000,5.0,0.0,625.0,3125.0,15625.0
+B3i,Munich/Swiss/Allianz Re insurance consortium,31.025,200,1.0,0.0,310.25,62.05,310.25
+CBDC (Project Mariana),BIS wholesale CBDC interoperability,35.04,50000,0.1,0.0,35.04,1752.0,17520.0

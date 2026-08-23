@@ -1,0 +1,38 @@
+===== N=5 bring-up =====
+generated crypto-config-orderer-5node.yaml, configtx-5node.yaml, 5node-raft.yaml for N=5 (orderers orderer.example.com, orderer2.example.com, orderer3.example.com, orderer4.example.com, orderer5.example.com)
+org1.example.com
+org2.example.com
+orderers: 5
+[34m2026-08-10 22:20:06.715 KST 0007 INFO[0m [common.tools.configtxgen] [34;1mdoOutputBlock[0m -> Writing genesis block
+ Container peer0.org1.example.com  Started
+ Container orderer.example.com  Started
+containers up: 21 orderers
+===== channel join (5 orderers + 2 peers) =====
+  orderer1: Status: 201
+  orderer2: Status: 201
+  orderer3: Status: 201
+  orderer4: Status: 201
+  orderer5: Status: 201
+  orderers on channel: 5/5
+===== deploy BORA v4 binary + sidecar to 5 orderers =====
+  sidecars: 5/5
+[0;34mUsing docker and docker-compose[0m
+[0;34mdeploying chaincode on channel 'mychannel'[0m
+executing with the following
+- CHANNEL_NAME: [0;32mmychannel[0m
+- CC_NAME: [0;32mbasic[0m
+- CC_SRC_PATH: [0;32m../asset-transfer-basic/chaincode-go[0m
+- CC_SRC_LANGUAGE: [0;32mgo[0m
+- CC_VERSION: [0;32m1.0[0m
+- CC_SEQUENCE: [0;32mauto[0m
+- CC_END_POLICY: [0;32mNA[0m
+- CC_COLL_CONFIG: [0;32mNA[0m
+- CC_INIT_FCN: [0;32mNA[0m
+- DELAY: [0;32m3[0m
+- MAX_RETRY: [0;32m5[0m
+- VERBOSE: [0;32mfalse[0m
+[0;31mjq command not found...[0m
+[0;31m[0m
+[0;31mFollow the instructions in the Fabric docs to install the prereqs[0m
+[0;31mhttps://hyperledger-fabric.readthedocs.io/en/latest/prereqs.html[0m
+[0;31mDeploying chaincode failed[0m

@@ -1,0 +1,55 @@
+test:
+  name: D2-Commit-Validation-LowRate
+  description: >
+    Diagnostic sweep to find the TRUE committed-throughput ceiling of the
+    single-host 5-orderer cluster. Every prior run (saturation-refine at
+    600-900 tps) reported Succ:0 / CommitStatusError DEADLINE_EXCEEDED,
+    i.e. Caliper never confirmed a commit. This low-rate sweep establishes
+    the rate at which commits actually confirm (Succ > 0). Run this FIRST
+    after the network is up; if even rate-50 yields Succ:0, the failure is
+    in the commit-notification pipeline (discovery/deliver endpoint), not
+    saturation, and the connection profile must be fixed before any
+    throughput numbers are trustworthy.
+  workers:
+    number: 4
+  rounds:
+    - label: rate-50
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: workload/createAsset.js
+    - label: rate-100
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 100
+      workload:
+        module: workload/createAsset.js
+    - label: rate-150
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 150
+      workload:
+        module: workload/createAsset.js
+    - label: rate-200
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 200
+      workload:
+        module: workload/createAsset.js
+    - label: rate-250
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 250
+      workload:
+        module: workload/createAsset.js

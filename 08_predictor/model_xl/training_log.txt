@@ -1,0 +1,8 @@
+Device: cpu
+Train: 521,000 windows, Val: 78,150, Test: 78,150
+E00 loss=0.0437 val_score_rmse@30=0.0914 val_anom_auc=0.998 val_deg_auc=nan
+E01 loss=0.0278 val_score_rmse@30=0.0714 val_anom_auc=1.000 val_deg_auc=nan
+E02 loss=0.0240 val_score_rmse@30=0.0703 val_anom_auc=1.000 val_deg_auc=nan
+E03 loss=0.0217 val_score_rmse@30=0.0642 val_anom_auc=1.000 val_deg_auc=nan
+E04 loss=0.0207 val_score_rmse@30=0.0652 val_anom_auc=1.000 val_deg_auc=nan
+E05 loss=0.0205 val_score_rmse@30=0.0666 val_anom_auc=1.000 val_deg_auc=nan

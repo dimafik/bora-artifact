@@ -1,0 +1,35 @@
+TLC2 Version 2.20 of Day Month 20?? (rev: bb62e53)
+Running breadth-first search Model-Checking with fp 81 and seed -5056709669887436098 with 20 workers on 20 cores with 3641MB heap and 64MB offheap memory [pid: 695] (Linux 6.6.87.2-microsoft-standard-WSL2 amd64, Eclipse Adoptium 17.0.10 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file /mnt/d/프랑스 업데이트/TNSE 스페셜이슈 논문/IS-Raft-LAC/formal/tla/Enabledness.tla
+Parsing file /mnt/d/프랑스 업데이트/TNSE 스페셜이슈 논문/IS-Raft-LAC/formal/tla/Vanilla.tla
+Parsing file /tmp/tlc-741030557442863775/_TLCTrace.tla (jar:file:/mnt/d/%ed%94%84%eb%9e%91%ec%8a%a4%20%ec%97%85%eb%8d%b0%ec%9d%b4%ed%8a%b8/TNSE%20%ec%8a%a4%ed%8e%98%ec%85%9c%ec%9d%b4%ec%8a%88%20%eb%85%bc%eb%ac%b8/IS-Raft-LAC/formal/tla/tla2tools.jar!/tla2sany/StandardModules/_TLCTrace.tla)
+Parsing file /tmp/tlc-741030557442863775/Naturals.tla (jar:file:/mnt/d/%ed%94%84%eb%9e%91%ec%8a%a4%20%ec%97%85%eb%8d%b0%ec%9d%b4%ed%8a%b8/TNSE%20%ec%8a%a4%ed%8e%98%ec%85%9c%ec%9d%b4%ec%8a%88%20%eb%85%bc%eb%ac%b8/IS-Raft-LAC/formal/tla/tla2tools.jar!/tla2sany/StandardModules/Naturals.tla)
+Parsing file /tmp/tlc-741030557442863775/FiniteSets.tla (jar:file:/mnt/d/%ed%94%84%eb%9e%91%ec%8a%a4%20%ec%97%85%eb%8d%b0%ec%9d%b4%ed%8a%b8/TNSE%20%ec%8a%a4%ed%8e%98%ec%85%9c%ec%9d%b4%ec%8a%88%20%eb%85%bc%eb%ac%b8/IS-Raft-LAC/formal/tla/tla2tools.jar!/tla2sany/StandardModules/FiniteSets.tla)
+Parsing file /tmp/tlc-741030557442863775/Sequences.tla (jar:file:/mnt/d/%ed%94%84%eb%9e%91%ec%8a%a4%20%ec%97%85%eb%8d%b0%ec%9d%b4%ed%8a%b8/TNSE%20%ec%8a%a4%ed%8e%98%ec%85%9c%ec%9d%b4%ec%8a%88%20%eb%85%bc%eb%ac%b8/IS-Raft-LAC/formal/tla/tla2tools.jar!/tla2sany/StandardModules/Sequences.tla)
+Parsing file /tmp/tlc-741030557442863775/TLC.tla (jar:file:/mnt/d/%ed%94%84%eb%9e%91%ec%8a%a4%20%ec%97%85%eb%8d%b0%ec%9d%b4%ed%8a%b8/TNSE%20%ec%8a%a4%ed%8e%98%ec%85%9c%ec%9d%b4%ec%8a%88%20%eb%85%bc%eb%ac%b8/IS-Raft-LAC/formal/tla/tla2tools.jar!/tla2sany/StandardModules/TLC.tla)
+Parsing file /tmp/tlc-741030557442863775/TLCExt.tla (jar:file:/mnt/d/%ed%94%84%eb%9e%91%ec%8a%a4%20%ec%97%85%eb%8d%b0%ec%9d%b4%ed%8a%b8/TNSE%20%ec%8a%a4%ed%8e%98%ec%85%9c%ec%9d%b4%ec%8a%88%20%eb%85%bc%eb%ac%b8/IS-Raft-LAC/formal/tla/tla2tools.jar!/tla2sany/StandardModules/TLCExt.tla)
+Parsing file /tmp/tlc-741030557442863775/Integers.tla (jar:file:/mnt/d/%ed%94%84%eb%9e%91%ec%8a%a4%20%ec%97%85%eb%8d%b0%ec%9d%b4%ed%8a%b8/TNSE%20%ec%8a%a4%ed%8e%98%ec%85%9c%ec%9d%b4%ec%8a%88%20%eb%85%bc%eb%ac%b8/IS-Raft-LAC/formal/tla/tla2tools.jar!/tla2sany/StandardModules/Integers.tla)
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module Vanilla
+Semantic processing of module Integers
+Semantic processing of module TLCExt
+Semantic processing of module _TLCTrace
+Semantic processing of module Enabledness
+Linting of module Vanilla
+Linting of module TLCExt
+Linting of module _TLCTrace
+Linting of module Enabledness
+Starting... (2026-08-13 13:02:54)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-08-13 13:02:54.
+Model checking completed. No error has been found.
+  Estimates of the probability that TLC did not check all reachable states
+  because two distinct states had the same fingerprint:
+  calculated (optimistic):  val = 3.5E-14
+1921 states generated, 432 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 9.
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 5 and the 95th percentile is 3).
+Finished in 00s at (2026-08-13 13:02:54)

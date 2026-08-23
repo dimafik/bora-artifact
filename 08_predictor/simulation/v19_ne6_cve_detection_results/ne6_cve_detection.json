@@ -1,0 +1,16 @@
+{
+  "experiment": "NE6_cve202143667_detection",
+  "n_legit_windows": 1500,
+  "n_byzantine_windows": 1500,
+  "window_L": 16,
+  "cve_pattern": "CC drops to ~0 for 1-2 ticks per window; RTT unchanged; moments matched to legit",
+  "moment_check_mean_legit": 1.000478586977481,
+  "moment_check_mean_byz": 1.000189972402064,
+  "moment_check_mean_gap": 0.0002886145754170677,
+  "moment_check_var_legit": 0.04029524945094489,
+  "moment_check_var_byz": 0.13930569248251168,
+  "auc_linear_scorer_thm1_blind": 0.4997515555555556,
+  "auc_memory_enabled_advisor": 0.5013657777777778,
+  "auc_spike_aware_NW1": 1.0,
+  "interpretation": "Linear scorer fails (~0.5) confirming Theorem 1; memory-enabled AR(1) detector achieves high AUC; spike-aware NW1 feature gives operational detection."
+}

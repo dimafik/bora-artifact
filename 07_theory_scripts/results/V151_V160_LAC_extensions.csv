@@ -1,0 +1,35 @@
+experiment,config,metric,note
+V151_QLAC_migration,phase=0,0.0,Migration cost % over classical
+V151_QLAC_migration,phase=1,17.0,Migration cost % over classical
+V151_QLAC_migration,phase=2,34.0,Migration cost % over classical
+V151_QLAC_migration,phase=3,51.0,Migration cost % over classical
+V152_STARK_optim,round=1,50.0,STARK proof size (KB)
+V152_STARK_optim,round=5,22.360679774997894,STARK proof size (KB)
+V152_STARK_optim,round=10,15.811388300841896,STARK proof size (KB)
+V153_SNN_stages,stages=1,1.3,SNN training speedup
+V153_SNN_stages,stages=3,1.9,SNN training speedup
+V153_SNN_stages,stages=5,2.5,SNN training speedup
+V153_SNN_stages,stages=10,4.0,SNN training speedup
+V154_RL_stability,clip=0.1,0.9958607314841775,Policy gradient stability
+V154_RL_stability,clip=1.0,0.9698970004336018,Policy gradient stability
+V154_RL_stability,clip=10.0,0.8958607314841774,Policy gradient stability
+V155_multi_modal_adv,modes=1,0.05,Multi-modal adversary success
+V155_multi_modal_adv,modes=3,0.15000000000000002,Multi-modal adversary success
+V155_multi_modal_adv,modes=5,0.25,Multi-modal adversary success
+V156_quantum_advantage,QKD,0.9,Quantum advantage score (0-1)
+V156_quantum_advantage,QRNG,0.7,Quantum advantage score (0-1)
+V156_quantum_advantage,Q-zkML,0.5,Quantum advantage score (0-1)
+V157_hybrid_cost,Q=25%,12.5,Hybrid cost overhead %
+V157_hybrid_cost,Q=50%,25.0,Hybrid cost overhead %
+V157_hybrid_cost,Q=75%,37.5,Hybrid cost overhead %
+V157_hybrid_cost,Q=100%,50.0,Hybrid cost overhead %
+V158_photonic_neuro,photons=100,0.15019048322368797,Photonic energy per inference (pJ)
+V158_photonic_neuro,photons=1000,0.10032881506161208,Photonic energy per inference (pJ)
+V158_photonic_neuro,photons=10000,0.07525668186780549,Photonic energy per inference (pJ)
+V159_cross_paper,combos=2,0.96,Cross-paper composability score
+V159_cross_paper,combos=4,0.92,Cross-paper composability score
+V159_cross_paper,combos=6,0.88,Cross-paper composability score
+V159_cross_paper,combos=12,0.76,Cross-paper composability score
+V160_interstellar,txs=1000000000000,1.1e-05,INTERSTELLAR 10T-tx HC miss rate
+V160_interstellar,txs=5000000000000,1.1069897000433602e-05,INTERSTELLAR 10T-tx HC miss rate
+V160_interstellar,txs=10000000000000,1.11e-05,INTERSTELLAR 10T-tx HC miss rate

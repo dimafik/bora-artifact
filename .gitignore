@@ -1,0 +1,16 @@
+# credentials — never commit
+*.pem
+*.key
+*.ppk
+id_rsa*
+*.pfx
+*.p12
+
+# bulk regenerable artefacts
+*.parquet
+predictor_daemon.log
+caliper-seed*.log
+
+# os noise
+Thumbs.db
+.DS_Store

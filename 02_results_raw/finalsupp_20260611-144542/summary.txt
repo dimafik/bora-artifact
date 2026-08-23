@@ -1,0 +1,18 @@
+=== final suppression: N=12 SEEDS=3 (process-checked healer) ===
+#### SEED 1 ####
+  [A_s1 base] orderer3 2/12 | live 12/12
+  [B_s1 BORA] orderer3 0/12 | live 12/12
+#### SEED 2 ####
+  [A_s2 base] orderer3 3/12 | live 12/12
+  [B_s2 BORA] orderer3 0/12 | live 12/12
+#### SEED 3 ####
+  [A_s3 base] orderer3 2/12 | live 12/12
+  [B_s3 BORA] orderer3 0/12 | live 12/12
+FINAL_SUPP_DONE (results: /mnt/d/fabric-d2/results/finalsupp_20260611-144542)
+label,seed,orderer3_wins,n,liveness
+A_base,1,2,12,12
+B_BORA,1,0,12,12
+A_base,2,3,12,12
+B_BORA,2,0,12,12
+A_base,3,2,12,12
+B_BORA,3,0,12,12

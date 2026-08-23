@@ -1,0 +1,11 @@
+=== C: end-to-end application throughput on the live 5-host AWS EC2 cluster ===
+Full Fabric network: 5 orderers (1/host) + Org1 peer (host1) + Org2 peer (host2),
+cross-host TLS, asset-transfer-basic chaincode committed (Approvals Org1+Org2 true).
+InitLedger: status 200. CreateAsset loop (sequential peer-CLI, default majority
+endorsement => both orgs endorse each tx across hosts):
+  submitted=30/30  elapsed=4.84s  tx/s=6.20  (baseline)
+NOTE: rate is sequential-CLI-bound (per-invoke process+endorse+order overhead on
+t3.micro), not the cluster's saturation throughput; it confirms the cross-host
+network commits application transactions end-to-end. Rigorous saturation throughput
+(parallel Caliper load) remains the single-host result; BORA's leadership-layer guard
+is orthogonal to the peer->orderer->commit data plane.

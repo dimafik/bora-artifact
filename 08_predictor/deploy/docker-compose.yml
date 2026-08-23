@@ -1,0 +1,71 @@
+version: "3.8"
+
+services:
+  raft0:
+    build: .
+    container_name: raft-node-0
+    environment:
+      NODE_ID: 0
+      PORT: 6000
+      PEERS: "raft1:6001 raft2:6002 raft3:6003 raft4:6004"
+      AI_AUGMENTED: "1"
+    networks:
+      raft_net:
+        ipv4_address: 10.5.0.10
+    ports: ["6000:6000"]
+
+  raft1:
+    build: .
+    container_name: raft-node-1
+    environment:
+      NODE_ID: 1
+      PORT: 6001
+      PEERS: "raft0:6000 raft2:6002 raft3:6003 raft4:6004"
+      AI_AUGMENTED: "1"
+    networks:
+      raft_net:
+        ipv4_address: 10.5.0.11
+
+  raft2:
+    build: .
+    container_name: raft-node-2
+    environment:
+      NODE_ID: 2
+      PORT: 6002
+      PEERS: "raft0:6000 raft1:6001 raft3:6003 raft4:6004"
+      AI_AUGMENTED: "1"
+    networks:
+      raft_net:
+        ipv4_address: 10.5.0.12
+
+  raft3:
+    build: .
+    container_name: raft-node-3
+    environment:
+      NODE_ID: 3
+      PORT: 6003
+      PEERS: "raft0:6000 raft1:6001 raft2:6002 raft4:6004"
+      AI_AUGMENTED: "1"
+    networks:
+      raft_net:
+        ipv4_address: 10.5.0.13
+
+  raft4:
+    build: .
+    container_name: raft-node-4
+    environment:
+      NODE_ID: 4
+      PORT: 6004
+      PEERS: "raft0:6000 raft1:6001 raft2:6002 raft3:6003"
+      BYZANTINE: "1"        # Byzantine node for stress test
+      AI_AUGMENTED: "1"
+    networks:
+      raft_net:
+        ipv4_address: 10.5.0.14
+
+networks:
+  raft_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/24

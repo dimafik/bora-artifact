@@ -1,0 +1,159 @@
+{
+  "rq1_summary": [
+    {
+      "attack": "burst-delay",
+      "detector": "linear",
+      "mean": 0.7638225333333334,
+      "std": 0.009839457746465866
+    },
+    {
+      "attack": "burst-delay",
+      "detector": "memory-enabled",
+      "mean": 0.8050206814814815,
+      "std": 0.006687246643763629
+    },
+    {
+      "attack": "burst-delay",
+      "detector": "static-univariate",
+      "mean": 1.0,
+      "std": 0.0
+    },
+    {
+      "attack": "moment-matching",
+      "detector": "linear",
+      "mean": 0.5084020444444445,
+      "std": 0.004325673384815206
+    },
+    {
+      "attack": "moment-matching",
+      "detector": "memory-enabled",
+      "mean": 1.0,
+      "std": 0.0
+    },
+    {
+      "attack": "moment-matching",
+      "detector": "static-univariate",
+      "mean": 0.5116319851851852,
+      "std": 0.010331110014007534
+    },
+    {
+      "attack": "selective-lag",
+      "detector": "linear",
+      "mean": 0.9802999407407408,
+      "std": 0.0023083637479004125
+    },
+    {
+      "attack": "selective-lag",
+      "detector": "memory-enabled",
+      "mean": 0.513830562962963,
+      "std": 0.009124546212661884
+    },
+    {
+      "attack": "selective-lag",
+      "detector": "static-univariate",
+      "mean": 0.5093217333333333,
+      "std": 0.0078054992962671675
+    }
+  ],
+  "rq2_summary": [
+    {
+      "rho": 0.0,
+      "mean": 0.0021352280435773235,
+      "std": 0.0002978008172850105
+    },
+    {
+      "rho": 0.05,
+      "mean": 0.002160220519484331,
+      "std": 0.00031203868347310255
+    },
+    {
+      "rho": 0.1,
+      "mean": 0.0021754945589539903,
+      "std": 0.0003150868001086294
+    },
+    {
+      "rho": 0.2,
+      "mean": 0.0020653605771561463,
+      "std": 0.0003263821759012412
+    }
+  ],
+  "rq3_summary": [
+    {
+      "attack": "burst-delay",
+      "mi_linear": 0.006625470017707645,
+      "mi_memory": 0.40091829557797076,
+      "gap": 0.3942928255602631
+    },
+    {
+      "attack": "moment-matching",
+      "mi_linear": 0.20952387002369494,
+      "mi_memory": 0.6931471805404453,
+      "gap": 0.4836233105167504
+    },
+    {
+      "attack": "selective-lag",
+      "mi_linear": 0.4151810125130731,
+      "mi_memory": 0.004871711100309664,
+      "gap": -0.4103093014127635
+    }
+  ],
+  "rq4_summary": [
+    {
+      "W": 1,
+      "mean": 0.4999201037037037,
+      "std": 0.009905903751460112
+    },
+    {
+      "W": 8,
+      "mean": 0.978110488888889,
+      "std": 0.002358481550311299
+    },
+    {
+      "W": 32,
+      "mean": 1.0,
+      "std": 0.0
+    },
+    {
+      "W": 64,
+      "mean": 1.0,
+      "std": 0.0
+    },
+    {
+      "W": 128,
+      "mean": 1.0,
+      "std": 0.0
+    }
+  ],
+  "rq5": {
+    "events": 400,
+    "safety_violations": 0
+  },
+  "config": {
+    "window_len": 64,
+    "n_channels": 14,
+    "ar_rho": 0.6,
+    "regime_switch_prob": 0.05,
+    "n_regimes": 2,
+    "base_cc_mean": [
+      0.85,
+      0.55
+    ],
+    "base_rtt_mean": [
+      40.0,
+      80.0
+    ],
+    "base_cc_std": 0.04,
+    "base_rtt_std": 8.0,
+    "cc_rtt_corr": -0.35,
+    "base_hb_miss_rate": 0.005,
+    "base_log_lag": 0.5,
+    "base_ack_jitter": 1.5,
+    "base_vote_rate": 0.02,
+    "base_term_churn": 0.001,
+    "base_ack_rate": 95.0,
+    "base_batch_size": 12.0,
+    "seed": 42
+  },
+  "n_seeds": 30,
+  "n_per_class": 1500
+}

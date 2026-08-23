@@ -1,0 +1,13 @@
+== N=9 leader-controlled arms  TX=320 C=16 seeds:1 2 3 ==
+  orderer1 -> orderer3 RTT: rtt min/avg/max/mdev = 200.155/200.180/200.211/0.019 ms
+-- L2: delay on, advisor idle, orderer3 forced to lead --
+  leader=3
+  seed1 blocks=20 height=83->103 tps=.279564 mean_latency_ms=57228.37 
+  seed2 blocks=20 height=103->123 tps=10.7634 mean_latency_ms=1486.511 
+  seed3 blocks=20 height=123->143 tps=10.8651 mean_latency_ms=1472.596 
+-- L3: delay on, advisor blacklists 3, election re-run --
+  leader=7 (advisor active)
+  seed1 blocks=20 height=145->165 tps=12.9528 mean_latency_ms=1235.245 
+  seed2 blocks=20 height=165->185 tps=6.77248 mean_latency_ms=2362.493 
+  seed3 blocks=20 height=185->205 tps=6.84045 mean_latency_ms=2339.017 
+== done: /d/fabric-d2/results/mh_leader_N9.txt ==

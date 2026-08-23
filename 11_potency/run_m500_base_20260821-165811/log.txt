@@ -1,0 +1,15 @@
+=== potency: scale=m500 arm=base N=40 target=orderer3 ===
+  healthy_white      target  5/40  live 40/40  advisors 40/40  blocks    0 in 1011s (0.0000 /s)
+  pgd_rho_0.0        target  3/40  live 40/40  advisors 40/40  blocks    0 in 1066s (0.0000 /s)
+  pgd_rho_0.3        target  6/40  live 40/40  advisors 40/40  blocks    0 in 1046s (0.0000 /s)
+  pgd_rho_0.6        target  2/40  live 39/40  advisors 40/40  blocks    0 in 1000s (0.0000 /s)
+  pgd_rho_0.8        target  5/40  live 40/40  advisors 40/40  blocks    0 in  995s (0.0000 /s)
+  attack_class_ar1   target  7/40  live 39/40  advisors 40/40  blocks    0 in 1000s (0.0000 /s)
+POTENCY_DONE /d/fabric-d2/results/potency/run_m500_base_20260821-165811
+condition,wins,n,liveness,advisor_ok,h0,h1,blocks,seconds,blocks_per_s
+healthy_white,5,40,40,40,,,0,1011,0.0000
+pgd_rho_0.0,3,40,40,40,,,0,1066,0.0000
+pgd_rho_0.3,6,40,40,40,,,0,1046,0.0000
+pgd_rho_0.6,2,40,39,40,,,0,1000,0.0000
+pgd_rho_0.8,5,40,40,40,,,0,995,0.0000
+attack_class_ar1,7,40,39,40,,,0,1000,0.0000

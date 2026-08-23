@@ -1,0 +1,6 @@
+k,stopped,samples,r_mode,cap_mode,bt_size_mode,bt_mode,expected_cap,expected_size,cap_ok,size_ok,leader,advice_on_o1
+0,2,60,0,4,4,5;11;3;8,4,4,yes,yes,none,"{"blacklist":[8;5;11;3];"seq":1;"fail_open":false}"
+1,2,60,1,3,3,5;11;8,3,3,yes,yes,none,"{"blacklist":[5;11;3];"seq":1;"fail_open":false}"
+2,4,60,2,2,2,11;3,2,2,yes,yes,none,"{"blacklist":[5;11];"seq":1;"fail_open":false}"
+3,6,60,3,1,1,3,1,1,yes,yes,none,"{"blacklist":[5];"seq":1;"fail_open":false}"
+4,7,60,4,0,0,empty,0,0,yes,yes,none,"{"blacklist":[];"seq":1;"fail_open":false}"

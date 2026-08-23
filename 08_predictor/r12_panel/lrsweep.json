@@ -1,0 +1,41 @@
+{
+ "H1": {
+  "MLP 64-32": {
+   "best_auc": 0.7889,
+   "lr": 0.001,
+   "epochs": 27
+  },
+  "1D-CNN": {
+   "best_auc": 0.8793,
+   "lr": 0.003,
+   "epochs": 80
+  },
+  "GRU": {
+   "best_auc": 0.8921,
+   "lr": 0.001,
+   "epochs": 58
+  },
+  "Transformer (ours)": {
+   "best_auc": 0.6613,
+   "lr": 0.0003,
+   "epochs": 12
+  }
+ },
+ "H3_holdout_ar1": {
+  "MLP 64-32": {
+   "best_auc": 0.4682,
+   "lr": 0.003,
+   "epochs": 27
+  },
+  "1D-CNN": {
+   "best_auc": 0.8923,
+   "lr": 0.001,
+   "epochs": 26
+  },
+  "GRU": {
+   "best_auc": 0.9462,
+   "lr": 0.0003,
+   "epochs": 57
+  }
+ }
+}

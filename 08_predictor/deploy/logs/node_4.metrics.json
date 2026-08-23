@@ -1,0 +1,28 @@
+{
+  "timestamp": 1780470483.0983996,
+  "role": "follower",
+  "term": 484,
+  "leader_id": null,
+  "blacklist": [],
+  "metrics": {
+    "elections_started": 113,
+    "votes_cast": 0,
+    "leader_changes": 0,
+    "ai_blacklist_events": 0,
+    "byzantine_advice_rejected": 0,
+    "rtt_p99": [],
+    "cc_mean": []
+  },
+  "rtt_p99": {
+    "7000": 15.959501266479492,
+    "7001": 16.00503921508789,
+    "7002": 16.057491302490234,
+    "7003": 15.501022338867188
+  },
+  "cc_mean": {
+    "7000": null,
+    "7001": null,
+    "7002": null,
+    "7003": null
+  }
+}

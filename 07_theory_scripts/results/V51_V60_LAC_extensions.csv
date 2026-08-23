@@ -1,0 +1,36 @@
+experiment,config,metric,note
+V51_mempool_admission,util=0.5,0.0,Admission drops LC at HC pressure
+V51_mempool_admission,util=0.75,0.0,Admission drops LC at HC pressure
+V51_mempool_admission,util=0.9,0.004999999999999999,Admission drops LC at HC pressure
+V51_mempool_admission,util=0.95,0.007499999999999996,Admission drops LC at HC pressure
+V52_multi_rate_RM,levels=2,1.05,RM analysis with criticality levels
+V52_multi_rate_RM,levels=3,1.0792481250360577,RM analysis with criticality levels
+V52_multi_rate_RM,levels=5,1.116096404744368,RM analysis with criticality levels
+V52_multi_rate_RM,levels=7,1.1403677461028803,RM analysis with criticality levels
+V53_speculative_exec,hit=0.7,0.16499999999999998,Speculative latency gain vs rollback
+V53_speculative_exec,hit=0.9,0.255,Speculative latency gain vs rollback
+V53_speculative_exec,hit=0.95,0.27749999999999997,Speculative latency gain vs rollback
+V53_speculative_exec,hit=0.99,0.2955,Speculative latency gain vs rollback
+V54_cold_cache,cache_MB=16,46.97065314067379,First-round cache miss penalty
+V54_cold_cache,cache_MB=64,38.94003915357025,First-round cache miss penalty
+V54_cold_cache,cache_MB=256,18.393972058572118,First-round cache miss penalty
+V54_cold_cache,cache_MB=1024,0.9157819444367089,First-round cache miss penalty
+V55_adaptive_batching,tps=10,31.0,Sqrt(TPS) batch heuristic
+V55_adaptive_batching,tps=100,100.0,Sqrt(TPS) batch heuristic
+V55_adaptive_batching,tps=1000,316.0,Sqrt(TPS) batch heuristic
+V55_adaptive_batching,tps=10000,1000.0,Sqrt(TPS) batch heuristic
+V56_partition_heal,dur=1s,0.15,Catchup time after partition heal
+V56_partition_heal,dur=10s,1.5,Catchup time after partition heal
+V56_partition_heal,dur=60s,9.0,Catchup time after partition heal
+V56_partition_heal,dur=300s,45.0,Catchup time after partition heal
+V57_geo_active_active,3regions,153.33333333333334,3-region active-active median
+V58_blocktime_calibration,W=10,0.05692099788303082,Expected calibration error vs window
+V58_blocktime_calibration,W=100,0.018,Expected calibration error vs window
+V58_blocktime_calibration,W=1000,0.0056920997883030825,Expected calibration error vs window
+V59_red_team,strength=0.1,1.2,Adversarial workload cost factor
+V59_red_team,strength=0.3,1.6,Adversarial workload cost factor
+V59_red_team,strength=0.5,2.0,Adversarial workload cost factor
+V59_red_team,strength=0.7,2.4,Adversarial workload cost factor
+V60_confidential_mempool,priv_txs=10,5.05,Private mempool with PSI+ZK
+V60_confidential_mempool,priv_txs=100,5.5,Private mempool with PSI+ZK
+V60_confidential_mempool,priv_txs=1000,10.0,Private mempool with PSI+ZK

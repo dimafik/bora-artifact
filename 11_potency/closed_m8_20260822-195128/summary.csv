@@ -1,0 +1,7 @@
+condition,wins,n,liveness,advisor_ok,bt_has_target,n_bt_samples
+healthy_white,3,40,39,40,2,40
+pgd_rho_0.0,6,40,40,40,1,40
+pgd_rho_0.3,6,40,40,40,7,40
+pgd_rho_0.6,4,40,40,40,16,40
+pgd_rho_0.8,2,40,40,40,24,40
+attack_class_ar1,2,40,40,40,34,40

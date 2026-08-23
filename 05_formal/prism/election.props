@@ -1,0 +1,9 @@
+// w.p.1 convergence: a leader is elected with probability 1
+// (the qualitative claim TLA+/TLAPS cannot state).
+P>=1 [ F el ]
+
+// sanity: probability of eventually electing a leader (= 1)
+P=? [ F el ]
+
+// expected number of election rounds until a leader is elected (= 1/q)
+R{"rounds"}=? [ F el ]

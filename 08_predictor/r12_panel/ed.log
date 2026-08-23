@@ -1,0 +1,37 @@
+=== H1
+    MLP 64-32                    epochs=22  AUC=0.7739
+    1D-CNN                       epochs=60  AUC=0.8427
+    GRU                          epochs=36  AUC=0.8885
+    Transformer (ours)           epochs=16  AUC=0.6507
+  [H1] 13.0 min
+=== H2
+    MLP 64-32                    epochs=27  AUC=0.9874
+    1D-CNN                       epochs=18  AUC=0.9999
+    GRU                          epochs=15  AUC=0.9997
+    Transformer (ours)           epochs=14  AUC=0.7837
+  [H2] 10.3 min
+=== H3_holdout_ar1
+    MLP 64-32                    epochs=49  AUC=0.4385
+    1D-CNN                       epochs=15  AUC=0.8828
+    GRU                          epochs=15  AUC=0.8499
+    Transformer (ours)           epochs=24  AUC=0.6240
+  [H3_holdout_ar1] 16.7 min
+=== H3_holdout_burst
+    MLP 64-32                    epochs=28  AUC=0.3209
+    1D-CNN                       epochs=12  AUC=0.6573
+    GRU                          epochs=32  AUC=0.7055
+    Transformer (ours)           epochs=15  AUC=0.8807
+  [H3_holdout_burst] 11.8 min
+=== H3_holdout_varshift
+    MLP 64-32                    epochs=44  AUC=0.6662
+    1D-CNN                       epochs=13  AUC=0.9741
+    GRU                          epochs=14  AUC=0.6743
+    Transformer (ours)           epochs=20  AUC=0.6443
+  [H3_holdout_varshift] 14.0 min
+=== H3_holdout_heavytail
+    MLP 64-32                    epochs=18  AUC=0.7446
+    1D-CNN                       epochs=22  AUC=1.0000
+    GRU                          epochs=23  AUC=0.6637
+    Transformer (ours)           epochs=13  AUC=0.8451
+  [H3_holdout_heavytail] 10.3 min
+done

@@ -1,0 +1,48 @@
+test:
+  name: D2-CreateAsset-Sweep
+  description: >
+    Caliper sweep on Hyperledger Fabric 5-orderer Raft cluster.
+    Workload: asset-transfer-basic.CreateAsset (unique ID per tx).
+    4 rate points: 100 / 500 / 1000 / 2000 tx/s.
+  workers:
+    number: 8
+  rounds:
+    - label: rate-100
+      txDuration: 60
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 100
+      workload:
+        module: workload/createAsset.js
+    - label: rate-500
+      txDuration: 60
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: workload/createAsset.js
+    - label: rate-1000
+      txDuration: 60
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 1000
+      workload:
+        module: workload/createAsset.js
+    - label: rate-2000
+      txDuration: 60
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 2000
+      workload:
+        module: workload/createAsset.js
+
+monitors:
+  resource:
+    - module: process
+      options:
+        interval: 3
+        processes: [{ command: 'node', arguments: 'caliper', multiOutput: 'avg' }]

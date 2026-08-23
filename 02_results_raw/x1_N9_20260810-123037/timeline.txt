@@ -1,0 +1,3 @@
+X1 closed loop: N=9 f=4 cap=2 m=1 targets=[3] chance=12.5%
+seeds=1 elec=1 delay=200ms
+budget: ~20s/election, attack window 6m

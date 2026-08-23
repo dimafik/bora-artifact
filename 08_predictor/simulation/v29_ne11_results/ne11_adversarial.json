@@ -1,0 +1,18 @@
+{
+  "static_PBFT_MM_AUC": 0.5344880000000001,
+  "adversarial_eps_0.05": {
+    "AUC": 0.820688,
+    "delta_mean": 0.0,
+    "delta_var": 0.0006398726254701614
+  },
+  "adversarial_eps_0.1": {
+    "AUC": 0.820688,
+    "delta_mean": 0.0,
+    "delta_var": 0.0006398726254701614
+  },
+  "adversarial_eps_0.2": {
+    "AUC": 0.820688,
+    "delta_mean": 0.0,
+    "delta_var": 0.0006398726254701614
+  }
+}

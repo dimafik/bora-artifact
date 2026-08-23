@@ -1,0 +1,4 @@
+arm,rate,seed,dur,elections,elec_with_fp,fp_node_wins,leader_changes,demotions,demote_TP,demote_FP,liveness_fail,advice_seen,safety_viol
+A,20,1,120,4,4,0,15,0,0,0,0,0,0
+C,20,1,120,4,4,0,20,0,0,0,0,0,0
+D,20,1,120,4,4,0,16,0,0,0,0,0,0

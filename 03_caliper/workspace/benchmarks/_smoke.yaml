@@ -1,0 +1,8 @@
+test:
+  name: smoke
+  workers: {number: 2}
+  rounds:
+    - label: smoke
+      txDuration: 25
+      rateControl: {type: fixed-rate, opts: {tps: 50}}
+      workload: {module: workload/createAsset.js}

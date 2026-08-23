@@ -1,0 +1,4 @@
+=== v4 vote-reject test, N=15 ===
+BORA [3]:   orderer3 won 3/15 | liveness 15/15
+base []:    orderer3 won 4/15 | liveness 15/15
+VOTE_REJECT_TEST_DONE base=4/15 bora=3/15 (results: /mnt/d/fabric-d2/results/votereject_20260611-143542)

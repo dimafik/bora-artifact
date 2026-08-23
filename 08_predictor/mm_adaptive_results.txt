@@ -1,0 +1,11 @@
+non-adaptive moment-matched: AUC=0.923 (attack mean-anom 0.926 vs healthy 0.372)
+
+[moment-matched constraint ON: mean=8,std=3 held] detector-adaptive PGD
+rho_min | adaptive AUC | attack mean-anom | realised autocorr | marg(mean/std)
+  0.0   |    0.774    |     0.749      |      0.73       |  8.0/3.0
+  0.3   |    0.748    |     0.714      |      0.71       |  8.0/3.0
+  0.6   |    0.733    |     0.704      |      0.74       |  8.0/3.0
+  0.8   |    0.819    |     0.789      |      0.83       |  8.0/3.0
+  -> worst-case adaptive AUC over rho_min = 0.733 (vs non-adaptive 0.92)
+
+[constraint OFF: adversary abandons the attack] AUC=0.536 but marginals drift to mean/std=7.8/4.4 (no longer moment-matched -> a mean/var threshold re-detects it).

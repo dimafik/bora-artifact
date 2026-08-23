@@ -1,0 +1,39 @@
+== N=5 delay sweep, degraded node leading  TX=320 C=16 ==
+-- delay 200ms --
+  orderer1 -> orderer3 RTT: rtt min/avg/max/mdev = 200.182/200.195/200.223/0.016 ms
+  L2 advisor idle, orderer3 leading:
+    leader=3
+    seed1 tps=6.81529 mean_latency_ms=2347.654 
+    seed2 tps=6.83920 mean_latency_ms=2339.446 
+    seed3 tps=6.84825 mean_latency_ms=2336.354 
+  L3 advisor excludes 3:
+    leader=2
+    seed1 tps=6.85854 mean_latency_ms=2332.847 
+    seed2 tps=6.86729 mean_latency_ms=2329.876 
+    seed3 tps=6.80936 mean_latency_ms=2349.696 
+-- delay 500ms --
+  orderer1 -> orderer3 RTT: rtt min/avg/max/mdev = 500.178/500.189/500.196/0.006 ms
+  L2 advisor idle, orderer3 leading:
+    leader=3
+    seed1 tps=4.74094 mean_latency_ms=3374.841 
+    seed2 tps=4.77446 mean_latency_ms=3351.151 
+    seed3 tps=4.79794 mean_latency_ms=3334.747 
+  L3 advisor excludes 3:
+    leader=2
+    seed1 tps=5.59456 mean_latency_ms=2859.907 
+    seed2 tps=5.68664 mean_latency_ms=2813.602 
+    seed3 tps=5.63991 mean_latency_ms=2836.915 
+-- delay 1000ms --
+  orderer1 -> orderer3 RTT: rtt min/avg/max/mdev = 1000.204/1000.215/1000.246/0.017 ms
+  L2 advisor idle, orderer3 leading:
+    WARNING: leader=5 not 3
+    leader=5
+    seed1 tps=6.87615 mean_latency_ms=2326.873 
+    seed2 tps=6.82336 mean_latency_ms=2344.875 
+    seed3 tps=6.88735 mean_latency_ms=2323.091 
+  L3 advisor excludes 3:
+    leader=2
+    seed1 tps=6.86598 mean_latency_ms=2330.321 
+    seed2 tps=6.85553 mean_latency_ms=2333.873 
+    seed3 tps=6.81036 mean_latency_ms=2349.351 
+== done: /d/fabric-d2/results/mh_delaysweep_N5.txt ==

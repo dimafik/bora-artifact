@@ -1,0 +1,8 @@
+H1b (공격 위치 무작위) — Transformer 판독 방식별
+
+  readout=mean  lr=3e-04  ep=34  AUC=0.8378   (15.5 min)
+  readout=mean  lr=1e-03  ep=25  AUC=0.8429   (11.8 min)
+  readout=max   lr=3e-04  ep=40  AUC=0.8388   (20.7 min)
+  readout=max   lr=1e-03  ep=30  AUC=0.8290   (15.4 min)
+  readout=attn  lr=3e-04  ep=33  AUC=0.8465   (17.0 min)
+  readout=attn  lr=1e-03  ep=24  AUC=0.8461   (12.2 min)

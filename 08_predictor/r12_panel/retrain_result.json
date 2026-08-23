@@ -1,0 +1,11 @@
+{
+ "train_windows": 20000,
+ "val_windows": 2000,
+ "test_windows": 4000,
+ "epochs_run": 19,
+ "best_val_auc": 0.9995,
+ "test_auc": 0.9996,
+ "params": 141067,
+ "published_auc_800_windows": 0.903,
+ "minutes": 11.5
+}

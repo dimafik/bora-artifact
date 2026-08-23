@@ -1,0 +1,61 @@
+{
+  "experiment_id": "5node_caliper_clean_eta",
+  "date_utc": "2026-06-07",
+  "description": "Clean 5-seed Caliper sweep on 5-orderer Raft cluster. Each seed runs on a FRESH bootstrapped network (cryptogen + genesis + container start + chaincode deploy) to avoid the cumulative state-DB growth that broke seeds 2-5 in the original β sweep.",
+  "fabric_version": "v2.5.10",
+  "caliper_version": "0.6.0",
+  "rates_targeted": [
+    100,
+    300,
+    500
+  ],
+  "round_duration_s": 30,
+  "workers_per_round": 8,
+  "n_seeds": 5,
+  "aggregate_results": {
+    "rate-100": {
+      "TPS_mean": 93.9,
+      "TPS_std": 0.0,
+      "avg_lat_s": 0.08,
+      "succ_total": 15040,
+      "fail_total": 0,
+      "n_seeds": 5
+    },
+    "rate-300": {
+      "TPS_mean": 281.18,
+      "TPS_std": 0.04,
+      "avg_lat_s": 0.05,
+      "succ_total": 45040,
+      "fail_total": 0,
+      "n_seeds": 5
+    },
+    "rate-500": {
+      "TPS_mean": 468.38,
+      "TPS_std": 0.08,
+      "avg_lat_s": 0.242,
+      "succ_total": 75040,
+      "fail_total": 0,
+      "n_seeds": 5
+    }
+  },
+  "key_findings": {
+    "100_percent_success_all_seeds": "135,120 total transactions, 0 failures",
+    "extreme_reproducibility": "TPS std across 5 seeds: 0.00, 0.04, 0.08 (essentially deterministic)",
+    "rate-500_validated_5_seeds": "Original β saw 483.7 TPS in seed 1 only; η confirms 468.4 TPS sustained across 5 fresh seeds",
+    "fresh_network_strategy_works": "State-DB bottleneck of original β fully avoided"
+  },
+  "files": {
+    "report-clean-seed{1-5}.html": "Caliper HTML reports per seed",
+    "caliper-clean-seed{1-5}.log": "Full Caliper logs"
+  },
+  "paper_integration": {
+    "phase_letter": "eta",
+    "paper_table_label": "tab:d2-caliper",
+    "paper_section_or_paragraph": "Caliper sustained throughput (5-seed clean)",
+    "related_phases": {
+      "beta": "5node_caliper_2026-06-07 (failed multi-seed precursor; eta uses fresh-network-per-seed to fix)",
+      "delta": "5node_saturation_delta_2026-06-08 (extends eta's rate-500 ceiling at 468.4 TPS to identify the actual saturation plateau)"
+    },
+    "delta_extension": "Eta's rate-500 sustains 468 TPS at 50ms latency. Delta brackets the saturation by sweeping rate-600 through rate-900, finding the plateau at 503-537 TPS with latency growing 5.7s -> 17s as queue accumulates."
+  }
+}

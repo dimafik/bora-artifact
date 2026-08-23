@@ -1,0 +1,4 @@
+  WAN N=9 base s1: o3 2/10 live 10/10
+  WAN N=9 BORA s1: o3 0/10 live 10/10
+  WAN N=9 base s2: o3 2/10 live 10/10
+  WAN N=9 BORA s2: o3 0/10 live 10/10

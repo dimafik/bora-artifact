@@ -1,0 +1,4 @@
+  seed 1 done: o3 0/12
+  seed 2 done: o3 0/24
+  seed 3 done: o3 0/36
+  seed 4 done: o3 0/48

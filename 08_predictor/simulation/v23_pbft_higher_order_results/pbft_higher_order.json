@@ -1,0 +1,14 @@
+{
+  "linear_baseline": 0.49108177777777773,
+  "memory_ar1": 0.5460875555555555,
+  "kurtosis_4th_moment": 0.4257008888888889,
+  "cross_product_lag1": 0.49181377777777774,
+  "range_to_iqr": 0.5299764444444444,
+  "linear_baseline_direction_invariant": 0.5089182222222223,
+  "memory_ar1_direction_invariant": 0.5460875555555555,
+  "kurtosis_4th_moment_direction_invariant": 0.5742991111111111,
+  "cross_product_lag1_direction_invariant": 0.5081862222222222,
+  "range_to_iqr_direction_invariant": 0.5299764444444444,
+  "combined_higher_order": 0.4979942222222222,
+  "combined_higher_order_direction_invariant": 0.5020057777777778
+}

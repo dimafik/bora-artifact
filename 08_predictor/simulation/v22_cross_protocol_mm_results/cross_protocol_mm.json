@@ -1,0 +1,26 @@
+{
+  "NE8m_PBFT_MM": {
+    "auc_linear": 0.48403644444444444,
+    "auc_memory": 0.5311,
+    "auc_spike_aware": 0.46221333333333336,
+    "moment_check_mean_gap": 0.0014376358291935953,
+    "moment_check_var_gap": 0.00012870305431058986,
+    "safety_violations": 0
+  },
+  "NE9m_HotStuff_MM": {
+    "auc_linear": 0.5000002222222222,
+    "auc_memory": 0.9983573333333333,
+    "auc_spike_aware": 0.4352775555555556,
+    "moment_check_mean_gap": 0.0,
+    "moment_check_var_gap": 0.0,
+    "safety_violations": 0
+  },
+  "NE10m_Tendermint_MM": {
+    "auc_linear": 0.4942662222222222,
+    "auc_memory": 0.5378942222222223,
+    "auc_spike_aware": 0.9824488888888889,
+    "moment_check_mean_gap": 0.00012493154400883277,
+    "moment_check_var_gap": 2.3354435631223972e-05,
+    "safety_violations": 0
+  }
+}

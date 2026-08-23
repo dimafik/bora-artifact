@@ -1,0 +1,6 @@
+== N=7 leader-controlled arms  TX=320 C=16 seeds:1 2 3 ==
+  orderer1 -> orderer3 RTT: rtt min/avg/max/mdev = 200.182/200.198/200.229/0.018 ms
+-- L2: delay on, advisor idle, orderer3 forced to lead --
+  leader=3
+  seed1 blocks=20 height=260->280 tps=5.40317 mean_latency_ms=2961.212 
+  seed2 blocks=19 height=280->299 tps=5.42581 mean_latency_ms=2948.853 
