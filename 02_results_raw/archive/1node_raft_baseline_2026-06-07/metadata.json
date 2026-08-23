@@ -1,0 +1,114 @@
+{
+  "experiment_id": "1node_raft_baseline",
+  "date_utc": "2026-06-07",
+  "description": "Concurrency sweep on Hyperledger Fabric v2.5 single-orderer Raft test-network, asset-transfer-basic chaincode (Go), CreateAsset workload. Real measurement on Docker Desktop + WSL2 Ubuntu.",
+  "fabric_version": "v2.5.10",
+  "docker_version": "27.3.1",
+  "docker_compose_version": "v2.30.3-desktop.1",
+  "fabric_images": {
+    "peer": "hyperledger/fabric-peer:latest (v3.x)",
+    "orderer": "hyperledger/fabric-orderer:latest (v3.x)",
+    "ccenv": "hyperledger/fabric-ccenv:3.1"
+  },
+  "host_os": "Windows 11 + WSL2 Ubuntu 24.04 (kernel 6.6.87.2-microsoft-standard-WSL2)",
+  "host_memory_gb_allocated_to_docker": 16,
+  "network": "fabric-samples test-network (1 orderer.example.com:7050, peer0.org1:7051, peer0.org2:9051), default Raft etcd tick=500ms",
+  "chaincode": "asset-transfer-basic Go (built with Go 1.23.4 via fabric-ccenv:3.1 inside peer container)",
+  "channel": "mychannel",
+  "workload": "CreateAsset transactions, unique asset_id per invocation, fixed payload (color=red, size=100, owner=alice, value=42)",
+  "measurement_method": "peer chaincode invoke CLI in parallel bash background processes; per-tx start/end timestamps via date +%s%N; per-thread isolated CSV then merged",
+  "endorsement": "Both Org1+Org2 peers (--peerAddresses x2)",
+  "concurrency_levels": [
+    1,
+    2,
+    4,
+    8,
+    16
+  ],
+  "n_tx_per_thread": 20,
+  "total_tx_per_seed_per_concurrency": [
+    20,
+    40,
+    80,
+    160,
+    320
+  ],
+  "n_seeds": 5,
+  "total_measurements": 3100,
+  "notes": [
+    "Concurrency=1 is sequential baseline",
+    "All seeds completed 100% success rate (0 failures)",
+    "Raw CSVs in each seed{N}/conc_sweep/c{C}/merged.csv",
+    "Per-seed summary in seed{N}/conc_sweep/summary.csv (note: C=1 row has spurious newline due to grep -c idiom bug; OK count still correct)",
+    "Aggregate from aggregate.py output below"
+  ],
+  "aggregate_results": {
+    "C=1_sequential": {
+      "TPS_mean": 3.8,
+      "TPS_std": 0.07,
+      "p99_ms_mean": 361,
+      "lat_mean_ms": 261,
+      "n_seeds": 5,
+      "tx_per_seed": 20
+    },
+    "C=2": {
+      "TPS_mean": 4.59,
+      "TPS_std": 0.17,
+      "p95_ms_mean": 285.2,
+      "p99_ms_mean": 285.2,
+      "lat_mean_ms": 211.8,
+      "n_seeds": 5,
+      "tx_per_seed": 40
+    },
+    "C=4": {
+      "TPS_mean": 9.6,
+      "TPS_std": 1.6,
+      "p95_ms_mean": 266.6,
+      "p99_ms_mean": 277.8,
+      "lat_mean_ms": 196.4,
+      "n_seeds": 5,
+      "tx_per_seed": 80
+    },
+    "C=8": {
+      "TPS_mean": 15.91,
+      "TPS_std": 0.83,
+      "p95_ms_mean": 285.0,
+      "p99_ms_mean": 307.2,
+      "lat_mean_ms": 235.9,
+      "n_seeds": 5,
+      "tx_per_seed": 160
+    },
+    "C=16": {
+      "TPS_mean": 28.98,
+      "TPS_std": 2.4,
+      "p95_ms_mean": 353.8,
+      "p99_ms_mean": 366.0,
+      "lat_mean_ms": 242.6,
+      "n_seeds": 5,
+      "tx_per_seed": 320
+    }
+  },
+  "scripts_used": [
+    "/mnt/d/fabric-d2/manual-up.sh (cryptogen + genesis + container start)",
+    "/mnt/d/fabric-d2/peer-join-and-deploy.sh (channel join + chaincode deploy)",
+    "/mnt/d/fabric-d2/concurrency-sweep.sh (sweep at C={1,2,4,8,16})",
+    "/mnt/d/fabric-d2/run-all-seeds.sh (5-seed loop driver)",
+    "/mnt/d/fabric-d2/aggregate.py (cross-seed statistics)"
+  ],
+  "limitations": [
+    "1 orderer = no Raft fault-tolerance demonstration (need >=3 for real Raft consensus, but 1-orderer etcd still goes through Raft state machine)",
+    "Single local host = no real wide-area RTT (network is loopback, ~0.05ms inter-container latency)",
+    "Throughput ceiling is CPU/Docker overhead, not Fabric ordering"
+  ],
+  "paper_integration": {
+    "phase_letter": "alpha",
+    "paper_table_label": "tab:d2-conc (1-orderer column)",
+    "paper_section_or_paragraph": "Concurrency baseline",
+    "related_phases": {
+      "gamma": "5node_raft_2026-06-07 (5-orderer equivalent, contrasts pipelining cost)",
+      "eta": "5node_caliper_clean_2026-06-07 (SDK throughput at sustained rates)",
+      "delta": "5node_saturation_delta_2026-06-08 (saturation plateau identification)",
+      "mu": "5node_extended_conc_2026-06-08 (native CLI ceiling)"
+    }
+  }
+}

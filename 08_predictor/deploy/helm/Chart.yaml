@@ -1,0 +1,8 @@
+apiVersion: v2
+name: raft-blacklist
+description: AI-Augmented Raft with bounded blacklist advice
+type: application
+version: 0.1.0
+appVersion: "v28"
+maintainers:
+  - name: TNSE Submission Anonymous

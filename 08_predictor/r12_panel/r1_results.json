@@ -1,0 +1,50 @@
+[
+ {
+  "name": "std(dRTT) statistic",
+  "params": 0,
+  "cfg": "-",
+  "auc": 0.7245
+ },
+ {
+  "name": "logistic / 40 summary stats",
+  "params": 41,
+  "cfg": "-",
+  "auc": 0.807
+ },
+ {
+  "name": "random forest / summary stats",
+  "params": 1255248,
+  "cfg": "-",
+  "auc": 0.8483
+ },
+ {
+  "name": "k-NN (k=15) / summary stats",
+  "params": 20000,
+  "cfg": "-",
+  "auc": 0.7801
+ },
+ {
+  "name": "MLP 64-32",
+  "params": 32897,
+  "cfg": "flat/1e-03",
+  "auc": 0.9992
+ },
+ {
+  "name": "1D-CNN",
+  "params": 1985,
+  "cfg": "max/3e-04",
+  "auc": 0.9999
+ },
+ {
+  "name": "GRU",
+  "params": 2497,
+  "cfg": "last/1e-03",
+  "auc": 1.0
+ },
+ {
+  "name": "Transformer (ours)",
+  "params": 143244,
+  "cfg": "attn/3e-04",
+  "auc": 1.0
+ }
+]

@@ -1,0 +1,202 @@
+{
+ "ticks": 2400,
+ "n_orderers": 7,
+ "target": 3,
+ "tick_seconds": 0.15,
+ "base_mean_ms": 8.0,
+ "base_std_ms": 3.0,
+ "tracks": {
+  "m8_healthy_white.csv": {
+   "condition": "healthy_white",
+   "scale": "m8",
+   "target_mean_ms": 8.0,
+   "target_realised": {
+    "mean": 8.06,
+    "std": 2.96,
+    "autocorr": 0.026
+   },
+   "others_realised": {
+    "mean": 8.01,
+    "std": 2.99,
+    "autocorr": 0.013
+   },
+   "detector_auc": null
+  },
+  "m8_pgd_rho_0.0.csv": {
+   "condition": "pgd_rho_0.0",
+   "scale": "m8",
+   "target_mean_ms": 8.0,
+   "target_realised": {
+    "mean": 8.0,
+    "std": 2.97,
+    "autocorr": 0.046
+   },
+   "others_realised": {
+    "mean": 7.98,
+    "std": 2.95,
+    "autocorr": 0.002
+   },
+   "detector_auc": 0.0027
+  },
+  "m8_pgd_rho_0.3.csv": {
+   "condition": "pgd_rho_0.3",
+   "scale": "m8",
+   "target_mean_ms": 8.0,
+   "target_realised": {
+    "mean": 8.0,
+    "std": 2.97,
+    "autocorr": 0.327
+   },
+   "others_realised": {
+    "mean": 7.98,
+    "std": 2.96,
+    "autocorr": 0.016
+   },
+   "detector_auc": 0.0393
+  },
+  "m8_pgd_rho_0.6.csv": {
+   "condition": "pgd_rho_0.6",
+   "scale": "m8",
+   "target_mean_ms": 8.0,
+   "target_realised": {
+    "mean": 8.0,
+    "std": 2.97,
+    "autocorr": 0.602
+   },
+   "others_realised": {
+    "mean": 8.0,
+    "std": 2.97,
+    "autocorr": 0.007
+   },
+   "detector_auc": 0.3324
+  },
+  "m8_pgd_rho_0.8.csv": {
+   "condition": "pgd_rho_0.8",
+   "scale": "m8",
+   "target_mean_ms": 8.0,
+   "target_realised": {
+    "mean": 8.0,
+    "std": 2.97,
+    "autocorr": 0.8
+   },
+   "others_realised": {
+    "mean": 7.97,
+    "std": 2.96,
+    "autocorr": 0.022
+   },
+   "detector_auc": 0.9433
+  },
+  "m8_attack_class_ar1.csv": {
+   "condition": "attack_class_ar1",
+   "scale": "m8",
+   "target_mean_ms": 8.0,
+   "target_realised": {
+    "mean": 8.2,
+    "std": 2.86,
+    "autocorr": 0.861
+   },
+   "others_realised": {
+    "mean": 8.0,
+    "std": 2.97,
+    "autocorr": 0.005
+   },
+   "detector_auc": null
+  },
+  "m500_healthy_white.csv": {
+   "condition": "healthy_white",
+   "scale": "m500",
+   "target_mean_ms": 500.0,
+   "target_realised": {
+    "mean": 498.62,
+    "std": 186.63,
+    "autocorr": 0.026
+   },
+   "others_realised": {
+    "mean": 500.16,
+    "std": 185.88,
+    "autocorr": 0.001
+   },
+   "detector_auc": null
+  },
+  "m500_pgd_rho_0.0.csv": {
+   "condition": "pgd_rho_0.0",
+   "scale": "m500",
+   "target_mean_ms": 500.0,
+   "target_realised": {
+    "mean": 500.0,
+    "std": 185.93,
+    "autocorr": 0.059
+   },
+   "others_realised": {
+    "mean": 496.43,
+    "std": 184.39,
+    "autocorr": -0.004
+   },
+   "detector_auc": 0.0027
+  },
+  "m500_pgd_rho_0.3.csv": {
+   "condition": "pgd_rho_0.3",
+   "scale": "m500",
+   "target_mean_ms": 500.0,
+   "target_realised": {
+    "mean": 500.0,
+    "std": 185.93,
+    "autocorr": 0.316
+   },
+   "others_realised": {
+    "mean": 498.75,
+    "std": 185.92,
+    "autocorr": 0.002
+   },
+   "detector_auc": 0.0393
+  },
+  "m500_pgd_rho_0.6.csv": {
+   "condition": "pgd_rho_0.6",
+   "scale": "m500",
+   "target_mean_ms": 500.0,
+   "target_realised": {
+    "mean": 500.0,
+    "std": 185.93,
+    "autocorr": 0.603
+   },
+   "others_realised": {
+    "mean": 498.49,
+    "std": 184.53,
+    "autocorr": 0.015
+   },
+   "detector_auc": 0.3324
+  },
+  "m500_pgd_rho_0.8.csv": {
+   "condition": "pgd_rho_0.8",
+   "scale": "m500",
+   "target_mean_ms": 500.0,
+   "target_realised": {
+    "mean": 500.0,
+    "std": 185.93,
+    "autocorr": 0.799
+   },
+   "others_realised": {
+    "mean": 496.79,
+    "std": 184.33,
+    "autocorr": -0.007
+   },
+   "detector_auc": 0.9433
+  },
+  "m500_attack_class_ar1.csv": {
+   "condition": "attack_class_ar1",
+   "scale": "m500",
+   "target_mean_ms": 500.0,
+   "target_realised": {
+    "mean": 504.8,
+    "std": 182.11,
+    "autocorr": 0.886
+   },
+   "others_realised": {
+    "mean": 496.96,
+    "std": 184.28,
+    "autocorr": -0.008
+   },
+   "detector_auc": null
+  }
+ }
+}

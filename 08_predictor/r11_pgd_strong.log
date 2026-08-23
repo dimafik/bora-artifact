@@ -1,0 +1,78 @@
+N=200/class, 3 seeds, 300 steps, 6 attacks per cell
+    seed 0  linear / 40 summary stats    rho>=0.0  AUC 0.044  (19s)
+    seed 0  linear / 40 summary stats    rho>=0.3  AUC 0.113  (21s)
+    seed 0  linear / 40 summary stats    rho>=0.6  AUC 0.405  (22s)
+    seed 0  linear / 40 summary stats    rho>=0.8  AUC 0.959  (23s)
+  seed 0  linear / 40 summary stats        non-adapt 1.000  worst 0.044  [lr=0.3/ar1/r0]  85s
+    seed 0  MLP 64-32 / raw window       rho>=0.0  AUC 0.000  (10s)
+    seed 0  MLP 64-32 / raw window       rho>=0.3  AUC 0.000  (10s)
+    seed 0  MLP 64-32 / raw window       rho>=0.6  AUC 0.141  (11s)
+    seed 0  MLP 64-32 / raw window       rho>=0.8  AUC 0.957  (10s)
+  seed 0  MLP 64-32 / raw window           non-adapt 1.000  worst 0.000  [lr=0.1/ar1/r0]  41s
+    seed 0  std(dRTT) statistic          rho>=0.0  AUC 0.314  (8s)
+    seed 0  std(dRTT) statistic          rho>=0.3  AUC 0.392  (9s)
+    seed 0  std(dRTT) statistic          rho>=0.6  AUC 0.531  (9s)
+    seed 0  std(dRTT) statistic          rho>=0.8  AUC 0.931  (9s)
+  seed 0  std(dRTT) statistic              non-adapt 0.999  worst 0.314  [lr=1.0/white/r0]  35s
+    seed 0  Transformer (ours, best_mm.p rho>=0.0  AUC 0.109  (515s)
+    seed 0  Transformer (ours, best_mm.p rho>=0.3  AUC 0.256  (510s)
+    seed 0  Transformer (ours, best_mm.p rho>=0.6  AUC 0.510  (466s)
+    seed 0  Transformer (ours, best_mm.p rho>=0.8  AUC 0.711  (470s)
+  seed 0  Transformer (ours, best_mm.pt)   non-adapt 0.905  worst 0.109  [lr=0.3/white/r0]  1961s
+    seed 1  linear / 40 summary stats    rho>=0.0  AUC 0.035  (20s)
+    seed 1  linear / 40 summary stats    rho>=0.3  AUC 0.118  (18s)
+    seed 1  linear / 40 summary stats    rho>=0.6  AUC 0.521  (23s)
+    seed 1  linear / 40 summary stats    rho>=0.8  AUC 0.962  (21s)
+  seed 1  linear / 40 summary stats        non-adapt 1.000  worst 0.035  [lr=1.0/white/r0]  82s
+    seed 1  MLP 64-32 / raw window       rho>=0.0  AUC 0.000  (9s)
+    seed 1  MLP 64-32 / raw window       rho>=0.3  AUC 0.000  (10s)
+    seed 1  MLP 64-32 / raw window       rho>=0.6  AUC 0.060  (10s)
+    seed 1  MLP 64-32 / raw window       rho>=0.8  AUC 0.814  (11s)
+  seed 1  MLP 64-32 / raw window           non-adapt 0.999  worst 0.000  [lr=0.1/ar1/r0]  40s
+    seed 1  std(dRTT) statistic          rho>=0.0  AUC 0.265  (8s)
+    seed 1  std(dRTT) statistic          rho>=0.3  AUC 0.333  (9s)
+    seed 1  std(dRTT) statistic          rho>=0.6  AUC 0.477  (9s)
+    seed 1  std(dRTT) statistic          rho>=0.8  AUC 0.910  (9s)
+  seed 1  std(dRTT) statistic              non-adapt 0.999  worst 0.265  [lr=1.0/white/r0]  35s
+    seed 1  Transformer (ours, best_mm.p rho>=0.0  AUC 0.110  (523s)
+    seed 1  Transformer (ours, best_mm.p rho>=0.3  AUC 0.262  (517s)
+    seed 1  Transformer (ours, best_mm.p rho>=0.6  AUC 0.504  (484s)
+    seed 1  Transformer (ours, best_mm.p rho>=0.8  AUC 0.721  (436s)
+  seed 1  Transformer (ours, best_mm.pt)   non-adapt 0.905  worst 0.110  [lr=1.0/white/r0]  1960s
+    seed 2  linear / 40 summary stats    rho>=0.0  AUC 0.073  (17s)
+    seed 2  linear / 40 summary stats    rho>=0.3  AUC 0.146  (23s)
+    seed 2  linear / 40 summary stats    rho>=0.6  AUC 0.488  (21s)
+    seed 2  linear / 40 summary stats    rho>=0.8  AUC 0.967  (22s)
+  seed 2  linear / 40 summary stats        non-adapt 1.000  worst 0.073  [lr=1.0/white/r0]  83s
+    seed 2  MLP 64-32 / raw window       rho>=0.0  AUC 0.000  (10s)
+    seed 2  MLP 64-32 / raw window       rho>=0.3  AUC 0.000  (11s)
+    seed 2  MLP 64-32 / raw window       rho>=0.6  AUC 0.140  (10s)
+    seed 2  MLP 64-32 / raw window       rho>=0.8  AUC 0.938  (11s)
+  seed 2  MLP 64-32 / raw window           non-adapt 0.999  worst 0.000  [lr=0.1/ar1/r0]  41s
+    seed 2  std(dRTT) statistic          rho>=0.0  AUC 0.352  (8s)
+    seed 2  std(dRTT) statistic          rho>=0.3  AUC 0.412  (8s)
+    seed 2  std(dRTT) statistic          rho>=0.6  AUC 0.548  (8s)
+    seed 2  std(dRTT) statistic          rho>=0.8  AUC 0.942  (8s)
+  seed 2  std(dRTT) statistic              non-adapt 1.000  worst 0.352  [lr=1.0/white/r0]  33s
+    seed 2  Transformer (ours, best_mm.p rho>=0.0  AUC 0.142  (526s)
+    seed 2  Transformer (ours, best_mm.p rho>=0.3  AUC 0.230  (529s)
+    seed 2  Transformer (ours, best_mm.p rho>=0.6  AUC 0.490  (497s)
+    seed 2  Transformer (ours, best_mm.p rho>=0.8  AUC 0.691  (438s)
+  seed 2  Transformer (ours, best_mm.pt)   non-adapt 0.900  worst 0.142  [lr=0.3/white/r0]  1991s
+
+============================================================================================
+  strongest constrained white-box attack, mean +- sd over 3 seeds
+============================================================================================
+  detector                           params  non-adap     rho>=0.0     rho>=0.3     rho>=0.6     rho>=0.8        worst
+  linear / 40 summary stats              41     1.000  0.050+-0.016  0.126+-0.015  0.471+-0.049  0.963+-0.003   0.050+-0.016
+  MLP 64-32 / raw window              32897     0.999  0.000+-0.000  0.000+-0.000  0.114+-0.038  0.903+-0.064   0.000+-0.000
+  std(dRTT) statistic                     0     0.999  0.311+-0.036  0.379+-0.034  0.518+-0.030  0.928+-0.013   0.311+-0.036
+  Transformer (ours, best_mm.pt)     141067     0.903  0.120+-0.015  0.249+-0.014  0.501+-0.009  0.708+-0.012   0.120+-0.015
+
+  constraint audit over every detector, seed and winning attack
+    rho_min 0.0: min autocorr -0.030 | mean 8.00-8.00 | std 3.00-3.00
+    rho_min 0.3: min autocorr 0.300 | mean 8.00-8.00 | std 3.00-3.00
+    rho_min 0.6: min autocorr 0.599 | mean 8.00-8.00 | std 3.00-3.00
+    rho_min 0.8: min autocorr 0.785 | mean 8.00-8.00 | std 3.00-3.00
+
+wrote D:\프랑스 업데이트\TNSE 스페셜이슈 논문\IS-Raft-LAC\submission\pivot_v26\r11_pgd_strong.json

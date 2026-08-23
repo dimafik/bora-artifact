@@ -1,0 +1,33 @@
+=== sidecar socket? ===
+SOCKET_OK
+[refresher] pid=44683
+######## SEED 1 ########
+  --- A: no BORA (blacklist=[]) ---
+    [A_s1] election 1: restart id=2 -> leader id=5
+  [A_s1] orderer3 won [A_s1]/12 | liveness election/12 | 1: restart id=2 -> leader id=5 distinct
+  --- B: BORA sustained (blacklist=[3]) ---
+    [B_s1] election 1: restart id=0 -> leader id=0
+  [B_s1] orderer3 won [B_s1]/12 | liveness election/12 | 1: restart id=0 -> leader id=0 distinct
+######## SEED 2 ########
+  --- A: no BORA (blacklist=[]) ---
+    [A_s2] election 1: restart id=0 -> leader id=0
+  [A_s2] orderer3 won [A_s2]/12 | liveness election/12 | 1: restart id=0 -> leader id=0 distinct
+  --- B: BORA sustained (blacklist=[3]) ---
+    [B_s2] election 1: restart id=0 -> leader id=0
+  [B_s2] orderer3 won [B_s2]/12 | liveness election/12 | 1: restart id=0 -> leader id=0 distinct
+######## SEED 3 ########
+  --- A: no BORA (blacklist=[]) ---
+    [A_s3] election 1: restart id=0 -> leader id=0
+  [A_s3] orderer3 won [A_s3]/12 | liveness election/12 | 1: restart id=0 -> leader id=0 distinct
+  --- B: BORA sustained (blacklist=[3]) ---
+    [B_s3] election 1: restart id=0 -> leader id=0
+  [B_s3] orderer3 won [B_s3]/12 | liveness election/12 | 1: restart id=0 -> leader id=0 distinct
+LEADER_ACQ_LS3_DONE (results: /mnt/d/fabric-d2/results/leaderacq_20260611-134900)
+=== results.csv ===
+label,seed,orderer3_wins,n_elect,liveness_ok,distinct_leaders
+A_noBORA,1,[A_s1],12,election,1: restart id=2 -> leader id=5
+B_BORA,1,[B_s1],12,election,1: restart id=0 -> leader id=0
+A_noBORA,2,[A_s2],12,election,1: restart id=0 -> leader id=0
+B_BORA,2,[B_s2],12,election,1: restart id=0 -> leader id=0
+A_noBORA,3,[A_s3],12,election,1: restart id=0 -> leader id=0
+B_BORA,3,[B_s3],12,election,1: restart id=0 -> leader id=0

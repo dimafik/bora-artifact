@@ -1,0 +1,11 @@
+=== LS4 start: N_ELECT=3 SEEDS=1 ===
+sidecars ensured
+[refresher] orderer3-only pid=63608
+######## SEED 1 ########
+  [A_s1 no-BORA] orderer3 won 1/3 | liveness 3/3 | 3 distinct
+  [B_s1 BORA]    orderer3 won 1/3 | liveness 3/3 | 3 distinct
+LEADER_ACQ_LS4_DONE (results: /mnt/d/fabric-d2/results/leaderacq4_20260611-135302)
+=== results.csv ===
+label,seed,orderer3_wins,n_elect,liveness_ok,distinct_leaders
+A_noBORA,1,1,3,3,3
+B_BORA,1,1,3,3,3

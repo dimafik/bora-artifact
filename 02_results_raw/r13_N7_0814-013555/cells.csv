@@ -1,0 +1,7 @@
+arm,rate,seed,dur,leader_changes,target_led_s,fp_events,fp_on_leader,demotions,demote_TP,demote_FP,safety_viol,final_leader
+A,0,1,120,0,0.0,0,0,0,0,0,0,6
+C,0,1,120,0,0.0,0,0,0,0,0,0,6
+D,0,1,120,0,0.0,0,0,0,0,0,0,6
+A,20,1,120,0,0.0,31,5,0,0,0,0,6
+C,20,1,120,0,0.0,31,5,0,0,0,0,6
+D,20,1,120,16,0.0,31,4,4,0,4,0,2

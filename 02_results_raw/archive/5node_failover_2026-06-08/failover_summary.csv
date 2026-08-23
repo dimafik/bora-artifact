@@ -1,0 +1,4 @@
+trial,killed_orderer,detection_ms,new_leader_orderer
+1,orderer3,6731,orderer4
+2,orderer4,5585,orderer
+3,orderer,1273,orderer4

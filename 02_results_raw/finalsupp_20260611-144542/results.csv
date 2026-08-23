@@ -1,0 +1,7 @@
+label,seed,orderer3_wins,n,liveness
+A_base,1,2,12,12
+B_BORA,1,0,12,12
+A_base,2,3,12,12
+B_BORA,2,0,12,12
+A_base,3,2,12,12
+B_BORA,3,0,12,12

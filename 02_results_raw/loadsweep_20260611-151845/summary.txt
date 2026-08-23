@@ -1,0 +1,17 @@
+######## LOAD 0 tx/s ########
+  LOAD 0: orderer3 won 0/10 | liveness 9/10
+######## LOAD 100 tx/s ########
+  LOAD 100: orderer3 won 0/10 | liveness 10/10
+######## LOAD 200 tx/s ########
+  LOAD 200: orderer3 won 0/10 | liveness 9/10
+######## LOAD 300 tx/s ########
+  LOAD 300: orderer3 won 0/10 | liveness 9/10
+######## LOAD 400 tx/s ########
+  LOAD 400: orderer3 won 0/10 | liveness 10/10
+LOAD_SWEEP_DONE (results: /mnt/d/fabric-d2/results/loadsweep_20260611-151845)
+load_tps,orderer3_wins,k,liveness
+0,0,10,9
+100,0,10,10
+200,0,10,9
+300,0,10,9
+400,0,10,10

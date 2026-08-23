@@ -1,0 +1,11 @@
+idx,leader_before,leader_after,fp_node,fp_node_won,live,time_to_leader_s,fp_delivered,advice_seen_on
+1,-,-,-,-,-,-,-,noleader
+2,6,2,-,0,1,4,0,n1:{"blacklist":[];"seq":1;"fail_open":false}
+3,-,-,-,-,-,-,-,noleader
+4,6,5,-,0,1,4,0,n1:{"blacklist":[];"seq":1;"fail_open":false}
+5,-,-,-,-,-,-,-,noleader
+6,5,7,-,0,1,4,0,n2:{"blacklist":[];"seq":1;"fail_open":false}
+7,-,-,-,-,-,-,-,noleader
+8,7,6,-,0,1,4,0,n1:{"blacklist":[];"seq":1;"fail_open":false}
+9,6,1,5,0,1,4,0,n1:{"blacklist":[];"seq":1;"fail_open":false}
+10,1,4,5,0,1,2,0,n2:{"blacklist":[];"seq":1;"fail_open":false}

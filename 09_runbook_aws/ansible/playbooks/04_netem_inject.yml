@@ -1,0 +1,61 @@
+---
+# Delay injection on the target orderer, matching the single-host study of §V-C.
+#
+# The single-host arms are E1 (clean), E2 (+200 ms on orderer3, advisor off) and
+# E3 (same delay, advisor on). The multi-host run has to reproduce that ladder
+# exactly or its throughput numbers cannot be placed beside the single-host
+# ones, so the delay parameters here are the ones that study used: a fixed
+# 200 ms egress delay on the third orderer only.
+#
+#   ansible-playbook -i inventory.yml playbooks/04_netem_inject.yml -e state=on
+#   ansible-playbook -i inventory.yml playbooks/04_netem_inject.yml -e state=off
+#
+# `state=off` is idempotent: tc exits non-zero when there is no qdisc to delete,
+# which is the normal case on a clean host, so that failure is tolerated. Any
+# other failure is not.
+- name: Delay injection on the target orderer
+  hosts: orderers
+  gather_facts: false
+  vars:
+    state: "on"
+    target_host: orderer3
+    delay_ms: 200
+    iface: eth0
+  tasks:
+    - name: Skip hosts that are not the target
+      ansible.builtin.meta: end_host
+      when: inventory_hostname != target_host
+
+    - name: Remove any existing qdisc first
+      ansible.builtin.command:
+        cmd: "tc qdisc del dev {{ iface }} root"
+      become: true
+      register: tc_del
+      failed_when: >
+        tc_del.rc != 0 and
+        'No such file or directory' not in tc_del.stderr and
+        'Cannot delete' not in tc_del.stderr
+      changed_when: tc_del.rc == 0
+
+    - name: Apply the delay
+      ansible.builtin.command:
+        cmd: "tc qdisc add dev {{ iface }} root netem delay {{ delay_ms }}ms"
+      become: true
+      when: state == "on"
+      changed_when: true
+
+    - name: Read back the qdisc so the arm is recorded, not assumed
+      ansible.builtin.command:
+        cmd: "tc qdisc show dev {{ iface }}"
+      become: true
+      register: tc_show
+      changed_when: false
+
+    - name: Fail if the delay is not what this arm claims
+      ansible.builtin.assert:
+        that:
+          - (state == "on") == ('netem' in tc_show.stdout)
+          - (state != "on") or (delay_ms | string + 'ms' in tc_show.stdout)
+        fail_msg: >-
+          qdisc does not match state={{ state }}: {{ tc_show.stdout }}
+        success_msg: "qdisc: {{ tc_show.stdout | trim }}"

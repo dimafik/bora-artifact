@@ -1,0 +1,18 @@
+=== latency x2: scale=m500 secs=180 workers=4 pace=1.0 ===
+---- repeat 1 ----
+  r1 p1 nodelay            n=232  fail=0   p50=2118   p95=2171   p99=2725   max=2725
+  r1 p2 healthy_white      n=104  fail=0   p50=6064   p95=7184   p99=7334   max=7335
+  r1 p3 pgd_rho_0.0        n=104  fail=0   p50=5993   p95=7215   p99=7255   max=7255
+  r1 p4 pgd_rho_0.3        n=108  fail=0   p50=5867   p95=6377   p99=6475   max=6476
+  r1 p5 pgd_rho_0.6        n=108  fail=0   p50=5857   p95=6502   p99=6669   max=6673
+  r1 p6 pgd_rho_0.8        n=108  fail=0   p50=5839   p95=6994   p99=7039   max=7039
+  r1 p7 attack_class_ar1   n=104  fail=0   p50=5934   p95=6809   p99=6858   max=6859
+---- repeat 2 ----
+  r2 p1 healthy_white      n=108  fail=0   p50=5909   p95=6790   p99=6908   max=6908
+  r2 p2 pgd_rho_0.0        n=108  fail=0   p50=5677   p95=6803   p99=7123   max=7123
+  r2 p3 pgd_rho_0.3        n=112  fail=0   p50=5854   p95=6628   p99=6670   max=6673
+  r2 p4 pgd_rho_0.6        n=104  fail=0   p50=5937   p95=7181   p99=7365   max=7366
+  r2 p5 pgd_rho_0.8        n=108  fail=0   p50=5642   p95=7017   p99=7086   max=7087
+  r2 p6 attack_class_ar1   n=108  fail=0   p50=5708   p95=6366   p99=6640   max=6641
+  r2 p7 nodelay            n=232  fail=0   p50=2119   p95=2138   p99=2168   max=2172
+LATENCY_DONE /d/fabric-d2/results/potency/lat_m500_20260823-112227

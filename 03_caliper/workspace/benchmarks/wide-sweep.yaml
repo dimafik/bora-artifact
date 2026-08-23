@@ -1,0 +1,38 @@
+test:
+  name: D2-Wide-Sweep
+  description: >
+    Spans the ~570 tps commit ceiling (100-700 tps). Below ceiling Caliper
+    confirms commits (Succ>0); above, the cluster saturates and the
+    saturation point itself is the signal (it drops under attack, so the
+    rate at which Succ collapses reveals the attack/BORA effect on capacity).
+  workers:
+    number: 4
+  rounds:
+    - label: rate-100
+      txDuration: 25
+      rateControl: {type: fixed-rate, opts: {tps: 100}}
+      workload: {module: workload/createAsset.js}
+    - label: rate-200
+      txDuration: 25
+      rateControl: {type: fixed-rate, opts: {tps: 200}}
+      workload: {module: workload/createAsset.js}
+    - label: rate-300
+      txDuration: 25
+      rateControl: {type: fixed-rate, opts: {tps: 300}}
+      workload: {module: workload/createAsset.js}
+    - label: rate-400
+      txDuration: 25
+      rateControl: {type: fixed-rate, opts: {tps: 400}}
+      workload: {module: workload/createAsset.js}
+    - label: rate-500
+      txDuration: 25
+      rateControl: {type: fixed-rate, opts: {tps: 500}}
+      workload: {module: workload/createAsset.js}
+    - label: rate-600
+      txDuration: 25
+      rateControl: {type: fixed-rate, opts: {tps: 600}}
+      workload: {module: workload/createAsset.js}
+    - label: rate-700
+      txDuration: 25
+      rateControl: {type: fixed-rate, opts: {tps: 700}}
+      workload: {module: workload/createAsset.js}

@@ -1,0 +1,5 @@
+label,seed,orderer3_wins,n_elect,liveness_ok,distinct_leaders
+A_noBORA,1,1,10,10,10
+B_BORA,1,1,10,10,10
+A_noBORA,2,2,10,10,10
+B_BORA,2,2,10,10,10

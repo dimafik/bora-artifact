@@ -1,0 +1,4 @@
+R2-5 leader cost (2nd attempt): delay=200ms max_pin=40
+===== bring-up N=5 =====
+===== join peers to mychannel =====
+  *** peer0.org1.example.com did NOT join mychannel

@@ -1,0 +1,12 @@
+{
+ "R2b": {
+  "base": {
+   "relational": false,
+   "lr": 0.0003,
+   "params": 143244,
+   "scores": {
+    "": 0.4868
+   }
+  }
+ }
+}

@@ -1,0 +1,28 @@
+== N=11  TX=320  C=16  seeds:1 2 3 ==
+-- channel ch11 --
+    orderer9 JOIN PROBLEM: { 	"error": "cannot join: channel already exists" }
+    orderer10 JOIN PROBLEM: { 	"error": "cannot join: channel already exists" }
+    orderer11 JOIN PROBLEM: { 	"error": "cannot join: channel already exists" }
+    org1 joined ch11
+    org2 joined ch11
+  == anchor peers ==
+    org1 ANCHOR FAILED
+    org2 ANCHOR FAILED
+    committed
+    InitLedger status:200
+-- patched binary on orderers 1..11 --
+  sidecars up: 11
+-- E1: clean, advisor idle --
+    advice: {"blacklist":[],"seq":1786531770,"fail_open":false}  seed1 attempted=320 committed=256 blocks=16 height=7->23 tps=1.88135 mean_latency_ms=8504.493 client_cpu_max_pct=26 
+  seed2 attempted=320 committed=179 blocks=18 height=23->41 tps=1.69760 mean_latency_ms=9424.970 client_cpu_max_pct=54 
+  seed3 attempted=320 committed=192 blocks=21 height=41->62 tps=4.00025 mean_latency_ms=3999.723 client_cpu_max_pct=54 
+-- E2: +200ms, advisor idle --
+  orderer1 -> orderer3 RTT: rtt min/avg/max/mdev = 200.173/200.183/200.207/0.013 ms
+    advice: {"blacklist":[],"seq":1786532070,"fail_open":false}  seed1 attempted=320 committed=320 blocks=20 height=66->86 tps=6.76363 mean_latency_ms=2365.586 client_cpu_max_pct=62 
+  seed2 attempted=320 committed=272 blocks=20 height=86->106 tps=5.87940 mean_latency_ms=2721.352 client_cpu_max_pct=56 
+  seed3 attempted=320 committed=256 blocks=20 height=106->126 tps=5.45739 mean_latency_ms=2931.788 client_cpu_max_pct=78 
+-- E3: +200ms, advisor acting --
+    advice: {"blacklist":[3],"seq":1786532217,"fail_open":false}  seed1 attempted=320 committed=288 blocks=20 height=127->147 tps=6.34033 mean_latency_ms=2523.518 client_cpu_max_pct=57 
+  seed2 attempted=320 committed=496 blocks=20 height=147->167 tps=10.7538 mean_latency_ms=1487.833 client_cpu_max_pct=56 
+  seed3 attempted=320 committed=320 blocks=20 height=167->187 tps=6.84230 mean_latency_ms=2338.385 client_cpu_max_pct=27 
+== done: /d/fabric-d2/results/mh_final_N11.txt ==

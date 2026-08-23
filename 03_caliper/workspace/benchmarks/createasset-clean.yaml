@@ -1,0 +1,34 @@
+test:
+  name: D2-CreateAsset-Clean5Seed
+  description: >
+    Clean 5-seed Caliper sweep on fresh 5-orderer Raft network.
+    Rates below the ~500-700 TPS saturation point identified in β.
+    Each seed starts on a freshly bootstrapped Fabric network to
+    avoid cumulative state-DB growth.
+  workers:
+    number: 8
+  rounds:
+    - label: rate-100
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 100
+      workload:
+        module: workload/createAsset.js
+    - label: rate-300
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 300
+      workload:
+        module: workload/createAsset.js
+    - label: rate-500
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 500
+      workload:
+        module: workload/createAsset.js

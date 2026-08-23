@@ -1,0 +1,64 @@
+{
+ "n_per_condition": 200,
+ "window": 60,
+ "mean": 8.0,
+ "std": 3.0,
+ "conditions": {
+  "pgd_rho_0.0": {
+   "rho_min": 0.0,
+   "auc": 0.0027,
+   "realised_autocorr": 0.057,
+   "mean": 8.0,
+   "std": 3.0,
+   "feasible_frac": 1.0,
+   "lr": 1.0,
+   "seed": 1,
+   "init": "white"
+  },
+  "pgd_rho_0.3": {
+   "rho_min": 0.3,
+   "auc": 0.0393,
+   "realised_autocorr": 0.325,
+   "mean": 8.0,
+   "std": 3.0,
+   "feasible_frac": 1.0,
+   "lr": 1.0,
+   "seed": 0,
+   "init": "ar0.3"
+  },
+  "pgd_rho_0.6": {
+   "rho_min": 0.6,
+   "auc": 0.3324,
+   "realised_autocorr": 0.604,
+   "mean": 8.0,
+   "std": 3.0,
+   "feasible_frac": 1.0,
+   "lr": 1.0,
+   "seed": 2,
+   "init": "ar0.6"
+  },
+  "pgd_rho_0.8": {
+   "rho_min": 0.8,
+   "auc": 0.9433,
+   "realised_autocorr": 0.801,
+   "mean": 8.0,
+   "std": 3.0,
+   "feasible_frac": 1.0,
+   "lr": 1.0,
+   "seed": 1,
+   "init": "ar0.3"
+  },
+  "healthy_white": {
+   "realised_autocorr": -0.014,
+   "mean": 7.989,
+   "std": 2.925,
+   "mean_anomaly_score": 0.0
+  },
+  "attack_class_ar1": {
+   "realised_autocorr": 0.802,
+   "mean": 8.024,
+   "std": 2.382,
+   "mean_anomaly_score": 0.9788
+  }
+ }
+}

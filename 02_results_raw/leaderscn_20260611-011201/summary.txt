@@ -1,0 +1,34 @@
+=== sidecar socket? ===
+OK
+######## ATTACK-LEADER (orderer3 leader, +2000ms, no BORA) ########
+[pin] forcing orderer3 to leader...
+  attempt 1: current leader id=
+  attempt 2: current leader id=4
+  attempt 3: current leader id=1
+  attempt 4: current leader id=4
+  attempt 5: current leader id=5
+  attempt 6: current leader id=1
+  attempt 7: current leader id=2
+  attempt 8: current leader id=4
+  attempt 9: current leader id=2
+  attempt 10: current leader id=5
+  attempt 11: current leader id=2
+  attempt 12: current leader id=4
+  attempt 13: current leader id=5
+  attempt 14: current leader id=4
+  WARN: could not pin orderer3 as leader after 14 tries
+>>> attack_leader: ledger Δ=4522 / 242s | leader start=5 end= | leaderchanges during run:
+    | rate-100 | 3004 | 0    | 100.1           | 3.63            | 0.02            | 0.22            | 93.0             |
+    | rate-200 | 6004 | 0    | 200.1           | 2.53            | 0.02            | 0.15            | 185.0            |
+    | rate-300 | 9004 | 0    | 300.1           | 10.99           | 0.02            | 0.30            | 231.0            |
+    | rate-400 | 12004 | 0    | 400.1           | 10.57           | 0.03            | 0.86            | 320.4            |
+    | rate-500 | 15004 | 0    | 500.1           | 12.24           | 0.03            | 0.78            | 355.5            |
+######## BORA-LEADER (orderer3 leader, +2000ms, blacklist 3) ########
+[pin] forcing orderer3 to leader...
+  attempt 1: current leader id=
+  attempt 2: current leader id=5
+  attempt 3: current leader id=4
+  attempt 4: current leader id=5
+  attempt 5: current leader id=1
+  attempt 6: current leader id=3
+  -> orderer3 is LEADER

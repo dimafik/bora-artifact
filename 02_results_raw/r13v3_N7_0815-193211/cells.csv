@@ -1,0 +1,5 @@
+phase,arm,rate,seed,dur,elections,elec_with_fp,leader_changes,demotions,demote_TP,demote_FP,leaderless_s,target_tenure_s,liveness_fail,mean_ttl_s,advice_seen,repaired,safety_viol
+P1,C,20,1,120,4,4,19,0,0,0,8,0,0,4.0,4,0,0
+P1,D,20,1,120,4,1,52,9,0,9,26,0,0,4.0,1,0,0
+P1,A,20,1,120,4,2,17,0,0,0,10,26,0,4.0,0,0,0
+P2,D,0,1,180,0,0,3,1,1,0,2,6,0,-,0,0,0

@@ -1,0 +1,642 @@
+[
+ {
+  "name": "std(dRTT) statistic",
+  "params": 0,
+  "differentiable": true,
+  "non_adaptive": 0.9995,
+  "worst_case": 0.5848,
+  "sweep": {
+   "rho_0.0": {
+    "worst_auc": 0.5848,
+    "best_combo": {
+     "lr": 0.3,
+     "seed": 0,
+     "init": "white",
+     "auc": 0.5848,
+     "autocorr": 0.017,
+     "mean": 8.0,
+     "std": 3.0,
+     "feasible_frac": 1.0
+    },
+    "all_combos": [
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "white",
+      "auc": 0.5848,
+      "autocorr": 0.017,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     },
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "ar0.9",
+      "auc": 0.6588,
+      "autocorr": 0.395,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     }
+    ]
+   },
+   "rho_0.8": {
+    "worst_auc": 1.0,
+    "best_combo": {
+     "lr": 0.3,
+     "seed": 0,
+     "init": "white",
+     "auc": 1.0,
+     "autocorr": 0.8,
+     "mean": 8.0,
+     "std": 3.0,
+     "feasible_frac": 1.0
+    },
+    "all_combos": [
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "white",
+      "auc": 1.0,
+      "autocorr": 0.8,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     },
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "ar0.9",
+      "auc": 1.0,
+      "autocorr": 0.8,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     }
+    ]
+   }
+  },
+  "minutes": 0.0
+ },
+ {
+  "name": "logistic / 40 summary stats",
+  "params": 41,
+  "differentiable": true,
+  "non_adaptive": 1.0,
+  "worst_case": 0.8852,
+  "sweep": {
+   "rho_0.0": {
+    "worst_auc": 0.8852,
+    "best_combo": {
+     "lr": 0.3,
+     "seed": 0,
+     "init": "white",
+     "auc": 0.8852,
+     "autocorr": 0.0,
+     "mean": 8.0,
+     "std": 3.0,
+     "feasible_frac": 1.0
+    },
+    "all_combos": [
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "white",
+      "auc": 0.8852,
+      "autocorr": 0.0,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     },
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "ar0.9",
+      "auc": 0.9576,
+      "autocorr": 0.0,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     }
+    ]
+   },
+   "rho_0.8": {
+    "worst_auc": 1.0,
+    "best_combo": {
+     "lr": 0.3,
+     "seed": 0,
+     "init": "white",
+     "auc": 1.0,
+     "autocorr": 0.8,
+     "mean": 8.0,
+     "std": 3.0,
+     "feasible_frac": 1.0
+    },
+    "all_combos": [
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "white",
+      "auc": 1.0,
+      "autocorr": 0.8,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     },
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "ar0.9",
+      "auc": 1.0,
+      "autocorr": 0.8,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     }
+    ]
+   }
+  },
+  "minutes": 0.0
+ },
+ {
+  "name": "MLP 64-32 / raw window",
+  "params": 32897,
+  "differentiable": true,
+  "non_adaptive": 0.9941,
+  "worst_case": 0.006,
+  "sweep": {
+   "rho_0.0": {
+    "worst_auc": 0.006,
+    "best_combo": {
+     "lr": 0.3,
+     "seed": 0,
+     "init": "ar0.9",
+     "auc": 0.006,
+     "autocorr": 0.003,
+     "mean": 8.0,
+     "std": 3.0,
+     "feasible_frac": 1.0
+    },
+    "all_combos": [
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "white",
+      "auc": 0.0292,
+      "autocorr": 0.0,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     },
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "ar0.9",
+      "auc": 0.006,
+      "autocorr": 0.003,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     }
+    ]
+   },
+   "rho_0.8": {
+    "worst_auc": 1.0,
+    "best_combo": {
+     "lr": 0.3,
+     "seed": 0,
+     "init": "white",
+     "auc": 1.0,
+     "autocorr": 0.8,
+     "mean": 8.0,
+     "std": 3.0,
+     "feasible_frac": 1.0
+    },
+    "all_combos": [
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "white",
+      "auc": 1.0,
+      "autocorr": 0.8,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     },
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "ar0.9",
+      "auc": 1.0,
+      "autocorr": 0.8,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     }
+    ]
+   }
+  },
+  "minutes": 0.0
+ },
+ {
+  "name": "1D-CNN",
+  "params": 1969,
+  "differentiable": true,
+  "non_adaptive": 1.0,
+  "worst_case": 0.6972,
+  "sweep": {
+   "rho_0.0": {
+    "worst_auc": 0.6972,
+    "best_combo": {
+     "lr": 0.3,
+     "seed": 0,
+     "init": "white",
+     "auc": 0.6972,
+     "autocorr": 0.0,
+     "mean": 8.0,
+     "std": 3.0,
+     "feasible_frac": 1.0
+    },
+    "all_combos": [
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "white",
+      "auc": 0.6972,
+      "autocorr": 0.0,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     },
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "ar0.9",
+      "auc": 0.7428,
+      "autocorr": 0.0,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     }
+    ]
+   },
+   "rho_0.8": {
+    "worst_auc": 1.0,
+    "best_combo": {
+     "lr": 0.3,
+     "seed": 0,
+     "init": "white",
+     "auc": 1.0,
+     "autocorr": 0.8,
+     "mean": 8.0,
+     "std": 3.0,
+     "feasible_frac": 1.0
+    },
+    "all_combos": [
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "white",
+      "auc": 1.0,
+      "autocorr": 0.8,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     },
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "ar0.9",
+      "auc": 1.0,
+      "autocorr": 0.8,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     }
+    ]
+   }
+  },
+  "minutes": 0.1
+ },
+ {
+  "name": "GRU",
+  "params": 2473,
+  "differentiable": true,
+  "non_adaptive": 0.9999,
+  "worst_case": 0.37,
+  "sweep": {
+   "rho_0.0": {
+    "worst_auc": 0.37,
+    "best_combo": {
+     "lr": 0.3,
+     "seed": 0,
+     "init": "white",
+     "auc": 0.37,
+     "autocorr": 0.003,
+     "mean": 8.0,
+     "std": 3.0,
+     "feasible_frac": 1.0
+    },
+    "all_combos": [
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "white",
+      "auc": 0.37,
+      "autocorr": 0.003,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     },
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "ar0.9",
+      "auc": 0.5848,
+      "autocorr": 0.282,
+      "mean": 8.0,
+      "std": 2.999,
+      "feasible_frac": 1.0
+     }
+    ]
+   },
+   "rho_0.8": {
+    "worst_auc": 1.0,
+    "best_combo": {
+     "lr": 0.3,
+     "seed": 0,
+     "init": "white",
+     "auc": 1.0,
+     "autocorr": 0.8,
+     "mean": 8.0,
+     "std": 3.0,
+     "feasible_frac": 1.0
+    },
+    "all_combos": [
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "white",
+      "auc": 1.0,
+      "autocorr": 0.8,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     },
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "ar0.9",
+      "auc": 1.0,
+      "autocorr": 0.802,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     }
+    ]
+   }
+  },
+  "minutes": 0.1
+ },
+ {
+  "name": "Transformer (ours, retrained)",
+  "params": 141067,
+  "differentiable": true,
+  "non_adaptive": 0.9998,
+  "worst_case": 0.0952,
+  "sweep": {
+   "rho_0.0": {
+    "worst_auc": 0.0952,
+    "best_combo": {
+     "lr": 0.3,
+     "seed": 0,
+     "init": "white",
+     "auc": 0.0952,
+     "autocorr": 0.036,
+     "mean": 8.0,
+     "std": 3.0,
+     "feasible_frac": 1.0
+    },
+    "all_combos": [
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "white",
+      "auc": 0.0952,
+      "autocorr": 0.036,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     },
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "ar0.9",
+      "auc": 0.692,
+      "autocorr": 0.665,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     }
+    ]
+   },
+   "rho_0.8": {
+    "worst_auc": 0.9916,
+    "best_combo": {
+     "lr": 0.3,
+     "seed": 0,
+     "init": "white",
+     "auc": 0.9916,
+     "autocorr": 0.8,
+     "mean": 8.0,
+     "std": 3.0,
+     "feasible_frac": 1.0
+    },
+    "all_combos": [
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "white",
+      "auc": 0.9916,
+      "autocorr": 0.8,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     },
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "ar0.9",
+      "auc": 0.9924,
+      "autocorr": 0.811,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     }
+    ]
+   }
+  },
+  "minutes": 0.2
+ },
+ {
+  "name": "random forest / summary stats",
+  "params": 2524,
+  "differentiable": false,
+  "non_adaptive": 1.0,
+  "worst_case": 0.9936,
+  "sweep": {
+   "rho_0.0": {
+    "worst_auc": 0.9936,
+    "best_combo": {
+     "lr": 0.3,
+     "seed": 0,
+     "init": "ar0.9",
+     "auc": 0.9936,
+     "autocorr": 0.0,
+     "mean": 8.0,
+     "std": 3.0,
+     "feasible_frac": 1.0
+    },
+    "all_combos": [
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "white",
+      "auc": 0.9968,
+      "autocorr": 0.0,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     },
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "ar0.9",
+      "auc": 0.9936,
+      "autocorr": 0.0,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     }
+    ]
+   },
+   "rho_0.8": {
+    "worst_auc": 1.0,
+    "best_combo": {
+     "lr": 0.3,
+     "seed": 0,
+     "init": "white",
+     "auc": 1.0,
+     "autocorr": 0.8,
+     "mean": 8.0,
+     "std": 3.0,
+     "feasible_frac": 1.0
+    },
+    "all_combos": [
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "white",
+      "auc": 1.0,
+      "autocorr": 0.8,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     },
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "ar0.9",
+      "auc": 1.0,
+      "autocorr": 0.8,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     }
+    ]
+   }
+  },
+  "minutes": 0.0
+ },
+ {
+  "name": "k-NN (k=15) / summary stats",
+  "params": 1000,
+  "differentiable": false,
+  "non_adaptive": 0.9999,
+  "worst_case": 0.6614,
+  "sweep": {
+   "rho_0.0": {
+    "worst_auc": 0.6614,
+    "best_combo": {
+     "lr": 0.3,
+     "seed": 0,
+     "init": "white",
+     "auc": 0.6614,
+     "autocorr": 0.0,
+     "mean": 8.0,
+     "std": 3.0,
+     "feasible_frac": 1.0
+    },
+    "all_combos": [
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "white",
+      "auc": 0.6614,
+      "autocorr": 0.0,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     },
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "ar0.9",
+      "auc": 0.8696,
+      "autocorr": 0.0,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     }
+    ]
+   },
+   "rho_0.8": {
+    "worst_auc": 1.0,
+    "best_combo": {
+     "lr": 0.3,
+     "seed": 0,
+     "init": "white",
+     "auc": 1.0,
+     "autocorr": 0.8,
+     "mean": 8.0,
+     "std": 3.0,
+     "feasible_frac": 1.0
+    },
+    "all_combos": [
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "white",
+      "auc": 1.0,
+      "autocorr": 0.8,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     },
+     {
+      "lr": 0.3,
+      "seed": 0,
+      "init": "ar0.9",
+      "auc": 1.0,
+      "autocorr": 0.8,
+      "mean": 8.0,
+      "std": 3.0,
+      "feasible_frac": 1.0
+     }
+    ]
+   }
+  },
+  "minutes": 0.1
+ }
+]

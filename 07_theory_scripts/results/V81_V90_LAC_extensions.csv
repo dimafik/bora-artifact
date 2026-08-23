@@ -1,0 +1,31 @@
+experiment,config,metric,note
+V81_zk_proofs,Groth16,5.0,ZK proof generation time
+V81_zk_proofs,Plonk,3.0,ZK proof generation time
+V81_zk_proofs,Halo2,8.0,ZK proof generation time
+V82_HE_consensus,BFV,100.0,HE consensus slowdown vs plain
+V82_HE_consensus,CKKS,50.0,HE consensus slowdown vs plain
+V82_HE_consensus,TFHE,500.0,HE consensus slowdown vs plain
+V83_MPC_scheduling,parties=3,259.8076211353316,MPC joint scheduling latency
+V83_MPC_scheduling,parties=5,559.0169943749474,MPC joint scheduling latency
+V83_MPC_scheduling,parties=10,1581.1388300841895,MPC joint scheduling latency
+V84_watchtower,WT=1,30.0,Mean fault detection time
+V84_watchtower,WT=3,10.0,Mean fault detection time
+V84_watchtower,WT=10,3.0,Mean fault detection time
+V85_VaaS,AWS,25.0,VaaS round-trip latency
+V85_VaaS,GCP,30.0,VaaS round-trip latency
+V85_VaaS,OnPrem,5.0,VaaS round-trip latency
+V86_edge_consensus,d=10km,2.05,5G/MEC edge consensus latency
+V86_edge_consensus,d=100km,2.5,5G/MEC edge consensus latency
+V86_edge_consensus,d=1000km,7.0,5G/MEC edge consensus latency
+V87_cross_chain_swap,chains=2,9.0,Cross-chain atomic swap latency
+V87_cross_chain_swap,chains=3,11.0,Cross-chain atomic swap latency
+V87_cross_chain_swap,chains=5,15.0,Cross-chain atomic swap latency
+V88_token_gating,supply=1000,0.5499999999999999,Validator stake Gini coefficient
+V88_token_gating,supply=10000,0.49999999999999994,Validator stake Gini coefficient
+V88_token_gating,supply=100000,0.44999999999999996,Validator stake Gini coefficient
+V89_DAO_upgrade,fork,24.0,Upgrade downtime
+V89_DAO_upgrade,vote,4.0,Upgrade downtime
+V89_DAO_upgrade,DAO,0.5,Upgrade downtime
+V90_stress_test,txs=1000000,1e-05,10M+ transaction HC miss rate
+V90_stress_test,txs=5000000,1.069897000433602e-05,10M+ transaction HC miss rate
+V90_stress_test,txs=10000000,1.1000000000000001e-05,10M+ transaction HC miss rate

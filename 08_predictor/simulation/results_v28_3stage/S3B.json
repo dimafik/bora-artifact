@@ -1,0 +1,10 @@
+{
+  "total_events": 30000,
+  "total_violations": 0,
+  "fail_open_engagements": 8608,
+  "violations_per_mode": {
+    "noisy": 0,
+    "wrong": 0,
+    "max_out": 0
+  }
+}

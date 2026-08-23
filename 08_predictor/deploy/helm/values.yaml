@@ -1,0 +1,26 @@
+replicaCount: 5
+image:
+  repository: raft-blacklist
+  tag: v28
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 6000
+
+aiAugmented: true
+electionTimeoutMinMs: 150
+electionTimeoutMaxMs: 300
+heartbeatMs: 50
+faultBound: 2
+kFail: 3
+tauR: 0.5
+tauConf: 0.7
+
+resources:
+  requests:
+    cpu: 500m
+    memory: 512Mi
+  limits:
+    cpu: 1
+    memory: 1Gi

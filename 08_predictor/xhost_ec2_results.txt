@@ -1,0 +1,9 @@
+=== PHYSICAL multi-host: 5 orderers on 5 separate AWS EC2 instances (ap-northeast-2) ===
+1 orderer per host, cross-host TLS etcdraft Raft, --network host + --add-host (private IPs)
+BORA v4 binary running on all 5 hosts (restarts=0, fully compatible), sidecars 5/5
+forced-election target=orderer3, pause/unpause leader over SSH on its own host, 2 seeds x 8 elections
+base,5,1,1,8,8
+bora,5,1,0,8,8
+base,5,2,1,8,8
+bora,5,2,0,8,8
+=> baseline orderer3 acquisition 2/16 (12.5%) vs BORA 0/16 (0%), liveness 32/32 (100%)

@@ -1,0 +1,35 @@
+test:
+  name: D2-BelowCeiling-Sweep
+  description: >
+    CORRECTED sweep. Ledger ground-truth (block-height delta with NO load)
+    shows the single-host 5-orderer cluster commits at ~430-570 tx/s.
+    The earlier 600-900 tps sweep was 1.1-1.6x ABOVE this ceiling, so the
+    orderer queue grew without bound and the gateway commit-status call hit
+    DEADLINE_EXCEEDED -> Succ:0 (a client-side measurement artifact; the
+    ledger DID commit every tx, just late). This sweep stays BELOW the
+    ceiling (100-500 tps) so commits confirm within the default deadline
+    and Caliper reports real Succ/throughput/latency. Cross-check each round
+    against block-height delta on peer0.org1.
+  workers:
+    number: 4
+  rounds:
+    - label: rate-100
+      txDuration: 30
+      rateControl: {type: fixed-rate, opts: {tps: 100}}
+      workload: {module: workload/createAsset.js}
+    - label: rate-200
+      txDuration: 30
+      rateControl: {type: fixed-rate, opts: {tps: 200}}
+      workload: {module: workload/createAsset.js}
+    - label: rate-300
+      txDuration: 30
+      rateControl: {type: fixed-rate, opts: {tps: 300}}
+      workload: {module: workload/createAsset.js}
+    - label: rate-400
+      txDuration: 30
+      rateControl: {type: fixed-rate, opts: {tps: 400}}
+      workload: {module: workload/createAsset.js}
+    - label: rate-500
+      txDuration: 30
+      rateControl: {type: fixed-rate, opts: {tps: 500}}
+      workload: {module: workload/createAsset.js}

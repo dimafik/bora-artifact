@@ -1,0 +1,25 @@
+=== H1
+   MLP 64-32            lr=3e-04 ep=47 AUC=0.7737
+   MLP 64-32            lr=1e-03 ep=27 AUC=0.7889
+   MLP 64-32            lr=3e-03 ep=18 AUC=0.7758
+   1D-CNN               lr=3e-04 ep=80 AUC=0.8273
+   1D-CNN               lr=1e-03 ep=80 AUC=0.8606
+   1D-CNN               lr=3e-03 ep=80 AUC=0.8793
+   GRU                  lr=3e-04 ep=80 AUC=0.8889
+   GRU                  lr=1e-03 ep=58 AUC=0.8921
+   GRU                  lr=3e-03 ep=28 AUC=0.8910
+   Transformer (ours)   lr=3e-04 ep=12 AUC=0.6613
+   Transformer (ours)   lr=1e-03 ep=30 AUC=0.6287
+   Transformer (ours)   lr=3e-03 ep=11 AUC=0.5967
+=== H3_holdout_ar1
+   MLP 64-32            lr=3e-04 ep=62 AUC=0.4268
+   MLP 64-32            lr=1e-03 ep=44 AUC=0.4243
+   MLP 64-32            lr=3e-03 ep=27 AUC=0.4682
+   1D-CNN               lr=3e-04 ep=23 AUC=0.7445
+   1D-CNN               lr=1e-03 ep=26 AUC=0.8923
+   1D-CNN               lr=3e-03 ep=18 AUC=0.8901
+   GRU                  lr=3e-04 ep=57 AUC=0.9462
+   GRU                  lr=1e-03 ep=24 AUC=0.9276
+   GRU                  lr=3e-03 ep=15 AUC=0.8800
+   Transformer (ours)   lr=3e-04 ep=28 AUC=0.7263
+   Transformer (ours)   lr=1e-03 ep=35 AUC=0.5291

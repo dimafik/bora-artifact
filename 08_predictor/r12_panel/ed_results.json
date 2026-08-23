@@ -1,0 +1,254 @@
+{
+ "H1": [
+  {
+   "name": "std(dRTT) statistic",
+   "params": 0,
+   "auc": 0.5531
+  },
+  {
+   "name": "logistic / 40 summary stats",
+   "params": 41,
+   "auc": 0.6974
+  },
+  {
+   "name": "random forest / summary stats",
+   "params": 1542010,
+   "auc": 0.7002
+  },
+  {
+   "name": "k-NN (k=15) / summary stats",
+   "params": 20000,
+   "auc": 0.6591
+  },
+  {
+   "name": "MLP 64-32",
+   "params": 32897,
+   "auc": 0.7739
+  },
+  {
+   "name": "1D-CNN",
+   "params": 1969,
+   "auc": 0.8427
+  },
+  {
+   "name": "GRU",
+   "params": 2473,
+   "auc": 0.8885
+  },
+  {
+   "name": "Transformer (ours)",
+   "params": 141067,
+   "auc": 0.6507
+  }
+ ],
+ "H2": [
+  {
+   "name": "std(dRTT) statistic",
+   "params": 0,
+   "auc": 0.6647
+  },
+  {
+   "name": "logistic / 40 summary stats",
+   "params": 41,
+   "auc": 0.9749
+  },
+  {
+   "name": "random forest / summary stats",
+   "params": 440754,
+   "auc": 0.9874
+  },
+  {
+   "name": "k-NN (k=15) / summary stats",
+   "params": 20000,
+   "auc": 0.9778
+  },
+  {
+   "name": "MLP 64-32",
+   "params": 32897,
+   "auc": 0.9874
+  },
+  {
+   "name": "1D-CNN",
+   "params": 1969,
+   "auc": 0.9999
+  },
+  {
+   "name": "GRU",
+   "params": 2473,
+   "auc": 0.9997
+  },
+  {
+   "name": "Transformer (ours)",
+   "params": 141067,
+   "auc": 0.7837
+  }
+ ],
+ "H3_holdout_ar1": [
+  {
+   "name": "std(dRTT) statistic",
+   "params": 0,
+   "auc": 0.999
+  },
+  {
+   "name": "logistic / 40 summary stats",
+   "params": 41,
+   "auc": 0.6111
+  },
+  {
+   "name": "random forest / summary stats",
+   "params": 518210,
+   "auc": 0.9132
+  },
+  {
+   "name": "k-NN (k=15) / summary stats",
+   "params": 20000,
+   "auc": 0.3962
+  },
+  {
+   "name": "MLP 64-32",
+   "params": 32897,
+   "auc": 0.4385
+  },
+  {
+   "name": "1D-CNN",
+   "params": 1969,
+   "auc": 0.8828
+  },
+  {
+   "name": "GRU",
+   "params": 2473,
+   "auc": 0.8499
+  },
+  {
+   "name": "Transformer (ours)",
+   "params": 141067,
+   "auc": 0.624
+  }
+ ],
+ "H3_holdout_burst": [
+  {
+   "name": "std(dRTT) statistic",
+   "params": 0,
+   "auc": 0.0065
+  },
+  {
+   "name": "logistic / 40 summary stats",
+   "params": 41,
+   "auc": 0.4231
+  },
+  {
+   "name": "random forest / summary stats",
+   "params": 479238,
+   "auc": 0.8107
+  },
+  {
+   "name": "k-NN (k=15) / summary stats",
+   "params": 20000,
+   "auc": 0.723
+  },
+  {
+   "name": "MLP 64-32",
+   "params": 32897,
+   "auc": 0.3209
+  },
+  {
+   "name": "1D-CNN",
+   "params": 1969,
+   "auc": 0.6573
+  },
+  {
+   "name": "GRU",
+   "params": 2473,
+   "auc": 0.7055
+  },
+  {
+   "name": "Transformer (ours)",
+   "params": 141067,
+   "auc": 0.8807
+  }
+ ],
+ "H3_holdout_varshift": [
+  {
+   "name": "std(dRTT) statistic",
+   "params": 0,
+   "auc": 0.7515
+  },
+  {
+   "name": "logistic / 40 summary stats",
+   "params": 41,
+   "auc": 0.7395
+  },
+  {
+   "name": "random forest / summary stats",
+   "params": 68724,
+   "auc": 0.7568
+  },
+  {
+   "name": "k-NN (k=15) / summary stats",
+   "params": 20000,
+   "auc": 0.6074
+  },
+  {
+   "name": "MLP 64-32",
+   "params": 32897,
+   "auc": 0.6662
+  },
+  {
+   "name": "1D-CNN",
+   "params": 1969,
+   "auc": 0.9741
+  },
+  {
+   "name": "GRU",
+   "params": 2473,
+   "auc": 0.6743
+  },
+  {
+   "name": "Transformer (ours)",
+   "params": 141067,
+   "auc": 0.6443
+  }
+ ],
+ "H3_holdout_heavytail": [
+  {
+   "name": "std(dRTT) statistic",
+   "params": 0,
+   "auc": 0.9045
+  },
+  {
+   "name": "logistic / 40 summary stats",
+   "params": 41,
+   "auc": 0.9948
+  },
+  {
+   "name": "random forest / summary stats",
+   "params": 510766,
+   "auc": 0.9938
+  },
+  {
+   "name": "k-NN (k=15) / summary stats",
+   "params": 20000,
+   "auc": 0.9727
+  },
+  {
+   "name": "MLP 64-32",
+   "params": 32897,
+   "auc": 0.7446
+  },
+  {
+   "name": "1D-CNN",
+   "params": 1969,
+   "auc": 1.0
+  },
+  {
+   "name": "GRU",
+   "params": 2473,
+   "auc": 0.6637
+  },
+  {
+   "name": "Transformer (ours)",
+   "params": 141067,
+   "auc": 0.8451
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": 1780473393.1009731,
+  "region": "us-east-1",
+  "role": "candidate",
+  "term": 128,
+  "leader_id": null,
+  "blacklist": [],
+  "metrics": {
+    "elections_started": 38,
+    "votes_cast": 0,
+    "leader_changes": 0,
+    "ai_blacklist_events": 0,
+    "byzantine_advice_rejected": 0
+  },
+  "rtt_p99": {
+    "8001": 31.894922256469727,
+    "8002": 62.586069107055664,
+    "8003": 62.60418891906738,
+    "8004": 108.92891883850098
+  }
+}

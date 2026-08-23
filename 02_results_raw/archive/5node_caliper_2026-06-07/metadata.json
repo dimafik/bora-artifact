@@ -1,0 +1,101 @@
+{
+  "experiment_id": "5node_caliper_sweep",
+  "date_utc": "2026-06-07",
+  "description": "Caliper Docker 5-orderer Raft sweep at rates 100/500/1000/2000 tx/s with 5 seeds × 4 rounds × 60s each.",
+  "fabric_version": "v2.5.10",
+  "caliper_version": "0.6.0 (hyperledger/caliper:0.6.0 Docker image)",
+  "caliper_sut_bind": "fabric:fabric-gateway",
+  "host_os": "Windows 11 + WSL2 Ubuntu, Docker Desktop 27.3.1",
+  "host_memory_gb_allocated_to_docker": 16,
+  "network": "5-orderer Raft (orderer1-5), 2 peers (org1, org2), channel mychannel, chaincode basic v1.0 with endorsement policy OR(Org1MSP.peer, Org2MSP.peer)",
+  "workload": "CreateAsset(unique_id, color=red, size=100, owner=alice, value=42) via Fabric Gateway SDK",
+  "n_workers_per_seed": 8,
+  "rounds_per_seed": [
+    "rate-100 (60s, target 100 tx/s)",
+    "rate-500 (60s, target 500 tx/s)",
+    "rate-1000 (60s, target 1000 tx/s)",
+    "rate-2000 (60s, target 2000 tx/s)"
+  ],
+  "total_runtime_minutes": 41,
+  "outcome": "PARTIAL SUCCESS - critical findings on saturation point",
+  "valid_data": {
+    "seed_1": {
+      "status": "PRIMARY VALID DATA",
+      "rate-100": {
+        "succ": 6008,
+        "fail": 0,
+        "send_rate": 100.1,
+        "throughput": 96.9,
+        "avg_lat_s": 0.08,
+        "max_lat_s": 2.03
+      },
+      "rate-500": {
+        "succ": 30008,
+        "fail": 0,
+        "send_rate": 500.1,
+        "throughput": 483.7,
+        "avg_lat_s": 0.53,
+        "max_lat_s": 2.05
+      },
+      "rate-1000": {
+        "succ": 32824,
+        "fail": 27173,
+        "send_rate": 999.6,
+        "throughput": 453.0,
+        "avg_lat_s": 33.1,
+        "max_lat_s": 64.87,
+        "note": "saturation point identified - >50% commits time out"
+      },
+      "rate-2000": {
+        "succ": 0,
+        "fail": 70022,
+        "send_rate": 1167.0,
+        "throughput": 452.8,
+        "avg_lat_s": null,
+        "note": "complete saturation, but Caliper still detects max network throughput ~453"
+      }
+    },
+    "seeds_2_3_4": {
+      "status": "DEGRADED - all rounds 100% failure",
+      "diagnosis": "Network entered degraded state after seed 1's rate-2000 saturation. Orderer Raft cluster reports forwarding timeouts to follower nodes (see orderer1 logs at 14:10 UTC showing 'rejected by Order: timed out (7s) waiting on forwarding to 3'). Peers accumulated ~68k assets in seed 1, slowing state DB operations beyond Caliper's commit timeout window. Seed 5 was stopped mid-round 2 with same DEADLINE_EXCEEDED pattern."
+    }
+  },
+  "key_findings": {
+    "validated_throughput": "5-orderer Raft + 2 peers + basic chaincode sustains 500 TPS with 530 ms avg latency on commodity Docker Desktop",
+    "saturation_point": "~500-700 TPS — above this, commit latency explodes from 530 ms to 33 s",
+    "raft_overhead_visible": "Orderer leader-to-follower forwarding becomes bottleneck under load; matches Raft theoretical commit cost",
+    "0_safety_violations": "All successful transactions in seed 1 produced valid ledger entries (block 88468+ reached)"
+  },
+  "data_caveats": [
+    "Only seed 1 yields paper-grade clean numbers; seeds 2-4 are diagnostic data showing system overload",
+    "txDuration=60s/round was too long; would need 30s/round + cool-down between seeds for clean 5-seed replication",
+    "Local Docker Desktop is the bottleneck (CPU+memory shared with WSL2 + Caliper container)",
+    "Real production AWS deployment would shift saturation higher",
+    "All recorded ledger height milestones preserved in caliper-seed*.log files"
+  ],
+  "files": {
+    "report-seed1.html": "Caliper-generated HTML report (15 KB), seed 1, all 4 rates",
+    "report-seed{2,3,4}.html": "Caliper reports for failed seeds",
+    "caliper-seed1.log": "Full Caliper debug log, seed 1 (~35 MB)",
+    "caliper-seed{2-5}.log": "Diagnostic logs for failed/partial seeds"
+  },
+  "scripts_used": [
+    "/mnt/d/fabric-d2/run-caliper.sh",
+    "/mnt/d/fabric-d2/caliper-5seed-sweep.sh",
+    "/mnt/d/fabric-d2/caliper-parse.py",
+    "/mnt/d/fabric-d2/caliper-workspace/benchmarks/createasset-sweep.yaml",
+    "/mnt/d/fabric-d2/caliper-workspace/workload/createAsset.js",
+    "/mnt/d/fabric-d2/caliper-workspace/networks/fabric-5node.yaml",
+    "/mnt/d/fabric-d2/caliper-workspace/networks/connection-org{1,2}.json"
+  ],
+  "paper_integration": {
+    "phase_letter": "beta_failed_multi_seed",
+    "paper_table_label": "honest disclosure paragraph in §VII.B (seeds 2-5 cumulative state-DB bottleneck)",
+    "paper_section_or_paragraph": "Caliper multi-seed limitation disclosure",
+    "related_phases": {
+      "eta": "5node_caliper_clean_2026-06-07 (clean 5-seed sweep using fresh-network-per-seed)",
+      "delta": "5node_saturation_delta_2026-06-08 (reinterprets beta's rate-1000 45% timeouts as Caliper 7s window expiration, NOT actual blockchain failure)"
+    },
+    "delta_reinterpretation": "Beta's rate-1000 45% commit timeouts are now understood as the Caliper SDK's default 7-second observation window being exceeded once tail latency grows past it. Delta sweep at rates 600-900 tx/s shows 0 commit failures across 270,013 transactions, demonstrating the blockchain DOES commit them — just outside the SDK's observation window. The 'saturation point at ~500-700 TPS' in v49 is therefore narrowed by delta to ~530 TPS plateau."
+  }
+}

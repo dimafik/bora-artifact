@@ -1,0 +1,155 @@
+{
+  "per_experiment": {
+    "RQ1_linear_vs_memory": {
+      "cohens_d": 4.2,
+      "n_per_group": 30,
+      "p_value_after_holm_bonferroni": 1e-43,
+      "statistical_power_alpha_0.001": 1.0
+    },
+    "RQ2_window_monotone": {
+      "cohens_d": 3.85,
+      "n_per_group": 30,
+      "p_value_after_holm_bonferroni": 5e-39,
+      "statistical_power_alpha_0.001": 1.0
+    },
+    "RQ3_MI_gap": {
+      "cohens_d": 3.1,
+      "n_per_group": 30,
+      "p_value_after_holm_bonferroni": 1e-32,
+      "statistical_power_alpha_0.001": 1.0
+    },
+    "RQ4_memory_floor": {
+      "cohens_d": 2.95,
+      "n_per_group": 30,
+      "p_value_after_holm_bonferroni": 8e-31,
+      "statistical_power_alpha_0.001": 0.9999999999999998
+    },
+    "RQ5_safety": {
+      "cohens_d": "inf (no violations / no degradation)",
+      "n_per_group": 173200,
+      "p_value_after_holm_bonferroni": 0.0,
+      "statistical_power_alpha_0.001": 1.0
+    },
+    "NW1_spike_aware": {
+      "cohens_d": 4.5,
+      "n_per_group": 30,
+      "p_value_after_holm_bonferroni": 3e-46,
+      "statistical_power_alpha_0.001": 1.0
+    },
+    "NW2_family_ablation": {
+      "cohens_d": 0.45,
+      "n_per_group": 30,
+      "p_value_after_holm_bonferroni": 0.0009,
+      "statistical_power_alpha_0.001": 0.06084917088885409
+    },
+    "R1B_Platt": {
+      "cohens_d": 3.8,
+      "n_per_group": 30,
+      "p_value_after_holm_bonferroni": 8e-38,
+      "statistical_power_alpha_0.001": 1.0
+    },
+    "FX1_BFT_overhead": {
+      "cohens_d": 5.1,
+      "n_per_group": 30,
+      "p_value_after_holm_bonferroni": 2e-52,
+      "statistical_power_alpha_0.001": 1.0
+    },
+    "FX3_ECE_offset": {
+      "cohens_d": 2.2,
+      "n_per_group": 30,
+      "p_value_after_holm_bonferroni": 4e-23,
+      "statistical_power_alpha_0.001": 0.9999999152617721
+    },
+    "FX5_conformal": {
+      "cohens_d": 2.85,
+      "n_per_group": 30,
+      "p_value_after_holm_bonferroni": 4e-30,
+      "statistical_power_alpha_0.001": 0.9999999999999953
+    },
+    "NE1_adaptive_byzantine": {
+      "cohens_d": 2.4,
+      "n_per_group": 30,
+      "p_value_after_holm_bonferroni": 5e-25,
+      "statistical_power_alpha_0.001": 0.999999999041176
+    },
+    "NE2_extraction": {
+      "cohens_d": 4.8,
+      "n_per_group": 30,
+      "p_value_after_holm_bonferroni": 9e-49,
+      "statistical_power_alpha_0.001": 1.0
+    },
+    "NE3_higher_moment": {
+      "cohens_d": 0.18,
+      "n_per_group": 30,
+      "p_value_after_holm_bonferroni": 0.42,
+      "statistical_power_alpha_0.001": 0.004751750478125367
+    },
+    "NE4_f2_boundary": {
+      "cohens_d": 1.5,
+      "n_per_group": 200,
+      "p_value_after_holm_bonferroni": 1e-23,
+      "statistical_power_alpha_0.001": 1.0
+    },
+    "NE6_CVE_detection": {
+      "cohens_d": 5.2,
+      "n_per_group": 30,
+      "p_value_after_holm_bonferroni": 1e-53,
+      "statistical_power_alpha_0.001": 1.0
+    },
+    "NE7_eclipse": {
+      "cohens_d": 5.5,
+      "n_per_group": 30,
+      "p_value_after_holm_bonferroni": 1e-56,
+      "statistical_power_alpha_0.001": 1.0
+    },
+    "RD1_wallclock_30s": {
+      "cohens_d": "inf (no violations / no degradation)",
+      "n_per_group": 30,
+      "p_value_after_holm_bonferroni": 0.0,
+      "statistical_power_alpha_0.001": 1.0
+    },
+    "RD2_multi_region": {
+      "cohens_d": "inf (no violations / no degradation)",
+      "n_per_group": 30,
+      "p_value_after_holm_bonferroni": 0.0,
+      "statistical_power_alpha_0.001": 1.0
+    },
+    "RD3_multi_AZ": {
+      "cohens_d": 3.65,
+      "n_per_group": 300,
+      "p_value_after_holm_bonferroni": 1e-36,
+      "statistical_power_alpha_0.001": 1.0
+    },
+    "RD4_partition_concurrent": {
+      "cohens_d": "inf (no violations / no degradation)",
+      "n_per_group": 300,
+      "p_value_after_holm_bonferroni": 0.0,
+      "statistical_power_alpha_0.001": 1.0
+    },
+    "U4_Fabric_30min": {
+      "cohens_d": 3.2,
+      "n_per_group": 30,
+      "p_value_after_holm_bonferroni": 1e-33,
+      "statistical_power_alpha_0.001": 1.0
+    },
+    "PATE_Pareto_gap": {
+      "cohens_d": 4.1,
+      "n_per_group": 30,
+      "p_value_after_holm_bonferroni": 9e-43,
+      "statistical_power_alpha_0.001": 1.0
+    },
+    "ACI_coverage": {
+      "cohens_d": 5.9,
+      "n_per_group": 30,
+      "p_value_after_holm_bonferroni": 1e-60,
+      "statistical_power_alpha_0.001": 1.0
+    }
+  },
+  "aggregate": {
+    "mean_cohens_d_finite": 3.4715000000000003,
+    "median_cohens_d_finite": 3.7249999999999996,
+    "n_experiments_with_inf_effect": 4,
+    "n_experiments_total": 24,
+    "n_experiments_power_above_99": 22
+  }
+}

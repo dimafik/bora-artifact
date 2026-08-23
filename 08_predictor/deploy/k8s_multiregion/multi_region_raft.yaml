@@ -1,0 +1,91 @@
+# Kubernetes multi-region Raft deployment
+# Deploys across 3 clusters using kubefed (Kubernetes Federation v2)
+# or via per-cluster manifests with shared discovery.
+#
+# Usage (per cluster):
+#   kubectl --context=us-east-1-cluster apply -f multi_region_raft.yaml
+#   kubectl --context=eu-west-1-cluster apply -f multi_region_raft.yaml
+#   kubectl --context=ap-northeast-1-cluster apply -f multi_region_raft.yaml
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: raft-blacklist-config
+data:
+  AI_AUGMENTED: "true"
+  K_FAIL: "3"
+  TAU_R: "0.5"
+  TAU_CONF: "0.7"
+  FAULT_BOUND: "2"
+
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: raft-blacklist
+spec:
+  serviceName: raft-blacklist
+  replicas: 2  # 2 per region for us-east-1/eu-west-1; 1 for ap-northeast-1
+  selector:
+    matchLabels:
+      app: raft-blacklist
+  template:
+    metadata:
+      labels:
+        app: raft-blacklist
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - raft-blacklist
+              topologyKey: failure-domain.beta.kubernetes.io/zone
+      containers:
+        - name: raft-node
+          image: ghcr.io/example/raft-blacklist:v28
+          ports:
+            - containerPort: 6000
+          envFrom:
+            - configMapRef:
+                name: raft-blacklist-config
+          env:
+            - name: NODE_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.labels['statefulset.kubernetes.io/pod-name']
+            - name: REGION
+              valueFrom:
+                configMapKeyRef:
+                  name: raft-region-config
+                  key: REGION
+          resources:
+            requests:
+              cpu: 500m
+              memory: 512Mi
+            limits:
+              cpu: 1
+              memory: 1Gi
+          readinessProbe:
+            tcpSocket:
+              port: 6000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: raft-blacklist
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 6000
+      targetPort: 6000
+  selector:
+    app: raft-blacklist

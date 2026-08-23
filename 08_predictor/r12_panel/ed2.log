@@ -1,0 +1,111 @@
+=== H1b
+    std(dRTT) statistic            -      AUC=0.5567
+    logistic / 40 summary stats    -      AUC=0.7074
+    random forest / summary stats  -      AUC=0.7063
+    k-NN (k=15) / summary stats    -      AUC=0.6725
+    MLP 64-32                      flat/3e-04 ep=21 AUC=0.5863
+    MLP 64-32                      flat/1e-03 ep=12 AUC=0.5907
+    1D-CNN                         mean/3e-04 ep=40 AUC=0.8154
+    1D-CNN                         mean/1e-03 ep=40 AUC=0.8409
+    1D-CNN                         max/3e-04  ep=40 AUC=0.8050
+    1D-CNN                         max/1e-03  ep=34 AUC=0.8274
+    1D-CNN                         attn/3e-04 ep=40 AUC=0.8362
+    1D-CNN                         attn/1e-03 ep=40 AUC=0.8463
+    GRU                            last/3e-04 ep= 7 AUC=0.5034
+    GRU                            last/1e-03 ep=40 AUC=0.8542
+    GRU                            mean/3e-04 ep=40 AUC=0.8380
+    GRU                            mean/1e-03 ep=40 AUC=0.8566
+    GRU                            attn/3e-04 ep=40 AUC=0.8464
+    GRU                            attn/1e-03 ep=40 AUC=0.8588
+    Transformer (ours)             attn/3e-04 ep=40 AUC=0.8451
+    Transformer (ours)             attn/1e-03 ep=27 AUC=0.8371
+  [H1b] 50.1 min
+=== H3:ar1
+    std(dRTT) statistic            -      AUC=0.9990
+    logistic / 40 summary stats    -      AUC=0.6111
+    random forest / summary stats  -      AUC=0.9132
+    k-NN (k=15) / summary stats    -      AUC=0.3962
+    MLP 64-32                      flat/3e-04 ep=40 AUC=0.4302
+    MLP 64-32                      flat/1e-03 ep=40 AUC=0.4604
+    1D-CNN                         mean/3e-04 ep=33 AUC=0.8264
+    1D-CNN                         mean/1e-03 ep=17 AUC=0.7698
+    1D-CNN                         max/3e-04  ep=40 AUC=0.6393
+    1D-CNN                         max/1e-03  ep=40 AUC=0.8507
+    1D-CNN                         attn/3e-04 ep=25 AUC=0.4450
+    1D-CNN                         attn/1e-03 ep=13 AUC=0.5413
+    GRU                            last/3e-04 ep=40 AUC=0.8764
+    GRU                            last/1e-03 ep=18 AUC=0.8216
+    GRU                            mean/3e-04 ep=18 AUC=0.9173
+    GRU                            mean/1e-03 ep=11 AUC=0.9730
+    GRU                            attn/3e-04 ep=32 AUC=0.7355
+    GRU                            attn/1e-03 ep= 9 AUC=0.9548
+    Transformer (ours)             attn/3e-04 ep= 9 AUC=0.6928
+    Transformer (ours)             attn/1e-03 ep= 7 AUC=0.7472
+  [H3:ar1] 20.1 min
+=== H3:burst
+    std(dRTT) statistic            -      AUC=0.0065
+    logistic / 40 summary stats    -      AUC=0.4231
+    random forest / summary stats  -      AUC=0.8107
+    k-NN (k=15) / summary stats    -      AUC=0.7230
+    MLP 64-32                      flat/3e-04 ep=40 AUC=0.3602
+    MLP 64-32                      flat/1e-03 ep=39 AUC=0.2254
+    1D-CNN                         mean/3e-04 ep=15 AUC=0.6492
+    1D-CNN                         mean/1e-03 ep= 9 AUC=0.5284
+    1D-CNN                         max/3e-04  ep=40 AUC=0.7041
+    1D-CNN                         max/1e-03  ep=23 AUC=0.7189
+    1D-CNN                         attn/3e-04 ep=14 AUC=0.6627
+    1D-CNN                         attn/1e-03 ep= 8 AUC=0.6115
+    GRU                            last/3e-04 ep=22 AUC=0.6392
+    GRU                            last/1e-03 ep=12 AUC=0.5347
+    GRU                            mean/3e-04 ep=16 AUC=0.8293
+    GRU                            mean/1e-03 ep= 9 AUC=0.9120
+    GRU                            attn/3e-04 ep=15 AUC=0.7259
+    GRU                            attn/1e-03 ep= 9 AUC=0.8679
+    Transformer (ours)             attn/3e-04 ep=12 AUC=0.8673
+    Transformer (ours)             attn/1e-03 ep=11 AUC=0.9216
+  [H3:burst] 18.8 min
+=== H3:varshift
+    std(dRTT) statistic            -      AUC=0.7515
+    logistic / 40 summary stats    -      AUC=0.7395
+    random forest / summary stats  -      AUC=0.7568
+    k-NN (k=15) / summary stats    -      AUC=0.6074
+    MLP 64-32                      flat/3e-04 ep=40 AUC=0.7194
+    MLP 64-32                      flat/1e-03 ep=39 AUC=0.7467
+    1D-CNN                         mean/3e-04 ep=21 AUC=0.9473
+    1D-CNN                         mean/1e-03 ep=10 AUC=0.9038
+    1D-CNN                         max/3e-04  ep=33 AUC=0.6025
+    1D-CNN                         max/1e-03  ep=18 AUC=0.5761
+    1D-CNN                         attn/3e-04 ep=24 AUC=0.9821
+    1D-CNN                         attn/1e-03 ep=12 AUC=0.9248
+    GRU                            last/3e-04 ep=13 AUC=0.7189
+    GRU                            last/1e-03 ep=15 AUC=0.7679
+    GRU                            mean/3e-04 ep=23 AUC=0.9976
+    GRU                            mean/1e-03 ep=18 AUC=0.9958
+    GRU                            attn/3e-04 ep=24 AUC=0.9943
+    GRU                            attn/1e-03 ep=10 AUC=0.9923
+    Transformer (ours)             attn/3e-04 ep= 9 AUC=0.7167
+    Transformer (ours)             attn/1e-03 ep= 8 AUC=0.6643
+  [H3:varshift] 17.1 min
+=== H3:heavytail
+    std(dRTT) statistic            -      AUC=0.9045
+    logistic / 40 summary stats    -      AUC=0.9948
+    random forest / summary stats  -      AUC=0.9938
+    k-NN (k=15) / summary stats    -      AUC=0.9727
+    MLP 64-32                      flat/3e-04 ep=25 AUC=0.7367
+    MLP 64-32                      flat/1e-03 ep=21 AUC=0.7280
+    1D-CNN                         mean/3e-04 ep=32 AUC=1.0000
+    1D-CNN                         mean/1e-03 ep=19 AUC=1.0000
+    1D-CNN                         max/3e-04  ep=40 AUC=0.8065
+    1D-CNN                         max/1e-03  ep=26 AUC=0.8566
+    1D-CNN                         attn/3e-04 ep=40 AUC=0.9726
+    1D-CNN                         attn/1e-03 ep=35 AUC=0.9999
+    GRU                            last/3e-04 ep=34 AUC=0.8788
+    GRU                            last/1e-03 ep=25 AUC=0.8177
+    GRU                            mean/3e-04 ep=31 AUC=0.9727
+    GRU                            mean/1e-03 ep=18 AUC=0.9970
+    GRU                            attn/3e-04 ep=33 AUC=0.9409
+    GRU                            attn/1e-03 ep=13 AUC=0.9946
+    Transformer (ours)             attn/3e-04 ep=17 AUC=0.9951
+    Transformer (ours)             attn/1e-03 ep=16 AUC=0.9881
+  [H3:heavytail] 28.9 min
+done

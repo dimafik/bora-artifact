@@ -1,0 +1,10 @@
+arm,seed,elections,target_reacquired,seat_attempts,demotions,leaderless_s,target_tenure_s,liveness_fail,repaired,safety_viol
+A,1,5,1,13,0,12,18,0,0,0
+C,1,5,0,8,0,10,8,0,0,0
+D,1,5,0,3,1,16,4,0,0,0
+A,2,5,1,1,0,8,18,0,0,0
+C,2,5,0,8,0,12,8,0,0,0
+D,2,5,1,1,1,10,6,0,0,0
+A,3,5,0,4,0,12,8,0,0,0
+C,3,5,0,2,0,10,8,0,0,0
+D,3,5,1,9,1,8,6,0,0,0

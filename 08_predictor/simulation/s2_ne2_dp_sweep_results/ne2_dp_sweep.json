@@ -1,0 +1,50 @@
+[
+  {
+    "epsilon": "no_defense",
+    "cos_sim_mean": 0.9994868388348853,
+    "cos_sim_std": 0.0005219545619433905,
+    "n_trials": 30
+  },
+  {
+    "epsilon": 0.01,
+    "cos_sim_mean": 0.03926596680820251,
+    "cos_sim_std": 0.4678913140691865,
+    "n_trials": 30
+  },
+  {
+    "epsilon": 0.05,
+    "cos_sim_mean": 0.2979393125600217,
+    "cos_sim_std": 0.460845670090083,
+    "n_trials": 30
+  },
+  {
+    "epsilon": 0.1,
+    "cos_sim_mean": 0.46012019503574525,
+    "cos_sim_std": 0.39111135454454915,
+    "n_trials": 30
+  },
+  {
+    "epsilon": 0.5,
+    "cos_sim_mean": 0.9154875907812975,
+    "cos_sim_std": 0.08101760534938479,
+    "n_trials": 30
+  },
+  {
+    "epsilon": 1.0,
+    "cos_sim_mean": 0.9693720679860157,
+    "cos_sim_std": 0.03445017908943812,
+    "n_trials": 30
+  },
+  {
+    "epsilon": 2.0,
+    "cos_sim_mean": 0.9899069845415462,
+    "cos_sim_std": 0.007028827870208505,
+    "n_trials": 30
+  },
+  {
+    "epsilon": 5.0,
+    "cos_sim_mean": 0.9980853593153981,
+    "cos_sim_std": 0.001304261133798156,
+    "n_trials": 30
+  }
+]

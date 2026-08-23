@@ -1,0 +1,20 @@
+
+[Transformer (ours, retrained) 를 겨냥한 공격, rho=0]  ac=0.06 mean=8.00 std=3.00 feasible=100%
+   std(dRTT) statistic              AUC=0.5700
+   logistic / 40 summary stats      AUC=0.5512
+   MLP 64-32 / raw window           AUC=0.5733
+   1D-CNN                           AUC=0.6816
+   GRU                              AUC=0.5032
+   Transformer (ours, retrained)    AUC=0.0027
+   random forest / summary stats    AUC=0.5116
+   k-NN (k=15) / summary stats      AUC=0.5000
+
+[logistic / 40 summary stats 를 겨냥한 공격, rho=0]  ac=0.00 mean=8.00 std=3.00 feasible=100%
+   std(dRTT) statistic              AUC=0.9977
+   logistic / 40 summary stats      AUC=0.4145
+   MLP 64-32 / raw window           AUC=0.8023
+   1D-CNN                           AUC=0.8727
+   GRU                              AUC=0.8434
+   Transformer (ours, retrained)    AUC=0.9224
+   random forest / summary stats    AUC=0.9997
+   k-NN (k=15) / summary stats      AUC=0.5025

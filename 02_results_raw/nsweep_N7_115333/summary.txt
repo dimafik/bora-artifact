@@ -1,0 +1,2 @@
+  N=7 base s1: o3 0/10 live 0/10
+  N=7 BORA s1: o3 0/10 live 0/10

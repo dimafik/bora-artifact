@@ -1,0 +1,5 @@
+idx,leader_before,leader_after,fp_node,live,time_to_leader_s,fp_delivered,advice_seen_on
+1,-,-,-,-,-,-,noleader
+2,6,5,-,1,4,0,n1:{"blacklist":[3];"seq":1;"fail_open":false}
+3,-,-,-,-,-,-,noleader
+4,6,7,4,1,4,1,n1:{"blacklist":[3;4];"seq":1;"fail_open":false}

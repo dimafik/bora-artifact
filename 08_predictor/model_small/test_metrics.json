@@ -1,0 +1,9 @@
+{
+  "score_rmse_30s": 0.13613858819007874,
+  "score_rmse_60s": 0.17668291926383972,
+  "score_rmse_90s": 0.19263231754302979,
+  "anom_auc": 0.9938271641731262,
+  "anom_pos_rate": 0.10000000149011612,
+  "degrade_auc": NaN,
+  "degrade_pos_rate": 0.0
+}

@@ -1,0 +1,10 @@
+[0] ensure v3 sidecars + advice empty
+[1] start in-network RTT probe
+[2] start advice pusher
+[3] baseline 14s (no attack; expect Bt empty)
+ATTACK_ONSET_T0=1781166010.661344533
+[4] hold attack 50s (predictor should flag o3)
+ATTACK_STOP_T1=1781166060.930663452
+[5] recovery 20s (predictor should clear o3)
+[6] stop
+ML_DETECT_DONE OUT=/mnt/d/fabric-d2/results/mldetect_20260611-171955

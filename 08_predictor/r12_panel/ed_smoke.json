@@ -1,0 +1,254 @@
+{
+ "H1": [
+  {
+   "name": "std(dRTT) statistic",
+   "params": 0,
+   "auc": 0.5631
+  },
+  {
+   "name": "logistic / 40 summary stats",
+   "params": 41,
+   "auc": 0.6877
+  },
+  {
+   "name": "random forest / summary stats",
+   "params": 96734,
+   "auc": 0.6604
+  },
+  {
+   "name": "k-NN (k=15) / summary stats",
+   "params": 1200,
+   "auc": 0.6187
+  },
+  {
+   "name": "MLP 64-32",
+   "params": 32897,
+   "auc": 0.5027
+  },
+  {
+   "name": "1D-CNN",
+   "params": 1969,
+   "auc": 0.5485
+  },
+  {
+   "name": "GRU",
+   "params": 2473,
+   "auc": 0.6092
+  },
+  {
+   "name": "Transformer (ours)",
+   "params": 141067,
+   "auc": 0.4973
+  }
+ ],
+ "H2": [
+  {
+   "name": "std(dRTT) statistic",
+   "params": 0,
+   "auc": 0.6599
+  },
+  {
+   "name": "logistic / 40 summary stats",
+   "params": 41,
+   "auc": 0.9639
+  },
+  {
+   "name": "random forest / summary stats",
+   "params": 35780,
+   "auc": 0.9764
+  },
+  {
+   "name": "k-NN (k=15) / summary stats",
+   "params": 1200,
+   "auc": 0.9599
+  },
+  {
+   "name": "MLP 64-32",
+   "params": 32897,
+   "auc": 0.7807
+  },
+  {
+   "name": "1D-CNN",
+   "params": 1969,
+   "auc": 0.8838
+  },
+  {
+   "name": "GRU",
+   "params": 2473,
+   "auc": 0.5511
+  },
+  {
+   "name": "Transformer (ours)",
+   "params": 141067,
+   "auc": 0.7795
+  }
+ ],
+ "H3_holdout_ar1": [
+  {
+   "name": "std(dRTT) statistic",
+   "params": 0,
+   "auc": 0.9991
+  },
+  {
+   "name": "logistic / 40 summary stats",
+   "params": 41,
+   "auc": 0.2305
+  },
+  {
+   "name": "random forest / summary stats",
+   "params": 40666,
+   "auc": 0.8627
+  },
+  {
+   "name": "k-NN (k=15) / summary stats",
+   "params": 1200,
+   "auc": 0.3984
+  },
+  {
+   "name": "MLP 64-32",
+   "params": 32897,
+   "auc": 0.2934
+  },
+  {
+   "name": "1D-CNN",
+   "params": 1969,
+   "auc": 0.3236
+  },
+  {
+   "name": "GRU",
+   "params": 2473,
+   "auc": 0.5143
+  },
+  {
+   "name": "Transformer (ours)",
+   "params": 141067,
+   "auc": 0.4618
+  }
+ ],
+ "H3_holdout_burst": [
+  {
+   "name": "std(dRTT) statistic",
+   "params": 0,
+   "auc": 0.0061
+  },
+  {
+   "name": "logistic / 40 summary stats",
+   "params": 41,
+   "auc": 0.4798
+  },
+  {
+   "name": "random forest / summary stats",
+   "params": 39944,
+   "auc": 0.8722
+  },
+  {
+   "name": "k-NN (k=15) / summary stats",
+   "params": 1200,
+   "auc": 0.7966
+  },
+  {
+   "name": "MLP 64-32",
+   "params": 32897,
+   "auc": 0.199
+  },
+  {
+   "name": "1D-CNN",
+   "params": 1969,
+   "auc": 0.7741
+  },
+  {
+   "name": "GRU",
+   "params": 2473,
+   "auc": 0.3807
+  },
+  {
+   "name": "Transformer (ours)",
+   "params": 141067,
+   "auc": 0.8784
+  }
+ ],
+ "H3_holdout_varshift": [
+  {
+   "name": "std(dRTT) statistic",
+   "params": 0,
+   "auc": 0.7467
+  },
+  {
+   "name": "logistic / 40 summary stats",
+   "params": 41,
+   "auc": 0.7076
+  },
+  {
+   "name": "random forest / summary stats",
+   "params": 11602,
+   "auc": 0.7491
+  },
+  {
+   "name": "k-NN (k=15) / summary stats",
+   "params": 1200,
+   "auc": 0.6238
+  },
+  {
+   "name": "MLP 64-32",
+   "params": 32897,
+   "auc": 0.4568
+  },
+  {
+   "name": "1D-CNN",
+   "params": 1969,
+   "auc": 0.5888
+  },
+  {
+   "name": "GRU",
+   "params": 2473,
+   "auc": 0.3731
+  },
+  {
+   "name": "Transformer (ours)",
+   "params": 141067,
+   "auc": 0.5209
+  }
+ ],
+ "H3_holdout_heavytail": [
+  {
+   "name": "std(dRTT) statistic",
+   "params": 0,
+   "auc": 0.9135
+  },
+  {
+   "name": "logistic / 40 summary stats",
+   "params": 41,
+   "auc": 0.9993
+  },
+  {
+   "name": "random forest / summary stats",
+   "params": 40028,
+   "auc": 0.9861
+  },
+  {
+   "name": "k-NN (k=15) / summary stats",
+   "params": 1200,
+   "auc": 0.9046
+  },
+  {
+   "name": "MLP 64-32",
+   "params": 32897,
+   "auc": 0.4599
+  },
+  {
+   "name": "1D-CNN",
+   "params": 1969,
+   "auc": 0.8333
+  },
+  {
+   "name": "GRU",
+   "params": 2473,
+   "auc": 0.5205
+  },
+  {
+   "name": "Transformer (ours)",
+   "params": 141067,
+   "auc": 0.8371
+  }
+ ]
+}

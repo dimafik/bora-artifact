@@ -1,0 +1,37 @@
+[
+ {
+  "rel": "per-node",
+  "lr": 0.0003,
+  "top1": 0.253,
+  "shuffled": 0.253,
+  "params": 7553
+ },
+ {
+  "rel": "mean-dev",
+  "lr": 0.0003,
+  "top1": 0.711,
+  "shuffled": 0.711,
+  "params": 7553
+ },
+ {
+  "rel": "conv2d",
+  "lr": 0.001,
+  "top1": 0.2295,
+  "shuffled": 0.221,
+  "params": 10657
+ },
+ {
+  "rel": "gru-nodes",
+  "lr": 0.001,
+  "top1": 0.191,
+  "shuffled": 0.1915,
+  "params": 12353
+ },
+ {
+  "rel": "attention",
+  "lr": 0.0003,
+  "top1": 0.248,
+  "shuffled": 0.248,
+  "params": 11777
+ }
+]

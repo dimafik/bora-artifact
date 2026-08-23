@@ -1,0 +1,88 @@
+===== N=5 bring-up =====
+generated crypto-config-orderer-5node.yaml, configtx-5node.yaml, 5node-raft.yaml for N=5 (orderers orderer.example.com, orderer2.example.com, orderer3.example.com, orderer4.example.com, orderer5.example.com)
+org1.example.com
+org2.example.com
+orderers: 5
+[34m2026-08-10 23:15:57.341 KST 0007 INFO[0m [common.tools.configtxgen] [34;1mdoOutputBlock[0m -> Writing genesis block
+ Container orderer.example.com  Started
+ Container orderer3.example.com  Started
+containers up: 5 orderers
+===== channel join (5 orderers + 2 peers) =====
+  orderer1: Status: 201
+  orderer2: Status: 201
+  orderer3: Status: 201
+  orderer4: Status: 201
+  orderer5: Status: 201
+  orderers on channel: 5/5
+===== deploy BORA v4 binary + sidecar to 5 orderers =====
+  sidecars: 5/5
+[0;34mUsing docker and docker-compose[0m
+[0;34mdeploying chaincode on channel 'mychannel'[0m
+executing with the following
+- CHANNEL_NAME: [0;32mmychannel[0m
+- CC_NAME: [0;32mbasic[0m
+- CC_SRC_PATH: [0;32m../asset-transfer-basic/chaincode-go[0m
+- CC_SRC_LANGUAGE: [0;32mgo[0m
+- CC_VERSION: [0;32m1.0[0m
+- CC_SEQUENCE: [0;32mauto[0m
+- CC_END_POLICY: [0;32mNA[0m
+- CC_COLL_CONFIG: [0;32mNA[0m
+- CC_INIT_FCN: [0;32mNA[0m
+- DELAY: [0;32m3[0m
+- MAX_RETRY: [0;32m5[0m
+- VERBOSE: [0;32mfalse[0m
+executing with the following
+- CC_NAME: [0;32mbasic[0m
+- CC_SRC_PATH: [0;32m../asset-transfer-basic/chaincode-go[0m
+- CC_SRC_LANGUAGE: [0;32mgo[0m
+- CC_VERSION: [0;32m1.0[0m
+[0;34mVendoring Go dependencies at ../asset-transfer-basic/chaincode-go[0m
+/mnt/d/fabric-d2/fabric-samples/asset-transfer-basic/chaincode-go /mnt/d/fabric-d2/fabric-samples/test-network
+./scripts/packageCC.sh: line 44: go: command not found
+/mnt/d/fabric-d2/fabric-samples/test-network
+[0;32mFinished vendoring Go dependencies[0m
++ '[' false = true ']'
++ peer lifecycle chaincode package basic.tar.gz --path ../asset-transfer-basic/chaincode-go --lang golang --label basic_1.0
++ res=1
+Error: failed to normalize chaincode path: failed to determine module root: exec: "go": executable file not found in $PATH
+[0;31mChaincode packaging has failed[0m
+[0;34mInstalling chaincode on peer0.org1...[0m
+[0;34mUsing organization 1[0m
++ peer lifecycle chaincode queryinstalled --output json
++ grep '^basic_1.0:13b2ab298d7e25467d5090992f1ad97df0ecaf0556835ee0014e86680b01b397$'
++ jq -r 'try (.installed_chaincodes[].package_id)'
++ test 1 -ne 0
++ peer lifecycle chaincode install basic.tar.gz
++ res=0
+[34m2026-08-10 23:17:31.616 KST 0001 INFO[0m [cli.lifecycle.chaincode] [34;1msubmitInstallProposal[0m -> Installed remotely: response:<status:200 payload:"\nJbasic_1.0:13b2ab298d7e25467d5090992f1ad97df0ecaf0556835ee0014e86680b01b397\022\tbasic_1.0" > 
+[34m2026-08-10 23:17:31.617 KST 0002 INFO[0m [cli.lifecycle.chaincode] [34;1msubmitInstallProposal[0m -> Chaincode code package identifier: basic_1.0:13b2ab298d7e25467d5090992f1ad97df0ecaf0556835ee0014e86680b01b397
+[0;32mChaincode is installed on peer0.org1[0m
+[0;34mInstall chaincode on peer0.org2...[0m
+[0;34mUsing organization 2[0m
++ peer lifecycle chaincode queryinstalled --output json
++ jq -r 'try (.installed_chaincodes[].package_id)'
++ grep '^basic_1.0:13b2ab298d7e25467d5090992f1ad97df0ecaf0556835ee0014e86680b01b397$'
++ test 1 -ne 0
++ peer lifecycle chaincode install basic.tar.gz
++ res=0
+[34m2026-08-10 23:17:32.338 KST 0001 INFO[0m [cli.lifecycle.chaincode] [34;1msubmitInstallProposal[0m -> Installed remotely: response:<status:200 payload:"\nJbasic_1.0:13b2ab298d7e25467d5090992f1ad97df0ecaf0556835ee0014e86680b01b397\022\tbasic_1.0" > 
+[34m2026-08-10 23:17:32.339 KST 0002 INFO[0m [cli.lifecycle.chaincode] [34;1msubmitInstallProposal[0m -> Chaincode code package identifier: basic_1.0:13b2ab298d7e25467d5090992f1ad97df0ecaf0556835ee0014e86680b01b397
+[0;32mChaincode is installed on peer0.org2[0m
+++ peer lifecycle chaincode querycommitted --channelID mychannel --name basic
+++ sed -n '/Version:/{s/.*Sequence: //; s/, Endorsement Plugin:.*$//; p;}'
+Error: query failed with status: 500 - channel 'mychannel' not found
++ COMMITTED_CC_SEQUENCE=
++ res=0
+[0;34mUsing organization 1[0m
++ peer lifecycle chaincode queryinstalled --output json
++ jq -r 'try (.installed_chaincodes[].package_id)'
++ grep '^basic_1.0:13b2ab298d7e25467d5090992f1ad97df0ecaf0556835ee0014e86680b01b397$'
++ res=0
+basic_1.0:13b2ab298d7e25467d5090992f1ad97df0ecaf0556835ee0014e86680b01b397
+[0;32mQuery installed successful on peer0.org1 on channel[0m
+[0;34mUsing organization 1[0m
++ peer lifecycle chaincode approveformyorg -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile /mnt/d/fabric-d2/fabric-samples/test-network/organizations/ordererOrganizations/example.com/tlsca/tlsca.example.com-cert.pem --channelID mychannel --name basic --version 1.0 --package-id basic_1.0:13b2ab298d7e25467d5090992f1ad97df0ecaf0556835ee0014e86680b01b397 --sequence 1
++ res=1
+Error: proposal failed with status: 500 - channel 'mychannel' not found
+[0;31mChaincode definition approved on peer0.org1 on channel 'mychannel' failed[0m
+[0;31mDeploying chaincode failed[0m

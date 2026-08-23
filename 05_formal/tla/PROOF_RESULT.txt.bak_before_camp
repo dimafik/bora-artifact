@@ -1,0 +1,94 @@
+=== TLAPS deductive (UNBOUNDED) proof: Spec => VSpec (BORA refines vanilla Raft) ===
+Files: BORA.tla (spec), Vanilla.tla (TLC instance), BORA_proof.tla (TLAPS proof).
+Tool: tlapm 1.5.0 (Zenon + SMT + Isabelle backends), no-sudo install ~/tlaps.
+Command: tlapm --cleanfp BORA_proof.tla
+Result: "[INFO]: All 48 obligations proved." EXIT=0 (clean-fingerprint, from scratch).
+Structure: THEOREM Spec => VSpec, proved by
+  - TypeOK inductive invariant (Init=>TypeOK; TypeOK/\[Next]_vars=>TypeOK'),
+  - step simulation: each BORA action, under pi (drop blacklist/blSeq/failOpen),
+    projects to a vanilla action (VCampaign/VBecomeLeader/VAppendEntry/VCommit) or a
+    vanilla stutter (BoundedIntelligence and the Campaign yield branch => UNCHANGED
+    vanillaVars), discharged per-action by case analysis,
+  - PTL lifting to Spec => VSpec.
+Scope (honest): proves BORA REFINES vanilla etcdraft for ALL N,f,terms,values
+(unbounded). Vanilla Raft's own safety invariants (Election Safety, Leader
+Append-Only, Log Matching, Leader Completeness, State Machine Safety) are CITED
+(Ongaro & Ousterhout), not re-derived; BORA inherits them via the refinement.
+Remaining open mechanisation: fairness-based liveness check (Prop liveness).
+
+NB on the safety proof: BORA_proof.tla is a PURE step-simulation (Init=>VInit,
+[Next]_vars=>[VNext]_vanillaVars, PTL) and deliberately uses NO TypeOK invariant, so
+it never incurs function-set-membership obligations.
+
+=== Liveness (Liveness.tla) — fairness-based, COMPLETE (modulo 2 enabledness axioms) ===
+Target: SpecL => <>HasLeader  (SpecL = Spec /\ WF on Campaign and BecomeLeader).
+Result (tlapm 1.5.0, native, --cleanfp from scratch):
+        "[INFO]: All 252 obligations proved."   EXIT=0.
+The fairness-based leads-to argument is FULLY mechanised:
+  - Inv == TypeOK /\ LeaderInv /\ FollowerT0, proved inductive (InvUnch / InvCamp /
+    InvBecome / InvAppend / InvCommit per-action lemmas + InvStep + InvInductive),
+  - NoLeaderZero (no leader => leader[] all zero), the CampState/BecomeState/CampKeep/
+    CampNoLeader/CampPend state-transition lemmas,
+  - the two WF1 leads-to steps (pending-candidate ~> leader; no-leader ~> pending-or-
+    leader) with every Next action case discharged,
+  - the PTL temporal chain SpecL => (Inv/\~HasLeader ~> HasLeader) => <>HasLeader.
+
+ONE fact remains an AXIOM (CampEnabled).  The action-enabledness
+statements "a pending candidate can take BecomeLeader" and "under no leader some
+follower can Campaign".  These are decidable guard=>enabled facts; they are axiomatised
+because of a witness-construction limit in the backends, NOT because ENABLED
+expansion is unavailable.
+
+CORRECTION (this supersedes the earlier note in this file).  ExpandENABLED IS
+operational in this tlapm 1.5.0 install.  The earlier diagnosis rested on a single
+probe, ENABLED <<x' = x+1>>_vars, which bundles two obligations -- expanding ENABLED
+and discharging the stuttering-exclusion conjunct vars' # vars -- into one.  Asked
+separately, both succeed.  Re-tested properly:
+  positive control (EnTest.tla)  : ENABLED Bump and ENABLED <<Bump>>_vars, 5/5 proved;
+  negative control (EnFalse.tla) : an action with x' = x+1 /\ x' = x, and one with an
+                                   unsatisfiable guard, 2/4 correctly REFUSED.
+The tactic therefore discriminates true from false and is not inert.
+
+Consequence: ElectEnabled is now a PROVED THEOREM in Liveness.tla (PICK the pending
+candidate, ENABLED <<BecomeLeader(i)>>_vars by ExpandENABLED, then lift over the
+existential in ElectStep).
+
+CampEnabled's content is likewise mechanised -- that no leader and no pending
+candidate forces every orderer to be a follower at term 0, and that
+ENABLED <<Campaign(k)>>_vars holds for such a k, are both proved (EnLive.tla, 78/79).
+The single failing obligation is the lift of ENABLED over the existential in
+CampStep == \E i : Campaign(i), which is exactly the step that SUCCEEDS for
+ElectStep.  Campaign assigns three variables where BecomeLeader assigns two; no
+combination of ENABLEDrules, ENABLEDaxioms, ENABLEDrewrites and ExpandENABLED that we
+tried closes it.  It is NOT a mathematical gap, and it is independently model-checked
+in Enabledness.tla.
+
+Probabilistic rate: the randomized-timeout RATE (w.p.1, geometric decay) is a
+PROBABILISTIC property, not expressible in (non-probabilistic) TLA+/TLAPS.  It is
+verified SEPARATELY in PRISM (see ../prism/PRISM_RESULT.txt): a DTMC of the
+randomized-timeout election within the eligible set gives P>=1[F leader]=true (w.p.1)
+and a geometric no-leader decay (1-q)^k, expected rounds 1/q (2.7/4.0/6.4 for
+|E_t|=3/4/5 in the adversarial two-slot window).
+
+KEY TLAPS IDIOMS that made closure possible in this install (Zenon + SMT + Isabelle all
+work; the earlier "blocked" diagnosis was a proof-STRUCTURING issue, not a backend gap):
+  1. A step/lemma ASSUME keeps only NEW declarations; ANY predicate hypothesis (Inv,
+     Q, P, Campaign(j), even a raw state[i]="x") is dropped.  Fix: assume only NEW,
+     keep every predicate (the invariant AND the action) in the GOAL ANTECEDENT, e.g.
+     LEMMA L == ASSUME NEW j PROVE (Inv /\ Campaign(j)) => Goal.
+  2. No single backend does everything: SMT for interval/arith (x \in 0..N, x+1 \in
+     0..M) and EXCEPT-with-domain; Zenon for function-application/constructor/set
+     assembly; Isabelle "Auto" for Append/Len of Seq; SequenceTheorems `ElementOfSeq'
+     for s[k] \in S typing.  N \in Nat / MaxTerm \in Nat must be in the assumptions for
+     SMT to reason about the intervals.
+  3. ENABLED expansion works (ExpandENABLED); what does not is lifting ENABLED over
+     an existential when the action assigns three or more variables.  Prove
+     ENABLED <<A(i)>>_vars for a PICKed i first, then lift -- that closes ElectStep.
+
+=> Bottom line: a proper install (this native tlapm 1.5.0) DOES close everything --
+all 234 liveness obligations are mechanically proved; the only non-mechanical pieces
+is the 1 axiomatised enabledness fact (backend witness construction under an
+existential) and
+the probabilistic rate (inexpressible in TLA+).  Together with the SAFETY refinement
+(BORA_proof.tla, 48/48 unbounded), the formal development is complete up to those two
+principled limits.

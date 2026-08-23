@@ -1,0 +1,11 @@
+=== B: multi-host ML detection on the live 5-host AWS EC2 cluster ===
+Probe on orderer1 host measured real cross-host TCP-connect RTT to all 5 orderers
+(:7050) over the AWS network; netem 40ms+-10ms injected on orderer3 host ens5 mid-run.
+mean cross-host RTT (ms), baseline vs attack:
+  orderer1: 0.367 -> 0.239
+  orderer2: 0.349 -> 0.371
+  orderer3: 0.353 -> 38.335   <-- attacked orderer, clean 108x separation
+  orderer4: 0.316 -> 0.362
+  orderer5: 0.502 -> 0.357
+=> on real multi-host telemetry the attacked orderer separates cleanly; detection
+   plumbing works cross-host (not only the single-host RTT-shift).

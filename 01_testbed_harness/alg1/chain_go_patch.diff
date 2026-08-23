@@ -1,0 +1,65 @@
+--- a/orderer/consensus/etcdraft/chain.go
++++ b/orderer/consensus/etcdraft/chain.go
+@@ -28,6 +28,8 @@ package etcdraft
+
+ import (
+ 	"context"
++	"encoding/json"
++	"net"
+ 	"fmt"
+ 	"sync"
+ 	"sync/atomic"
+@@ -1568,3 +1570,40 @@ func (c *Chain) detectSelfID(consenters map[uint64]*etcdraft.Consenter) error {
+ 	c.logger.Panicf("Failed to detect own Raft ID because no matching certificate found")
+ 	return errors.New("invalid configuration")
+ }
++
++// shouldYieldElection consults the BORA sidecar advisor over a
++// Unix-domain socket. Returns true iff this orderer's raftID is in
++// the current B_t blacklist and BORA is not in fail-open mode.
++// Fail-open semantics: socket unreachable, malformed response,
++// stale sequence number, or explicit fail_open flag => return false.
++func (c *Chain) shouldYieldElection() bool {
++	conn, err := net.DialTimeout("unix", "/var/run/raft-advisor.sock", 50*time.Millisecond)
++	if err != nil {
++		return false
++	}
++	defer conn.Close()
++	conn.SetReadDeadline(time.Now().Add(50 * time.Millisecond))
++	var advice struct {
++		Blacklist []uint64 `json:"blacklist"`
++		Seq       uint64   `json:"seq"`
++		FailOpen  bool     `json:"fail_open"`
++	}
++	if err := json.NewDecoder(conn).Decode(&advice); err != nil {
++		return false
++	}
++	if advice.FailOpen {
++		return false
++	}
++	if advice.Seq <= atomic.LoadUint64(&c.lastBoraSeq) {
++		return false
++	}
++	atomic.StoreUint64(&c.lastBoraSeq, advice.Seq)
++	for _, id := range advice.Blacklist {
++		if id == c.raftID {
++			return true
++		}
++	}
++	return false
++}
+--- a/orderer/consensus/etcdraft/node.go
++++ b/orderer/consensus/etcdraft/node.go
+@@ -132,6 +132,12 @@ func (n *node) start(fresh, join bool) {
+ 			// `RecentActive` attributes
+ 			// are not reset yet.
+ 			status := n.Status()
++			// BORA: if this orderer is in B_t and not leader, suppress
++			// the tick so the election timer effectively resets. Leaders
++			// always tick so heartbeats keep flowing.
++			if status.RaftState != raft.StateLeader && n.chain.shouldYieldElection() {
++				continue
++			}
+
+ 			n.Tick()
+ 			n.tracker.Check(&status)

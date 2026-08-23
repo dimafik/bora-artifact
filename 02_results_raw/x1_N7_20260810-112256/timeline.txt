@@ -1,0 +1,25 @@
+X1 closed loop: N=7 f=3 cap=1 m=1 targets=[3] chance=16.7%
+seeds=4 elec=10 delay=200ms
+budget: ~18s/election, attack window 62m
+===== N=7 bring-up =====
+generated crypto-config-orderer-7node.yaml, configtx-7node.yaml, 7node-raft.yaml for N=7 (orderers orderer.example.com, orderer2.example.com, orderer3.example.com, orderer4.example.com, orderer5.example.com, orderer6.example.com, orderer7.example.com)
+org1.example.com
+org2.example.com
+orderers: 7
+[34m2026-08-10 11:23:01.819 KST 0007 INFO[0m [common.tools.configtxgen] [34;1mdoOutputBlock[0m -> Writing genesis block
+ Container orderer2.example.com  Started
+ Container orderer7.example.com  Started
+containers up: 11 orderers
+===== channel join (7 orderers + 2 peers) =====
+  orderer1: Status: 201
+  orderer2: Status: 201
+  orderer3: Status: 201
+  orderer4: Status: 201
+  orderer5: Status: 201
+  orderer6: Status: 201
+  orderer7: Status: 201
+  orderers on channel: 7/7
+===== deploy BORA v4 binary + sidecar to 7 orderers =====
+  sidecars: 7/7
+ATTACK_ONSET=1786328690.287089415 targets=[3]
+T_det=1786328693.118931846

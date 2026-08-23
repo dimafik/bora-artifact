@@ -1,0 +1,75 @@
+{
+  "experiment_id": "5node_saturation_refinement_delta",
+  "date_utc": "2026-06-08",
+  "description": "Caliper saturation refinement sweep on 5-orderer Raft, fresh network per seed. Bracketed between η rate-500 (sustained 468 TPS, 50 ms avg lat) and β rate-1000 (453 TPS with 45% commit timeouts). Identifies sustained throughput plateau and the rate above which queue backlog dominates latency.",
+  "fabric_version": "v2.5.10",
+  "caliper_version": "0.6.0",
+  "rates_targeted": [
+    600,
+    700,
+    800,
+    900
+  ],
+  "round_duration_s": 30,
+  "workers_per_round": 8,
+  "n_seeds": 3,
+  "aggregate_results": {
+    "rate-600": {
+      "TPS_mean": 502.97,
+      "TPS_std": 15.97,
+      "avg_lat_s_mean": 5.74,
+      "succ_total": 54024,
+      "fail_total": 0
+    },
+    "rate-700": {
+      "TPS_mean": 517.13,
+      "TPS_std": 16.8,
+      "avg_lat_s_mean": 9.7,
+      "succ_total": 63023,
+      "fail_total": 0
+    },
+    "rate-800": {
+      "TPS_mean": 527.77,
+      "TPS_std": 14.26,
+      "avg_lat_s_mean": 13.48,
+      "succ_total": 72006,
+      "fail_total": 0
+    },
+    "rate-900": {
+      "TPS_mean": 537.07,
+      "TPS_std": 1.31,
+      "avg_lat_s_mean": 16.95,
+      "succ_total": 80960,
+      "fail_total": 0
+    }
+  },
+  "key_findings": {
+    "saturation_plateau_TPS": "503-537 across rate-600 to rate-900 (≈ 7% variation despite 50% increase in send rate) - clear throughput ceiling",
+    "no_commit_failures": "All 270K transactions across 3 seeds × 4 rates committed successfully (0 fails)",
+    "queue_backlog_dominates_latency": "Latency grows nearly linearly: 5.7s (rate-600) → 17.0s (rate-900) as queue accumulates",
+    "max_latency_far_exceeds_avg": "Max latency in seed 1: rate-900 reaches 23.76 s (max) vs 16.81 s (avg)",
+    "saturation_point_identified": "Throughput ceiling on this hardware envelope: ~530 TPS sustained. Anything above creates client-side queue without raising actual blockchain throughput.",
+    "consistency_across_seeds": "TPS std across 3 fresh-bootstrap seeds: 1.31 to 16.80 (mostly within 3%)"
+  },
+  "comparison_to_other_phases": {
+    "vs_eta_rate-500": "η sustained 468 TPS clean → δ rate-600 sustains 503 TPS, +7.4%",
+    "vs_beta_rate-1000": "β rate-1000 had 453 TPS with 45% timeouts → δ shows queue dominates BEFORE failures",
+    "interpretation": "The β commit timeouts at rate-1000 are an artifact of Caliper's default 7s commit timeout being exceeded once latency grows past it. The actual blockchain CAN commit them (as δ shows), they just exceed the SDK observer window."
+  },
+  "files": {
+    "report-delta-seed{1-3}.html": "Caliper HTML reports per seed",
+    "caliper-delta-seed{1-3}.log": "Caliper debug logs"
+  },
+  "paper_integration": {
+    "phase_letter": "delta",
+    "paper_table_label": "tab:d2-saturation",
+    "paper_section_or_paragraph": "NE25 saturation refinement",
+    "related_phases": {
+      "eta": "5node_caliper_clean_2026-06-07 (extends eta's rate-100/300/500 to rate-600/700/800/900)",
+      "beta": "5node_caliper_2026-06-07 (reinterprets beta's rate-1000 45% timeouts)",
+      "mu": "5node_extended_conc_2026-06-08 (contrasts SDK 530 TPS ceiling vs native CLI 45 TPS ceiling)",
+      "epsilon": "5node_attack_2026-06-07 (clean baseline for attack-impact normalization)",
+      "kappa": "5node_alg1_2026-06-08 (clean baseline for blacklist-recovery analysis)"
+    }
+  }
+}

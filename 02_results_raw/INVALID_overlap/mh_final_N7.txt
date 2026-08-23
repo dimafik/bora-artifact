@@ -1,0 +1,28 @@
+== N=7  TX=320  C=16  seeds:1 2 3 ==
+-- channel ch7 --
+    orderer5 JOIN PROBLEM: { 	"error": "cannot join: channel already exists" }
+    orderer6 JOIN PROBLEM: { 	"error": "cannot join: channel already exists" }
+    orderer7 JOIN PROBLEM: { 	"error": "cannot join: channel already exists" }
+    org1 joined ch7
+    org2 joined ch7
+  == anchor peers ==
+    org1 ANCHOR FAILED
+    org2 ANCHOR FAILED
+    committed
+    InitLedger status:200
+-- patched binary on orderers 1..7 --
+  sidecars up: 7
+-- E1: clean, advisor idle --
+    advice: {"blacklist":[],"seq":1786530394,"fail_open":false}  seed1 attempted=320 committed=448 blocks=20 height=7->27 tps=9.37084 mean_latency_ms=1707.419 client_cpu_max_pct=52 
+  seed2 attempted=320 committed=400 blocks=20 height=27->47 tps=8.58998 mean_latency_ms=1862.629 client_cpu_max_pct=51 
+  seed3 attempted=320 committed=400 blocks=20 height=47->67 tps=8.54845 mean_latency_ms=1871.679 client_cpu_max_pct=52 
+-- E2: +200ms, advisor idle --
+  orderer1 -> orderer3 RTT: rtt min/avg/max/mdev = 200.156/200.191/200.228/0.025 ms
+    advice: {"blacklist":[],"seq":1786530544,"fail_open":false}  seed1 attempted=320 committed=528 blocks=20 height=67->87 tps=11.3362 mean_latency_ms=1411.404 client_cpu_max_pct=51 
+  seed2 attempted=320 committed=322 blocks=18 height=87->105 tps=3.04335 mean_latency_ms=5257.333 client_cpu_max_pct=51 
+  seed3 attempted=320 committed=235 blocks=15 height=105->120 tps=1.36602 mean_latency_ms=11712.73 client_cpu_max_pct=26 
+-- E3: +200ms, advisor acting --
+    advice: {"blacklist":[3],"seq":1786530874,"fail_open":false}  seed1 attempted=320 committed=608 blocks=20 height=120->140 tps=13.0368 mean_latency_ms=1227.289 client_cpu_max_pct=62 
+  seed2 attempted=320 committed=640 blocks=20 height=141->161 tps=13.7695 mean_latency_ms=1161.980 client_cpu_max_pct=57 
+  seed3 attempted=320 committed=320 blocks=20 height=161->181 tps=6.88768 mean_latency_ms=2322.979 client_cpu_max_pct=57 
+== done: /d/fabric-d2/results/mh_final_N7.txt ==

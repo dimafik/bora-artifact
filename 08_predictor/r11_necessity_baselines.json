@@ -1,0 +1,56 @@
+{
+  "naive": {
+    "best single mean/std feature": {
+      "auc": 1.0,
+      "params": null
+    },
+    "logistic / summary stats (linear)": {
+      "auc": 1.0,
+      "params": null
+    },
+    "gradient boosting / summary stats": {
+      "auc": 1.0,
+      "params": null
+    },
+    "MLP 64-32 / flattened window": {
+      "auc": 1.0,
+      "params": 32800
+    }
+  },
+  "moment_matched": {
+    "best single mean/std feature": {
+      "auc": 0.7409,
+      "params": null
+    },
+    "logistic / summary stats (linear)": {
+      "auc": 0.9814,
+      "params": null
+    },
+    "gradient boosting / summary stats": {
+      "auc": 0.9837,
+      "params": null
+    },
+    "MLP 64-32 / flattened window": {
+      "auc": 0.985,
+      "params": 32800
+    }
+  },
+  "sophisticated": {
+    "best single mean/std feature": {
+      "auc": 0.7409,
+      "params": null
+    },
+    "logistic / summary stats (linear)": {
+      "auc": 0.9814,
+      "params": null
+    },
+    "gradient boosting / summary stats": {
+      "auc": 0.9837,
+      "params": null
+    },
+    "MLP 64-32 / flattened window": {
+      "auc": 0.985,
+      "params": 32800
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "events": 400,
+  "safety_violations": 0,
+  "mean_auc_linear_under_combined_attack": 0.5079397925925926,
+  "std_auc_linear_under_combined_attack": 0.006056165927494407
+}

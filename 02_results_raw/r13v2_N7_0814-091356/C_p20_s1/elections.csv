@@ -1,0 +1,5 @@
+idx,leader_before,leader_after,fp_node,fp_node_won,live,fp_delivered,advice_seen_on
+1,5,0,6,0,0,1,n2:{"blacklist":[3;6];"seq":1;"fail_open":false}
+2,5,0,6,0,0,1,n2:{"blacklist":[3;6];"seq":1;"fail_open":false}
+3,5,0,6,0,0,1,n2:{"blacklist":[3;6];"seq":1;"fail_open":false}
+4,5,0,6,0,0,1,n2:{"blacklist":[3;6];"seq":1;"fail_open":false}

@@ -1,0 +1,120 @@
+{
+  "name": "test-network-org1",
+  "version": "1.0.0",
+  "client": {
+    "organization": "Org1",
+    "connection": {
+      "timeout": {
+        "peer": {
+          "endorser": "300"
+        }
+      }
+    }
+  },
+  "organizations": {
+    "Org1": {
+      "mspid": "Org1MSP",
+      "peers": ["peer0.org1.example.com"],
+      "certificateAuthorities": []
+    }
+  },
+  "orderers": {
+    "orderer.example.com": {
+      "url": "grpcs://host.docker.internal:7050",
+      "tlsCACerts": {
+        "path": "/cryptoMount/ordererOrganizations/example.com/tlsca/tlsca.example.com-cert.pem"
+      },
+      "grpcOptions": {
+        "ssl-target-name-override": "orderer.example.com",
+        "hostnameOverride": "orderer.example.com"
+      }
+    },
+    "orderer2.example.com": {
+      "url": "grpcs://host.docker.internal:8050",
+      "tlsCACerts": {
+        "path": "/cryptoMount/ordererOrganizations/example.com/tlsca/tlsca.example.com-cert.pem"
+      },
+      "grpcOptions": {
+        "ssl-target-name-override": "orderer2.example.com",
+        "hostnameOverride": "orderer2.example.com"
+      }
+    },
+    "orderer3.example.com": {
+      "url": "grpcs://host.docker.internal:10050",
+      "tlsCACerts": {
+        "path": "/cryptoMount/ordererOrganizations/example.com/tlsca/tlsca.example.com-cert.pem"
+      },
+      "grpcOptions": {
+        "ssl-target-name-override": "orderer3.example.com",
+        "hostnameOverride": "orderer3.example.com"
+      }
+    },
+    "orderer4.example.com": {
+      "url": "grpcs://host.docker.internal:11050",
+      "tlsCACerts": {
+        "path": "/cryptoMount/ordererOrganizations/example.com/tlsca/tlsca.example.com-cert.pem"
+      },
+      "grpcOptions": {
+        "ssl-target-name-override": "orderer4.example.com",
+        "hostnameOverride": "orderer4.example.com"
+      }
+    },
+    "orderer5.example.com": {
+      "url": "grpcs://host.docker.internal:12050",
+      "tlsCACerts": {
+        "path": "/cryptoMount/ordererOrganizations/example.com/tlsca/tlsca.example.com-cert.pem"
+      },
+      "grpcOptions": {
+        "ssl-target-name-override": "orderer5.example.com",
+        "hostnameOverride": "orderer5.example.com"
+      }
+    }
+  },
+  "peers": {
+    "peer0.org1.example.com": {
+      "url": "grpcs://host.docker.internal:7051",
+      "tlsCACerts": {
+        "path": "/cryptoMount/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem"
+      },
+      "grpcOptions": {
+        "ssl-target-name-override": "peer0.org1.example.com",
+        "hostnameOverride": "peer0.org1.example.com"
+      }
+    },
+    "peer0.org2.example.com": {
+      "url": "grpcs://host.docker.internal:9051",
+      "tlsCACerts": {
+        "path": "/cryptoMount/peerOrganizations/org2.example.com/tlsca/tlsca.org2.example.com-cert.pem"
+      },
+      "grpcOptions": {
+        "ssl-target-name-override": "peer0.org2.example.com",
+        "hostnameOverride": "peer0.org2.example.com"
+      }
+    }
+  },
+  "channels": {
+    "mychannel": {
+      "orderers": [
+        "orderer.example.com",
+        "orderer2.example.com",
+        "orderer3.example.com",
+        "orderer4.example.com",
+        "orderer5.example.com"
+      ],
+      "peers": {
+        "peer0.org1.example.com": {
+          "endorsingPeer": true,
+          "chaincodeQuery": true,
+          "ledgerQuery": true,
+          "eventSource": true
+        },
+        "peer0.org2.example.com": {
+          "endorsingPeer": true,
+          "chaincodeQuery": true,
+          "ledgerQuery": true,
+          "eventSource": true
+        }
+      }
+    }
+  }
+}

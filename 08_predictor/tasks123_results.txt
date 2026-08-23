@@ -1,0 +1,21 @@
+=== Round "remove honest caveats via real work" — outcomes ===
+TASK 1 (cross-module refinement TLC): SUCCESS, caveat REMOVED.
+  TLC checks Spec => Van!Spec (companion Vanilla module INSTANCEd under pi):
+  "Model checking completed. No error" (66849 states, 7008 distinct, N=5/f=2).
+  => refinement of Theorem 1 now mechanically checked DIRECTLY, not only via
+     per-step invariants. Paper §VI-B upgraded (EN+KO); "open mechanisation step"
+     for refinement removed (liveness mechanisation remains open).
+
+TASK 2 (tighten Wilson via more BORA forced elections): BLOCKED (not done).
+  t3.micro EC2 docker-exec/SSH hangs intermittently in the setup phase under the
+  forced-election orchestration (hundreds of sequential SSH calls). Attempted 3x,
+  stalled before the election loop each time. Existing honest bound retained:
+  0/106 forced elections, Wilson <=9.7%/5.1%. (Not weakened, not improved.)
+
+TASK 3 (parallel throughput to remove "CLI-bound"): DID NOT remove caveat (confirmed it).
+  Valid run (warmup status:200, /etc/hosts repaired). Concurrent sweep:
+    par=1: 6.66 | par=4: 8.11 | par=8: 7.92 | par=12: 7.96 tx/s
+  Throughput plateaus at ~8 tx/s regardless of parallelism => bottleneck is the
+  per-invoke peer-CLI process-spawn overhead, NOT the cluster. The CLI-bound caveat
+  is therefore REAL and stays; cluster saturation throughput (~570 tx/s) remains the
+  single-host Caliper result (an SDK/Caliper client is needed to saturate multi-host).

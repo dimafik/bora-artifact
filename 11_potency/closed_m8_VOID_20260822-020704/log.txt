@@ -1,0 +1,15 @@
+=== closed-loop: scale=m8 N=40 target=orderer3 ===
+  healthy_white      target  0/40  live  0/40  advisors 40/40  Bt∋o3 18/40
+  pgd_rho_0.0        target  0/40  live  0/40  advisors 40/40  Bt∋o3  7/40
+  pgd_rho_0.3        target  0/40  live  0/40  advisors 40/40  Bt∋o3 12/40
+  pgd_rho_0.6        target  0/40  live  0/40  advisors 40/40  Bt∋o3 25/40
+  pgd_rho_0.8        target  0/40  live  0/40  advisors 40/40  Bt∋o3 31/40
+  attack_class_ar1   target  0/40  live  0/40  advisors 40/40  Bt∋o3 36/40
+CLOSED_DONE /d/fabric-d2/results/potency/closed_m8_20260822-020704
+condition,wins,n,liveness,advisor_ok,bt_has_target,n_bt_samples
+healthy_white,0,40,0,40,18,40
+pgd_rho_0.0,0,40,0,40,7,40
+pgd_rho_0.3,0,40,0,40,12,40
+pgd_rho_0.6,0,40,0,40,25,40
+pgd_rho_0.8,0,40,0,40,31,40
+attack_class_ar1,0,40,0,40,36,40

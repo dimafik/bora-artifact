@@ -1,0 +1,103 @@
+{
+  "manifest_version": "1.0",
+  "generated_utc": "2026-06-08",
+  "paper": {
+    "title": "Provably Safe Learning-Augmented Leader Election: Tight Bounds for Permissioned Byzantine Consensus",
+    "venue": "IEEE TNSE Special Issue 'Theoretical Intelligent Blockchain Networks'",
+    "current_version": "v51 (tnse_submission51.{tex,pdf}, tnse_submission51_ko.{tex,pdf})",
+    "section_using_archives": "Section VII.B (D2: Hyperledger Fabric + Caliper, Executed Testbed) and Section VIII.A NE21-NE25 paragraphs"
+  },
+  "experimental_phases_summary": {
+    "alpha": {
+      "name": "1-orderer Raft baseline concurrency sweep",
+      "archive": "1node_raft_baseline_2026-06-07",
+      "n_seeds": 5,
+      "scope": "C=1..16, 20 tx/thread, peer chaincode invoke CLI",
+      "key_result": "TPS 3.80 (C=1) -> 28.98 (C=16), 0 failures",
+      "paper_use": "tab:d2-conc left column"
+    },
+    "gamma": {
+      "name": "5-orderer Raft baseline concurrency sweep",
+      "archive": "5node_raft_2026-06-07",
+      "n_seeds": 5,
+      "scope": "Same C as alpha but on 5-orderer Raft cluster",
+      "key_result": "TPS 3.35 (C=1) -> 27.91 (C=16), within 4-12% of 1-orderer",
+      "paper_use": "tab:d2-conc right column"
+    },
+    "beta": {
+      "name": "Caliper Docker multi-seed sweep (FAILED for seeds 2-5)",
+      "archive": "5node_caliper_2026-06-07",
+      "n_seeds": "1 valid + 4 with cumulative state-DB bottleneck",
+      "scope": "rate-100/500/1000/2000 tx/s, 60s/round",
+      "key_result": "seed 1 sustains 96.9 TPS @ rate-100; reported as honest disclosure",
+      "paper_use": "Honest disclosure paragraph in Caliper section",
+      "superseded_by": [
+        "eta",
+        "delta"
+      ]
+    },
+    "epsilon": {
+      "name": "Pumba orderer-delay attack injection",
+      "archive": "5node_attack_2026-06-07 (valid) + 5node_attack_unreliable_2026-06-07 (void first attempt)",
+      "n_seeds": 3,
+      "scope": "Clean / +200ms / +500ms delay on orderer3, C=1..16",
+      "key_result": "+200ms drops C=16 TPS by 81% (45.19 -> 8.55), p99 inflates 9x",
+      "paper_use": "tab:d2-attack (NE21)"
+    },
+    "eta": {
+      "name": "Caliper clean 5-seed sweep (fresh network/seed)",
+      "archive": "5node_caliper_clean_2026-06-07",
+      "n_seeds": 5,
+      "scope": "rate-100/300/500 tx/s, 30s/round, 8 workers",
+      "key_result": "93.9 / 281.18 / 468.38 TPS sustained, 135,120 tx, 0 failures, std<=0.08 TPS",
+      "paper_use": "tab:d2-caliper"
+    },
+    "kappa": {
+      "name": "Algorithm 1 simulation via orderer3 stop",
+      "archive": "5node_alg1_2026-06-08",
+      "n_seeds": 3,
+      "scope": "Phase A: +200ms attack on orderer3; Phase B: orderer3 stopped",
+      "key_result": "C=16 p99 latency 540 -> 389 ms (-28%); TPS partial recovery only",
+      "paper_use": "tab:d2-alg1 (NE22)"
+    },
+    "iota": {
+      "name": "Raft leader failover time",
+      "archive": "5node_failover_2026-06-08",
+      "n_trials": 3,
+      "scope": "Kill current leader, poll for new-leader election",
+      "key_result": "Failover 1273 / 5585 / 6731 ms (mean 4530 +- 2854 ms)",
+      "paper_use": "NE23 paragraph"
+    },
+    "mu": {
+      "name": "Extended concurrency C=32, 64",
+      "archive": "5node_extended_conc_2026-06-08",
+      "n_seeds": 3,
+      "scope": "C=1,4,16,32,64 native peer chaincode invoke CLI",
+      "key_result": "CLI ceiling at ~45 TPS (C=16); C=32 has 50% failures",
+      "paper_use": "NE24 paragraph"
+    },
+    "delta": {
+      "name": "Caliper saturation refinement",
+      "archive": "5node_saturation_delta_2026-06-08",
+      "n_seeds": 3,
+      "scope": "rate-600/700/800/900 tx/s, 30s/round, fresh-network-per-seed",
+      "key_result": "Throughput plateau 503-537 TPS, latency 5.7s -> 17s, 270,013 tx 0 failures",
+      "paper_use": "tab:d2-saturation (NE25)",
+      "supersedes_interpretation_of": "beta rate-1000 45% timeouts (now reinterpreted as Caliper SDK 7s window expiration)"
+    }
+  },
+  "campaign_totals": {
+    "total_executed_transactions": 415033,
+    "computation_breakdown": "alpha+gamma baseline: 3,100; eta Caliper: 135,120; delta Caliper: 270,013; epsilon attack: ~3,300; kappa: ~1,100; mu: ~1,500; iota: 3 failover trials",
+    "total_safety_violations": 0,
+    "total_committed_blocks": "88,468+ (per Raft block height monitor in master log)"
+  },
+  "honest_disclosures": [
+    "beta seeds 2-5 produced 0 successes due to cumulative state-DB growth; eta fixes this with fresh-network-per-seed",
+    "beta rate-1000 'commit timeouts' are NOT blockchain failures, but Caliper SDK 7s window expirations (proven by delta showing 0 failures up to rate-900)",
+    "Algorithm 1 'simulation' in kappa is naive orderer removal; paper's actual mechanism is candidacy-filter (preserves quorum)",
+    "ε first attempt invalidated by pumba 'duration < interval' syntax error; valid re-run in 5node_attack_2026-06-07",
+    "All measurements on single-host Docker Desktop; production AWS deployment would shift saturation point higher",
+    "Native peer chaincode invoke CLI saturates at ~45 TPS (mu); 10x below Fabric Gateway SDK ceiling — CLI is measurement artifact, not Raft bottleneck"
+  ]
+}

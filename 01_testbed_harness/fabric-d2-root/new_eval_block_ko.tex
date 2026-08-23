@@ -1,0 +1,65 @@
+\subsection{공격 하 throughput와 교정된 saturation point}
+\label{sec:caliper}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_eval_corrected.pdf}
+\caption{BORA-패치 5-orderer 클러스터의 교정된 평가 (Caliper가
+커밋을 확인하는 sub-ceiling rate; 원장 block-height delta로
+교차검증). \textbf{(a)} clean / \texttt{orderer3} $+500$\,ms
+단일-follower 지연 / 동일 공격 + BORA(orderer3 blacklist)의 부하별
+커밋 throughput: 공격은 $15$--$25\%$ 저하시키고, BORA는 공격 곡선을
+$\pm 3\%$ 내로 따라간다(설계상 follower-지연 throughput을 회복시키지
+못하며 회복할 수도 없다). \textbf{(b)} 강제 선출에서의 악의 노드
+리더십 획득: 최빈 당선 orderer가 BORA 없이 $33\%$, BORA가
+blacklist하면 $\approx 14\%$ 당선($\approx 2.4\times$ 감소)하며, 매
+선출이 여전히 유효 리더를 뽑아 liveness가 보존된다.}
+\label{fig:eval}
+\end{figure*}
+
+원래 saturation sweep(제공 부하 $600$--$900$ tx/s)을 감사한 결과
+client-측 계측 아티팩트를 발견했다: 그 부하는 단일호스트 클러스터의
+커밋 throughput 천장 $\approx 570$ tx/s를 초과하여 orderer 큐가
+무한히 쌓였고, Caliper의 gateway commit-status 호출이
+\texttt{DEADLINE\_EXCEEDED}를 반환했다. 그럼에도 모든 트랜잭션은
+원장에 커밋되었으며(block-height 증가가 $\approx 570$ tx/s 지속
+커밋을 확인) client가 커밋을 확인받지 못해 라운드별 수치가 확인된
+커밋 throughput이 아니라 제공 \emph{send rate}를 반영했다. 따라서
+commit이 gateway 마감 내에 확인되는 sub-ceiling rate($100$--$500$
+tx/s)에서 전체 캠페인을 재실행하고, 매 실행을 원장 block-height
+delta로 교차검증했다.
+
+그림~\ref{fig:eval}(a)가 교정된 throughput이다. $+500$\,ms
+단일-follower 공격은 커밋 throughput을 $15$--$25\%$ 낮추고 평균
+지연을 $\approx 50$\,ms에서 $\approx 2$\,s로 높인다. \emph{BORA는
+이 throughput을 회복시키지 못한다}: \texttt{orderer3}을 blacklist해도
+모든 rate·seed에서 공격 곡선을 $\pm 3\%$ 내로 따라간다. 이는
+프로토콜의 올바른, 예상된 동작이다. bounded blacklist는 \emph{leader
+자격}(Algorithm~\ref{alg:hook})만 제어하며, 리더의 느린 follower로의
+복제나 quorum 대기는 바꾸지 않는다. 네트워크 지연된 follower는 BORA
+활성 여부와 무관하게 Raft의 기존 $3/5$ quorum margin에 흡수되므로,
+BORA는 follower-지연 throughput에 대해 올바르게 중립이다. 이 논문의
+이전 초안은 이 regime에서 ``$+10.6\%$/$+14.5\%$ 회복'' 수치를
+보고했으나, 그것은 위의 send-rate 아티팩트였고 확인된-커밋 측정에서
+살아남지 못하므로 철회한다.
+
+\paragraph*{BORA의 가치가 측정되는 지점.}
+BORA의 목적은 리더십 무결성이므로, 그 가치는 단일-follower
+throughput이 아니라 \emph{누가 리더십을 갖는가}에서 나타난다.
+그림~\ref{fig:eval}(b)가 이를 직접 측정한다. 반복된 강제
+선출(캠페인당 12회 선출)에서 최빈 당선 orderer는 BORA 없이 $33\%$
+당선했으나, BORA가 그 노드를 blacklist하면 당선율이 $\approx 14\%$로
+($\approx 2.4\times$ 감소) 떨어지며, 매 선출이 여전히 유효 리더를
+뽑아 liveness가 보존된다. 이것이 정확히 BORA의 보안 목표다: 표적
+공격자가 블록 순서를 편향시키는 데 필요한 리더십을 거부하되,
+정리~\ref{thm:safety}의 simulation relation을 깨뜨릴 강제 demotion
+없이 달성한다. 잔여 비영(非零) 당선율은 fail-open, advisory
+메커니즘의 의도된 결과다 --- BORA는 확인할 수 없는 yield를 강제하지
+않으므로, blacklist된 노드가 새 advice를 읽기 전 짧은 창에서 가끔
+campaign한다.
+
+\paragraph*{안전성.}
+측정된 모든 조건 --- clean, 모든 rate의 단일·다중 follower 지연,
+그리고 리더십-차단 캠페인 --- 에서 클러스터는 단 한 건의 safety
+위반 없이 모든 트랜잭션을 커밋했으며, 이는 유일한 보편적 보증이자
+정리~\ref{thm:safety}의 trace-refinement 내용이다.

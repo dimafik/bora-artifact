@@ -1,0 +1,6 @@
+idx,leader_before,leader_after,target_won,live,ttl_s,advice_on_orderer
+1,4,3,1,1,2,n1:{"blacklist":[3];"seq":1;"fail_open":false}
+2,4,2,0,1,4,n1:{"blacklist":[3];"seq":1;"fail_open":false}
+3,2,1,0,1,4,n1:{"blacklist":[3];"seq":1;"fail_open":false}
+4,1,2,0,1,4,n2:{"blacklist":[3];"seq":1;"fail_open":false}
+5,2,7,0,1,4,n1:{"blacklist":[3];"seq":1;"fail_open":false}

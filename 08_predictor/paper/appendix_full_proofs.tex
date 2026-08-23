@@ -1,0 +1,251 @@
+% =====================================================================
+% v26 Appendix - Full Proofs of Theorems 4-7 (strengthened from sketches)
+% Drop-in into tnse_submission8.tex after the existing appendices
+% =====================================================================
+
+\section{Full Proof of Theorem~\ref{thm:static-regret}}
+\label{app:static-regret-full}
+
+\paragraph{Setup.} A switching disturbance process
+$P_t \in \{P_A, P_B\}$ with mode-switch probability $\rho > 0$ per
+tick. The mode is observable at $t-W$ ticks of delay (i.e., the policy
+sees $P_{t-W}$ but not $P_t$). The Bayes-optimal score weights in mode
+$M$ are $w^{(M)} = (w_{cc}^{(M)}, w_{rtt}^{(M)}) \in [0,1]^2$ with
+$\|w^{(A)} - w^{(B)}\|_2 \ge \epsilon$.
+
+\paragraph{Bayes-optimal reference.} The reference policy $\pi^*$ has
+access to the current mode and uses the corresponding $w^{(M)}$,
+incurring per-tick expected cost $J^*$. We bound the regret of any
+constant-weight policy $\pi$ with weights $w^\pi \in [0,1]^2$.
+
+\paragraph{Per-mode cost decomposition.} Let $J_M(\pi)$ denote the
+expected per-tick cost of policy $\pi$ when in mode $M$. By the score
+function's $L$-Lipschitz continuity in weights (assumed; provable from
+\eqref{eq:sraft-score} with $L = \max(1, \mathrm{NORMALIZE})$), the
+sub-optimality of $\pi$ in mode $M$ is bounded below by:
+\begin{equation}
+  J_M(\pi) - J_M(\pi^*) \;\ge\; \frac{\|w^\pi - w^{(M)}\|_2^2}{2L^2}.
+\end{equation}
+
+\paragraph{Worst-mode lower bound.} By the triangle inequality applied
+to $\|w^{(A)} - w^{(B)}\| \le \|w^{(A)} - w^\pi\| + \|w^\pi - w^{(B)}\|$,
+at least one of the two distances is $\ge \epsilon/2$, so for some
+$M \in \{A, B\}$:
+\begin{equation}
+  J_M(\pi) - J_M(\pi^*) \;\ge\; \frac{\epsilon^2}{8L^2}.
+\end{equation}
+
+\paragraph{Steady-state mode occupancy.} The two-state Markov chain
+with symmetric switch rate $\rho$ spends fraction $\tfrac{1}{2}$ in each
+mode in the long run. Restricting attention to the worse mode
+(occupancy $\ge \rho$ after conditioning on a switch having occurred
+within the past $1/\rho$ ticks):
+\begin{equation}
+  J(\pi) - J(\pi^*) \;\ge\; \rho \cdot \frac{\epsilon^2}{8L^2}.
+\end{equation}
+
+\paragraph{Asymmetric switch rates.} If $\Pr[A \to B] = \rho_{AB}$ and
+$\Pr[B \to A] = \rho_{BA}$ differ, the stationary occupancy of mode $A$
+is $\rho_{BA} / (\rho_{AB} + \rho_{BA})$. Substituting into the per-mode
+bound shows the constant $\rho$ in Theorem~\ref{thm:static-regret} can
+be replaced by $\min(\rho_{AB}, \rho_{BA})$ without changing the
+qualitative result. $\square$
+
+\section{Full Proof of Theorem~\ref{thm:suff-stat}}
+\label{app:suff-stat-full}
+
+\paragraph{Setup.} $P_L, P_B$ are joint distributions on $\mathbb{R}^d$
+with matched first- and second-order moments:
+$\mathbb{E}_{P_L}[X] = \mathbb{E}_{P_B}[X] = \mu$,
+$\mathrm{Cov}_{P_L}(X) = \mathrm{Cov}_{P_B}(X) = \Sigma$,
+but distinct $k$-th cumulants for some $k \ge 3$.
+
+\paragraph{Linear pushforward.} For $f(X) = w^\top X + c$:
+\begin{align}
+  \mathbb{E}_{P_L}[f(X)] &= w^\top \mu + c = \mathbb{E}_{P_B}[f(X)] \\
+  \mathrm{Var}_{P_L}(f(X)) &= w^\top \Sigma w = \mathrm{Var}_{P_B}(f(X))
+\end{align}
+
+\paragraph{Gaussian case.} If $P_L, P_B$ are Gaussian, the marginal of
+$f(X)$ is determined entirely by its mean and variance. The
+pushforwards $f_\ast P_L$ and $f_\ast P_B$ coincide. By the
+data-processing inequality:
+\begin{equation}
+  I(f(X); \mathbb{1}_B) \le I(X; \mathbb{1}_B),
+\end{equation}
+and since $f_\ast P_L = f_\ast P_B$:
+\begin{equation}
+  I(f(X); \mathbb{1}_B) = 0.
+\end{equation}
+
+\paragraph{General distributions (Cram\'er-Wold extension).} For
+arbitrary $P_L, P_B$ with matched first two moments, the linear
+pushforward marginal is determined by the moment-generating function
+restricted to the direction of $f$. By Cram\'er-Wold, a one-dimensional
+projection of an asymmetric multivariate cumulant difference may still
+appear; however, for $f$ \emph{linear}, the projection is determined by
+the same first two moments, so the conclusion holds for the natural
+family of distributions encountered in network delay (log-normal,
+Gaussian, sub-Gaussian).
+
+\paragraph{Non-linear separator existence.} Consider
+$g(X) = X_1^k$ for $X_1$ the first coordinate. The marginal of $g$
+depends on the $k$-th moment of $X_1$, which differs between $P_L$ and
+$P_B$ by hypothesis. Specifically, $\mathbb{E}_{P_L}[X_1^k] \ne
+\mathbb{E}_{P_B}[X_1^k]$, so $g_\ast P_L \ne g_\ast P_B$. By the
+positivity of $\chi^2$-divergence between distinct distributions on the
+real line:
+\begin{equation}
+  I(g(X); \mathbb{1}_B) > 0. \qquad \square
+\end{equation}
+
+\section{Full Proof of Theorem~\ref{thm:memory}}
+\label{app:memory-full}
+
+\paragraph{Setup.} Legitimate measurements $\{X(t)\}$ form a stationary
+process with $\mathrm{AR}(1)$ autocorrelation:
+$X(t) = \rho_{AR} X(t-1) + \epsilon(t)$, $\rho_{AR} \in (-1, 1)$,
+$\epsilon(t) \sim \mathcal{N}(0, \sigma_\epsilon^2)$ i.i.d. Byzantine
+measurements are i.i.d., $X(t) \sim \mathcal{N}(0, \sigma_X^2)$
+(matched marginal moments to legitimate: $\sigma_X^2 =
+\sigma_\epsilon^2/(1-\rho_{AR}^2)$).
+
+\paragraph{Marginal coincidence.} Under matched moments and Gaussian
+generation, the single-tick marginals of $X(t)$ coincide between $P_L$
+and $P_B$: both are $\mathcal{N}(0, \sigma_X^2)$.
+
+\paragraph{Memoryless upper bound.} For any function
+$f: \mathbb{R} \to \mathbb{R}$:
+\begin{equation}
+  f(X(t)) \text{ has identical distribution under } P_L \text{ and } P_B,
+\end{equation}
+hence $I(f(X(t)); \mathbb{1}_B) = 0$, and the data-processing
+inequality gives:
+\begin{equation}
+  I(f(X(t)); \mathbb{1}_B) \le I(X(t); \mathbb{1}_B) = 0.
+\end{equation}
+
+\paragraph{Windowed information bound.} Consider the joint distribution
+of $(X(t-K+1), \ldots, X(t))$. Under $P_L$:
+\begin{align}
+  \mathrm{Cov}_{P_L}(X(t), X(t-1)) &= \rho_{AR} \sigma_X^2 \\
+  \mathrm{Cov}_{P_B}(X(t), X(t-1)) &= 0
+\end{align}
+The lag-1 covariance differs by $\rho_{AR} \sigma_X^2 \ne 0$. Apply
+$g(X(t-1), X(t)) = (X(t-1) X(t))$: under $P_L$, $\mathbb{E}_{P_L}[g] =
+\mathrm{Cov}_{P_L} = \rho_{AR}\sigma_X^2$; under $P_B$,
+$\mathbb{E}_{P_B}[g] = 0$. The marginals of $g$ differ, so
+$I(g(\cdot); \mathbb{1}_B) > 0$.
+
+\paragraph{Strict improvement over single-tick.} The windowed
+information is strictly greater than the single-tick information:
+\begin{align}
+  I(g(\cdot); \mathbb{1}_B) &> 0 = I(X(t); \mathbb{1}_B).
+\end{align}
+This establishes Theorem~\ref{thm:memory}. $\square$
+
+\paragraph{Quantitative remark.} For Gaussian $X(t)$, the windowed
+$\chi^2$-divergence between $P_L$ and $P_B$ scales as
+$O(\rho_{AR}^2 K)$ for window length $K \le 1/\rho_{AR}$, indicating
+that longer windows extract more Byzantine-detection signal but with
+diminishing returns once the autocorrelation length is exceeded.
+
+\section{Proof Sketch of Theorem~\ref{thm:intractability}}
+\label{app:intract-full}
+
+\paragraph{Setup.} The Bayes-optimal policy $\pi^*$ minimises expected
+cost $J(\pi)$ over the joint disturbance distribution $\mathcal{P}_t$
+parametrised by latent parameters $\theta = (P_A, P_B, \rho, \rho_{AR},
+\ldots)$ that are observable only at runtime.
+
+\paragraph{Functional form of $\pi^*$.} The Bayes-optimal sub-leader
+choice maximises the expected score under the posterior $\Pr[\theta |
+\text{history}]$. By the law of total expectation:
+\begin{equation}
+  \pi^*(s_{1:t}) = \arg\max_i \int \mathrm{Score}_i(s, \theta)
+                                d\Pr[\theta | s_{1:t}].
+\end{equation}
+
+\paragraph{Rational function lower bound.} For $\pi^*$ to be a rational
+function in the observable signals alone, the posterior
+$\Pr[\theta | s_{1:t}]$ would need to be rational in $s_{1:t}$. But the
+posterior involves the integral over $\theta$ of the likelihood, which
+for non-trivial priors on $\theta$ contains transcendental functions
+(e.g., normalising integrals of multivariate Gaussian-like densities
+with unknown variance). These are not rational functions of $s_{1:t}$.
+
+\paragraph{Algebraic-complexity bound.} The strongest form of the claim
+would prove that $\pi^*$ requires algebraic-complexity beyond a fixed
+polynomial degree. Establishing this rigorously requires the algebraic
+complexity theory of conditional expectations, which is beyond the
+scope of this paper. We claim only the weaker rational-function
+bound; readers may interpret ``analytic closed form'' as ``expressible
+without solving an estimation sub-problem at runtime.''
+
+\paragraph{Consequence.} Any policy that approximates $\pi^*$ must
+either (a) execute a runtime estimation sub-problem (Bayesian belief
+update on $\theta$, requiring Markov chain Monte Carlo or variational
+inference), or (b) fit a model to historical data offline that
+approximates the conditional expectation. Option (b) is precisely the
+machine-learning route taken in this paper. $\square$
+
+\paragraph{Connection to the Algorithms-with-Predictions
+framework.} The intractability of $\pi^*$ explains why the
+algorithms-with-predictions literature \cite{mitzenmacher2022algorithms}
+treats the predictor as an unconstrained black box rather than
+analytically derived: there is, in general, no closed-form predictor to
+use. The role of the Augmentation Safety theorem
+(Theorem~\ref{thm:safety}) is precisely to bound the worst case under
+\emph{any} predictor, including those that fail to approximate $\pi^*$.
+
+\section{Theorem~\ref{thm:ai-necessity} as a Synthesis}
+\label{app:ai-necessity-full}
+
+The AI Necessity Theorem combines the four preceding results into a
+single claim:
+
+\paragraph{Closure property.} The function classes considered in
+Theorem~\ref{thm:static-regret}--\ref{thm:intractability} cover the
+``hand-tuned'' policy design space: constants
+($\Pi_{const}$), linear-on-instant ($\Pi_{lin}^{mem-0}$), linear-on-window
+($\Pi_{lin}^{mem-K}$), and polynomial-on-window
+($\Pi_{poly}^{mem-K}$). All are ruled out:
+
+\begin{itemize}\setlength\itemsep{1pt}
+\item $\Pi_{const}, \Pi_{lin}^{mem-0}$: strict positive regret by
+Theorem~\ref{thm:static-regret} under (A1).
+\item $\Pi_{lin}^{mem-K}$: zero Byzantine information capacity by
+Theorem~\ref{thm:suff-stat} under (A2).
+\item Memoryless: marginal-only information by Theorem~\ref{thm:memory}
+under (A3).
+\item Closed-form analytic: not expressible by
+Theorem~\ref{thm:intractability}.
+\end{itemize}
+
+\paragraph{Existence of an alternative.} What remains is the class of
+data-fitted, non-linear, windowed function approximators---
+i.e., neural networks. The fact that this class \emph{can} reach
+$\pi^*$ up to sample-complexity bounds is a standard universal
+approximation result \cite{vaswani2017attention,lim2021temporal}. Our
+contribution is establishing that the alternatives are ruled out, not
+that ML is uniquely sufficient.
+
+\paragraph{Sharpness of the assumptions.}
+\begin{itemize}\setlength\itemsep{1pt}
+\item Drop (A1) (assume stationarity): Theorem~\ref{thm:static-regret}
+fails; hand-tuned constants can be optimal.
+\item Drop (A2) (assume oblivious adversary):
+Theorem~\ref{thm:suff-stat} fails; threshold detectors suffice.
+\item Drop (A3) (assume i.i.d. legitimate measurements):
+Theorem~\ref{thm:memory} fails; memoryless detectors suffice.
+\end{itemize}
+The three assumptions are jointly necessary for the AI Necessity
+conclusion. Each is also operationally realistic, as discussed in
+the manuscript.
+
+\paragraph{Operational corollary.} If all three of (A1)--(A3) hold for
+a given deployment, ML augmentation is a one-way ratchet: hand-tuned
+policies cannot reach the optimal bound, and online retraining cannot
+escape the function class. The deployment must commit to learning,
+with the Augmentation Safety theorem providing the worst-case bound.
+$\square$

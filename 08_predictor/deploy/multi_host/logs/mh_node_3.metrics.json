@@ -1,0 +1,21 @@
+{
+  "timestamp": 1780473393.1162395,
+  "region": "eu-west-1",
+  "role": "follower",
+  "term": 128,
+  "leader_id": null,
+  "blacklist": [],
+  "metrics": {
+    "elections_started": 36,
+    "votes_cast": 0,
+    "leader_changes": 0,
+    "ai_blacklist_events": 0,
+    "byzantine_advice_rejected": 0
+  },
+  "rtt_p99": {
+    "8000": 62.54291534423828,
+    "8001": 63.13514709472656,
+    "8002": 32.64307975769043,
+    "8004": 140.54250717163086
+  }
+}

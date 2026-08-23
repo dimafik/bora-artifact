@@ -1,0 +1,31 @@
+# Burst overlay — runs at T+3:45 → T+4:15
+# 100 TPS baseline + 300 TPS bursts for 60s every 5min
+test:
+  name: sched-bft-burst-overlay
+  workers: { type: local, number: 8 }
+  rounds:
+    - label: arm_a_burst
+      txDuration: 600
+      rateControl:
+        type: composite-rate
+        opts:
+          weights: [100, 0]
+          rateControllers:
+            - type: fixed-rate
+              opts: { tps: 100 }
+            - type: fixed-rate
+              opts: { tps: 300 }
+      workload: { module: ../workloads/transfer.js, arguments: { assets: 100000 } }
+
+    - label: arm_b_burst
+      txDuration: 600
+      rateControl:
+        type: composite-rate
+        opts:
+          weights: [100, 0]
+          rateControllers:
+            - type: fixed-rate
+              opts: { tps: 100 }
+            - type: fixed-rate
+              opts: { tps: 300 }
+      workload: { module: ../workloads/transfer.js, arguments: { assets: 100000 } }

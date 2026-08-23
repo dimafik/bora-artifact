@@ -1,0 +1,19 @@
+{
+  "experiment_id": "5node_attack_unreliable_first_attempt",
+  "date_utc": "2026-06-07",
+  "description": "First attempt at orderer-delay attack injection via pumba on 5-orderer Raft cluster. Pumba container exited with 'duration must be shorter than interval' error before injecting any delay; all three labelled phases (clean/+200ms/+500ms) ran on effectively undelayed network.",
+  "status": "VOID - preserved for transparency only",
+  "pumba_error_caught": "time=\"2026-06-07T14:14:59Z\" level=fatal msg=\"error parsing netem parameters: duration must be shorter than interval\"",
+  "diagnosis": "Used --interval 4m --duration 4m; pumba requires interval > duration. Fixed in re-run by using --interval 10m --duration 4m.",
+  "observation_confirming_void": "TPS across clean/+200ms/+500ms phases at C=16: 44.14 / 51.22 / 50.52 — all WITHIN clean baseline variance, indicating no actual delay was injected",
+  "valid_rerun": "5node_attack_2026-06-07/ contains the valid epsilon-phase data with correctly applied pumba delay",
+  "paper_integration": {
+    "phase_letter": "epsilon_void",
+    "paper_table_label": "(not in paper - invalidated by pumba syntax error)",
+    "paper_section_or_paragraph": "(not in paper)",
+    "related_phases": {
+      "epsilon": "5node_attack_2026-06-07 (the valid re-run with corrected pumba interval > duration syntax)"
+    },
+    "note": "Preserved for reproducibility audit transparency"
+  }
+}

@@ -1,0 +1,12 @@
+--- a/orderer/consensus/etcdraft/chain.go
++++ b/orderer/consensus/etcdraft/chain.go
+@@ -190,6 +190,9 @@ type Chain struct {
+
+ 	confState raftpb.ConfState // Etcdraft requires ConfState to be persisted within snapshot
+
++	// BORA: last advice sequence number this Chain has accepted.
++	// Atomic-accessed by shouldYieldElection().
++	lastBoraSeq uint64
+ }
+
+ // NewChain returns a Chain instance.

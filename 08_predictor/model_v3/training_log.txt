@@ -1,0 +1,15 @@
+Device: cpu
+Train: 416,800 windows, Val: 0
+  train degrade pos rate: 0.0306
+  val   degrade pos rate: nan
+  positive weight for degrade BCE: 31.66
+Traceback (most recent call last):
+  File "D:\프랑스 업데이트\TNSE 스페셜이슈 논문\IS-Raft-LAC\submission\pivot_v26\predictor\train_v3_balanced.py", line 205, in <module>
+    raise SystemExit(main())
+  File "D:\프랑스 업데이트\TNSE 스페셜이슈 논문\IS-Raft-LAC\submission\pivot_v26\predictor\train_v3_balanced.py", line 201, in main
+    return train(ap.parse_args())
+  File "D:\프랑스 업데이트\TNSE 스페셜이슈 논문\IS-Raft-LAC\submission\pivot_v26\predictor\train_v3_balanced.py", line 170, in train
+    val = evaluate(model, val_loader, device)
+  File "D:\프랑스 업데이트\TNSE 스페셜이슈 논문\IS-Raft-LAC\submission\pivot_v26\predictor\train_v3_balanced.py", line 62, in evaluate
+    score_p = np.concatenate(score_p)
+ValueError: need at least one array to concatenate

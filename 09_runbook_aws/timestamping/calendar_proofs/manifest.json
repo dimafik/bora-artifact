@@ -1,0 +1,25 @@
+{
+  "preregister_hash_file": "preregister.hash",
+  "file_digest_sha256": "2cf8ea70fd8e1e4e1346f388236f8046b0286293144be39337fbd8a0d1ac4728",
+  "submission_timestamp_utc": "2026-06-01T07:13:26.559405+00:00",
+  "calendars": [
+    {
+      "url": "https://alice.btc.calendar.opentimestamps.org",
+      "status": "saved",
+      "fragment_file": "alice.btc.calendar.opentimestamps.org.ots-fragment",
+      "fragment_size_bytes": 137
+    },
+    {
+      "url": "https://bob.btc.calendar.opentimestamps.org",
+      "status": "saved",
+      "fragment_file": "bob.btc.calendar.opentimestamps.org.ots-fragment",
+      "fragment_size_bytes": 135
+    },
+    {
+      "url": "https://finney.calendar.eternitywall.com",
+      "status": "saved",
+      "fragment_file": "finney.calendar.eternitywall.com.ots-fragment",
+      "fragment_size_bytes": 156
+    }
+  ]
+}

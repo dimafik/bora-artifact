@@ -1,0 +1,8 @@
+{
+  "n_trials": 300,
+  "safety_violations": 0,
+  "liveness_failures": 4,
+  "correct_recoveries": 287,
+  "safety_rate": 1.0,
+  "liveness_rate": 0.9866666666666667
+}

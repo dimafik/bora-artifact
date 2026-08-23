@@ -1,0 +1,32 @@
+[
+  {
+    "name": "logistic / window means (linear)",
+    "non_adaptive": 0.8341,
+    "moment_matched": 0.4542,
+    "params": null
+  },
+  {
+    "name": "logistic / summary stats (linear)",
+    "non_adaptive": 0.974,
+    "moment_matched": 0.0118,
+    "params": null
+  },
+  {
+    "name": "gradient boosting / summary stats",
+    "non_adaptive": 0.9764,
+    "moment_matched": 0.4961,
+    "params": null
+  },
+  {
+    "name": "MLP 64-32 / flattened window",
+    "non_adaptive": 0.8403,
+    "moment_matched": 0.6593,
+    "params": 32800
+  },
+  {
+    "name": "Multi-Head Transformer (reference)",
+    "non_adaptive": 0.9417,
+    "moment_matched": 0.2467,
+    "params": 141067
+  }
+]

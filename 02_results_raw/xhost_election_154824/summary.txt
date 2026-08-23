@@ -1,0 +1,4 @@
+  XHOST N=5 base s1: o3 1/8 live 8/8
+  XHOST N=5 BORA s1: o3 0/8 live 8/8
+  XHOST N=5 base s2: o3 1/8 live 8/8
+  XHOST N=5 BORA s2: o3 0/8 live 8/8

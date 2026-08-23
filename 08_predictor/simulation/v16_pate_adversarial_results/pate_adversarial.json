@@ -1,0 +1,62 @@
+[
+  {
+    "eps": 0.01,
+    "strategy": "random",
+    "attacker_cos": 0.5077902260823015,
+    "legit_auc": 0.9998509674337299
+  },
+  {
+    "eps": 0.01,
+    "strategy": "adversarial",
+    "attacker_cos": 0.3352550212855131,
+    "legit_auc": 0.9998530290915022
+  },
+  {
+    "eps": 0.05,
+    "strategy": "random",
+    "attacker_cos": 0.9166156354688029,
+    "legit_auc": 0.9998378767167165
+  },
+  {
+    "eps": 0.05,
+    "strategy": "adversarial",
+    "attacker_cos": 0.9624346072434535,
+    "legit_auc": 0.9997806210503238
+  },
+  {
+    "eps": 0.1,
+    "strategy": "random",
+    "attacker_cos": 0.9764450640594192,
+    "legit_auc": 0.9998449748444433
+  },
+  {
+    "eps": 0.1,
+    "strategy": "adversarial",
+    "attacker_cos": 0.9978034960120287,
+    "legit_auc": 0.9998304982774466
+  },
+  {
+    "eps": 0.5,
+    "strategy": "random",
+    "attacker_cos": 0.9990110410430205,
+    "legit_auc": 0.9998050973795505
+  },
+  {
+    "eps": 0.5,
+    "strategy": "adversarial",
+    "attacker_cos": 0.9996731816722423,
+    "legit_auc": 0.9998159708740622
+  },
+  {
+    "eps": 1.0,
+    "strategy": "random",
+    "attacker_cos": 0.9992496219448189,
+    "legit_auc": 0.9998094897009407
+  },
+  {
+    "eps": 1.0,
+    "strategy": "adversarial",
+    "attacker_cos": 0.9996715009775484,
+    "legit_auc": 0.9997800213010117
+  }
+]

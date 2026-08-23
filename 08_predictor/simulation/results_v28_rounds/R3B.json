@@ -1,0 +1,10 @@
+{
+  "total_events": 60000,
+  "total_violations": 0,
+  "fail_open_count": 36293,
+  "per_mode": {
+    "max_risk": 0,
+    "max_conf_noise": 0,
+    "coord_attack": 0
+  }
+}

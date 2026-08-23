@@ -1,0 +1,19 @@
+=== sidecar socket? ===
+SOCKET_OK
+[refresher] started pid=6310 (bumps seq ~0.3s)
+######## CONDITION A: attack, NO BORA (blacklist=[]) ########
+  [elect] A_noBORA: forcing 12 elections...
+    election 1: restarted id=2 -> new leader id=5
+    election 2: restarted id=5 -> new leader id=4
+    election 3: restarted id=4 -> new leader id=0
+    election 4: restarted id=0 -> new leader id=4
+    election 5: restarted id=4 -> new leader id=5
+    election 6: restarted id=5 -> new leader id=4
+    election 7: restarted id=4 -> new leader id=2
+    election 8: restarted id=2 -> new leader id=1
+    election 9: restarted id=1 -> new leader id=4
+    election 10: restarted id=4 -> new leader id=5
+    election 11: restarted id=5 -> new leader id=2
+    election 12: restarted id=2 -> new leader id=1
+  [elect] A_noBORA RESULT: orderer3 won 0/12 forced elections; 12 distinct leaders
+  [pin] forcing orderer3 to leader (cond A)...

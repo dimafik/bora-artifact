@@ -1,0 +1,17 @@
+== N=5  TX=320  C=16  seeds:1 2 3 ==
+-- patched binary on orderers 1..5 --
+  sidecars up: 5
+-- E1: clean, advisor idle --
+    advice: {"blacklist":[],"seq":1786529069,"fail_open":false}  seed1 attempted=320 committed=320 blocks=20 height=387->407 tps=6.85135 mean_latency_ms=2335.295 client_cpu_max_pct=26 
+  seed2 attempted=320 committed=320 blocks=20 height=407->427 tps=6.82697 mean_latency_ms=2343.638 client_cpu_max_pct=26 
+  seed3 attempted=320 committed=320 blocks=20 height=427->447 tps=6.81112 mean_latency_ms=2349.090 client_cpu_max_pct=26 
+-- E2: +200ms, advisor idle --
+  orderer1 -> orderer3 RTT: rtt min/avg/max/mdev = 200.217/200.238/200.263/0.017 ms
+    advice: {"blacklist":[],"seq":1786529222,"fail_open":false}  seed1 attempted=320 committed=320 blocks=20 height=447->467 tps=6.33039 mean_latency_ms=2527.482 client_cpu_max_pct=26 
+  seed2 attempted=320 committed=320 blocks=20 height=467->487 tps=6.24960 mean_latency_ms=2560.152 client_cpu_max_pct=26 
+  seed3 attempted=320 committed=320 blocks=20 height=487->507 tps=6.35209 mean_latency_ms=2518.846 client_cpu_max_pct=25 
+-- E3: +200ms, advisor acting --
+    advice: {"blacklist":[3],"seq":1786529384,"fail_open":false}  seed1 attempted=320 committed=320 blocks=20 height=507->527 tps=6.29184 mean_latency_ms=2542.965 client_cpu_max_pct=26 
+  seed2 attempted=320 committed=320 blocks=20 height=527->547 tps=6.31417 mean_latency_ms=2533.971 client_cpu_max_pct=26 
+  seed3 attempted=320 committed=320 blocks=20 height=547->567 tps=6.28162 mean_latency_ms=2547.104 client_cpu_max_pct=26 
+== done: /d/fabric-d2/results/mh_final_N5.txt ==

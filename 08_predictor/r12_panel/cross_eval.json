@@ -1,0 +1,54 @@
+{
+ "Transformer (ours, retrained)": {
+  "combo": {
+   "lr": 1.0,
+   "seed": 1,
+   "init": "white",
+   "auc": 0.0027,
+   "autocorr": 0.057,
+   "mean": 8.0,
+   "std": 3.0,
+   "feasible_frac": 1.0
+  },
+  "realised_ac": 0.057,
+  "mean": 8.0,
+  "std": 3.0,
+  "feasible": 1.0,
+  "scored_by": {
+   "std(dRTT) statistic": 0.57,
+   "logistic / 40 summary stats": 0.5512,
+   "MLP 64-32 / raw window": 0.5733,
+   "1D-CNN": 0.6816,
+   "GRU": 0.5032,
+   "Transformer (ours, retrained)": 0.0027,
+   "random forest / summary stats": 0.5116,
+   "k-NN (k=15) / summary stats": 0.5
+  }
+ },
+ "logistic / 40 summary stats": {
+  "combo": {
+   "lr": 1.0,
+   "seed": 2,
+   "init": "ar0.6",
+   "auc": 0.4145,
+   "autocorr": 0.0,
+   "mean": 8.0,
+   "std": 3.0,
+   "feasible_frac": 1.0
+  },
+  "realised_ac": 0.0,
+  "mean": 8.0,
+  "std": 3.0,
+  "feasible": 1.0,
+  "scored_by": {
+   "std(dRTT) statistic": 0.9977,
+   "logistic / 40 summary stats": 0.4145,
+   "MLP 64-32 / raw window": 0.8023,
+   "1D-CNN": 0.8727,
+   "GRU": 0.8434,
+   "Transformer (ours, retrained)": 0.9224,
+   "random forest / summary stats": 0.9997,
+   "k-NN (k=15) / summary stats": 0.5025
+  }
+ }
+}

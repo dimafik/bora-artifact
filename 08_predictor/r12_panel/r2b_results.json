@@ -1,0 +1,64 @@
+[
+ {
+  "name": "pairwise-correlation features + logistic",
+  "variant": "hand",
+  "params": null,
+  "auc": 0.8918
+ },
+ {
+  "name": "MLP",
+  "variant": "nomix",
+  "params": 32897,
+  "lr": 0.001,
+  "auc": 0.4869
+ },
+ {
+  "name": "MLP",
+  "variant": "mix",
+  "params": 155777,
+  "lr": 0.001,
+  "auc": 0.4916
+ },
+ {
+  "name": "1D-CNN",
+  "variant": "nomix",
+  "params": 1969,
+  "lr": 0.0003,
+  "auc": 0.5068
+ },
+ {
+  "name": "1D-CNN",
+  "variant": "mix",
+  "params": 4529,
+  "lr": 0.001,
+  "auc": 0.8416
+ },
+ {
+  "name": "GRU",
+  "variant": "nomix",
+  "params": 2473,
+  "lr": 0.0003,
+  "auc": 0.5194
+ },
+ {
+  "name": "GRU",
+  "variant": "mix",
+  "params": 4777,
+  "lr": 0.001,
+  "auc": 0.8492
+ },
+ {
+  "name": "Transformer (ours)",
+  "variant": "nomix",
+  "params": 143244,
+  "lr": 0.0003,
+  "auc": 0.5083
+ },
+ {
+  "name": "Transformer (ours)",
+  "variant": "mix",
+  "params": 159884,
+  "lr": 0.0003,
+  "auc": 0.8547
+ }
+]

@@ -1,0 +1,705 @@
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+(* created new ".tlacache/FiniteSets.tlaps/FiniteSets.thy" *)
+(* fingerprints written in ".tlacache/FiniteSets.tlaps/fingerprints" *)
+File "/home/jinu337/tlaps/lib/tlaps/FiniteSets.tla", line 1, character 1 to line 23, character 77:
+[INFO]: All 0 obligation proved.
+(* created new ".tlacache/TLAPS.tlaps/TLAPS.thy" *)
+(* fingerprints written in ".tlacache/TLAPS.tlaps/fingerprints" *)
+File "/home/jinu337/tlaps/lib/tlaps/TLAPS.tla", line 1, character 1 to line 362, character 77:
+[INFO]: All 0 obligation proved.
+(* created new ".tlacache/Vanilla.tlaps/Vanilla.thy" *)
+(* fingerprints written in ".tlacache/Vanilla.tlaps/fingerprints" *)
+File "./Vanilla.tla", line 1, character 1 to line 73, character 77:
+[INFO]: All 0 obligation proved.
+** Unexpanded symbols: ACTION_Campaign_, ACTION_Commit_, ACTION_BecomeLeader_, STATE_vars_, ACTION_AppendEntry_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_, STATE_Inv_
+
+** Unexpanded symbols: ACTION_Next_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: ACTION_Campaign_, ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: ACTION_Next_, ACTION_BecomeLeader_, STATE_vars_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: ---
+
+** Unexpanded symbols: CONSTANT_Orderers_, STATE_Inv_
+
+** Unexpanded symbols: STATE_Inv_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_Inv_, STATE_HasLeader_
+
+** Unexpanded symbols: CONSTANT_Orderers_, STATE_LeaderInv_, STATE_FollowerT0_
+
+** Unexpanded symbols: STATE_Inv_
+
+** Unexpanded symbols: STATE_FollowerT0_, STATE_TypeOK_
+
+** Unexpanded symbols: TEMPORAL_SpecL_
+
+** Unexpanded symbols: ACTION_Campaign_, ACTION_Commit_, ACTION_BecomeLeader_, STATE_vars_, STATE_Inv_, STATE_PendingCand_, ACTION_AppendEntry_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_, STATE_Inv_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Next_, STATE_Inv_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Campaign_, ACTION_Next_, STATE_vars_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_, ACTION_Next_, STATE_vars_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_, ACTION_Next_, STATE_vars_, STATE_PendingCand_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_, STATE_Inv_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Next_, ACTION_BecomeLeader_, STATE_vars_, STATE_Inv_, STATE_PendingCand_
+
+** Unexpanded symbols: ACTION_Next_, ACTION_BecomeLeader_, STATE_vars_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_, ACTION_Next_, STATE_vars_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_, ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_, ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: ACTION_BecomeLeader_
+
+** Unexpanded symbols: STATE_vars_, ACTION_BecomeLeader_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_BecomeLeader_
+
+** Unexpanded symbols: ---
+
+** Unexpanded symbols: STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Campaign_, ACTION_Commit_, ACTION_BecomeLeader_, STATE_vars_, STATE_Inv_, STATE_PendingCand_, ACTION_AppendEntry_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Next_, STATE_Inv_, STATE_vars_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Next_, STATE_Inv_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_, STATE_Inv_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Campaign_, ACTION_Next_, STATE_vars_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_, ACTION_Next_, STATE_vars_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Campaign_, STATE_LeaderInv_, STATE_FollowerT0_, ACTION_Next_, STATE_vars_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Next_, ACTION_BecomeLeader_, STATE_vars_, STATE_Inv_, STATE_PendingCand_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_, ACTION_Next_, STATE_vars_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_, ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_, ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: ---
+
+** Unexpanded symbols: ACTION_Campaign_, STATE_vars_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Campaign_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Campaign_, ACTION_Commit_, STATE_vars_, ACTION_BecomeLeader_, ACTION_AppendEntry_
+
+** Unexpanded symbols: ACTION_Next_, STATE_vars_, STATE_Inv_
+
+** Unexpanded symbols: STATE_Inv_, STATE_HasLeader_
+
+** Unexpanded symbols: ---
+
+** Unexpanded symbols: ACTION_Campaign_
+
+** Unexpanded symbols: ---
+
+** Unexpanded symbols: STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: TEMPORAL_SpecL_
+
+** Unexpanded symbols: TEMPORAL_SpecL_
+
+** Unexpanded symbols: ---
+
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+Zenon error: exhausted search space without finding a proof
+your 131072x1 screen size is bogus. expect trouble
+Zenon error: exhausted search space without finding a proof
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+Zenon error: exhausted search space without finding a proof
+Zenon error: exhausted search space without finding a proof
+Zenon error: exhausted search space without finding a proof
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+(* created new ".tlacache/Liveness.tlaps/Liveness.thy" *)
+(* fingerprints written in ".tlacache/Liveness.tlaps/fingerprints" *)
+File "./Liveness.tla", line 159, characters 3-4:
+[ERROR]: Could not prove or check:
+           ASSUME NEW CONSTANT N,
+                  NEW CONSTANT F,
+                  NEW CONSTANT MaxTerm,
+                  NEW CONSTANT Values,
+                  Orderers == 1..N,
+                  NEW VARIABLE currentTerm,
+                  NEW VARIABLE state,
+                  NEW VARIABLE votedFor,
+                  NEW VARIABLE log,
+                  NEW VARIABLE commitIndex,
+                  NEW VARIABLE leader,
+                  NEW VARIABLE history,
+                  TypeOK ==
+                    /\ currentTerm \in [Orderers -> 0..MaxTerm]
+                    /\ state
+                       \in [Orderers -> {"follower", "candidate", "leader"}]
+                    /\ votedFor \in [Orderers -> 0..N]
+                    /\ log
+                       \in [Orderers ->
+                              Seq([term : 0..MaxTerm, value : Values])]
+                    /\ commitIndex \in [Orderers -> Nat]
+                    /\ leader \in [0..MaxTerm -> 0..N]
+                    /\ history \in Seq([index : Nat, value : Values]),
+                  Init ==
+                    /\ currentTerm = [i \in Orderers |-> 0]
+                    /\ state = [i \in Orderers |-> "follower"]
+                    /\ votedFor = [i \in Orderers |-> 0]
+                    /\ log = [i \in Orderers |-> <<>>]
+                    /\ commitIndex = [i \in Orderers |-> 0]
+                    /\ leader = [t \in 0..MaxTerm |-> 0]
+                    /\ history = <<>>,
+                  HasLeader == \E i \in Orderers : state[i] = "leader",
+                  NAssume == N >= 1,
+                  MTAssume == MaxTerm >= 1,
+                  LeaderInv ==
+                    \A t \in 0..MaxTerm :
+                       leader[t] # 0 => state[leader[t]] = "leader",
+                  FollowerT0 ==
+                    \A i \in Orderers :
+                       state[i] = "follower" => currentTerm[i] = 0,
+                  Inv == TypeOK /\ LeaderInv /\ FollowerT0,
+                  ElectEnabled ==
+                    Inv /\ PendingCand => ENABLED <<ElectStep>>_vars,
+                  CampEnabled ==
+                    Inv /\ ~HasLeader /\ ~PendingCand
+                    => ENABLED <<CampStep>>_vars,
+                  NAssume ,
+                  MTAssume ,
+                  NAssume ,
+                  MTAssume 
+           PROVE  Init => Inv /\ ~HasLeader
+File "./Liveness.tla", line 147, characters 7-8:
+[ERROR]: Could not prove or check:
+           ASSUME NEW CONSTANT N,
+                  NEW CONSTANT F,
+                  NEW CONSTANT MaxTerm,
+                  NEW CONSTANT Values,
+                  Orderers == 1..N,
+                  NEW VARIABLE currentTerm,
+                  NEW VARIABLE state,
+                  NEW VARIABLE votedFor,
+                  NEW VARIABLE log,
+                  NEW VARIABLE commitIndex,
+                  NEW VARIABLE leader,
+                  NEW VARIABLE history,
+                  TypeOK ==
+                    /\ currentTerm \in [Orderers -> 0..MaxTerm]
+                    /\ state
+                       \in [Orderers -> {"follower", "candidate", "leader"}]
+                    /\ votedFor \in [Orderers -> 0..N]
+                    /\ log
+                       \in [Orderers ->
+                              Seq([term : 0..MaxTerm, value : Values])]
+                    /\ commitIndex \in [Orderers -> Nat]
+                    /\ leader \in [0..MaxTerm -> 0..N]
+                    /\ history \in Seq([index : Nat, value : Values]),
+                  Campaign(i) ==
+                    /\ state[i] = "follower"
+                    /\ currentTerm[i] < MaxTerm
+                    /\ currentTerm'
+                       = [currentTerm EXCEPT !
+                                   [i] = currentTerm[i] + 1]
+                    /\ state' = [state EXCEPT !
+                                   [i] = "candidate"]
+                    /\ votedFor' = [votedFor EXCEPT !
+                                   [i] = i]
+                    /\ UNCHANGED <<log, commitIndex, leader, history>>,
+                  NAssume == N >= 1,
+                  MTAssume == MaxTerm >= 1,
+                  Inv == TypeOK /\ LeaderInv /\ FollowerT0,
+                  ElectEnabled ==
+                    Inv /\ PendingCand => ENABLED <<ElectStep>>_vars,
+                  CampEnabled ==
+                    Inv /\ ~HasLeader /\ ~PendingCand
+                    => ENABLED <<CampStep>>_vars,
+                  NAssume ,
+                  MTAssume ,
+                  Q == Inv /\ ~HasLeader /\ ~PendingCand,
+                  NEW CONSTANT j \in Orderers,
+                  <3>2 
+           PROVE  (state')[j] = "candidate" /\ leader' = leader
+File "./Liveness.tla", line 145, characters 48-49:
+[ERROR]: Could not prove or check:
+           ASSUME NEW CONSTANT N,
+                  NEW CONSTANT F,
+                  NEW CONSTANT MaxTerm,
+                  NEW CONSTANT Values,
+                  Orderers == 1..N,
+                  NEW VARIABLE currentTerm,
+                  NEW VARIABLE state,
+                  NEW VARIABLE votedFor,
+                  NEW VARIABLE log,
+                  NEW VARIABLE commitIndex,
+                  NEW VARIABLE leader,
+                  NEW VARIABLE history,
+                  NAssume == N >= 1,
+                  MTAssume == MaxTerm >= 1,
+                  ElectEnabled ==
+                    Inv /\ PendingCand => ENABLED <<ElectStep>>_vars,
+                  CampEnabled ==
+                    Inv /\ ~HasLeader /\ ~PendingCand
+                    => ENABLED <<CampStep>>_vars,
+                  NAssume ,
+                  MTAssume ,
+                  Q == Inv /\ ~HasLeader /\ ~PendingCand,
+                  NEW CONSTANT j \in Orderers,
+                  NoLeaderZero 
+           PROVE  \A t \in 0..MaxTerm : leader[t] = 0
+File "./Liveness.tla", line 144, characters 19-20:
+[ERROR]: Could not prove or check:
+           ASSUME NEW CONSTANT N,
+                  NEW CONSTANT F,
+                  NEW CONSTANT MaxTerm,
+                  NEW CONSTANT Values,
+                  Orderers == 1..N,
+                  NEW VARIABLE currentTerm,
+                  NEW VARIABLE state,
+                  NEW VARIABLE votedFor,
+                  NEW VARIABLE log,
+                  NEW VARIABLE commitIndex,
+                  NEW VARIABLE leader,
+                  NEW VARIABLE history,
+                  NAssume == N >= 1,
+                  MTAssume == MaxTerm >= 1,
+                  ElectEnabled ==
+                    Inv /\ PendingCand => ENABLED <<ElectStep>>_vars,
+                  CampEnabled ==
+                    Inv /\ ~HasLeader /\ ~PendingCand
+                    => ENABLED <<CampStep>>_vars,
+                  NAssume ,
+                  MTAssume ,
+                  Q == Inv /\ ~HasLeader /\ ~PendingCand,
+                  NEW CONSTANT j \in Orderers,
+                  InvStep ,
+                  <3>N 
+           PROVE  Inv'
+File "./Liveness.tla", line 111, characters 32-33:
+[ERROR]: Could not prove or check:
+           ASSUME NEW CONSTANT N,
+                  NEW CONSTANT F,
+                  NEW CONSTANT MaxTerm,
+                  NEW CONSTANT Values,
+                  Orderers == 1..N,
+                  NEW VARIABLE currentTerm,
+                  NEW VARIABLE state,
+                  NEW VARIABLE votedFor,
+                  NEW VARIABLE log,
+                  NEW VARIABLE commitIndex,
+                  NEW VARIABLE leader,
+                  NEW VARIABLE history,
+                  TypeOK ==
+                    /\ currentTerm \in [Orderers -> 0..MaxTerm]
+                    /\ state
+                       \in [Orderers -> {"follower", "candidate", "leader"}]
+                    /\ votedFor \in [Orderers -> 0..N]
+                    /\ log
+                       \in [Orderers ->
+                              Seq([term : 0..MaxTerm, value : Values])]
+                    /\ commitIndex \in [Orderers -> Nat]
+                    /\ leader \in [0..MaxTerm -> 0..N]
+                    /\ history \in Seq([index : Nat, value : Values]),
+                  BecomeLeader(i) ==
+                    /\ state[i] = "candidate"
+                    /\ leader[currentTerm[i]] = 0
+                    /\ state' = [state EXCEPT !
+                                   [i] = "leader"]
+                    /\ leader' = [leader EXCEPT !
+                                   [currentTerm[i]] = i]
+                    /\ UNCHANGED <<currentTerm, votedFor, log, commitIndex,
+                                   history>>,
+                  NAssume == N >= 1,
+                  MTAssume == MaxTerm >= 1,
+                  Inv == TypeOK /\ LeaderInv /\ FollowerT0,
+                  ElectEnabled ==
+                    Inv /\ PendingCand => ENABLED <<ElectStep>>_vars,
+                  CampEnabled ==
+                    Inv /\ ~HasLeader /\ ~PendingCand
+                    => ENABLED <<CampStep>>_vars,
+                  NAssume ,
+                  MTAssume ,
+                  P == Inv /\ PendingCand /\ ~HasLeader,
+                  NEW CONSTANT j \in Orderers,
+                  <3>2 
+           PROVE  (state')[j] = "leader"
+File "./Liveness.tla", line 94, characters 9-10:
+[ERROR]: Could not prove or check:
+           ASSUME NEW CONSTANT N,
+                  NEW CONSTANT F,
+                  NEW CONSTANT MaxTerm,
+                  NEW CONSTANT Values,
+                  Orderers == 1..N,
+                  NEW VARIABLE currentTerm,
+                  NEW VARIABLE state,
+                  NEW VARIABLE votedFor,
+                  NEW VARIABLE log,
+                  NEW VARIABLE commitIndex,
+                  NEW VARIABLE leader,
+                  NEW VARIABLE history,
+                  TypeOK ==
+                    /\ currentTerm \in [Orderers -> 0..MaxTerm]
+                    /\ state
+                       \in [Orderers -> {"follower", "candidate", "leader"}]
+                    /\ votedFor \in [Orderers -> 0..N]
+                    /\ log
+                       \in [Orderers ->
+                              Seq([term : 0..MaxTerm, value : Values])]
+                    /\ commitIndex \in [Orderers -> Nat]
+                    /\ leader \in [0..MaxTerm -> 0..N]
+                    /\ history \in Seq([index : Nat, value : Values]),
+                  Campaign(i) ==
+                    /\ state[i] = "follower"
+                    /\ currentTerm[i] < MaxTerm
+                    /\ currentTerm'
+                       = [currentTerm EXCEPT !
+                                   [i] = currentTerm[i] + 1]
+                    /\ state' = [state EXCEPT !
+                                   [i] = "candidate"]
+                    /\ votedFor' = [votedFor EXCEPT !
+                                   [i] = i]
+                    /\ UNCHANGED <<log, commitIndex, leader, history>>,
+                  NAssume == N >= 1,
+                  MTAssume == MaxTerm >= 1,
+                  Inv == TypeOK /\ LeaderInv /\ FollowerT0,
+                  ElectEnabled ==
+                    Inv /\ PendingCand => ENABLED <<ElectStep>>_vars,
+                  CampEnabled ==
+                    Inv /\ ~HasLeader /\ ~PendingCand
+                    => ENABLED <<CampStep>>_vars,
+                  NAssume ,
+                  MTAssume ,
+                  P == Inv /\ PendingCand /\ ~HasLeader,
+                  P ,
+                  [Next]_vars ,
+                  NEW CONSTANT i \in Orderers,
+                  NEW CONSTANT j \in Orderers,
+                  <4>1 ,
+                  <4>3 
+           PROVE  (state')[i] = "candidate"
+                  /\ (currentTerm')[i] = currentTerm[i] /\ 
+                  leader' = leader
+File "./Liveness.tla", line 49, characters 22-23:
+[ERROR]: Could not prove or check:
+           ASSUME NEW CONSTANT N,
+                  NEW CONSTANT F,
+                  NEW CONSTANT MaxTerm,
+                  NEW CONSTANT Values,
+                  Orderers == 1..N,
+                  NEW VARIABLE currentTerm,
+                  NEW VARIABLE state,
+                  NEW VARIABLE votedFor,
+                  NEW VARIABLE log,
+                  NEW VARIABLE commitIndex,
+                  NEW VARIABLE leader,
+                  NEW VARIABLE history,
+                  TypeOK ==
+                    /\ currentTerm \in [Orderers -> 0..MaxTerm]
+                    /\ state
+                       \in [Orderers -> {"follower", "candidate", "leader"}]
+                    /\ votedFor \in [Orderers -> 0..N]
+                    /\ log
+                       \in [Orderers ->
+                              Seq([term : 0..MaxTerm, value : Values])]
+                    /\ commitIndex \in [Orderers -> Nat]
+                    /\ leader \in [0..MaxTerm -> 0..N]
+                    /\ history \in Seq([index : Nat, value : Values]),
+                  Init ==
+                    /\ currentTerm = [i \in Orderers |-> 0]
+                    /\ state = [i \in Orderers |-> "follower"]
+                    /\ votedFor = [i \in Orderers |-> 0]
+                    /\ log = [i \in Orderers |-> <<>>]
+                    /\ commitIndex = [i \in Orderers |-> 0]
+                    /\ leader = [t \in 0..MaxTerm |-> 0]
+                    /\ history = <<>>,
+                  NAssume == N >= 1,
+                  MTAssume == MaxTerm >= 1,
+                  LeaderInv ==
+                    \A t \in 0..MaxTerm :
+                       leader[t] # 0 => state[leader[t]] = "leader",
+                  FollowerT0 ==
+                    \A i \in Orderers :
+                       state[i] = "follower" => currentTerm[i] = 0,
+                  Inv == TypeOK /\ LeaderInv /\ FollowerT0,
+                  NAssume ,
+                  MTAssume 
+           PROVE  Init => Inv
+File "./Liveness.tla", line 45, characters 45-46:
+[ERROR]: Could not prove or check:
+           ASSUME NEW CONSTANT N,
+                  NEW CONSTANT F,
+                  NEW CONSTANT MaxTerm,
+                  NEW CONSTANT Values,
+                  Orderers == 1..N,
+                  NEW VARIABLE currentTerm,
+                  NEW VARIABLE state,
+                  NEW VARIABLE votedFor,
+                  NEW VARIABLE log,
+                  NEW VARIABLE commitIndex,
+                  NEW VARIABLE leader,
+                  NEW VARIABLE history,
+                  TypeOK ==
+                    /\ currentTerm \in [Orderers -> 0..MaxTerm]
+                    /\ state
+                       \in [Orderers -> {"follower", "candidate", "leader"}]
+                    /\ votedFor \in [Orderers -> 0..N]
+                    /\ log
+                       \in [Orderers ->
+                              Seq([term : 0..MaxTerm, value : Values])]
+                    /\ commitIndex \in [Orderers -> Nat]
+                    /\ leader \in [0..MaxTerm -> 0..N]
+                    /\ history \in Seq([index : Nat, value : Values]),
+                  Commit(i) ==
+                    /\ state[i] = "leader"
+                    /\ Len(log[i]) > commitIndex[i]
+                    /\ commitIndex' = [commitIndex EXCEPT !
+                                   [i] = Len(log[i])]
+                    /\ history'
+                       = Append(history,
+                                [index |-> Len(log[i]),
+                                 value |-> log[i][Len(log[i])].value])
+                    /\ UNCHANGED <<currentTerm, state, votedFor, log,
+                                   leader>>,
+                  NAssume == N >= 1,
+                  MTAssume == MaxTerm >= 1,
+                  LeaderInv ==
+                    \A t \in 0..MaxTerm :
+                       leader[t] # 0 => state[leader[t]] = "leader",
+                  FollowerT0 ==
+                    \A i \in Orderers :
+                       state[i] = "follower" => currentTerm[i] = 0,
+                  Inv == TypeOK /\ LeaderInv /\ FollowerT0,
+                  Inv ,
+                  [Next]_vars ,
+                  <1>5 
+           PROVE  Inv'
+File "./Liveness.tla", line 44, characters 67-68:
+[ERROR]: Could not prove or check:
+           ASSUME NEW CONSTANT N,
+                  NEW CONSTANT F,
+                  NEW CONSTANT MaxTerm,
+                  NEW CONSTANT Values,
+                  Orderers == 1..N,
+                  NEW VARIABLE currentTerm,
+                  NEW VARIABLE state,
+                  NEW VARIABLE votedFor,
+                  NEW VARIABLE log,
+                  NEW VARIABLE commitIndex,
+                  NEW VARIABLE leader,
+                  NEW VARIABLE history,
+                  TypeOK ==
+                    /\ currentTerm \in [Orderers -> 0..MaxTerm]
+                    /\ state
+                       \in [Orderers -> {"follower", "candidate", "leader"}]
+                    /\ votedFor \in [Orderers -> 0..N]
+                    /\ log
+                       \in [Orderers ->
+                              Seq([term : 0..MaxTerm, value : Values])]
+                    /\ commitIndex \in [Orderers -> Nat]
+                    /\ leader \in [0..MaxTerm -> 0..N]
+                    /\ history \in Seq([index : Nat, value : Values]),
+                  AppendEntry(i, v) ==
+                    /\ state[i] = "leader"
+                    /\ log'
+                       = [log EXCEPT
+                            ![i] = Append
+                                   (log[i],
+                                   [term |-> currentTerm[i], value |-> v])]
+                    /\ UNCHANGED <<currentTerm, state, votedFor, commitIndex,
+                                   leader, history>>,
+                  NAssume == N >= 1,
+                  MTAssume == MaxTerm >= 1,
+                  LeaderInv ==
+                    \A t \in 0..MaxTerm :
+                       leader[t] # 0 => state[leader[t]] = "leader",
+                  FollowerT0 ==
+                    \A i \in Orderers :
+                       state[i] = "follower" => currentTerm[i] = 0,
+                  Inv == TypeOK /\ LeaderInv /\ FollowerT0,
+                  Inv ,
+                  [Next]_vars ,
+                  <1>4 
+           PROVE  Inv'
+File "./Liveness.tla", line 40, characters 19-20:
+[ERROR]: Could not prove or check:
+           ASSUME NEW CONSTANT N,
+                  NEW CONSTANT F,
+                  NEW CONSTANT MaxTerm,
+                  NEW CONSTANT Values,
+                  Orderers == 1..N,
+                  NEW VARIABLE currentTerm,
+                  NEW VARIABLE state,
+                  NEW VARIABLE votedFor,
+                  NEW VARIABLE log,
+                  NEW VARIABLE commitIndex,
+                  NEW VARIABLE leader,
+                  NEW VARIABLE history,
+                  TypeOK ==
+                    /\ currentTerm \in [Orderers -> 0..MaxTerm]
+                    /\ state
+                       \in [Orderers -> {"follower", "candidate", "leader"}]
+                    /\ votedFor \in [Orderers -> 0..N]
+                    /\ log
+                       \in [Orderers ->
+                              Seq([term : 0..MaxTerm, value : Values])]
+                    /\ commitIndex \in [Orderers -> Nat]
+                    /\ leader \in [0..MaxTerm -> 0..N]
+                    /\ history \in Seq([index : Nat, value : Values]),
+                  BecomeLeader(i) ==
+                    /\ state[i] = "candidate"
+                    /\ leader[currentTerm[i]] = 0
+                    /\ state' = [state EXCEPT !
+                                   [i] = "leader"]
+                    /\ leader' = [leader EXCEPT !
+                                   [currentTerm[i]] = i]
+                    /\ UNCHANGED <<currentTerm, votedFor, log, commitIndex,
+                                   history>>,
+                  NAssume == N >= 1,
+                  MTAssume == MaxTerm >= 1,
+                  LeaderInv ==
+                    \A t \in 0..MaxTerm :
+                       leader[t] # 0 => state[leader[t]] = "leader",
+                  FollowerT0 ==
+                    \A i \in Orderers :
+                       state[i] = "follower" => currentTerm[i] = 0,
+                  Inv == TypeOK /\ LeaderInv /\ FollowerT0,
+                  Inv ,
+                  [Next]_vars ,
+                  NEW CONSTANT i \in Orderers,
+                  <2>1 ,
+                  NAssume 
+           PROVE  TypeOK'
+File "./Liveness.tla", line 34, characters 19-20:
+[ERROR]: Could not prove or check:
+           ASSUME NEW CONSTANT N,
+                  NEW CONSTANT F,
+                  NEW CONSTANT MaxTerm,
+                  NEW CONSTANT Values,
+                  Orderers == 1..N,
+                  NEW VARIABLE currentTerm,
+                  NEW VARIABLE state,
+                  NEW VARIABLE votedFor,
+                  NEW VARIABLE log,
+                  NEW VARIABLE commitIndex,
+                  NEW VARIABLE leader,
+                  NEW VARIABLE history,
+                  TypeOK ==
+                    /\ currentTerm \in [Orderers -> 0..MaxTerm]
+                    /\ state
+                       \in [Orderers -> {"follower", "candidate", "leader"}]
+                    /\ votedFor \in [Orderers -> 0..N]
+                    /\ log
+                       \in [Orderers ->
+                              Seq([term : 0..MaxTerm, value : Values])]
+                    /\ commitIndex \in [Orderers -> Nat]
+                    /\ leader \in [0..MaxTerm -> 0..N]
+                    /\ history \in Seq([index : Nat, value : Values]),
+                  Campaign(i) ==
+                    /\ state[i] = "follower"
+                    /\ currentTerm[i] < MaxTerm
+                    /\ currentTerm'
+                       = [currentTerm EXCEPT !
+                                   [i] = currentTerm[i] + 1]
+                    /\ state' = [state EXCEPT !
+                                   [i] = "candidate"]
+                    /\ votedFor' = [votedFor EXCEPT !
+                                   [i] = i]
+                    /\ UNCHANGED <<log, commitIndex, leader, history>>,
+                  NAssume == N >= 1,
+                  MTAssume == MaxTerm >= 1,
+                  LeaderInv ==
+                    \A t \in 0..MaxTerm :
+                       leader[t] # 0 => state[leader[t]] = "leader",
+                  FollowerT0 ==
+                    \A i \in Orderers :
+                       state[i] = "follower" => currentTerm[i] = 0,
+                  Inv == TypeOK /\ LeaderInv /\ FollowerT0,
+                  Inv ,
+                  [Next]_vars ,
+                  NEW CONSTANT i \in Orderers,
+                  <2>1 ,
+                  MTAssume ,
+                  NAssume 
+           PROVE  TypeOK'
+File "./Liveness.tla", line 1, character 1 to line 161, character 77:
+[ERROR]: 11/215 obligations failed.
+There were backend errors processing module `"Liveness"`.
+ tlapm ending abnormally with Failure("backend errors: there are unproved obligations")
+Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
+Called from Tlapm.process_module in file "tlapm.ml", line 408, characters 12-77
+Called from Tlapm.main.f in file "tlapm.ml", line 503, characters 23-43
+Called from Stdlib__list.fold_left in file "list.ml", line 121, characters 24-34
+Called from Tlapm.main in file "tlapm.ml", line 506, characters 13-40
+Called from Tlapm.init in file "tlapm.ml", line 518, characters 8-33
+

@@ -1,0 +1,9 @@
+=== LS6 start: N_ELECT=5 SEEDS=1 ===
+[healer] orderer3 sidecar pid=109423
+######## SEED 1 ########
+  [A_s1 no-BORA] orderer3 won 1/5 | liveness 5/5 | 5 distinct
+  [B_s1 BORA]    orderer3 won 1/5 | liveness 5/5 | 5 distinct
+LEADER_ACQ_LS6_DONE (results: /mnt/d/fabric-d2/results/leaderacq6_20260611-141028)
+label,seed,orderer3_wins,n_elect,liveness_ok,distinct_leaders
+A_noBORA,1,1,5,5,5
+B_BORA,1,1,5,5,5

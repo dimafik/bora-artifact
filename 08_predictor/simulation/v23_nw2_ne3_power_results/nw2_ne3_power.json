@@ -1,0 +1,26 @@
+{
+  "NW2_family_ablation_upgrade": {
+    "n_per_family": 200,
+    "auc_per_family_removed": {
+      "L": 0.9971249999999999,
+      "R": 0.99855,
+      "E": 0.9977,
+      "T": 0.994475,
+      "N": 0.998375,
+      "B": 0.998125
+    },
+    "mean_auc_separation": 0.00138000000000007,
+    "power_at_d_0.45_alpha_0.001": 0.8867594625636606,
+    "v21_underpowered": "d=0.45, power=0.082 at n=30",
+    "v23_upgraded": "d=0.45, power=0.8868 at n=200"
+  },
+  "NE3_higher_moment_upgrade": {
+    "n_total": 600,
+    "linear_AUC_should_be_near_0.5": 0.49507777777777773,
+    "kurtosis_window_AUC": 0.6566666666666667,
+    "cohens_d_kurtosis": 0.7459583966808558,
+    "power_at_kurtosis_d": 0.34404726155961873,
+    "v21_underpowered": "d=0.18, power=0.018 at n=30 (linear only)",
+    "v23_upgraded_finding": "Linear stays at 0.4951 (~0.5, Thm 1 confirmed); kurtosis-window feature reaches AUC 0.6567, d=0.75, power=0.3440"
+  }
+}

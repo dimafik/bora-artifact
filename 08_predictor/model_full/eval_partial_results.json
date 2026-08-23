@@ -1,0 +1,15 @@
+{
+  "n_test": 156300,
+  "score_rmse_30s": 0.10605724155902863,
+  "score_rmse_60s": 0.10635228455066681,
+  "score_rmse_90s": 0.10485591739416122,
+  "anomaly_auc": 0.9996247611647526,
+  "degrade_auc": 0.732777841638837,
+  "degrade_precision_at_10pct": 0.07114523352527191,
+  "degrade_precision_at_10pct_ci99": [
+    0.06602875793507232,
+    0.07662565021293022
+  ],
+  "degrade_recall": 0.26127819548872183,
+  "n_train_epochs_used": 2
+}

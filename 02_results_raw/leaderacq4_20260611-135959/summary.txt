@@ -1,0 +1,10 @@
+=== LS4 start: N_ELECT=10 SEEDS=3 ===
+sidecars ensured
+[refresher] orderer3-only pid=76303
+######## SEED 1 ########
+  [A_s1 no-BORA] orderer3 won 1/10 | liveness 10/10 | 10 distinct
+  [B_s1 BORA]    orderer3 won 1/10 | liveness 10/10 | 10 distinct
+######## SEED 2 ########
+  [A_s2 no-BORA] orderer3 won 2/10 | liveness 10/10 | 10 distinct
+  [B_s2 BORA]    orderer3 won 2/10 | liveness 10/10 | 10 distinct
+######## SEED 3 ########

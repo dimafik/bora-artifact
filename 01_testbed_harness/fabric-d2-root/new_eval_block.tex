@@ -1,0 +1,77 @@
+\subsection{Throughput under attack and the corrected saturation point}
+\label{sec:caliper}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/fig_eval_corrected.pdf}
+\caption{Corrected evaluation on the BORA-patched five-orderer
+cluster (sub-ceiling rates where Caliper confirms commits;
+cross-checked against ledger block-height delta).
+\textbf{(a)} Committed throughput versus offered load for clean,
+a $+500$\,ms single-follower delay on \texttt{orderer3}, and the
+same attack with BORA blacklisting \texttt{orderer3}: the attack
+degrades throughput $15$--$25\%$, and BORA tracks the attack curve
+within $\pm 3\%$ (it does not, and by construction cannot, recover
+follower-delay throughput).
+\textbf{(b)} Adversarial leadership acquisition over forced
+elections: the most-elected orderer wins leadership $33\%$ of the
+time without BORA and $\approx 14\%$ when BORA blacklists it (a
+$\approx 2.4\times$ reduction), while every election still elects a
+valid leader, so liveness is preserved.}
+\label{fig:eval}
+\end{figure*}
+
+An audit of the original saturation sweeps (offered $600$--$900$
+tx/s) uncovered a client-side measurement artifact: that offered
+load exceeds the single-host cluster's committed-throughput ceiling
+of $\approx 570$ tx/s, so the orderer queue grew without bound and
+Caliper's gateway commit-status calls returned
+\texttt{DEADLINE\_EXCEEDED}. Every transaction was nonetheless
+committed on-ledger --- block-height growth confirms a sustained
+$\approx 570$ tx/s commit rate --- but the client never confirmed
+the commits, so the per-round figures reflected the offered
+\emph{send rate}, not confirmed committed throughput. We therefore
+re-ran the entire campaign at sub-ceiling rates ($100$--$500$
+tx/s), where commits confirm within the gateway deadline, and
+cross-checked every run against the ledger block-height delta.
+
+Figure~\ref{fig:eval}(a) reports the corrected throughput. The
+$+500$\,ms single-follower attack lowers committed throughput by
+$15$--$25\%$ and raises mean latency from $\approx 50$\,ms to
+$\approx 2$\,s. \emph{BORA does not recover this throughput}: with
+\texttt{orderer3} blacklisted it tracks the attack curve to within
+$\pm 3\%$ at every rate and across seeds. This is the correct,
+expected behaviour of the protocol. The bounded blacklist governs
+only \emph{leader eligibility} (Algorithm~\ref{alg:hook}); it does
+not change the leader's replication to, or quorum wait on, a slow
+follower. A network-delayed follower is absorbed by Raft's existing
+$3/5$ quorum margin whether or not BORA is active, so BORA is
+correctly neutral on follower-delay throughput. An earlier
+draft of this paper reported ``$+10.6\%$/$+14.5\%$ recovery''
+figures in this regime; those were the send-rate artifact above and
+do not survive a confirmed-commit measurement, so we retract them.
+
+\paragraph*{Where BORA's value is measurable.}
+BORA's purpose is leadership integrity, so its value is visible in
+\emph{who holds the leadership}, not in single-follower throughput.
+Figure~\ref{fig:eval}(b) measures this directly. Over repeated
+forced elections (twelve elections per campaign), the most
+frequently elected orderer won leadership $33\%$ of the time
+without BORA; when BORA blacklists that node its win rate falls to
+$\approx 14\%$ --- a $\approx 2.4\times$ reduction --- while every
+election still produced a valid leader, so liveness is preserved.
+This is exactly BORA's security objective: it denies a targeted
+adversary the leadership it would need to bias block ordering,
+without the hard demotion that would break the simulation relation
+of Theorem~\ref{thm:safety}. The residual non-zero win rate is the
+designed consequence of the fail-open, advisory mechanism --- BORA
+never forces a yield it cannot confirm, so a blacklisted node
+occasionally campaigns in the brief window before fresh advice is
+read.
+
+\paragraph*{Safety.}
+Across every condition measured --- clean, single- and
+multi-follower delay at every rate, and the leadership-exclusion
+campaign --- the cluster committed every transaction with zero
+safety violations, the only universal guarantee and the
+trace-refinement content of Theorem~\ref{thm:safety}.

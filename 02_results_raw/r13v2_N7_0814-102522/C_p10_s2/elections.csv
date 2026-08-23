@@ -1,0 +1,11 @@
+idx,leader_before,leader_after,fp_node,fp_node_won,live,time_to_leader_s,fp_delivered,advice_seen_on
+1,7,5,7,0,1,4,1,n2:{"blacklist":[3;7];"seq":1;"fail_open":false}
+2,5,2,5,0,1,4,1,n2:{"blacklist":[3;5];"seq":1;"fail_open":false}
+3,2,4,2,0,1,2,1,n3:{"blacklist":[2;3];"seq":1;"fail_open":false}
+4,4,2,4,0,1,4,0,n2:{"blacklist":[3];"seq":1;"fail_open":false}
+5,2,7,2,0,1,2,1,n3:{"blacklist":[2;3];"seq":1;"fail_open":false}
+6,7,6,7,0,1,4,1,n2:{"blacklist":[3;7];"seq":1;"fail_open":false}
+7,6,5,6,0,1,2,1,n3:{"blacklist":[3;6];"seq":1;"fail_open":false}
+8,5,0,6,0,0,-1,1,n2:{"blacklist":[3;6];"seq":1;"fail_open":false}
+9,5,0,6,0,0,-1,1,n2:{"blacklist":[3;6];"seq":1;"fail_open":false}
+10,5,0,6,0,0,-1,1,n2:{"blacklist":[3;6];"seq":1;"fail_open":false}

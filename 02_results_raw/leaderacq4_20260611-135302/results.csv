@@ -1,0 +1,3 @@
+label,seed,orderer3_wins,n_elect,liveness_ok,distinct_leaders
+A_noBORA,1,1,3,3,3
+B_BORA,1,1,3,3,3

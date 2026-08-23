@@ -1,0 +1,24 @@
+# Algorithm 1 advisor configuration for 5-orderer Raft cluster
+orderers:
+  - name: orderer.example.com,  admin_port: 7053
+  - name: orderer2.example.com, admin_port: 8053
+  - name: orderer3.example.com, admin_port: 10053
+  - name: orderer4.example.com, admin_port: 11053
+  - name: orderer5.example.com, admin_port: 12053
+
+# Observer
+poll_interval_s: 1.0
+window_size: 16
+
+# Predictor + Advisor thresholds
+tau_r: 0.50
+tau_conf: 0.40
+
+# Fail-open (paper §VI.A)
+k_fail: 3
+
+# Bounded blacklist hard cap |B_t| < f_cap (so f_cap=2 => |B_t| <= 1)
+f_cap: 2
+
+# Active-Leader Rule: incumbent stays for this long before being blacklistable
+alr_grace_s: 10.0

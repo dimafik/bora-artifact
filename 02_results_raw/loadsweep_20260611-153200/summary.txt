@@ -1,0 +1,11 @@
+######## LOAD 450 tx/s ########
+  LOAD 450: orderer3 won 0/8 | liveness 8/8
+######## LOAD 550 tx/s ########
+  LOAD 550: orderer3 won 0/8 | liveness 8/8
+######## LOAD 650 tx/s ########
+  LOAD 650: orderer3 won 0/8 | liveness 7/8
+LOAD_SWEEP_DONE (results: /mnt/d/fabric-d2/results/loadsweep_20260611-153200)
+load_tps,orderer3_wins,k,liveness
+450,0,8,8
+550,0,8,8
+650,0,8,7

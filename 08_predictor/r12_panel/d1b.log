@@ -1,0 +1,12 @@
+data (6000, 5, 60, 8)  chance=0.20
+  per-node    lr=3e-04 ep=13  top1=0.2450  shuffled=0.2450  (0.2 min)
+  per-node    lr=1e-03 ep=11  top1=0.2470  shuffled=0.2470  (0.1 min)
+  mean-dev    lr=3e-04 ep=15  top1=0.7090  shuffled=0.7090  (0.2 min)
+  mean-dev    lr=1e-03 ep= 7  top1=0.7105  shuffled=0.7105  (0.1 min)
+  conv2d      lr=3e-04 ep= 6  top1=0.1910  shuffled=0.1910  (0.1 min)
+  conv2d      lr=1e-03 ep=16  top1=0.2285  shuffled=0.2300  (0.3 min)
+  gru-nodes   lr=3e-04 ep=10  top1=0.2350  shuffled=0.2350  (0.6 min)
+  gru-nodes   lr=1e-03 ep=21  top1=0.6425  shuffled=0.6315  (1.2 min)
+  attention   lr=3e-04 ep=30  top1=0.6520  shuffled=0.6520  (0.9 min)
+  attention   lr=1e-03 ep=19  top1=0.6705  shuffled=0.6705  (0.6 min)
+done

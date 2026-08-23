@@ -1,0 +1,67 @@
+---
+# Phase 2 (T+1:35 → T+1:45): Activate Proposed protocol
+# Toggle from Arm A (Raft FIFO) to Arm B (Proposed: PSR + BRAO sidecar)
+- name: Deploy BRAO sidecar to orderers
+  hosts: orderers
+  tasks:
+    - name: Copy frozen predictor model
+      ansible.builtin.copy:
+        src: ../../models/brao_v1.pt
+        dest: /opt/fabric/models/brao_v1.pt
+        mode: '0444'
+
+    - name: Copy sidecar Python source
+      ansible.builtin.copy:
+        src: ../../brao_sidecar/
+        dest: /opt/brao_sidecar/
+        mode: '0555'
+
+    - name: Install Python deps
+      ansible.builtin.pip:
+        requirements: /opt/brao_sidecar/requirements.txt
+
+    - name: Render systemd unit
+      ansible.builtin.template:
+        src: templates/brao-sidecar.service.j2
+        dest: /etc/systemd/system/brao-sidecar.service
+
+    - name: Enable + start sidecar
+      ansible.builtin.systemd:
+        name: brao-sidecar
+        enabled: true
+        state: started
+        daemon_reload: true
+
+    - name: Wait for sidecar healthz
+      ansible.builtin.uri:
+        url: http://127.0.0.1:9081/healthz
+        status_code: 200
+      retries: 30
+      delay: 2
+
+    - name: Set BRAO_DISABLE=0 in orderer env
+      ansible.builtin.lineinfile:
+        path: /opt/fabric/orderer.env
+        regexp: '^BRAO_DISABLE='
+        line: 'BRAO_DISABLE=0'
+
+    - name: Rolling restart orderer (one at a time to preserve quorum)
+      community.docker.docker_compose_v2:
+        project_src: /opt/fabric
+        files: [orderer-compose.yml]
+        state: present
+        recreate: always
+      throttle: 1
+
+    - name: Wait for Raft leader election to settle
+      ansible.builtin.pause: { seconds: 15 }
+
+- name: Verify predictor confidence is being emitted
+  hosts: orderers
+  tasks:
+    - name: Scrape probe metrics
+      ansible.builtin.uri:
+        url: http://127.0.0.1:9095/metrics
+        return_content: true
+      register: probes
+      failed_when: "'predictor_confidence_count' not in probes.content"

@@ -1,0 +1,37 @@
+  H1b-regr  none       seed=0 ep=11 AUC=0.6094 (2.6 min)
+  H1b-regr  none       seed=1 ep=18 AUC=0.6402 (3.9 min)
+  H1b-regr  none       seed=2 ep= 6 AUC=0.6482 (1.3 min)
+  H1b-regr  none       seed=3 ep=10 AUC=0.6643 (2.2 min)
+  H1b-regr  none       seed=4 ep=12 AUC=0.6315 (2.5 min)
+  -> H1b-regr  none       0.6387¡¾0.0182
+  H1b-regr  deepsets   seed=0 ep= 7 AUC=0.6002 (1.7 min)
+  H1b-regr  deepsets   seed=1 ep=18 AUC=0.6469 (4.1 min)
+  H1b-regr  deepsets   seed=2 ep= 7 AUC=0.6603 (1.6 min)
+  H1b-regr  deepsets   seed=3 ep= 8 AUC=0.6485 (1.6 min)
+  H1b-regr  deepsets   seed=4 ep= 5 AUC=0.6342 (1.1 min)
+  -> H1b-regr  deepsets   0.6380¡¾0.0206
+  H1b-regr  attention  seed=0 ep= 9 AUC=0.6202 (2.1 min)
+  H1b-regr  attention  seed=1 ep=10 AUC=0.6472 (2.1 min)
+  H1b-regr  attention  seed=2 ep= 9 AUC=0.6386 (2.1 min)
+  H1b-regr  attention  seed=3 ep= 7 AUC=0.6188 (1.4 min)
+  H1b-regr  attention  seed=4 ep=14 AUC=0.6087 (2.7 min)
+  -> H1b-regr  attention  0.6267¡¾0.0141
+  NA-regr   none       seed=0 ep=15 AUC=0.9999 (2.9 min)
+  NA-regr   none       seed=1 ep=10 AUC=0.9999 (1.9 min)
+  NA-regr   none       seed=2 ep=10 AUC=1.0000 (1.9 min)
+  NA-regr   none       seed=3 ep=13 AUC=0.9998 (2.5 min)
+  NA-regr   none       seed=4 ep=12 AUC=0.9999 (2.3 min)
+  -> NA-regr   none       0.9999¡¾0.0001
+  NA-regr   deepsets   seed=0 ep=12 AUC=0.9999 (2.6 min)
+  NA-regr   deepsets   seed=1 ep=10 AUC=1.0000 (2.0 min)
+  NA-regr   deepsets   seed=2 ep=11 AUC=1.0000 (2.6 min)
+  NA-regr   deepsets   seed=3 ep= 9 AUC=0.9995 (2.4 min)
+  NA-regr   deepsets   seed=4 ep=20 AUC=0.9998 (4.6 min)
+  -> NA-regr   deepsets   0.9998¡¾0.0002
+  NA-regr   attention  seed=0 ep=13 AUC=0.9998 (3.1 min)
+  NA-regr   attention  seed=1 ep=11 AUC=0.9995 (2.8 min)
+  NA-regr   attention  seed=2 ep=12 AUC=0.9999 (2.8 min)
+  NA-regr   attention  seed=3 ep=16 AUC=0.9999 (3.7 min)
+  NA-regr   attention  seed=4 ep=10 AUC=0.9999 (2.3 min)
+  -> NA-regr   attention  0.9998¡¾0.0002
+done

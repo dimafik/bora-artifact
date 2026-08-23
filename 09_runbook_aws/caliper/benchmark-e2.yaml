@@ -1,0 +1,38 @@
+# E2 attack: +200 ms on orderer3, advisor off. Same workload as E1.
+test:
+  name: bora-multihost-e2-attack
+  description: multi-host throughput/latency, +200 ms on orderer3, advisor off
+  workers:
+    type: local
+    number: 8
+  rounds:
+    - label: warmup
+      txDuration: 60
+      rateControl: { type: linear-rate, opts: { startingTps: 10, finishingTps: 100 } }
+      workload: { module: ../workloads/transfer.js, arguments: { assets: 100000, criticality: low } }
+
+    - &measurement
+      label: e2_round_1
+      txDuration: 600
+      rateControl:
+        type: composite-rate
+        opts:
+          weights: [70, 15, 15]
+          rateControllers:
+            - { type: fixed-rate, opts: { tps: 70 } }
+            - { type: fixed-rate, opts: { tps: 15 } }
+            - { type: fixed-rate, opts: { tps: 15 } }
+      workload:
+        module: ../workloads/transfer.js
+        arguments: { assets: 100000, criticality: low }
+
+    - <<: *measurement
+      label: e2_round_2
+    - <<: *measurement
+      label: e2_round_3
+    - <<: *measurement
+      label: e2_round_4
+    - <<: *measurement
+      label: e2_round_5
+    - <<: *measurement
+      label: e2_round_6

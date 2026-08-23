@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "raft-blacklist.fullname" . }}
+spec:
+  serviceName: {{ include "raft-blacklist.fullname" . }}
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "raft-blacklist.fullname" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "raft-blacklist.fullname" . }}
+    spec:
+      containers:
+        - name: raft-node
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.service.port }}
+          env:
+            - name: NODE_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.labels['statefulset.kubernetes.io/pod-name']
+            - name: PORT
+              value: "{{ .Values.service.port }}"
+            - name: AI_AUGMENTED
+              value: "{{ if .Values.aiAugmented }}1{{ else }}0{{ end }}"
+            - name: K_FAIL
+              value: "{{ .Values.kFail }}"
+            - name: TAU_R
+              value: "{{ .Values.tauR }}"
+            - name: TAU_CONF
+              value: "{{ .Values.tauConf }}"
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}

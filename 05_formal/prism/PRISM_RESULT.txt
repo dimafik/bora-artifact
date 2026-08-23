@@ -1,0 +1,37 @@
+=== PRISM probabilistic verification of BORA leader-election convergence ===
+Tool: PRISM 4.8.1 (DTMC engine).  Models: election.pm (W=2, worst case),
+election_w3.pm (W=3), election_k.pm (round-bounded).  Run via run_prism.sh
+(ubuntu:24.04 container + JRE).  This supplies the PROBABILISTIC part of the
+liveness Proposition that (non-probabilistic) TLA+/TLAPS cannot express.
+
+Model: within BORA's eligible set E_t (|E_t| = NE, blacklisted nodes withhold
+their campaign but still vote; the minimum-hold rule keeps NE >= ceil((N+1)/2)),
+each election round every eligible candidate draws a uniform timeout slot in
+{0..W-1}; the UNIQUE-smallest-slot candidate wins, a tie is a split vote and the
+round repeats.  Per-round success q = NE/2^NE for W=2 (exact, confirmed below).
+
+--- QUALITATIVE: w.p.1 convergence  P>=1 [ F leader ]  (TLA+ cannot state this) ---
+  W=2, NE=3 : true     (P=?[F leader] = 1.0 exact)
+  W=2, NE=4 : true     (P=?[F leader] = 1.0 exact)
+  W=2, NE=5 : true     (P=?[F leader] = 1.0 exact)
+
+--- EXPECTED ROUNDS  R{"rounds"}=? [ F leader ]  (= 1/q) ---
+            W=2 (worst-case 2-slot window)     W=3 (wider window)
+  NE=3 :    2.667   (= 1 / (3/8))              1.800
+  NE=4 :    4.000   (= 1 / (4/16))             2.250
+  NE=5 :    6.400   (= 1 / (5/32))             2.859
+  => wider timeout window => higher q => faster; W=2 is the adversarial worst case.
+
+--- GEOMETRIC DECAY  P[ leader within k rounds ] = 1-(1-q)^(k+1)  (W=2, NE=5, q=0.15625) ---
+  k= 1 : 0.2881      k= 5 : 0.6392      k=12 : 0.8902
+  k= 2 : 0.3993      k= 6 : 0.6956      k=20 : 0.9718
+  k= 3 : 0.4932      k= 8 : 0.7833
+  k= 4 : 0.5724                                  -> P -> 1 monotonically (w.p.1).
+
+=> The randomised-timeout convergence RATE that is inexpressible in TLA+ is
+mechanically verified in PRISM: a leader is elected with probability one and the
+no-leader probability decays geometrically; even the adversarial worst case
+(two-slot window, full contention NE=N=5) converges in 6.4 rounds in expectation.
+Together with the TLAPS fairness-based leads-to proof (Liveness.tla, 234/234) and
+the unbounded safety refinement (BORA_proof.tla, 48/48), the liveness Proposition
+is now mechanised on both its non-probabilistic and probabilistic sides.

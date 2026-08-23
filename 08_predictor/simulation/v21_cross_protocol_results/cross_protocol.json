@@ -1,0 +1,20 @@
+{
+  "NE8_PBFT": {
+    "auc_linear": 1.0,
+    "auc_memory_ar1": 0.5187257777777777,
+    "auc_spike_aware": 0.45234399999999997,
+    "safety_violations": 0
+  },
+  "NE9_HotStuff": {
+    "auc_linear": 0.0,
+    "auc_memory_ar1": 0.9986106666666666,
+    "auc_spike_aware": 0.3415288888888889,
+    "safety_violations": 0
+  },
+  "NE10_Tendermint": {
+    "auc_linear": 0.0,
+    "auc_memory_ar1": 0.5123031111111112,
+    "auc_spike_aware": 0.9832235555555556,
+    "safety_violations": 0
+  }
+}

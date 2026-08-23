@@ -1,0 +1,32 @@
+[
+  {
+    "scenario": "vanilla",
+    "elections": 579,
+    "leader_changes": 0,
+    "blacklist_events": 0,
+    "byzantine_advice_rejected": 0,
+    "unique_leaders": 1,
+    "byzantine_was_leader": false,
+    "median_rtt_p99": 16.08419418334961
+  },
+  {
+    "scenario": "byzantine",
+    "elections": 580,
+    "leader_changes": 0,
+    "blacklist_events": 0,
+    "byzantine_advice_rejected": 0,
+    "unique_leaders": 1,
+    "byzantine_was_leader": false,
+    "median_rtt_p99": 18.933773040771484
+  },
+  {
+    "scenario": "ai_byzantine",
+    "elections": 575,
+    "leader_changes": 0,
+    "blacklist_events": 0,
+    "byzantine_advice_rejected": 0,
+    "unique_leaders": 1,
+    "byzantine_was_leader": false,
+    "median_rtt_p99": 16.09659194946289
+  }
+]
