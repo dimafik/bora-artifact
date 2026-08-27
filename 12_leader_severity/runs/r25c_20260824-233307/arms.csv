@@ -1,0 +1,5 @@
+arm,leader_before,leader_after,h0,h1,secs
+C_clean,3,3,132214,136719,219
+F_follower,7,7,136719,141245,507
+L_leader,3,3,141380,148647,648
+C_clean_post,3,3,149941,158079,397

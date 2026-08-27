@@ -1,4 +1,18 @@
 """BORA predictor daemon (ML in the loop).
+
+*** SUPERSEDED -- DO NOT USE, AND NOT USED FOR ANY REPORTED MEASUREMENT. ***
+
+This early version applies a static cap `[:FCAP]` with FCAP=2, which is wrong in
+two ways against Algorithm 1 substep (c): it ignores the Raft-observed unhealthy
+count r, and the constant itself admits |B_t| <= f rather than |B_t| < f. The
+defect never showed up in practice because every campaign injected a single
+degraded orderer, so |B_t| never exceeded 1.
+
+The corrected daemon is `predictor_daemon_n.py` in this directory, which
+implements `cap = max(0, F - r - 1)`. That is the one every closed-loop result in
+the paper was produced with. This file is retained only so the correction is
+auditable.
+
 Reads the live in-network RTT feed, builds the trained 8-feature window per
 orderer, runs the multi-head Transformer (best.pt), and emits B_t = {nodes whose
 predicted leader-suitability Score < THRESH} (capped < f). Writes bt.json on the

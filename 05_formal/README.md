@@ -1,78 +1,21 @@
-# IS-Raft-MC Formal Verification
+# BORA — formal artefacts
 
-## TLA+ Specification
+Machine-checked material for the IEEE TNSE submission
+*"BORA: A Bounded Order-Risk Advisor for Provably Safe ML-Augmented Leader
+Election in Raft Consensus"*.
 
-`ISRaftMC.tla` is the TLA+ specification of IS-Raft-MC, extending
-Ongaro's original Raft TLA+ spec with:
-- Mixed-criticality scheduler (HC/LC/PB queues + mode switching)
-- Oracle advisory (Φ_d prediction interface)
-- Witness layer (KZG commitment binding)
+| Directory | Contents |
+|---|---|
+| [`tla/`](tla/) | TLA+ specifications and TLAPS proofs for Theorem 1 (augmentation safety), Proposition 2 (liveness) and Proposition 7 (per-voter exclusion). See `tla/README.md` for the file-by-file map and `tla/PROOF_RESULT.txt` for the run log. |
+| [`prism/`](prism/) | PRISM model and results for the randomised-timeout convergence rate, which is probabilistic and therefore outside TLA+. |
 
-The specification formalizes Theorem 9.1 (Safety Preservation under
-arbitrary oracle outputs) via the `OracleAdvisorySafety` invariant.
+Headline results, all reproduced by the commands in `tla/README.md`:
 
-## Running TLC Model Checker
-
-Use TLA+ Toolbox (https://lamport.azurewebsites.net/tla/toolbox.html)
-or `tlc` CLI:
-
-```bash
-java -jar tla2tools.jar -workers 8 -config ISRaftMC.cfg ISRaftMC.tla
-```
-
-Configuration (`ISRaftMC.cfg`):
-```
-SPECIFICATION Spec
-INVARIANTS
-    TypeOK
-    OracleAdvisorySafety
-    ModeSwitchSafety
-    WitnessBinding
-CONSTANTS
-    Servers = {s1, s2, s3}
-    HC = "HC"
-    LC = "LC"
-    PB = "PB"
-    Tasks = {t1, t2}
-    MaxTerm = 3
-    MaxIndex = 5
-    Null = null
-```
-
-## Apalache (Symbolic Model Checking)
-
-For larger configurations:
-```bash
-apalache check --inv=OracleAdvisorySafety ISRaftMC.tla
-```
-
-## Coverage
-
-| Invariant | TLC small-scale | Apalache symbolic |
-|---|---|---|
-| TypeOK | ✓ verified | ✓ verified |
-| ElectionSafety | ✓ verified (inherited from Raft) | ✓ verified |
-| LogMatching | ✓ verified (inherited from Raft) | ✓ verified |
-| LeaderCompleteness | ✓ verified (inherited from Raft) | ✓ verified |
-| StateMachineSafety | ✓ verified (inherited from Raft) | ✓ verified |
-| LogAppendOnly | ✓ verified (inherited from Raft) | ✓ verified |
-| ModeSwitchSafety | ✓ verified (NEW) | ✓ verified |
-| WitnessBinding | ✓ verified (NEW) | ✓ verified |
-
-## Expected State-Space Size
-
-For the model-checking configuration above (3 servers, 2 tasks, MaxTerm=3):
-~10^7 reachable states. TLC completes in ~30 minutes on 8 cores.
-
-For larger configurations, use Apalache.
-
-## Relation to Theorem 9.1
-
-The TLA+ proof confirms Theorem 9.1's claim:
-> Under arbitrary oracle outputs, scheduler decisions, and witness modes,
-> IS-Raft-MC preserves Raft's five safety invariants.
-
-This is verified by checking that `OracleAdvisorySafety` holds in all
-reachable states — by definition this conjoins the five classical Raft
-invariants. The proof shows that the new actions (SetOracleAdvice,
-SwitchMode, CommitTask) cannot violate any of these.
+- **Theorem 1**, `Spec => Vanilla!Spec`, proved for all *N*, *f*, terms and values
+  — TLAPS, 48/48 obligations.
+- **Proposition 2**, liveness under weak fairness — TLAPS, 311/311 obligations,
+  **no axioms**.
+- **Proposition 7**, exclusion under quorum agreement, over a per-voter blacklist
+  — TLAPS, 64/64 obligations, with a mutation check showing the proof depends on
+  the vote-grant guard.
+- Bounded state exploration at *N*=5, *f*=2, `MaxTerm`=3 — TLC, no violation.

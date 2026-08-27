@@ -1,0 +1,7 @@
+R2-5 leader cost (3rd campaign, N=7, bracketed): delay=200ms max_pin=40
+===== SKIP_SETUP=1: reusing existing cluster =====
+  precondition OK: chaincode committed, 7 orderers up
+===== C_clean (no delay) =====
+  orderer3 RTT with attack off: 14.9 ms
+>>> C_clean: ledger delta=0 -- NOTHING COMMITTED, measurement invalid
+    (check that chaincode 'basic' is deployed and the peers are healthy)
