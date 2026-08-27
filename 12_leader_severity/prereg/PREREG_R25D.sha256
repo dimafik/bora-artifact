@@ -1,0 +1,7 @@
+# R25D pre-registration integrity
+# recorded before the first extension run
+# UTC: 2026-08-25T03:03:39Z
+# harness unchanged from R25C -- hash repeated here as proof
+
+1e7ed97ebf73a80319d608170856d574acab70054d83bebca00aa07368358c01 *PREREG_R25D.md
+c997d7b036621b08ab7a3f14d4c5fb16ecd5d59bafd85a638dd740bd40409a30 *r25_leader_cost3.sh

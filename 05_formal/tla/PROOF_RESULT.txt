@@ -14,13 +14,14 @@ Scope (honest): proves BORA REFINES vanilla etcdraft for ALL N,f,terms,values
 (unbounded). Vanilla Raft's own safety invariants (Election Safety, Leader
 Append-Only, Log Matching, Leader Completeness, State Machine Safety) are CITED
 (Ongaro & Ousterhout), not re-derived; BORA inherits them via the refinement.
-Remaining open mechanisation: fairness-based liveness check (Prop liveness).
+Liveness is mechanised separately (Liveness.tla, 311/311, no axioms; see below),
+and the per-voter model is covered in its own section further down.
 
 NB on the safety proof: BORA_proof.tla is a PURE step-simulation (Init=>VInit,
 [Next]_vars=>[VNext]_vanillaVars, PTL) and deliberately uses NO TypeOK invariant, so
 it never incurs function-set-membership obligations.
 
-=== Liveness (Liveness.tla) — fairness-based, COMPLETE (modulo 2 enabledness axioms) ===
+=== Liveness (Liveness.tla) — fairness-based, COMPLETE, NO AXIOMS ===
 Target: SpecL => <>HasLeader  (SpecL = Spec /\ WF on Campaign and BecomeLeader).
 Result (tlapm 1.5.0, native, --cleanfp from scratch):
         "[INFO]: All 311 obligations proved."   EXIT=0.  NO AXIOMS.
@@ -33,11 +34,15 @@ The fairness-based leads-to argument is FULLY mechanised:
     leader) with every Next action case discharged,
   - the PTL temporal chain SpecL => (Inv/\~HasLeader ~> HasLeader) => <>HasLeader.
 
-NO fact remains an AXIOM.  The action-enabledness
-statements "a pending candidate can take BecomeLeader" and "under no leader some
-follower can Campaign".  These are decidable guard=>enabled facts; they are axiomatised
-because of a witness-construction limit in the backends, NOT because ENABLED
-expansion is unavailable.
+NO fact remains an AXIOM.  The two action-enabledness statements -- "a pending
+candidate can take BecomeLeader" (ElectEnabled) and "under no leader some follower
+can Campaign" (CampEnabled) -- are PROVED THEOREMS, discharged by ENABLED
+expansion.  `grep AXIOM Liveness.tla` returns nothing.  Both are additionally
+model-checked, independently of the proof, in Enabledness.tla.
+
+An earlier revision of this file said these two facts were axiomatised.  That was
+true of an earlier revision of Liveness.tla and is no longer true; the paragraphs
+below record how it was closed.
 
 CORRECTION (this supersedes the earlier note in this file).  ExpandENABLED IS
 operational in this tlapm 1.5.0 install.  The earlier diagnosis rested on a single
@@ -98,9 +103,37 @@ work; the earlier "blocked" diagnosis was a proof-STRUCTURING issue, not a backe
      implication, and close with ENABLEDrules + ENABLEDaxioms + ENABLEDrewrites +
      ExpandENABLED together.  A one-line BY ExpandENABLED does not do it.
 
-=> Bottom line: a proper install (this native tlapm 1.5.0) DOES close everything --
-all 234 liveness obligations are mechanically proved; the only non-mechanical pieces
-is
-the probabilistic rate (inexpressible in TLA+).  Together with the SAFETY refinement
-(BORA_proof.tla, 48/48 unbounded), the formal development is complete up to those two
-principled limits.
+=== Per-voter (decentralised) model: BORA_pv.tla / BORA_pv_proof.tla / BORA_pv_excl.tla ===
+The deployment gives every orderer its own sidecar, so the blacklist is per-voter and
+only eventually consistent.  These modules replace the global set by
+    blacklist \in [Orderers -> SUBSET Orderers]
+BoundedIntelligence hands each voter an arbitrary set on every step; NOTHING in the
+spec forces the views to agree.  The tick guard reads a node's OWN view; the vote
+guard reads a QUORUM of views.
+
+  Safety refinement (BORA_pv_proof.tla):
+      tlapm --cleanfp -> "All 48 obligations proved."  EXIT=0.
+    Same theorem as the global model (Spec => Vanilla!Spec).  No new lemma was
+    needed: both guards only ADD preconditions to actions vanilla Raft already
+    permits, and removing behaviours cannot break a refinement.  Safety therefore
+    holds however far the per-voter views diverge -- no agreement premise enters.
+
+  Exclusion (BORA_pv_excl.tla):
+      tlapm --cleanfp -> "All 64 obligations proved."  EXIT=0.
+    THEOREM Exclusion_PV_Thm ==
+      Spec => [][ (QuorumHolds(i) /\ ~failOpen) => ~Acquires(i) ]_vars
+    This is Proposition 7 of the paper, verbatim.  NON-VACUITY was checked by
+    mutation: a duplicate module with ONLY the vote-grant guard deleted from
+    BecomeLeader fails 1 of the 64 obligations, at <3>2 (j # i) -- exactly the step
+    that uses the guard.  The proof therefore depends on the guard rather than
+    following from unrelated structure.  The mutated module was removed after the
+    check.
+
+  NOT proved, and not provable in any protocol model: whether an honest quorum
+  actually agrees inside a given election window.  That is a deployment timing
+  property; the paper measures it on the testbed instead.
+
+=> Bottom line: this native tlapm 1.5.0 install closes everything claimed --
+safety 48/48 unbounded (global) and 48/48 (per-voter), exclusion 64/64, and all
+311 liveness obligations with no axioms.  The only non-mechanical piece is the
+probabilistic rate, which is inexpressible in TLA+ and is verified in PRISM.

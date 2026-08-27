@@ -1,0 +1,594 @@
+2026.08.25-08:06:16.125 info  [caliper] [cli-launch-manager] 	Binding specification is present, performing binding for "fabric:fabric-gateway"
+2026.08.25-08:06:16.127 warn  [caliper] [bind] 	Working directory is not specified. Current path: "/hyperledger/caliper/workspace"
+2026.08.25-08:06:16.127 info  [caliper] [bind] 	User-provided arguments for npm: "-g"
+2026.08.25-08:06:16.127 info  [caliper] [bind] 	Binding for fabric@fabric-gateway. This might take some time...
+2026.08.25-08:06:16.127 info  [caliper] [bind] 	Using working directory: /hyperledger/caliper/workspace
+2026.08.25-08:06:16.128 info  [caliper] [bind] 	Calling npm with: install -g @hyperledger/fabric-gateway@1.5.0 @grpc/grpc-js@1.10.3
+
+added 82 packages in 6s
+
+4 packages are looking for funding
+  run `npm fund` for details
+npm notice 
+npm notice New major version of npm available! 10.2.4 -> 12.0.2
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v12.0.2>
+npm notice Run `npm install -g npm@12.0.2` to update!
+npm notice 
+2026.08.25-08:06:21.832 info  [caliper] [cli-launch-manager] 	Set workspace path: /hyperledger/caliper/workspace
+2026.08.25-08:06:21.832 info  [caliper] [cli-launch-manager] 	Set benchmark configuration path: /hyperledger/caliper/workspace/benchmarks/belowceiling-sweep.yaml
+2026.08.25-08:06:21.832 info  [caliper] [cli-launch-manager] 	Set network configuration path: /hyperledger/caliper/workspace/networks/fabric-5node.yaml
+2026.08.25-08:06:21.832 info  [caliper] [cli-launch-manager] 	Set SUT type: fabric
+2026.08.25-08:06:21.836 info  [caliper] [benchmark-validator] 	No observer specified, will default to `none`
+2026.08.25-08:06:21.836 info  [caliper] [caliper-engine] 	Starting benchmark flow
+2026.08.25-08:06:21.836 info  [caliper] [caliper-engine] 	Skipping start commands due to benchmark flow conditioning
+2026.08.25-08:06:21.836 info  [caliper] [caliper-engine] 	Skipping initialization phase due to benchmark flow conditioning
+2026.08.25-08:06:21.836 info  [caliper] [caliper-engine] 	Skipping install smart contract phase due to benchmark flow conditioning
+2026.08.25-08:06:22.130 info  [caliper] [FabricConnectorFactory] 	Initializing peer gateway connector compatible with installed fabric-gateway SDK: 1.5.0
+2026.08.25-08:06:22.171 info  [caliper] [IdentityManager] 	Adding User1 (admin=false) as User1 for organization Org1MSP
+2026.08.25-08:06:22.181 info  [caliper] [IdentityManager] 	Adding User1 (admin=false) as _Org2MSP_User1 for organization Org2MSP
+2026.08.25-08:06:22.183 info  [caliper] [monitor.js] 	No resource monitors specified
+2026.08.25-08:06:22.184 info  [caliper] [default-observer] 	Observer interval set to 5000 milliseconds
+2026.08.25-08:06:22.187 info  [caliper] [round-orchestrator] 	Preparing worker connections
+2026.08.25-08:06:22.187 info  [caliper] [worker-orchestrator] 	Launching worker 1 of 4
+2026.08.25-08:06:22.189 info  [caliper] [worker-orchestrator] 	Launching worker 2 of 4
+2026.08.25-08:06:22.190 info  [caliper] [worker-orchestrator] 	Launching worker 3 of 4
+2026.08.25-08:06:22.191 info  [caliper] [worker-orchestrator] 	Launching worker 4 of 4
+2026.08.25-08:06:22.193 info  [caliper] [worker-orchestrator] 	Messenger not configured, entering configure phase...
+2026.08.25-08:06:22.194 info  [caliper] [worker-orchestrator] 	No existing workers detected, entering worker launch phase...
+2026.08.25-08:06:22.195 info  [caliper] [worker-orchestrator] 	Waiting for 4 workers to be connected...
+2026.08.25-08:06:22.418 info  [caliper] [cli-launch-worker] 	Worker is a locally forked process, skipping the binding step, already performed by the manager process
+2026.08.25-08:06:22.419 info  [caliper] [cli-launch-worker] 	Set workspace path: /hyperledger/caliper/workspace
+2026.08.25-08:06:22.419 info  [caliper] [cli-launch-worker] 	Set benchmark configuration path: /hyperledger/caliper/workspace/benchmarks/belowceiling-sweep.yaml
+2026.08.25-08:06:22.419 info  [caliper] [cli-launch-worker] 	Set network configuration path: /hyperledger/caliper/workspace/networks/fabric-5node.yaml
+2026.08.25-08:06:22.419 info  [caliper] [cli-launch-worker] 	Set SUT type: fabric
+2026.08.25-08:06:22.419 info  [caliper] [cli-launch-worker] 	Worker is a locally forked process, skipping the binding step, already performed by the manager process
+2026.08.25-08:06:22.420 info  [caliper] [cli-launch-worker] 	Set workspace path: /hyperledger/caliper/workspace
+2026.08.25-08:06:22.420 info  [caliper] [cli-launch-worker] 	Set benchmark configuration path: /hyperledger/caliper/workspace/benchmarks/belowceiling-sweep.yaml
+2026.08.25-08:06:22.420 info  [caliper] [cli-launch-worker] 	Set network configuration path: /hyperledger/caliper/workspace/networks/fabric-5node.yaml
+2026.08.25-08:06:22.420 info  [caliper] [cli-launch-worker] 	Set SUT type: fabric
+2026.08.25-08:06:22.423 info  [caliper] [cli-launch-worker] 	Worker is a locally forked process, skipping the binding step, already performed by the manager process
+2026.08.25-08:06:22.423 info  [caliper] [cli-launch-worker] 	Worker is a locally forked process, skipping the binding step, already performed by the manager process
+2026.08.25-08:06:22.424 info  [caliper] [cli-launch-worker] 	Set workspace path: /hyperledger/caliper/workspace
+2026.08.25-08:06:22.424 info  [caliper] [cli-launch-worker] 	Set benchmark configuration path: /hyperledger/caliper/workspace/benchmarks/belowceiling-sweep.yaml
+2026.08.25-08:06:22.424 info  [caliper] [cli-launch-worker] 	Set workspace path: /hyperledger/caliper/workspace
+2026.08.25-08:06:22.424 info  [caliper] [cli-launch-worker] 	Set benchmark configuration path: /hyperledger/caliper/workspace/benchmarks/belowceiling-sweep.yaml
+2026.08.25-08:06:22.424 info  [caliper] [cli-launch-worker] 	Set network configuration path: /hyperledger/caliper/workspace/networks/fabric-5node.yaml
+2026.08.25-08:06:22.424 info  [caliper] [cli-launch-worker] 	Set SUT type: fabric
+2026.08.25-08:06:22.424 info  [caliper] [cli-launch-worker] 	Set network configuration path: /hyperledger/caliper/workspace/networks/fabric-5node.yaml
+2026.08.25-08:06:22.424 info  [caliper] [cli-launch-worker] 	Set SUT type: fabric
+2026.08.25-08:06:22.436 info  [caliper] [worker-orchestrator] 	4 workers connected, progressing to worker assignment phase.
+2026.08.25-08:06:22.437 info  [caliper] [worker-orchestrator] 	Workers currently unassigned, awaiting index assignment...
+2026.08.25-08:06:22.437 info  [caliper] [worker-orchestrator] 	Waiting for 4 workers to be assigned...
+2026.08.25-08:06:22.449 info  [caliper] [worker-orchestrator] 	4 workers assigned, progressing to worker initialization phase.
+2026.08.25-08:06:22.449 info  [caliper] [worker-orchestrator] 	Waiting for 4 workers to be ready...
+2026.08.25-08:06:22.449 info  [caliper] [worker-message-handler] 	Initializing Worker#0...
+2026.08.25-08:06:22.449 info  [caliper] [worker-message-handler] 	Initializing Worker#1...
+2026.08.25-08:06:22.449 info  [caliper] [worker-message-handler] 	Initializing Worker#3...
+2026.08.25-08:06:22.449 info  [caliper] [worker-message-handler] 	Initializing Worker#2...
+2026.08.25-08:06:22.741 info  [caliper] [FabricConnectorFactory] 	Initializing peer gateway connector compatible with installed fabric-gateway SDK: 1.5.0
+2026.08.25-08:06:22.741 info  [caliper] [FabricConnectorFactory] 	Initializing peer gateway connector compatible with installed fabric-gateway SDK: 1.5.0
+2026.08.25-08:06:22.742 info  [caliper] [FabricConnectorFactory] 	Initializing peer gateway connector compatible with installed fabric-gateway SDK: 1.5.0
+2026.08.25-08:06:22.746 info  [caliper] [FabricConnectorFactory] 	Initializing peer gateway connector compatible with installed fabric-gateway SDK: 1.5.0
+2026.08.25-08:06:22.771 info  [caliper] [IdentityManager] 	Adding User1 (admin=false) as User1 for organization Org1MSP
+2026.08.25-08:06:22.771 info  [caliper] [IdentityManager] 	Adding User1 (admin=false) as User1 for organization Org1MSP
+2026.08.25-08:06:22.771 info  [caliper] [IdentityManager] 	Adding User1 (admin=false) as User1 for organization Org1MSP
+2026.08.25-08:06:22.772 info  [caliper] [IdentityManager] 	Adding User1 (admin=false) as User1 for organization Org1MSP
+2026.08.25-08:06:22.777 info  [caliper] [IdentityManager] 	Adding User1 (admin=false) as _Org2MSP_User1 for organization Org2MSP
+2026.08.25-08:06:22.777 info  [caliper] [IdentityManager] 	Adding User1 (admin=false) as _Org2MSP_User1 for organization Org2MSP
+2026.08.25-08:06:22.777 info  [caliper] [IdentityManager] 	Adding User1 (admin=false) as _Org2MSP_User1 for organization Org2MSP
+2026.08.25-08:06:22.778 info  [caliper] [IdentityManager] 	Adding User1 (admin=false) as _Org2MSP_User1 for organization Org2MSP
+2026.08.25-08:06:22.782 info  [caliper] [worker-message-handler] 	Worker#0 initialized
+2026.08.25-08:06:22.782 info  [caliper] [worker-message-handler] 	Worker#3 initialized
+2026.08.25-08:06:22.782 info  [caliper] [worker-message-handler] 	Worker#2 initialized
+2026.08.25-08:06:22.782 info  [caliper] [worker-message-handler] 	Worker#1 initialized
+2026.08.25-08:06:22.783 info  [caliper] [worker-orchestrator] 	4 workers ready, progressing to test preparation phase.
+2026.08.25-08:06:22.783 info  [caliper] [round-orchestrator] 	Started round 1 (rate-100)
+2026.08.25-08:06:22.784 info  [caliper] [worker-message-handler] 	Preparing Worker#0 for Round#0
+2026.08.25-08:06:22.784 info  [caliper] [worker-message-handler] 	Preparing Worker#1 for Round#0
+2026.08.25-08:06:22.784 info  [caliper] [worker-message-handler] 	Preparing Worker#3 for Round#0
+2026.08.25-08:06:22.784 info  [caliper] [worker-message-handler] 	Preparing Worker#2 for Round#0
+2026.08.25-08:06:22.821 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:06:22.822 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:06:22.822 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:06:22.822 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:06:22.828 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:06:22.828 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:06:22.828 info  [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 0 is starting...
+2026.08.25-08:06:22.828 info  [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 0 is starting...
+2026.08.25-08:06:22.829 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:06:22.829 info  [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 0 is starting...
+2026.08.25-08:06:22.829 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:06:22.829 info  [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 0 is starting...
+2026.08.25-08:06:22.830 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:06:22.830 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:06:22.830 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:06:22.830 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:06:22.830 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:06:22.830 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:06:22.830 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:06:22.830 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:06:22.831 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:06:22.831 info  [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 0 is completed
+2026.08.25-08:06:22.831 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:06:22.831 info  [caliper] [worker-message-handler] 	Worker#1 prepared for Round#0
+2026.08.25-08:06:22.831 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:06:22.831 info  [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 0 is completed
+2026.08.25-08:06:22.831 info  [caliper] [worker-message-handler] 	Worker#0 prepared for Round#0
+2026.08.25-08:06:22.831 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:06:22.831 info  [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 0 is completed
+2026.08.25-08:06:22.831 info  [caliper] [worker-message-handler] 	Worker#2 prepared for Round#0
+2026.08.25-08:06:22.831 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:06:22.831 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:06:22.831 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:06:22.832 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:06:22.832 info  [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 0 is completed
+2026.08.25-08:06:22.832 info  [caliper] [worker-message-handler] 	Worker#3 prepared for Round#0
+2026.08.25-08:06:22.832 info  [caliper] [worker-orchestrator] 	4 workers prepared, progressing to test phase.
+2026.08.25-08:06:22.832 info  [caliper] [round-orchestrator] 	Monitors successfully started
+2026.08.25-08:06:22.833 info  [caliper] [worker-message-handler] 	Worker#0 is starting Round#0
+2026.08.25-08:06:22.833 info  [caliper] [worker-message-handler] 	Worker#2 is starting Round#0
+2026.08.25-08:06:22.833 info  [caliper] [worker-message-handler] 	Worker#1 is starting Round#0
+2026.08.25-08:06:22.834 info  [caliper] [worker-message-handler] 	Worker#3 is starting Round#0
+2026.08.25-08:06:22.838 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:06:22.838 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:06:22.838 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:06:22.838 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:06:22.841 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:06:22.841 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:06:22.842 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:06:22.842 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:06:22.842 info  [caliper] [caliper-worker] 	Worker #2 starting workload loop
+2026.08.25-08:06:22.842 info  [caliper] [caliper-worker] 	Worker #0 starting workload loop
+2026.08.25-08:06:22.843 info  [caliper] [caliper-worker] 	Worker #3 starting workload loop
+2026.08.25-08:06:22.843 info  [caliper] [caliper-worker] 	Worker #1 starting workload loop
+2026.08.25-08:06:27.840 info  [caliper] [default-observer] 	[rate-100 Round 0 Transaction Info] - Submitted: 404 Succ: 400 Fail:0 Unfinished:4
+2026.08.25-08:06:32.835 info  [caliper] [default-observer] 	[rate-100 Round 0 Transaction Info] - Submitted: 904 Succ: 900 Fail:0 Unfinished:4
+2026.08.25-08:06:37.836 info  [caliper] [default-observer] 	[rate-100 Round 0 Transaction Info] - Submitted: 1404 Succ: 1400 Fail:0 Unfinished:4
+2026.08.25-08:06:42.836 info  [caliper] [default-observer] 	[rate-100 Round 0 Transaction Info] - Submitted: 1904 Succ: 1900 Fail:0 Unfinished:4
+2026.08.25-08:06:47.836 info  [caliper] [default-observer] 	[rate-100 Round 0 Transaction Info] - Submitted: 2404 Succ: 2390 Fail:0 Unfinished:14
+2026.08.25-08:06:52.838 info  [caliper] [default-observer] 	[rate-100 Round 0 Transaction Info] - Submitted: 2904 Succ: 2900 Fail:0 Unfinished:4
+2026.08.25-08:06:55.949 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:06:55.949 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:06:55.949 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:06:55.950 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:06:55.950 info  [caliper] [worker-message-handler] 	Worker#1 finished Round#0
+2026.08.25-08:06:55.952 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:06:55.952 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:06:55.952 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:06:55.952 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:06:55.952 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:06:55.952 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:06:55.952 info  [caliper] [worker-message-handler] 	Worker#3 finished Round#0
+2026.08.25-08:06:55.952 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:06:55.952 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:06:55.952 info  [caliper] [worker-message-handler] 	Worker#0 finished Round#0
+2026.08.25-08:06:55.953 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:06:55.953 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:06:55.953 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:06:55.953 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:06:55.953 info  [caliper] [worker-message-handler] 	Worker#2 finished Round#0
+2026.08.25-08:07:00.958 info  [caliper] [default-observer] 	Resetting txCount indicator count
+2026.08.25-08:07:00.958 info  [caliper] [report-builder] 	### Test result ###
+2026.08.25-08:07:00.961 info  [caliper] [report-builder] 	
++----------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+| Name     | Succ | Fail | Send Rate (TPS) | Max Latency (s) | Min Latency (s) | Avg Latency (s) | Throughput (TPS) |
+|----------|------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| rate-100 | 3004 | 0    | 100.1           | 2.04            | 0.03            | 0.09            | 93.8             |
++----------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+
+2026.08.25-08:07:00.961 info  [caliper] [round-orchestrator] 	Finished round 1 (rate-100) in 32.107 seconds
+2026.08.25-08:07:00.961 info  [caliper] [monitor.js] 	Stopping all monitors
+2026.08.25-08:07:00.961 info  [caliper] [round-orchestrator] 	Waiting 5 seconds for the next round...
+2026.08.25-08:07:05.964 info  [caliper] [round-orchestrator] 	Started round 2 (rate-200)
+2026.08.25-08:07:05.965 info  [caliper] [worker-message-handler] 	Preparing Worker#0 for Round#1
+2026.08.25-08:07:05.965 info  [caliper] [worker-message-handler] 	Preparing Worker#1 for Round#1
+2026.08.25-08:07:05.965 info  [caliper] [worker-message-handler] 	Preparing Worker#2 for Round#1
+2026.08.25-08:07:05.965 info  [caliper] [worker-message-handler] 	Preparing Worker#3 for Round#1
+2026.08.25-08:07:05.971 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:07:05.971 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:07:05.972 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:07:05.973 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:07:05.976 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:07:05.976 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:07:05.976 info  [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 1 is starting...
+2026.08.25-08:07:05.976 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:07:05.976 info  [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 1 is starting...
+2026.08.25-08:07:05.977 info  [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 1 is starting...
+2026.08.25-08:07:05.978 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:07:05.978 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:07:05.978 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:07:05.978 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:07:05.978 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:07:05.978 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:07:05.978 info  [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 1 is starting...
+2026.08.25-08:07:05.978 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:07:05.978 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:07:05.978 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:07:05.978 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:07:05.978 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:07:05.978 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:07:05.978 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:07:05.978 info  [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 1 is completed
+2026.08.25-08:07:05.978 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:07:05.978 info  [caliper] [worker-message-handler] 	Worker#3 prepared for Round#1
+2026.08.25-08:07:05.978 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:07:05.978 info  [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 1 is completed
+2026.08.25-08:07:05.978 info  [caliper] [worker-message-handler] 	Worker#2 prepared for Round#1
+2026.08.25-08:07:05.978 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:07:05.978 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:07:05.978 info  [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 1 is completed
+2026.08.25-08:07:05.978 info  [caliper] [worker-message-handler] 	Worker#1 prepared for Round#1
+2026.08.25-08:07:05.978 info  [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 1 is completed
+2026.08.25-08:07:05.978 info  [caliper] [worker-message-handler] 	Worker#0 prepared for Round#1
+2026.08.25-08:07:05.979 info  [caliper] [worker-orchestrator] 	4 workers prepared, progressing to test phase.
+2026.08.25-08:07:05.979 info  [caliper] [round-orchestrator] 	Monitors successfully started
+2026.08.25-08:07:05.980 info  [caliper] [worker-message-handler] 	Worker#0 is starting Round#1
+2026.08.25-08:07:05.980 info  [caliper] [worker-message-handler] 	Worker#1 is starting Round#1
+2026.08.25-08:07:05.980 info  [caliper] [worker-message-handler] 	Worker#3 is starting Round#1
+2026.08.25-08:07:05.980 info  [caliper] [worker-message-handler] 	Worker#2 is starting Round#1
+2026.08.25-08:07:05.984 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:07:05.984 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:07:05.985 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:07:05.985 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:07:05.989 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:07:05.989 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:07:05.989 info  [caliper] [caliper-worker] 	Worker #1 starting workload loop
+2026.08.25-08:07:05.989 info  [caliper] [caliper-worker] 	Worker #0 starting workload loop
+2026.08.25-08:07:05.990 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:07:05.990 info  [caliper] [caliper-worker] 	Worker #2 starting workload loop
+2026.08.25-08:07:05.991 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:07:05.991 info  [caliper] [caliper-worker] 	Worker #3 starting workload loop
+2026.08.25-08:07:10.979 info  [caliper] [default-observer] 	[rate-200 Round 1 Transaction Info] - Submitted: 803 Succ: 790 Fail:0 Unfinished:13
+2026.08.25-08:07:15.979 info  [caliper] [default-observer] 	[rate-200 Round 1 Transaction Info] - Submitted: 1802 Succ: 1790 Fail:0 Unfinished:12
+2026.08.25-08:07:20.980 info  [caliper] [default-observer] 	[rate-200 Round 1 Transaction Info] - Submitted: 2802 Succ: 2790 Fail:0 Unfinished:12
+2026.08.25-08:07:25.981 info  [caliper] [default-observer] 	[rate-200 Round 1 Transaction Info] - Submitted: 3802 Succ: 3790 Fail:0 Unfinished:12
+2026.08.25-08:07:30.981 info  [caliper] [default-observer] 	[rate-200 Round 1 Transaction Info] - Submitted: 4802 Succ: 4790 Fail:0 Unfinished:12
+2026.08.25-08:07:35.982 info  [caliper] [default-observer] 	[rate-200 Round 1 Transaction Info] - Submitted: 5804 Succ: 5790 Fail:0 Unfinished:14
+2026.08.25-08:07:39.095 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:07:39.095 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:07:39.095 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:07:39.095 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:07:39.095 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:07:39.095 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:07:39.095 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:07:39.096 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:07:39.096 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:07:39.096 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:07:39.096 info  [caliper] [worker-message-handler] 	Worker#0 finished Round#1
+2026.08.25-08:07:39.096 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:07:39.096 info  [caliper] [worker-message-handler] 	Worker#2 finished Round#1
+2026.08.25-08:07:39.096 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:07:39.097 info  [caliper] [worker-message-handler] 	Worker#1 finished Round#1
+2026.08.25-08:07:39.098 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:07:39.098 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:07:39.098 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:07:39.098 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:07:39.098 info  [caliper] [worker-message-handler] 	Worker#3 finished Round#1
+2026.08.25-08:07:44.098 info  [caliper] [default-observer] 	Resetting txCount indicator count
+2026.08.25-08:07:44.099 info  [caliper] [report-builder] 	### Test result ###
+2026.08.25-08:07:44.099 info  [caliper] [report-builder] 	
++----------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+| Name     | Succ | Fail | Send Rate (TPS) | Max Latency (s) | Min Latency (s) | Avg Latency (s) | Throughput (TPS) |
+|----------|------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| rate-200 | 6004 | 0    | 200.1           | 2.04            | 0.03            | 0.06            | 187.4            |
++----------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+
+2026.08.25-08:07:44.099 info  [caliper] [round-orchestrator] 	Finished round 2 (rate-200) in 32.108 seconds
+2026.08.25-08:07:44.099 info  [caliper] [monitor.js] 	Stopping all monitors
+2026.08.25-08:07:44.099 info  [caliper] [round-orchestrator] 	Waiting 5 seconds for the next round...
+2026.08.25-08:07:49.105 info  [caliper] [round-orchestrator] 	Started round 3 (rate-300)
+2026.08.25-08:07:49.107 info  [caliper] [worker-message-handler] 	Preparing Worker#0 for Round#2
+2026.08.25-08:07:49.109 info  [caliper] [worker-message-handler] 	Preparing Worker#3 for Round#2
+2026.08.25-08:07:49.110 info  [caliper] [worker-message-handler] 	Preparing Worker#2 for Round#2
+2026.08.25-08:07:49.111 info  [caliper] [worker-message-handler] 	Preparing Worker#1 for Round#2
+2026.08.25-08:07:49.126 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:07:49.127 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:07:49.130 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:07:49.131 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:07:49.135 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:07:49.135 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:07:49.136 info  [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 2 is starting...
+2026.08.25-08:07:49.136 info  [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 2 is starting...
+2026.08.25-08:07:49.137 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:07:49.137 info  [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 2 is starting...
+2026.08.25-08:07:49.137 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:07:49.137 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:07:49.137 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:07:49.137 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:07:49.137 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:07:49.137 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:07:49.137 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:07:49.137 info  [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 2 is completed
+2026.08.25-08:07:49.137 info  [caliper] [worker-message-handler] 	Worker#3 prepared for Round#2
+2026.08.25-08:07:49.137 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:07:49.137 info  [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 2 is completed
+2026.08.25-08:07:49.137 info  [caliper] [worker-message-handler] 	Worker#2 prepared for Round#2
+2026.08.25-08:07:49.138 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:07:49.138 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:07:49.138 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:07:49.138 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:07:49.138 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:07:49.138 info  [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 2 is completed
+2026.08.25-08:07:49.138 info  [caliper] [worker-message-handler] 	Worker#0 prepared for Round#2
+2026.08.25-08:07:49.138 info  [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 2 is starting...
+2026.08.25-08:07:49.140 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:07:49.140 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:07:49.140 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:07:49.140 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:07:49.140 info  [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 2 is completed
+2026.08.25-08:07:49.140 info  [caliper] [worker-message-handler] 	Worker#1 prepared for Round#2
+2026.08.25-08:07:49.140 info  [caliper] [worker-orchestrator] 	4 workers prepared, progressing to test phase.
+2026.08.25-08:07:49.140 info  [caliper] [round-orchestrator] 	Monitors successfully started
+2026.08.25-08:07:49.141 info  [caliper] [worker-message-handler] 	Worker#0 is starting Round#2
+2026.08.25-08:07:49.141 info  [caliper] [worker-message-handler] 	Worker#1 is starting Round#2
+2026.08.25-08:07:49.141 info  [caliper] [worker-message-handler] 	Worker#3 is starting Round#2
+2026.08.25-08:07:49.141 info  [caliper] [worker-message-handler] 	Worker#2 is starting Round#2
+2026.08.25-08:07:49.146 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:07:49.148 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:07:49.148 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:07:49.150 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:07:49.154 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:07:49.154 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:07:49.154 info  [caliper] [caliper-worker] 	Worker #2 starting workload loop
+2026.08.25-08:07:49.154 info  [caliper] [caliper-worker] 	Worker #1 starting workload loop
+2026.08.25-08:07:49.154 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:07:49.155 info  [caliper] [caliper-worker] 	Worker #3 starting workload loop
+2026.08.25-08:07:49.156 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:07:49.157 info  [caliper] [caliper-worker] 	Worker #0 starting workload loop
+2026.08.25-08:07:54.141 info  [caliper] [default-observer] 	[rate-300 Round 2 Transaction Info] - Submitted: 1203 Succ: 1180 Fail:0 Unfinished:23
+2026.08.25-08:07:59.142 info  [caliper] [default-observer] 	[rate-300 Round 2 Transaction Info] - Submitted: 2704 Succ: 2690 Fail:0 Unfinished:14
+2026.08.25-08:08:04.142 info  [caliper] [default-observer] 	[rate-300 Round 2 Transaction Info] - Submitted: 4204 Succ: 4180 Fail:0 Unfinished:24
+2026.08.25-08:08:09.144 info  [caliper] [default-observer] 	[rate-300 Round 2 Transaction Info] - Submitted: 5704 Succ: 5680 Fail:0 Unfinished:24
+2026.08.25-08:08:14.144 info  [caliper] [default-observer] 	[rate-300 Round 2 Transaction Info] - Submitted: 7204 Succ: 7180 Fail:0 Unfinished:24
+2026.08.25-08:08:19.145 info  [caliper] [default-observer] 	[rate-300 Round 2 Transaction Info] - Submitted: 8704 Succ: 8680 Fail:0 Unfinished:24
+2026.08.25-08:08:22.262 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:08:22.262 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:08:22.262 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:08:22.262 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:08:22.262 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:08:22.262 info  [caliper] [worker-message-handler] 	Worker#1 finished Round#2
+2026.08.25-08:08:22.262 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:08:22.262 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:08:22.262 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:08:22.262 info  [caliper] [worker-message-handler] 	Worker#2 finished Round#2
+2026.08.25-08:08:22.263 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:08:22.263 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:08:22.263 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:08:22.263 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:08:22.263 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:08:22.263 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:08:22.263 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:08:22.263 info  [caliper] [worker-message-handler] 	Worker#0 finished Round#2
+2026.08.25-08:08:22.264 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:08:22.264 info  [caliper] [worker-message-handler] 	Worker#3 finished Round#2
+2026.08.25-08:08:27.269 info  [caliper] [default-observer] 	Resetting txCount indicator count
+2026.08.25-08:08:27.269 info  [caliper] [report-builder] 	### Test result ###
+2026.08.25-08:08:27.270 info  [caliper] [report-builder] 	
++----------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+| Name     | Succ | Fail | Send Rate (TPS) | Max Latency (s) | Min Latency (s) | Avg Latency (s) | Throughput (TPS) |
+|----------|------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| rate-300 | 9004 | 0    | 300.1           | 2.05            | 0.03            | 0.06            | 280.9            |
++----------+------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+
+2026.08.25-08:08:27.270 info  [caliper] [round-orchestrator] 	Finished round 3 (rate-300) in 32.108 seconds
+2026.08.25-08:08:27.270 info  [caliper] [monitor.js] 	Stopping all monitors
+2026.08.25-08:08:27.270 info  [caliper] [round-orchestrator] 	Waiting 5 seconds for the next round...
+2026.08.25-08:08:32.275 info  [caliper] [round-orchestrator] 	Started round 4 (rate-400)
+2026.08.25-08:08:32.276 info  [caliper] [worker-message-handler] 	Preparing Worker#0 for Round#3
+2026.08.25-08:08:32.276 info  [caliper] [worker-message-handler] 	Preparing Worker#3 for Round#3
+2026.08.25-08:08:32.276 info  [caliper] [worker-message-handler] 	Preparing Worker#1 for Round#3
+2026.08.25-08:08:32.276 info  [caliper] [worker-message-handler] 	Preparing Worker#2 for Round#3
+2026.08.25-08:08:32.283 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:08:32.283 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:08:32.283 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:08:32.283 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:08:32.287 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:08:32.287 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:08:32.287 info  [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 3 is starting...
+2026.08.25-08:08:32.287 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:08:32.287 info  [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 3 is starting...
+2026.08.25-08:08:32.287 info  [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 3 is starting...
+2026.08.25-08:08:32.287 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:08:32.287 info  [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 3 is starting...
+2026.08.25-08:08:32.289 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:08:32.289 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:08:32.289 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:08:32.289 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:08:32.289 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:08:32.289 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:08:32.289 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:08:32.289 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:08:32.289 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:08:32.289 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:08:32.289 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:08:32.289 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:08:32.289 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:08:32.289 info  [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 3 is completed
+2026.08.25-08:08:32.289 info  [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 3 is completed
+2026.08.25-08:08:32.289 info  [caliper] [worker-message-handler] 	Worker#1 prepared for Round#3
+2026.08.25-08:08:32.289 info  [caliper] [worker-message-handler] 	Worker#3 prepared for Round#3
+2026.08.25-08:08:32.289 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:08:32.289 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:08:32.289 info  [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 3 is completed
+2026.08.25-08:08:32.289 info  [caliper] [worker-message-handler] 	Worker#2 prepared for Round#3
+2026.08.25-08:08:32.289 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:08:32.289 info  [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 3 is completed
+2026.08.25-08:08:32.289 info  [caliper] [worker-message-handler] 	Worker#0 prepared for Round#3
+2026.08.25-08:08:32.290 info  [caliper] [worker-orchestrator] 	4 workers prepared, progressing to test phase.
+2026.08.25-08:08:32.290 info  [caliper] [round-orchestrator] 	Monitors successfully started
+2026.08.25-08:08:32.291 info  [caliper] [worker-message-handler] 	Worker#0 is starting Round#3
+2026.08.25-08:08:32.291 info  [caliper] [worker-message-handler] 	Worker#1 is starting Round#3
+2026.08.25-08:08:32.291 info  [caliper] [worker-message-handler] 	Worker#2 is starting Round#3
+2026.08.25-08:08:32.291 info  [caliper] [worker-message-handler] 	Worker#3 is starting Round#3
+2026.08.25-08:08:32.295 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:08:32.295 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:08:32.295 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:08:32.295 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:08:32.298 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:08:32.298 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:08:32.298 info  [caliper] [caliper-worker] 	Worker #1 starting workload loop
+2026.08.25-08:08:32.298 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:08:32.299 info  [caliper] [caliper-worker] 	Worker #3 starting workload loop
+2026.08.25-08:08:32.299 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:08:32.299 info  [caliper] [caliper-worker] 	Worker #0 starting workload loop
+2026.08.25-08:08:32.299 info  [caliper] [caliper-worker] 	Worker #2 starting workload loop
+2026.08.25-08:08:37.291 info  [caliper] [default-observer] 	[rate-400 Round 3 Transaction Info] - Submitted: 1604 Succ: 1570 Fail:0 Unfinished:34
+2026.08.25-08:08:42.291 info  [caliper] [default-observer] 	[rate-400 Round 3 Transaction Info] - Submitted: 3604 Succ: 3570 Fail:0 Unfinished:34
+2026.08.25-08:08:47.291 info  [caliper] [default-observer] 	[rate-400 Round 3 Transaction Info] - Submitted: 5605 Succ: 5570 Fail:0 Unfinished:35
+2026.08.25-08:08:52.292 info  [caliper] [default-observer] 	[rate-400 Round 3 Transaction Info] - Submitted: 7605 Succ: 7580 Fail:0 Unfinished:25
+2026.08.25-08:08:57.293 info  [caliper] [default-observer] 	[rate-400 Round 3 Transaction Info] - Submitted: 9607 Succ: 9578 Fail:0 Unfinished:29
+2026.08.25-08:09:02.293 info  [caliper] [default-observer] 	[rate-400 Round 3 Transaction Info] - Submitted: 11607 Succ: 11580 Fail:0 Unfinished:27
+2026.08.25-08:09:05.404 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:09:05.404 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:09:05.404 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:09:05.404 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:09:05.404 info  [caliper] [worker-message-handler] 	Worker#3 finished Round#3
+2026.08.25-08:09:05.405 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:09:05.405 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:09:05.405 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:09:05.405 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:09:05.405 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:09:05.406 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:09:05.406 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:09:05.406 info  [caliper] [worker-message-handler] 	Worker#1 finished Round#3
+2026.08.25-08:09:05.406 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:09:05.406 info  [caliper] [worker-message-handler] 	Worker#0 finished Round#3
+2026.08.25-08:09:05.407 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:09:05.407 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:09:05.407 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:09:05.407 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:09:05.408 info  [caliper] [worker-message-handler] 	Worker#2 finished Round#3
+2026.08.25-08:09:10.412 info  [caliper] [default-observer] 	Resetting txCount indicator count
+2026.08.25-08:09:10.413 info  [caliper] [report-builder] 	### Test result ###
+2026.08.25-08:09:10.413 info  [caliper] [report-builder] 	
++----------+-------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+| Name     | Succ  | Fail | Send Rate (TPS) | Max Latency (s) | Min Latency (s) | Avg Latency (s) | Throughput (TPS) |
+|----------|-------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| rate-400 | 12004 | 0    | 400.1           | 2.06            | 0.04            | 0.08            | 374.6            |
++----------+-------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+
+2026.08.25-08:09:10.413 info  [caliper] [round-orchestrator] 	Finished round 4 (rate-400) in 32.108 seconds
+2026.08.25-08:09:10.413 info  [caliper] [monitor.js] 	Stopping all monitors
+2026.08.25-08:09:10.413 info  [caliper] [round-orchestrator] 	Waiting 5 seconds for the next round...
+2026.08.25-08:09:15.417 info  [caliper] [round-orchestrator] 	Started round 5 (rate-500)
+2026.08.25-08:09:15.418 info  [caliper] [worker-message-handler] 	Preparing Worker#1 for Round#4
+2026.08.25-08:09:15.418 info  [caliper] [worker-message-handler] 	Preparing Worker#0 for Round#4
+2026.08.25-08:09:15.418 info  [caliper] [worker-message-handler] 	Preparing Worker#2 for Round#4
+2026.08.25-08:09:15.419 info  [caliper] [worker-message-handler] 	Preparing Worker#3 for Round#4
+2026.08.25-08:09:15.426 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:09:15.427 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:09:15.427 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:09:15.427 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:09:15.433 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:09:15.433 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:09:15.433 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:09:15.433 info  [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 4 is starting...
+2026.08.25-08:09:15.433 info  [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 4 is starting...
+2026.08.25-08:09:15.433 info  [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 4 is starting...
+2026.08.25-08:09:15.433 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:09:15.434 info  [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 4 is starting...
+2026.08.25-08:09:15.434 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:09:15.434 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:09:15.434 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:09:15.434 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:09:15.434 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:09:15.434 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:09:15.434 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:09:15.434 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:09:15.434 info  [caliper] [caliper-worker] 	Info: worker 3 prepare test phase for round 4 is completed
+2026.08.25-08:09:15.434 info  [caliper] [worker-message-handler] 	Worker#3 prepared for Round#4
+2026.08.25-08:09:15.434 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:09:15.434 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:09:15.434 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:09:15.434 info  [caliper] [caliper-worker] 	Info: worker 1 prepare test phase for round 4 is completed
+2026.08.25-08:09:15.434 info  [caliper] [worker-message-handler] 	Worker#1 prepared for Round#4
+2026.08.25-08:09:15.434 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:09:15.435 info  [caliper] [caliper-worker] 	Info: worker 0 prepare test phase for round 4 is completed
+2026.08.25-08:09:15.435 info  [caliper] [worker-message-handler] 	Worker#0 prepared for Round#4
+2026.08.25-08:09:15.435 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:09:15.435 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:09:15.435 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:09:15.435 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:09:15.435 info  [caliper] [caliper-worker] 	Info: worker 2 prepare test phase for round 4 is completed
+2026.08.25-08:09:15.435 info  [caliper] [worker-message-handler] 	Worker#2 prepared for Round#4
+2026.08.25-08:09:15.435 info  [caliper] [worker-orchestrator] 	4 workers prepared, progressing to test phase.
+2026.08.25-08:09:15.435 info  [caliper] [round-orchestrator] 	Monitors successfully started
+2026.08.25-08:09:15.436 info  [caliper] [worker-message-handler] 	Worker#0 is starting Round#4
+2026.08.25-08:09:15.436 info  [caliper] [worker-message-handler] 	Worker#1 is starting Round#4
+2026.08.25-08:09:15.436 info  [caliper] [worker-message-handler] 	Worker#2 is starting Round#4
+2026.08.25-08:09:15.436 info  [caliper] [worker-message-handler] 	Worker#3 is starting Round#4
+2026.08.25-08:09:15.448 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:09:15.449 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:09:15.449 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:09:15.451 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user User1
+2026.08.25-08:09:15.456 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:09:15.456 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:09:15.456 info  [caliper] [caliper-worker] 	Worker #1 starting workload loop
+2026.08.25-08:09:15.456 info  [caliper] [caliper-worker] 	Worker #0 starting workload loop
+2026.08.25-08:09:15.458 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:09:15.458 info  [caliper] [caliper-worker] 	Worker #2 starting workload loop
+2026.08.25-08:09:15.463 info  [caliper] [connectors/peer-gateway/PeerGateway] 	Generating contract map for user _Org2MSP_User1
+2026.08.25-08:09:15.463 info  [caliper] [caliper-worker] 	Worker #3 starting workload loop
+2026.08.25-08:09:20.435 info  [caliper] [default-observer] 	[rate-500 Round 4 Transaction Info] - Submitted: 2002 Succ: 1818 Fail:0 Unfinished:184
+2026.08.25-08:09:25.436 info  [caliper] [default-observer] 	[rate-500 Round 4 Transaction Info] - Submitted: 4506 Succ: 4090 Fail:0 Unfinished:416
+2026.08.25-08:09:30.438 info  [caliper] [default-observer] 	[rate-500 Round 4 Transaction Info] - Submitted: 7007 Succ: 6380 Fail:0 Unfinished:627
+2026.08.25-08:09:35.438 info  [caliper] [default-observer] 	[rate-500 Round 4 Transaction Info] - Submitted: 9511 Succ: 8760 Fail:0 Unfinished:751
+2026.08.25-08:09:40.439 info  [caliper] [default-observer] 	[rate-500 Round 4 Transaction Info] - Submitted: 12015 Succ: 11018 Fail:0 Unfinished:997
+2026.08.25-08:09:45.439 info  [caliper] [default-observer] 	[rate-500 Round 4 Transaction Info] - Submitted: 14518 Succ: 13309 Fail:0 Unfinished:1209
+2026.08.25-08:09:48.561 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:09:48.562 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:09:48.562 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:09:48.562 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:09:48.562 info  [caliper] [worker-message-handler] 	Worker#1 finished Round#4
+2026.08.25-08:09:48.562 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:09:48.563 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:09:48.563 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:09:48.563 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:09:48.563 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:09:48.563 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:09:48.563 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:09:48.563 info  [caliper] [worker-message-handler] 	Worker#2 finished Round#4
+2026.08.25-08:09:48.563 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:09:48.563 info  [caliper] [worker-message-handler] 	Worker#0 finished Round#4
+2026.08.25-08:09:48.566 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user User1
+2026.08.25-08:09:48.567 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gateway for user _Org2MSP_User1
+2026.08.25-08:09:48.567 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org1.example.com
+2026.08.25-08:09:48.567 info  [caliper] [connectors/peer-gateway/PeerGateway] 	disconnecting gRpc client at peer peer0.org2.example.com
+2026.08.25-08:09:48.567 info  [caliper] [worker-message-handler] 	Worker#3 finished Round#4
+2026.08.25-08:09:53.570 info  [caliper] [default-observer] 	Resetting txCount indicator count
+2026.08.25-08:09:53.570 info  [caliper] [report-builder] 	### Test result ###
+2026.08.25-08:09:53.571 info  [caliper] [report-builder] 	
++----------+-------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+| Name     | Succ  | Fail | Send Rate (TPS) | Max Latency (s) | Min Latency (s) | Avg Latency (s) | Throughput (TPS) |
+|----------|-------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| rate-500 | 15004 | 0    | 500.0           | 2.52            | 0.05            | 1.32            | 467.8            |
++----------+-------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+
+2026.08.25-08:09:53.571 info  [caliper] [round-orchestrator] 	Finished round 5 (rate-500) in 32.111 seconds
+2026.08.25-08:09:53.571 info  [caliper] [monitor.js] 	Stopping all monitors
+2026.08.25-08:09:53.571 info  [caliper] [report-builder] 	### All test results ###
+2026.08.25-08:09:53.572 info  [caliper] [report-builder] 	
++----------+-------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+| Name     | Succ  | Fail | Send Rate (TPS) | Max Latency (s) | Min Latency (s) | Avg Latency (s) | Throughput (TPS) |
+|----------|-------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| rate-100 | 3004  | 0    | 100.1           | 2.04            | 0.03            | 0.09            | 93.8             |
+|----------|-------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| rate-200 | 6004  | 0    | 200.1           | 2.04            | 0.03            | 0.06            | 187.4            |
+|----------|-------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| rate-300 | 9004  | 0    | 300.1           | 2.05            | 0.03            | 0.06            | 280.9            |
+|----------|-------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| rate-400 | 12004 | 0    | 400.1           | 2.06            | 0.04            | 0.08            | 374.6            |
+|----------|-------|------|-----------------|-----------------|-----------------|-----------------|------------------|
+| rate-500 | 15004 | 0    | 500.0           | 2.52            | 0.05            | 1.32            | 467.8            |
++----------+-------+------+-----------------+-----------------+-----------------+-----------------+------------------+
+
+2026.08.25-08:09:53.587 info  [caliper] [report-builder] 	Generated report with path /hyperledger/caliper/workspace/report-r25b-C_clean.html
+2026.08.25-08:09:53.588 info  [caliper] [monitor.js] 	Stopping all monitors
+2026.08.25-08:09:53.588 info  [caliper] [worker-orchestrator] 	Sending exit message to connected workers
+2026.08.25-08:09:53.589 info  [caliper] [worker-message-handler] 	Worker#2 is exiting
+2026.08.25-08:09:53.589 info  [caliper] [worker-message-handler] 	Worker#1 is exiting
+2026.08.25-08:09:53.589 info  [caliper] [worker-message-handler] 	Worker#0 is exiting
+2026.08.25-08:09:53.589 info  [caliper] [round-orchestrator] 	Benchmark finished in 210.806 seconds. Total rounds: 5. Successful rounds: 5. Failed rounds: 0.
+2026.08.25-08:09:53.589 info  [caliper] [caliper-engine] 	Skipping end command due to benchmark flow conditioning
+2026.08.25-08:09:53.589 info  [caliper] [cli-launch-manager] 	Benchmark successfully finished!
+2026.08.25-08:09:53.590 info  [caliper] [worker-message-handler] 	Worker#3 is exiting
