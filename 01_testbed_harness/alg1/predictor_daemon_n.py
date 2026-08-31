@@ -26,6 +26,9 @@ Usage:  python predictor_daemon_n.py [thresh] [N] [f]
 """
 import sys, os, json, time, numpy as np, torch
 
+# NOTE: 11_potency/README.md requires per-window standardisation (mean 8,
+# s.d. 3) before scoring live RTT; without it the anomaly head saturates.
+# That step lives in r12_panel/closed_loop_daemon.py and is NOT applied here.
 sys.path.insert(0, "predictor")
 from model import ScorePredictor, CONFIG
 

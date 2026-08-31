@@ -1,3 +1,7 @@
+# RETRACTED NUMBERS.  The AUC series 0.774/0.748/0.733/0.819 hardcoded below
+# is the figure Section V-F now retracts: it came from a single restart
+# initialised at autocorrelation 0.85.  Kept for provenance only.
+# Do not re-run to produce a figure; see recreate_fig_pgd_corrected.py.
 # Rich regeneration of Fig.7 (White-box adaptive adversary) from REAL data in
 # mm_adaptive_results.txt. Produces a complex 2D (2-panel) and a 3D version.
 # No interpolation / no fabricated points -- only the measured operating points.
