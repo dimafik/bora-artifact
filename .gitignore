@@ -14,3 +14,7 @@ caliper-seed*.log
 # os noise
 Thumbs.db
 .DS_Store
+
+# python bytecode
+__pycache__/
+*.pyc
