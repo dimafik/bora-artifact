@@ -13,10 +13,82 @@ ML-Augmented Leader Election in Raft Consensus* (IEEE TNSE).
 
 ## Included by file type
 
-- `02_results_raw` — .csv, .json, .md, .txt
+- `02_results_raw` — .csv, .json, .md, .txt, plus the `elections.log`
+  of the six forced-election runs named in the next section
 - `03_caliper` — .json, .yaml, .yml, .md
 - `09_runbook_aws` — .tf, .yml, .yaml, .sh, .md, .hash, .ots, .json
 - `10_figures` — .py, .md, .sh
+
+## Which runs back the exclusion claim
+
+The exclusion figure (Fig. 5a, the operator-supplied panel) is built from four
+runs, 92 guarded elections in total with 0 acquisitions by the target. The
+figure's baseline counts are listed here too, so the identification can be
+checked in both columns rather than one.
+
+| Configuration | Directory | Baseline | Guarded | Live |
+|---|---|---|---|---|
+| N=5 single-host | `02_results_raw/finalsupp_20260611-144542` | 7/36 | 0/36 | 36/36 |
+| N=7 scaling | `02_results_raw/nsweep_N7_121812` | 7/20 | 0/20 | 20/20 |
+| N=9 scaling | `02_results_raw/nsweep_N9_122911` | 4/20 | 0/20 | 20/20 |
+| physical 5-host AWS | `02_results_raw/xhost_election_154824` | 2/16 | 0/16 | 16/16 |
+
+`01_testbed_harness/alg1/mk_fig_exclusion_stack.py` carries the same four pairs.
+Each directory now also ships its `elections.log`, one line per forced election
+in the form `[arm] eN: <old leader> -> <new leader>`, so the counts above can be
+recomputed by hand.
+
+The two starred rows of Fig. 5a come from `nsweep.sh`, which injects no delay:
+their target is a healthy orderer, and the caption says so. The paper's exposure
+bound does not rest on these 92. It rests on the closed-loop sweep,
+`02_results_raw/x1_N*` — 480 guarded elections at N=7,9,11,15,21 with the target
+degraded in every stratum and the blacklist produced by the detector, 0
+acquisitions, 476 of 480 electing a leader. The load sweep (74) is in
+`02_results_raw/loadsweep_*`.
+
+### The other N=7 runs
+
+Two further N=7 runs from the same session are in this package, and the paper
+uses neither.
+
+- `nsweep_N7_115333` — liveness 0/10 in *both* arms. The harness reads the
+  leader by grepping each orderer's log for `Raft leader changed`; it found
+  none, so the run recorded no election outcome in either arm.
+- `nsweep_N7_120309` — the target won 3/20 in the baseline arm and 3/20 under
+  the blacklist.
+
+`120309` is the run described in the response letter under "Corrections we made
+without being asked". It is why the submitted claim that exclusion held in
+"every forced election at N = 5, 7, 9" was withdrawn: we could not evidence the
+word *every*. What the run is not is evidence about the guard, because its
+*unguarded* arm scored 3/20 as well and the cluster completed all 40 of its
+elections. A guard that had failed would leave the two arms looking like the
+baseline of some other run, not like each other.
+
+Why the two arms match is not recoverable from this package. `nsweep.sh` prints
+`sidecars: <k>/<N>` at bring-up but does not write it to `summary.txt`, so the
+run carries no record of whether its sidecars were up, and an orderer whose
+advisor is unreachable fails open by design and runs as vanilla Raft. The
+harness is not the difference: `nsweep.sh.orig` is the only other version
+present and differs from `nsweep.sh` only in a port-table refactor that is
+numerically identical for N<=9. The closed-loop campaign preserves bring-up
+logs, sidecar state and per-arm raft logs in full, so the same question is
+answerable from files there. Both runs ship their `elections.log`.
+
+Other forced-election runs here are outside the 92 for reasons of their own:
+
+- `votereject_20260611-143542` — the vote-grant guard alone, without the tick
+  guard; the target won 3/15. This is the measurement behind the paper's
+  statement that complete exclusion requires both guards.
+- `auto6h_run` (EXP-A, six runs) — an early configuration; the target won 1 to 3
+  per 12.
+- `leaderacq*` — pilot runs of 3 to 12 elections; the target won in all but
+  `leaderacq4_20260611-135740` (0/4).
+- `leaderacq_20260611-134900` — the columns in its `results.csv` are shifted, so
+  the win and liveness fields cannot be recovered from it.
+- `leaderscn2_20260611-134257` — only the baseline arm ran.
+- `INVALID_*` and `archive/` — excluded by name, and throughput rather than
+  election experiments.
 
 ## Deliberately omitted
 
