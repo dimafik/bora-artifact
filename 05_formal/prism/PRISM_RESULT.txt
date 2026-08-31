@@ -32,6 +32,7 @@ round repeats.  Per-round success q = NE/2^NE for W=2 (exact, confirmed below).
 mechanically verified in PRISM: a leader is elected with probability one and the
 no-leader probability decays geometrically; even the adversarial worst case
 (two-slot window, full contention NE=N=5) converges in 6.4 rounds in expectation.
-Together with the TLAPS fairness-based leads-to proof (Liveness.tla, 234/234) and
+Together with the TLAPS fairness-based leads-to proof (Liveness.tla, 311/311,
+no axioms) and
 the unbounded safety refinement (BORA_proof.tla, 48/48), the liveness Proposition
 is now mechanised on both its non-probabilistic and probabilistic sides.

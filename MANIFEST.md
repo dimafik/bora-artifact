@@ -33,6 +33,14 @@ KZG witness commitments. Checked before removal — files in `07_theory_scripts`
 mentioning BORA: **0**; times the BORA manuscript references that directory:
 **0**. Removed 2026-08-26.
 
+A caveat on that test. This project's own working directory was named
+`IS-Raft-LAC` before the system was renamed to BORA, and that fragment still
+appears in 36 files here: 15 TLC logs, 12 shell scripts, 8 Python scripts and
+one text file. Those paths refer to *this* work, not to the removed paper, so
+"files mentioning BORA: 0" shows only that the rename post-dates them. The logs
+are kept verbatim because they are records of runs that actually happened;
+editing them would misrepresent what was executed.
+
 ## Not included, by policy
 
 Private keys and credentials are excluded by pattern (`*.pem`, `*.key`, `*.ppk`, `id_rsa*`, `*.pfx`, `*.p12`) and the package is re-scanned after assembly. The scan found none.
