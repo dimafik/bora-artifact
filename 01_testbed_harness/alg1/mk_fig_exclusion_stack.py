@@ -75,14 +75,21 @@ for ax, cfgs, title in ((axes[0], LEFT, "(a) operator-supplied blacklist"),
                   (NAVY, "s", NAVY, 4.2)]
         span = 0.13 if len(arms) == 2 else 0.21
         offs = [span - i * (2 * span / (len(arms) - 1)) for i in range(len(arms))]
+        zero = {}
         for (k, n), (col, mk, fc, ms), dy in zip(arms, style, offs):
             lo, hi, pt = wilson(k, n)
             ax.plot([lo, hi], [y + dy] * 2, color=col, lw=1.4, solid_capstyle="round")
             ax.plot(pt, y + dy, mk, ms=ms, color=col,
                     markerfacecolor=fc, markeredgewidth=1.1)
             if k == 0:
-                ax.text(hi + 1.2, y + dy, "\u2264%.1f%%" % hi, fontsize=6.8,
-                        color=col, va="center")
+                # key on the printed string: two arms that round to the same
+                # bound get one label, not two overprinted ones
+                zero.setdefault("\u2264%.1f%%" % hi, []).append((hi, dy, col))
+        for txt, hits in zero.items():
+            hi = max(h for h, _, _ in hits)
+            dy = sum(d for _, d, _ in hits) / len(hits)
+            col = hits[-1][2]
+            ax.text(hi + 1.2, y + dy, txt, fontsize=6.8, color=col, va="center")
     ax.set_yticks(ys)
     ax.set_yticklabels([c[0] for c in cfgs], fontsize=7.5)
     ax.set_ylim(-0.6, len(cfgs) - 0.4)
