@@ -42,8 +42,10 @@ StateConstraint ==
         /\ commitIndex[i] <= 1
 
 (***************************************************************************)
-(* THE TWO AXIOMS, AS TLC INVARIANTS.  Both must hold on every reachable    *)
-(* state of the bounded model.                                             *)
+(* THE TWO ENABLEDNESS FACTS, AS TLC INVARIANTS.  Liveness.tla proves both  *)
+(* by ExpandENABLED; they are re-checked here on every reachable state of   *)
+(* the bounded model as an independent cross-check, not because either is   *)
+(* assumed.                                                                 *)
 (***************************************************************************)
 ElectEnabledInv == (Inv /\ PendingCand)                => ENABLED <<ElectStep>>_vars
 CampEnabledInv  == (Inv /\ ~HasLeader /\ ~PendingCand) => ENABLED <<CampStep>>_vars
@@ -60,8 +62,8 @@ Reach2 == ~(Inv /\ ~HasLeader /\ ~PendingCand)
 (***************************************************************************)
 (* MUTATION PROBES.  Each weakens one hypothesis and must be VIOLATED.      *)
 (* A failure here shows the hypothesis is load-bearing rather than          *)
-(* decoration, i.e. TLC is genuinely evaluating ENABLED and the axioms are  *)
-(* not true for trivial reasons.                                           *)
+(* decoration, i.e. TLC is genuinely evaluating ENABLED and the two facts   *)
+(* are not true for trivial reasons.                                       *)
 (*                                                                         *)
 (*   ElectEnabledMut drops "leader[currentTerm[i]] = 0" from PendingCand.   *)
 (*   CampEnabledMut  drops "~PendingCand" from the campaign hypothesis.     *)
