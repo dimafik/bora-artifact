@@ -7,6 +7,22 @@ Pre-registered protocol:
   - Loss weights (w_score, w_anom, w_degr) = (1.0, 0.3, 0.3) -- locked
   - Train/val/test split on seed buckets
 
+KNOWN DEFECT IN THE SPLIT.  train() offsets the val and test seed buckets by
++1000 and +2000, and expand() then adds i*1000 for each of the four scenario
+variants.  The two offsets are the same size, so the buckets intersect: with the
+default 80/10/10 split, three of val's four scenario blocks and two of test's
+four fall inside the training set.  Metrics this script prints for val and test
+are therefore optimistic and should not be read as held-out performance.
+
+No number in the paper depends on them.  The detection results are live testbed
+measurements (02_results_raw/mldetect_*, x1_N*), and Table VI comes from
+r11_necessity_baselines.py, which splits at seed offsets 0 and 10,000 -- far
+enough apart that the scenario stride cannot bridge them.
+
+The script is kept as it ran: the deployed checkpoint was trained by it, and
+changing the split here would leave the shipped weights and the shipped code
+describing different experiments.
+
 Reports per-head metrics matching predictor_spec.md §6.
 """
 

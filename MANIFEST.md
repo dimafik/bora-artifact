@@ -90,6 +90,23 @@ Other forced-election runs here are outside the 92 for reasons of their own:
 - `INVALID_*` and `archive/` — excluded by name, and throughput rather than
   election experiments.
 
+## A defect we left in place
+
+`08_predictor/predictor/train.py` splits train, val and test by offsetting seed
+buckets by +1000 and +2000, then expands each seed into four scenario variants
+by adding i*1000. The two offsets are the same size, so the buckets intersect:
+three of val's four scenario blocks and two of test's four sit inside the
+training set, and the val/test metrics the script prints are optimistic.
+
+No number in the paper rests on them. Detection is measured live
+(`02_results_raw/mldetect_*`, `02_results_raw/x1_N*`), and Table VI comes from
+`08_predictor/r11_necessity_baselines.py`, which splits at seed offsets 0 and
+10,000 -- a gap the scenario stride of at most 3,000 cannot bridge.
+
+We left the script as it ran rather than correcting it. The deployed checkpoint
+was trained by this code, and a corrected split here would describe a model the
+shipped weights are not.
+
 ## Deliberately omitted
 
 Bulk transcripts and rendered assets that no number in the paper depends on. They are reproducible from the scripts included here.
