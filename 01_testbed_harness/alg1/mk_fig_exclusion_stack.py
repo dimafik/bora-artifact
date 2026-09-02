@@ -1,9 +1,13 @@
 # Two-panel exclusion forest for the revision.
 #
 # WHY TWO PANELS. The single-panel figure put four configurations on one axis
-# whose baselines were not measured the same way: N=5 and the AWS cluster carry a
-# +200 ms delay on the target, while the N=7/N=9 scaling points came from
-# nsweep.sh, which injects no delay at all -- its target is a HEALTHY orderer.
+# whose baselines were not measured the same way. VERIFIED 2026-09-02 by grepping
+# the harnesses: final_suppression.sh (N=5), nsweep.sh (N=7/N=9) and
+# xhost_bora_election.sh (AWS) contain NO netem/pumba/tc call whatsoever, so
+# ALL FOUR left-panel targets are HEALTHY orderers and the panel measures
+# enforcement alone. An earlier version of this header claimed N=5 and AWS
+# carried a +200 ms delay; that was wrong and it had propagated into the paper
+# caption as a two-row star footnote. Only the right panel injects delay.
 # Plotting them together is what made the "12.5-35%" range look like one
 # quantity. It is also exactly what Reviewer 2 objected to: in every one of those
 # runs the blacklist was supplied by the operator.
@@ -43,8 +47,8 @@ def wilson(k, n, z=1.96):
 
 # (label, baseline k/n, guarded k/n)
 LEFT = [("$N{=}5$ single-host", (7, 36), (0, 36)),
-        ("$N{=}7$ scaling*",    (7, 20), (0, 20)),
-        ("$N{=}9$ scaling*",    (4, 20), (0, 20)),
+        ("$N{=}7$ scaling ",    (7, 20), (0, 20)),
+        ("$N{=}9$ scaling ",    (4, 20), (0, 20)),
         ("physical 5-host AWS", (2, 16), (0, 16))]
 
 # Closed-loop sweep.  The two guarded arms are shown SEPARATELY.  Pooling them
@@ -113,4 +117,4 @@ axes[1].legend(handles=[
 fig.tight_layout(pad=0.4)
 fig.savefig(OUT, bbox_inches="tight")
 print("saved:", OUT)
-print("* the two starred rows are the only points whose target carries no delay")
+print("(a): no target carries injected delay; (b): every target carries +200 ms")

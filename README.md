@@ -45,6 +45,35 @@ sizes in `MANIFEST.md`. They regenerate from the scripts included here.
 Private keys and credentials are excluded by pattern and the package was
 re-scanned after assembly; the scan found none.
 
+## Environment
+
+Every single-host measurement in the paper was produced on **one machine**: a
+20-thread Intel i7-12700K under Docker Desktop, with 16 GB allocated to the
+engine, Windows 11 + WSL2. **No container is CPU-pinned and no CPU limit is
+set**, and the predictor daemon sets no process affinity, disables no GC and
+locks no memory.
+
+An earlier version of the paper described the fixed-N results as running on a
+14-core Xeon E5-2680 v4 with orderer containers pinned to disjoint cores, and
+the closed-loop sweep as a second testbed. That was wrong; it is corrected in
+the revision. How it was checked, so the claim above can be rechecked:
+
+* `compose/5node-raft.yaml` sets no `cpus`, `cpuset`, `deploy` or `resources`,
+  and no script in this package calls `taskset` or `numactl`.
+* `docker inspect` on the live orderers reports `CpusetCpus=[]` and
+  `NanoCpus=0`, which is where a runtime `docker update --cpuset-cpus` would
+  otherwise show up.
+* `docker info` reports `CPUs=20`, `MemTotal=16646320128` and Docker Desktop
+  `27.3.1`, matching the `host_os` and `host_memory_gb_allocated_to_docker`
+  fields recorded in `02_results_raw/archive/*/metadata.json` from June 2026.
+
+The genuine split is in software, not hardware. The exclusion, throughput and
+closed-loop results run against **Fabric v3.1.4** (`alg1/build_v3.sh`,
+`build_v4.sh`). The one exception is the ~530 tx/s commit ceiling, which comes
+from `02_results_raw/archive/5node_saturation_delta_2026-06-08`
+(`TPS_mean 527.77`) on **Fabric v2.5.10**; it is retained because it is the only
+saturation measurement taken, and the paper says so where it is used.
+
 ## Reproducing
 
 Each directory carries its own notes. Start from `11_potency/README.md` for the
