@@ -18,3 +18,9 @@ Thumbs.db
 # python bytecode
 __pycache__/
 *.pyc
+
+# TLC run output
+05_formal/tla/states/
+
+# working backups
+*.bak_*
