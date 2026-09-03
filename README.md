@@ -18,10 +18,17 @@ rest on.
 | Claim in the paper | File |
 |---|---|
 | 720 forced elections; 21/240 unguarded, 0/240 operator-supplied, 0/240 detector-produced | `02_results_raw/x1_*/elections.csv` |
-| Advice cap `\|B_t\| < f-r` held over 1,439 published cycles | `02_results_raw/x1c_*/cap_audit.csv` |
+| Advice cap `\|B_t\| < f-r` held over 1,439 published advice observations | `02_results_raw/x1_*/elections.csv` (the `cap`/`size` columns) |
+| The same cap audited against a rising `r`, 300 samples at N=11 | `02_results_raw/x1c_*/cap_audit.csv` |
+| Four missed leader replacements in 480 guarded elections, none in 240 unguarded | `02_results_raw/x1_*/elections.csv` (the `live` column) |
+| No target campaign inside a guarded election: 42 of 44 events, all unguarded | `02_results_raw/x1_*/logs/`, `01_testbed_harness/alg1/x1_campaign_audit.py` |
+| Detection in 3.1 s, no false positive over 158 cycles | `02_results_raw/mldetect_20260611-171955/predictor_daemon.log` |
+| Leader-vs-follower severity, 65% against 21% over 25 verified runs | `12_leader_severity/results/per_run_metrics.csv` |
+| ALR ablation at N=7 over 360 forced elections | `02_results_raw/r13_merged.csv` |
+| Physical five-host AWS: 147 guarded elections, 16 of them paired | `09_runbook_aws/`, `02_results_raw/mh_*` |
 | Table II — detector panel, incl. a 0-parameter statistic at AUC 1.00 | `08_predictor/r12_panel/panel2_results.json` |
 | White-box PGD, worst-case AUC 0.003 over 1,152 runs | `08_predictor/r12_panel/panel2_results.json` |
-| Safety 48/48, per-voter 48/48, liveness 311/311 (no axioms) | `05_formal/tla/` |
+| Safety 48/48 (global and per-voter), exclusion 64/64, liveness 311/311 (no axioms) | `05_formal/tla/` |
 | Convergence rate | `05_formal/prism/` |
 | What an evasive attack actually does (not in the paper) | `11_potency/` |
 
