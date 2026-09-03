@@ -24,12 +24,17 @@ if not rows:
 N = int(rows[0]["N"])
 targets = {int(t) for t in rows[0]["targets"].replace('"', "").split(",")}
 
-# Arm windows.  Each election spans t_start .. t_start+13s (9s pause + 4s settle).
+# Per-ELECTION windows, not per-arm.  x1_closedloop.sh interleaves the arms
+# (for each seed: A, then B, then C), so an arm's first-to-last span covers the
+# other two almost entirely -- on x1_N7_20260810-112256 each arm spans 23 min
+# while its elections occupy 40 x 13 s = 8.7 min, and B overlaps A by 91%.
+# Bucketing on those spans counted every campaign into two or three arms at
+# once.  Each election records its own t_start/t_end, so use them.
 win = {}
 for arm in ("A_vanilla", "B_oracle", "C_predictor"):
     r = [x for x in rows if x["arm"] == arm]
     if r:
-        win[arm] = (float(r[0]["t_start"]), float(r[-1]["t_start"]) + 13.0, len(r))
+        win[arm] = ([(float(x["t_start"]), float(x["t_end"])) for x in r], len(r))
 
 day = datetime.datetime.utcfromtimestamp(float(rows[0]["t_start"])).strftime("%Y-%m-%d")
 
@@ -62,16 +67,19 @@ def campaigns(i):
 
 print("=" * 70)
 print("campaign audit   run=%s   N=%d   targets=%s" % (run.split("\\")[-1], N, sorted(targets)))
-for a, (t0, t1, n) in win.items():
+for a, (spans, n) in win.items():
     f = lambda t: datetime.datetime.utcfromtimestamp(t).strftime("%H:%M:%S")
-    print("   %-12s %s ~ %s   (%d elections)" % (a, f(t0), f(t1), n))
+    occ = sum(t1 - t0 for t0, t1 in spans)
+    print("   %-12s %s ~ %s   (%d elections, %.1f min of election time)"
+          % (a, f(spans[0][0]), f(spans[-1][1]), n, occ / 60.0))
 print("=" * 70)
 
 tab = collections.defaultdict(dict)
 for i in range(1, N + 1):
     cs = campaigns(i)
-    for arm, (t0, t1, _) in win.items():
-        tab[i][arm] = sum(1 for t in cs if t0 <= t <= t1)
+    for arm, (spans, _) in win.items():
+        tab[i][arm] = sum(1 for t in cs
+                          if any(t0 <= t <= t1 for t0, t1 in spans))
 
 hdr = "%-10s %-7s" % ("node", "role") + "".join("%-14s" % a for a in win)
 print(hdr)
