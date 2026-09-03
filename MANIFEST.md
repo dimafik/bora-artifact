@@ -115,6 +115,23 @@ We left the script as it ran rather than correcting it. The deployed checkpoint
 was trained by this code, and a corrected split here would describe a model the
 shipped weights are not.
 
+## The two detection runs, and which one the paper uses
+
+`02_results_raw/` holds two runs from the same session, and the paper reports
+one of them.
+
+- `mldetect_20260611-171955` (159 lines) is the reported run. Its first logged
+  cycle reads `Bt=[] ... o3:0.85(rtt0)`: every orderer healthy, blacklist empty.
+- `mldetect_20260611-171546` (163 lines) is **not** reported. Its first logged
+  cycle already reads `Bt=[3] ... o3:0.42(rtt499)`, so residual delay from the
+  preceding experiment was still on orderer 3 when the daemon started and the
+  run had no clean baseline to detect against.
+
+Both ship. The selection rule is the one stated: a run whose baseline is already
+contaminated at T0 cannot measure detection latency from a clean state. The
+reported figures are therefore a single 84 s run, which the paper now says in a
+footnote.
+
 ## Deliberately omitted
 
 Bulk transcripts and rendered assets that no number in the paper depends on. They are reproducible from the scripts included here.
