@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-cp "/mnt/c/Users/jinu3/Bora_key1.pem" /tmp/bk.pem 2>/dev/null
+# BORA_KEY is the EC2 private key for the five hosts; it is not in this
+# repository and its path is not either.
+cp "${BORA_KEY:?set BORA_KEY to your EC2 private key}" /tmp/bk.pem
 chmod 600 /tmp/bk.pem
 IPS=(43.201.73.122 54.180.99.165 43.201.25.172 54.180.117.221 15.164.226.99)
 for ip in "${IPS[@]}"; do

@@ -2,7 +2,7 @@
 # Task 3 (fixed): docker start regenerates /etc/hosts, dropping our peer FQDN entries.
 # Re-add them, validate the warmup commits (status:200), then run the concurrent sweep.
 set -u
-cp /mnt/c/Users/jinu3/Bora_key1.pem /tmp/bk.pem 2>/dev/null; chmod 600 /tmp/bk.pem
+cp "${BORA_KEY:?set BORA_KEY to your EC2 private key}" /tmp/bk.pem 2>/dev/null; chmod 600 /tmp/bk.pem
 SSH="ssh -i /tmp/bk.pem -o StrictHostKeyChecking=no -o BatchMode=yes -o ConnectTimeout=15 -o ServerAliveInterval=5 -o ServerAliveCountMax=3"
 SCP="scp -i /tmp/bk.pem -o StrictHostKeyChecking=no -o BatchMode=yes -o ConnectTimeout=15 -q"
 H1=15.164.215.28; H2=13.209.97.224
