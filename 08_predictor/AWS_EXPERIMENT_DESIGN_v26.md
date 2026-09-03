@@ -1,5 +1,21 @@
 # v26 AWS Live Experiment Design - 4 Arms Calibrated to AI Necessity Thesis
 
+> **Status: planned, never run.** No measurement in the BORA paper comes from
+> this design. The physical five-host AWS results the paper reports were
+> produced by `01_testbed_harness/alg1/xhost_bora_election.sh`, which SSHes to
+> five hand-provisioned hosts and hot-swaps the patched Fabric v3.1.4 binary;
+> the runs are in `02_results_raw/xhost_election_*` and `02_results_raw/mh_*`.
+>
+> It is kept rather than deleted because the hypotheses below were written
+> before any AWS result was seen, and removing a pre-registration once the work
+> took a different shape would misrepresent the record.
+>
+> Two things to know while reading. The file paths in §8 point into
+> `09_runbook_aws/`, which is **not** in this artifact: it was the execution kit
+> for a different paper and was removed for that reason (see `MANIFEST.md`).
+> And the "S-Raft client workload" named there is another system of ours, not
+> the workload behind any number reported here.
+
 **Replaces**: v25 6-way Fabric Caliper design (AWS_5HR_EXPERIMENT_DESIGN.md)
 **Thesis alignment**: Linear-Score Ceiling + Augmentation Safety + 3 operating modes
 
