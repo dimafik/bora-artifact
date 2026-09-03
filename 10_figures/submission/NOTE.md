@@ -38,3 +38,32 @@ The paper's Definition 2 and Section III-D have been corrected to the head that
 exists, and the paper's Figure 2 has had its `Temperature` pipeline stage
 relabelled. These scripts are left as they were run, with this note recording
 what is wrong in them, rather than edited after the fact.
+
+## How Figure 2 was repaired
+
+Because the figure is a raster with no generator, its two text defects were
+fixed in place rather than by re-authoring the diagram. `fix_fig_process_views.py`
+is that repair, run on 2026-09-02, with the file it reads and the file it
+produced kept beside it:
+
+| File | What it is |
+|---|---|
+| `fig_process_views_pre_fix.png` | the figure as submitted |
+| `fig_process_views.png` | the same figure after the repair |
+| `fix_fig_process_views.py` | the repair, rerunnable from this directory |
+
+Both edits are text-only, so the strip geometry, the arrows and the box radii
+are untouched.
+
+* The pipeline strip's `Temperature` box is **relabelled**, not deleted, to the
+  risk score that Definition 2 and Algorithm 1 actually consume. The fill is
+  clipped to the measured salmon interior so the rounded grey border is never
+  painted over.
+* The advisor panel's line (a) read `High confidence filer`. Line (b) already
+  carries a correctly spelled `filter` in the same font, size and colour 77 px
+  below, so that word is copied pixel-for-pixel rather than re-rendered.
+
+Re-running the script writes `fig_process_views_FIXED.png` next to these; it
+should be identical to `fig_process_views.png`. It reads the pre-fix backup
+rather than its own output, so it is idempotent.
+
