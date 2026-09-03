@@ -8,7 +8,11 @@ id_rsa*
 
 # bulk regenerable artefacts
 *.parquet
+# predictor_daemon.log was ignored as bulk output.  It is not: the mldetect
+# runs' copies are the only evidence for the paper's detection latency and
+# false-positive count, so they are tracked explicitly.
 predictor_daemon.log
+!02_results_raw/mldetect_*/predictor_daemon.log
 caliper-seed*.log
 
 # os noise
