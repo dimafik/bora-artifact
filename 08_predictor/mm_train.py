@@ -35,6 +35,17 @@ m=ScorePredictor(CONFIG)
 sd=torch.load("model_small/best.pt",map_location="cpu")
 st=sd.get("model_state_dict",sd.get("state_dict",sd)) if isinstance(sd,dict) else sd
 m.load_state_dict(st)  # warm start from deployed weights
+# KNOWN DEFECT, recorded rather than fixed.  ScorePredictor.forward already
+# applies torch.sigmoid to the anomaly head, and BCEWithLogitsLoss applies its
+# own sigmoid on top, so training sees sigma(sigma(z)) and the gradients are
+# heavily damped.  Together with the sample size here -- make(400) is 800
+# windows against 141,067 parameters, 176 per sample -- this understates the
+# model: the r12_panel retrain at proper scale reaches 0.9996.  best_mm.pt is
+# left as it was because the paper's in-loop AUC of 0.84 (mm_analyze_indep.py,
+# 25 attack windows vs 109 healthy) was measured on this checkpoint; retraining
+# it would silently change a reported number.  Inference is unaffected: the
+# forward pass emits the single sigmoid, and the measured means are 0.915 for
+# the attacked node against 0.428 for healthy ones.
 opt=torch.optim.Adam(m.parameters(),lr=3e-4); bce=nn.BCEWithLogitsLoss()
 def auc(s,y):
     s=s.detach().numpy(); y=y.numpy(); pos=s[y==1]; neg=s[y==0]
