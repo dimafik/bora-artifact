@@ -77,9 +77,18 @@ answerable from files there. Both runs ship their `elections.log`.
 
 Other forced-election runs here are outside the 92 for reasons of their own:
 
-- `votereject_20260611-143542` — the vote-grant guard alone, without the tick
-  guard; the target won 3/15. This is the measurement behind the paper's
-  statement that complete exclusion requires both guards.
+- `votereject_20260611-143542` — a null result, and previously mis-described
+  here. Its `summary.txt` reads `BORA [3]: orderer3 won 3/15` against
+  `base []: orderer3 won 4/15`, which is no effect. It did **not** isolate the
+  vote-grant guard: `vote_reject_test.sh` runs the v4 orderer, which carries
+  both guards, and nothing in it disables the tick guard. Its healer also tests
+  only `test -S` on the socket file, which `final_suppression.sh` later
+  identified as insufficient ("a stale socket file is not a live advisor; every
+  prior run fail-opened on dead sidecars"), so the advisor was not verified live
+  and both guards fail open together when it is not. The run therefore bears on
+  advisor liveness, not on which guard is necessary. The paper reports it that
+  way; the earlier claim that it showed "complete exclusion requires both
+  guards" has been removed from both.
 - `auto6h_run` (EXP-A, six runs) — an early configuration; the target won 1 to 3
   per 12.
 - `leaderacq*` — pilot runs of 3 to 12 elections; the target won in all but
