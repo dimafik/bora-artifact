@@ -95,7 +95,7 @@ Input  (K=60, d=8)
          Linear(64, 32) -> ReLU -> Linear(32, 1) -> Sigmoid
 ```
 
-**파라미터 수**: ≈ 52 K (PyTorch 기준). Heartbeat마다 inference: P99 ≤ 3 ms on c5n.4xlarge CPU. **GPU 불필요**.
+**파라미터 수**: **141,067** (PyTorch 기준, `model.py` `__main__`이 세는 값이며 `retrain_result.json`·`r12_panel/panel2_results.json`과 일치). 이 문서는 한때 ≈52 K라 적었는데, 그것은 배포 인스턴스가 아니라 더 작은 초기 구성의 값이었다. Heartbeat마다 inference: P99 ≤ 3 ms on c5n.4xlarge CPU. **GPU 불필요**.
 
 ---
 

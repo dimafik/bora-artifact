@@ -41,7 +41,7 @@ leader is deposed within seconds, which destroys the condition being measured.
 | throughput with a degraded **leader** | median **35%** of that run's baseline — a **65% loss** |
 | throughput with a degraded **follower** | 79% of baseline — a **21% loss** |
 | **asymmetry** | **3.2×** |
-| mean latency | **27× higher** |
+| mean latency | **26× higher** (median 25.57 over the 25 runs; the mean is 29.55) |
 | leadership | orderer3 held it start to finish in **all 25** runs |
 
 Pre-registered primary of R25D, over all 36 runs as registered:
