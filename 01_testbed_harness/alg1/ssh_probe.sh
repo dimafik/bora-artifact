@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 pkill -9 ssh 2>/dev/null
 sleep 3
-cp /mnt/c/Users/jinu3/Bora_key1.pem /tmp/bk.pem 2>/dev/null
+cp "${BORA_KEY:?set BORA_KEY to your EC2 private key}" /tmp/bk.pem 2>/dev/null
 chmod 600 /tmp/bk.pem
 echo "lingering ssh: $(pgrep -c ssh)"
 echo "=== fresh SSH to each host (15s timeout) ==="

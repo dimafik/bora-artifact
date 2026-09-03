@@ -4,7 +4,7 @@
 # two is the paused leader). No heal loop (pause/unpause does not kill the exec'd
 # sidecar). Goal: many BORA forced elections (target orderer3) -> tighten Wilson.
 set -u
-cp /mnt/c/Users/jinu3/Bora_key1.pem /tmp/bk.pem 2>/dev/null; chmod 600 /tmp/bk.pem
+cp "${BORA_KEY:?set BORA_KEY to your EC2 private key}" /tmp/bk.pem 2>/dev/null; chmod 600 /tmp/bk.pem
 SSH="ssh -i /tmp/bk.pem -o StrictHostKeyChecking=no -o BatchMode=yes -o ConnectTimeout=15 -o ServerAliveInterval=5 -o ServerAliveCountMax=3"
 PUB=(x 15.164.215.28 13.209.97.224 13.209.3.44 54.180.145.47 52.78.184.161)
 N=5

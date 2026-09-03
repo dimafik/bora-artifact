@@ -25,7 +25,7 @@ rest on.
 | Detection in 3.1 s, no false positive over 158 cycles | `02_results_raw/mldetect_20260611-171955/predictor_daemon.log` |
 | Leader-vs-follower severity, 65% against 21% over 25 verified runs | `12_leader_severity/results/per_run_metrics.csv` |
 | ALR ablation at N=7 over 360 forced elections | `02_results_raw/r13_merged.csv` |
-| Physical five-host AWS: 147 guarded elections, 16 of them paired | `09_runbook_aws/`, `02_results_raw/mh_*` |
+| Physical five-host AWS: 147 guarded elections, 16 of them paired | `01_testbed_harness/alg1/xhost_bora_election.sh`, `02_results_raw/xhost_election_*`, `02_results_raw/mh_*` |
 | Table II — detector panel, incl. a 0-parameter statistic at AUC 1.00 | `08_predictor/r12_panel/panel2_results.json` |
 | White-box PGD, worst-case AUC 0.003 over 1,152 runs (paper Fig. 7) | `08_predictor/r12_panel/panel2_results.json`, `10_figures/revision/mk_fig_whitebox.py` |
 | Safety 48/48 (global and per-voter), exclusion 64/64, liveness 311/311 (no axioms) | `05_formal/tla/tlapm_out/` (tlapm transcripts), `05_formal/tla/run_tlapm.sh` (regenerates them) |
@@ -38,7 +38,9 @@ Conditions were fixed before results were seen. The paper follows the adaptive
 evaluation protocol of Tramèr et al., under which that ordering is the point.
 
 - `08_predictor/r12_panel/PREREGISTRATION.md`, `PREREG_R1R2.md`, `PREREG_D1D2.md`
-- `09_runbook_aws/preregister.hash` with an OpenTimestamps proof (`.ots`)
+- `12_leader_severity/prereg/PREREG_R25C.md`, `PREREG_R25D.md` and their addenda,
+  with `.sha256` alongside — these are the ones Section V-C cites when it reports
+  the clean-bracket threshold as a material confound
 
 Runs that were discarded are kept rather than deleted, with the reason recorded
 — see `11_potency/README.md`, which documents one campaign that ran to

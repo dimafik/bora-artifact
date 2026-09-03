@@ -16,7 +16,6 @@ ML-Augmented Leader Election in Raft Consensus* (IEEE TNSE).
 - `02_results_raw` — .csv, .json, .md, .txt, plus the `elections.log`
   of the six forced-election runs named in the next section
 - `03_caliper` — .json, .yaml, .yml, .md
-- `09_runbook_aws` — .tf, .yml, .yaml, .sh, .md, .hash, .ots, .json
 - `10_figures` — .py, .md, .sh
 
 ## Which runs back the exclusion claim
@@ -138,6 +137,18 @@ one text file. Those paths refer to *this* work, not to the removed paper, so
 "files mentioning BORA: 0" shows only that the rename post-dates them. The logs
 are kept verbatim because they are records of runs that actually happened;
 editing them would misrepresent what was executed.
+
+`09_runbook_aws` (34 files) was removed on the same grounds. Its README is
+"5-Hour AWS Fabric Live Experiment — Schedulable Byzantine Consensus", its
+playbooks deploy a BRAO sidecar, its packer image builds Fabric **2.5.4**, and
+`preregister.hash` with its OpenTimestamps proof anchors *that* design. None of
+it produced a number in this paper. The physical five-host runs were driven by
+`01_testbed_harness/alg1/xhost_bora_election.sh`, which SSHes to five
+hand-provisioned hosts and hot-swaps the patched Fabric **v3.1.4** binary — no
+terraform, no ansible, no packer. Checked before removal — files in
+`09_runbook_aws` mentioning BORA: **3** (`caliper/benchmark-e{1,2,3}.yaml`);
+times anything else in this repository referenced those three: **0**; times the
+BORA manuscript references that directory: **0**. Removed 2026-09-03.
 
 ## Not included, by policy
 
