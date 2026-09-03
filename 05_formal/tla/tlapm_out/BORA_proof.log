@@ -1,0 +1,65 @@
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+(* fingerprints file ".tlacache/FiniteSets.tlaps/fingerprints" removed *)
+(* created new ".tlacache/FiniteSets.tlaps/FiniteSets.thy" *)
+(* fingerprints written in ".tlacache/FiniteSets.tlaps/fingerprints" *)
+File "/home/jinu337/tlaps/lib/tlaps/FiniteSets.tla", line 1, character 1 to line 23, character 77:
+[INFO]: All 0 obligation proved.
+(* fingerprints file ".tlacache/Vanilla.tlaps/fingerprints" removed *)
+(* created new ".tlacache/Vanilla.tlaps/Vanilla.thy" *)
+(* fingerprints written in ".tlacache/Vanilla.tlaps/fingerprints" *)
+File "./Vanilla.tla", line 1, character 1 to line 73, character 77:
+[INFO]: All 0 obligation proved.
+(* fingerprints file ".tlacache/BORA.tlaps/fingerprints" removed *)
+(* created new ".tlacache/BORA.tlaps/BORA.thy" *)
+(* fingerprints written in ".tlacache/BORA.tlaps/fingerprints" *)
+File "./BORA.tla", line 1, character 1 to line 286, character 77:
+[INFO]: All 0 obligation proved.
+(* fingerprints file ".tlacache/TLAPS.tlaps/fingerprints" removed *)
+(* created new ".tlacache/TLAPS.tlaps/TLAPS.thy" *)
+(* fingerprints written in ".tlacache/TLAPS.tlaps/fingerprints" *)
+File "/home/jinu337/tlaps/lib/tlaps/TLAPS.tla", line 1, character 1 to line 362, character 77:
+[INFO]: All 0 obligation proved.
+(* fingerprints file ".tlacache/BORA_proof.tlaps/fingerprints" removed *)
+** Unexpanded symbols: CONSTANT_Orderers_
+
+** Unexpanded symbols: STATE_vanillaVars_, ACTION_VNext_, ACTION_BecomeLeader_, STATE_vars_, ACTION_Campaign_, CONSTANT_Orderers_, ACTION_AppendEntry_, ACTION_Commit_, ACTION_BoundedIntelligence_
+
+** Unexpanded symbols: STATE_vanillaVars_, ACTION_VNext_, ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: ACTION_VNext_, ACTION_Next_
+
+** Unexpanded symbols: CONSTANT_Orderers_, ACTION_VNext_, ACTION_Next_, CONSTANT_Cardinality_, STATE_vars_, STATE_Incumbent_
+
+** Unexpanded symbols: STATE_vanillaVars_, CONSTANT_Orderers_, ACTION_VAppendEntry_, ACTION_Next_, ACTION_VCommit_, ACTION_VBecomeLeader_, STATE_vars_, ACTION_VCampaign_
+
+** Unexpanded symbols: ACTION_Campaign_, CONSTANT_Orderers_, ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: STATE_vanillaVars_, CONSTANT_Orderers_, ACTION_Next_, STATE_vars_, ACTION_VCampaign_
+
+** Unexpanded symbols: CONSTANT_Orderers_, ACTION_Next_, ACTION_VCampaign_
+
+** Unexpanded symbols: CONSTANT_Orderers_, ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: STATE_vanillaVars_, CONSTANT_Orderers_, ACTION_VAppendEntry_, ACTION_Next_, ACTION_VCommit_, ACTION_VBecomeLeader_, STATE_vars_, ACTION_VCampaign_
+
+** Unexpanded symbols: CONSTANT_Orderers_, ACTION_Next_, ACTION_BecomeLeader_, STATE_vars_
+
+** Unexpanded symbols: CONSTANT_Orderers_, ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: STATE_vanillaVars_, CONSTANT_Orderers_, ACTION_VAppendEntry_, ACTION_Next_, ACTION_VCommit_, ACTION_VBecomeLeader_, STATE_vars_, ACTION_VCampaign_
+
+** Unexpanded symbols: CONSTANT_Orderers_, ACTION_Next_, STATE_vars_, ACTION_AppendEntry_
+
+** Unexpanded symbols: CONSTANT_Orderers_, ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: STATE_vanillaVars_, CONSTANT_Orderers_, ACTION_VAppendEntry_, ACTION_Next_, ACTION_VCommit_, ACTION_VBecomeLeader_, STATE_vars_, ACTION_VCampaign_
+
+** Unexpanded symbols: CONSTANT_Orderers_, ACTION_Commit_, ACTION_Next_, STATE_vars_
+
+** Unexpanded symbols: CONSTANT_Orderers_, ACTION_Next_, STATE_vars_
+
+(* created new ".tlacache/BORA_proof.tlaps/BORA_proof.thy" *)
+(* fingerprints written in ".tlacache/BORA_proof.tlaps/fingerprints" *)
+File "./BORA_proof.tla", line 1, character 1 to line 90, character 77:
+[INFO]: All 48 obligations proved.

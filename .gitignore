@@ -25,6 +25,9 @@ __pycache__/
 
 # TLC run output
 05_formal/tla/states/
+# tlapm's fingerprint cache: regenerable, and shipping it would let
+# run_tlapm.sh report success without discharging a single obligation.
+05_formal/tla/.tlacache/
 
 # working backups
 *.bak_*
