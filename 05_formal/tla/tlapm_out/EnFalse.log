@@ -1,0 +1,50 @@
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+(* fingerprints file ".tlacache/TLAPS.tlaps/fingerprints" removed *)
+(* created new ".tlacache/TLAPS.tlaps/TLAPS.thy" *)
+(* fingerprints written in ".tlacache/TLAPS.tlaps/fingerprints" *)
+File "/home/jinu337/tlaps/lib/tlaps/TLAPS.tla", line 1, character 1 to line 362, character 77:
+[INFO]: All 0 obligation proved.
+(* fingerprints file ".tlacache/EnFalse.tlaps/fingerprints" removed *)
+** Unexpanded symbols: ---
+
+** Unexpanded symbols: ---
+
+your 131072x1 screen size is bogus. expect trouble
+Zenon error: exhausted search space without finding a proof
+your 131072x1 screen size is bogus. expect trouble
+Zenon error: exhausted search space without finding a proof
+(* created new ".tlacache/EnFalse.tlaps/EnFalse.thy" *)
+(* fingerprints written in ".tlacache/EnFalse.tlaps/fingerprints" *)
+File "./EnFalse.tla", line 33, characters 3-4:
+[ERROR]: Could not prove or check:
+           ASSUME NEW VARIABLE x,
+                  NEW VARIABLE y,
+                  vars == <<x, y>>,
+                  TypeOK == x \in Nat /\ y \in Nat,
+                  Guarded == /\ x < 0
+                             /\ x' = x + 1
+                             /\ y' = y,
+                  ExpandENABLED 
+           PROVE  TypeOK => ENABLED <<Guarded>>_vars
+File "./EnFalse.tla", line 30, characters 3-4:
+[ERROR]: Could not prove or check:
+           ASSUME NEW VARIABLE x,
+                  NEW VARIABLE y,
+                  TypeOK == x \in Nat /\ y \in Nat,
+                  Impossible == /\ x' = x + 1
+                                /\ x' = x
+                                /\ y' = y,
+                  ExpandENABLED 
+           PROVE  TypeOK => ENABLED Impossible
+File "./EnFalse.tla", line 1, character 1 to line 35, character 77:
+[ERROR]: 2/4 obligations failed.
+There were backend errors processing module `"EnFalse"`.
+ tlapm ending abnormally with Failure("backend errors: there are unproved obligations")
+Raised at Stdlib.failwith in file "stdlib.ml", line 29, characters 17-33
+Called from Tlapm.process_module in file "tlapm.ml", line 408, characters 12-77
+Called from Tlapm.main.f in file "tlapm.ml", line 503, characters 23-43
+Called from Stdlib__list.fold_left in file "list.ml", line 121, characters 24-34
+Called from Tlapm.main in file "tlapm.ml", line 506, characters 13-40
+Called from Tlapm.init in file "tlapm.ml", line 518, characters 8-33
+

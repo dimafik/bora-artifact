@@ -1,3 +1,26 @@
+=== Reproducing this file ===
+Everything below is a record of what tlapm reported.  tlapm's own output is in
+tlapm_out/, and `bash run_tlapm.sh` regenerates it from scratch (--cleanfp, so
+no obligation is read back from cache).  Last run on tlapm 1.5.0:
+
+    BORA_proof      48/48   EXIT=0     safety refinement, unbounded
+    BORA_pv_proof   48/48   EXIT=0     safety refinement, per-voter blacklist
+    BORA_pv_excl    64/64   EXIT=0     exclusion under an honest quorum (Prop. 7)
+    Liveness       311/311  EXIT=0     fairness-based <>leader, no axioms
+    EnTest           5/5    EXIT=0     positive control
+    EnPair          36/36   EXIT=0     both actions, one recipe
+    EnCampFull      59/59   EXIT=0     CampEnabled, final form
+    EnFalse       2 of 4 FAILED, EXIT=3   NEGATIVE control -- this is the
+                                          correct outcome; a run in which
+                                          EnFalse passes means the ENABLED
+                                          tactic is inert and every positive
+                                          result above is worthless.
+
+`grep -c AXIOM Liveness.tla` returns 0.
+
+The fingerprint cache (.tlacache/) is deliberately NOT shipped: with it present
+the script could report success without discharging anything.
+
 === TLAPS deductive (UNBOUNDED) proof: Spec => VSpec (BORA refines vanilla Raft) ===
 Files: BORA.tla (spec), Vanilla.tla (TLC instance), BORA_proof.tla (TLAPS proof).
 Tool: tlapm 1.5.0 (Zenon + SMT + Isabelle backends), no-sudo install ~/tlaps.

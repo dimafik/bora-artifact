@@ -1,0 +1,18 @@
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+(* fingerprints file ".tlacache/TLAPS.tlaps/fingerprints" removed *)
+(* created new ".tlacache/TLAPS.tlaps/TLAPS.thy" *)
+(* fingerprints written in ".tlacache/TLAPS.tlaps/fingerprints" *)
+File "/home/jinu337/tlaps/lib/tlaps/TLAPS.tla", line 1, character 1 to line 362, character 77:
+[INFO]: All 0 obligation proved.
+(* fingerprints file ".tlacache/EnTest.tlaps/fingerprints" removed *)
+** Unexpanded symbols: ---
+
+** Unexpanded symbols: ---
+
+** Unexpanded symbols: ---
+
+(* created new ".tlacache/EnTest.tlaps/EnTest.thy" *)
+(* fingerprints written in ".tlacache/EnTest.tlaps/fingerprints" *)
+File "./EnTest.tla", line 1, character 1 to line 33, character 77:
+[INFO]: All 5 obligations proved.

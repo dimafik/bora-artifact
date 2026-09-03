@@ -1,0 +1,266 @@
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+(* fingerprints file ".tlacache/FiniteSets.tlaps/fingerprints" removed *)
+(* created new ".tlacache/FiniteSets.tlaps/FiniteSets.thy" *)
+(* fingerprints written in ".tlacache/FiniteSets.tlaps/fingerprints" *)
+File "/home/jinu337/tlaps/lib/tlaps/FiniteSets.tla", line 1, character 1 to line 23, character 77:
+[INFO]: All 0 obligation proved.
+(* fingerprints file ".tlacache/Functions.tlaps/fingerprints" removed *)
+(* created new ".tlacache/Functions.tlaps/Functions.thy" *)
+(* fingerprints written in ".tlacache/Functions.tlaps/fingerprints" *)
+File "/home/jinu337/tlaps/lib/tlaps/Functions.tla", line 1, character 1 to line 63, character 77:
+[INFO]: All 0 obligation proved.
+(* fingerprints file ".tlacache/NaturalsInduction.tlaps/fingerprints" removed *)
+(* created new ".tlacache/NaturalsInduction.tlaps/NaturalsInduction.thy" *)
+(* fingerprints written in ".tlacache/NaturalsInduction.tlaps/fingerprints" *)
+File "/home/jinu337/tlaps/lib/tlaps/NaturalsInduction.tla", line 1, character 1 to line 151, character 77:
+[INFO]: All 0 obligation proved.
+(* fingerprints file ".tlacache/TLAPS.tlaps/fingerprints" removed *)
+(* created new ".tlacache/TLAPS.tlaps/TLAPS.thy" *)
+(* fingerprints written in ".tlacache/TLAPS.tlaps/fingerprints" *)
+File "/home/jinu337/tlaps/lib/tlaps/TLAPS.tla", line 1, character 1 to line 362, character 77:
+[INFO]: All 0 obligation proved.
+(* fingerprints file ".tlacache/SequenceTheorems.tlaps/fingerprints" removed *)
+(* created new ".tlacache/SequenceTheorems.tlaps/SequenceTheorems.thy" *)
+(* fingerprints written in ".tlacache/SequenceTheorems.tlaps/fingerprints" *)
+File "/home/jinu337/tlaps/lib/tlaps/SequenceTheorems.tla", line 1, character 1 to line 263, character 77:
+[INFO]: All 0 obligation proved.
+(* fingerprints file ".tlacache/Vanilla.tlaps/fingerprints" removed *)
+(* created new ".tlacache/Vanilla.tlaps/Vanilla.thy" *)
+(* fingerprints written in ".tlacache/Vanilla.tlaps/fingerprints" *)
+File "./Vanilla.tla", line 1, character 1 to line 73, character 77:
+[INFO]: All 0 obligation proved.
+(* fingerprints file ".tlacache/Liveness.tlaps/fingerprints" removed *)
+** Unexpanded symbols: ---
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_, STATE_TypeOK_, ACTION_Campaign_, CONSTANT_Orderers_
+
+** Unexpanded symbols: ACTION_Campaign_, STATE_LeaderInv_, STATE_FollowerT0_
+
+** Unexpanded symbols: STATE_Inv_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_
+
+** Unexpanded symbols: STATE_FollowerT0_
+
+** Unexpanded symbols: STATE_LeaderInv_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_, STATE_TypeOK_, ACTION_BecomeLeader_, CONSTANT_Orderers_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_, ACTION_BecomeLeader_
+
+** Unexpanded symbols: ACTION_BecomeLeader_, STATE_Inv_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_
+
+** Unexpanded symbols: STATE_FollowerT0_
+
+** Unexpanded symbols: STATE_LeaderInv_
+
+** Unexpanded symbols: ---
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_, ACTION_AppendEntry_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_, ACTION_AppendEntry_
+
+** Unexpanded symbols: CONSTANT_Orderers_, STATE_LeaderInv_, STATE_FollowerT0_, STATE_TypeOK_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_
+
+** Unexpanded symbols: ---
+
+** Unexpanded symbols: ACTION_Commit_, STATE_LeaderInv_, STATE_FollowerT0_
+
+** Unexpanded symbols: ACTION_Commit_, STATE_LeaderInv_, STATE_FollowerT0_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_
+
+** Unexpanded symbols: CONSTANT_Orderers_, ACTION_Commit_, STATE_Inv_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_
+
+** Unexpanded symbols: ACTION_Commit_, ACTION_BecomeLeader_, STATE_Inv_, ACTION_Campaign_, CONSTANT_Orderers_, ACTION_AppendEntry_
+
+your 131072x1 screen size is bogus. expect trouble
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_
+
+** Unexpanded symbols: ACTION_Campaign_, CONSTANT_Orderers_, STATE_Inv_
+
+** Unexpanded symbols: CONSTANT_Orderers_, STATE_Inv_
+
+your 131072x1 screen size is bogus. expect trouble
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_
+
+** Unexpanded symbols: ACTION_Campaign_, CONSTANT_Orderers_, STATE_Inv_
+
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_, STATE_TypeOK_, STATE_Init_
+
+your 131072x1 screen size is bogus. expect trouble
+** Unexpanded symbols: ---
+
+your 131072x1 screen size is bogus. expect trouble
+** Unexpanded symbols: ---
+
+your 131072x1 screen size is bogus. expect trouble
+** Unexpanded symbols: CONSTANT_Orderers_
+
+** Unexpanded symbols: ---
+
+** Unexpanded symbols: CONSTANT_Orderers_, STATE_Inv_
+
+** Unexpanded symbols: STATE_Inv_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_Inv_, STATE_HasLeader_
+
+your 131072x1 screen size is bogus. expect trouble
+** Unexpanded symbols: CONSTANT_Orderers_, STATE_LeaderInv_, STATE_FollowerT0_
+
+** Unexpanded symbols: STATE_Inv_
+
+** Unexpanded symbols: STATE_FollowerT0_, STATE_TypeOK_
+
+** Unexpanded symbols: CONSTANT_Orderers_, STATE_Inv_, STATE_PendingCand_
+
+your 131072x1 screen size is bogus. expect trouble
+** Unexpanded symbols: STATE_Inv_, STATE_PendingCand_
+
+** Unexpanded symbols: CONSTANT_Orderers_, STATE_Inv_
+
+** Unexpanded symbols: CONSTANT_Orderers_, STATE_LeaderInv_, STATE_FollowerT0_, STATE_PendingCand_
+
+** Unexpanded symbols: CONSTANT_Orderers_, STATE_Inv_, STATE_PendingCand_
+
+** Unexpanded symbols: CONSTANT_Orderers_, STATE_vars_, ACTION_BecomeLeader_, STATE_Inv_, STATE_PendingCand_
+
+** Unexpanded symbols: STATE_SomeFollower_, CONSTANT_Orderers_, STATE_TypeOK_
+
+** Unexpanded symbols: STATE_SomeFollower_, STATE_TypeOK_
+
+** Unexpanded symbols: CONSTANT_Orderers_, STATE_TypeOK_
+
+** Unexpanded symbols: STATE_SomeFollower_, CONSTANT_Orderers_
+
+** Unexpanded symbols: STATE_SomeFollower_, CONSTANT_Orderers_, STATE_TypeOK_
+
+** Unexpanded symbols: STATE_SomeFollower_, ACTION_Campaign_, CONSTANT_Orderers_, STATE_TypeOK_, STATE_vars_
+
+** Unexpanded symbols: STATE_SomeFollower_, STATE_LeaderInv_, STATE_FollowerT0_, STATE_TypeOK_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: CONSTANT_Orderers_, STATE_LeaderInv_, STATE_FollowerT0_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: CONSTANT_Orderers_, STATE_Inv_, STATE_PendingCand_
+
+** Unexpanded symbols: STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_FollowerT0_, STATE_TypeOK_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: CONSTANT_Orderers_, STATE_Inv_, STATE_PendingCand_
+
+** Unexpanded symbols: CONSTANT_Orderers_, STATE_Inv_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: CONSTANT_Orderers_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: CONSTANT_Orderers_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: CONSTANT_Orderers_, STATE_LeaderInv_, STATE_TypeOK_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: CONSTANT_Orderers_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: TEMPORAL_SpecL_
+
+** Unexpanded symbols: ACTION_Commit_, ACTION_BecomeLeader_, STATE_Inv_, STATE_PendingCand_, ACTION_Campaign_, ACTION_AppendEntry_, STATE_HasLeader_
+
+your 131072x1 screen size is bogus. expect trouble
+** Unexpanded symbols: STATE_Inv_
+
+** Unexpanded symbols: ACTION_Campaign_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Campaign_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Campaign_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Campaign_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_BecomeLeader_, STATE_Inv_, STATE_PendingCand_
+
+** Unexpanded symbols: ACTION_BecomeLeader_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+Zenon error: exhausted search space without finding a proof
+your 131072x1 screen size is bogus. expect trouble
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_
+
+your 131072x1 screen size is bogus. expect trouble
+** Unexpanded symbols: STATE_Inv_, STATE_PendingCand_, ACTION_AppendEntry_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_
+
+** Unexpanded symbols: STATE_vars_, ACTION_BecomeLeader_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Commit_, ACTION_BecomeLeader_, STATE_Inv_, STATE_PendingCand_, ACTION_Campaign_, ACTION_AppendEntry_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_Inv_
+
+** Unexpanded symbols: ACTION_Campaign_, STATE_Inv_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Campaign_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Campaign_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Campaign_, STATE_LeaderInv_, STATE_FollowerT0_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Campaign_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+Zenon error: exhausted search space without finding a proof
+** Unexpanded symbols: ACTION_BecomeLeader_, STATE_Inv_, STATE_PendingCand_
+
+** Unexpanded symbols: ACTION_BecomeLeader_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_
+
+** Unexpanded symbols: STATE_Inv_, STATE_PendingCand_, ACTION_AppendEntry_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_LeaderInv_, STATE_FollowerT0_
+
+** Unexpanded symbols: ACTION_Campaign_, STATE_vars_, STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: ACTION_Campaign_, STATE_LeaderInv_, STATE_FollowerT0_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: STATE_Inv_, STATE_PendingCand_, STATE_HasLeader_
+
+** Unexpanded symbols: TEMPORAL_SpecL_
+
+** Unexpanded symbols: TEMPORAL_SpecL_
+
+** Unexpanded symbols: ---
+
+your 131072x1 screen size is bogus. expect trouble
+your 131072x1 screen size is bogus. expect trouble
+(* created new ".tlacache/Liveness.tlaps/Liveness.thy" *)
+(* fingerprints written in ".tlacache/Liveness.tlaps/fingerprints" *)
+File "./Liveness.tla", line 1, character 1 to line 303, character 77:
+[INFO]: All 311 obligations proved.
