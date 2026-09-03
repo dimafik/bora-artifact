@@ -1,6 +1,15 @@
 """BORA predictor daemon (ML in the loop).
 
-*** SUPERSEDED -- DO NOT USE, AND NOT USED FOR ANY REPORTED MEASUREMENT. ***
+*** SUPERSEDED -- DO NOT USE FOR NEW WORK. ***
+
+Corrected 2026-09-03: an earlier version of this notice said this file was
+not used for any reported measurement. That is wrong. No closed-loop cap
+result came from it, but the in-loop detection trace of the paper's Fig. 6
+and Section V-B did: `02_results_raw/mldetect_20260611-171955/
+predictor_daemon.log` opens with `# daemon start thresh=0.65 fcap=2`, which
+is this file's signature -- predictor_daemon_n.py prints `cap_rule=f-r-1`
+instead. The defect below did not touch that measurement: one orderer was
+degraded, so |B_t| never exceeded 1 and the static cap never bound.
 
 This early version applies a static cap `[:FCAP]` with FCAP=2, which is wrong in
 two ways against Algorithm 1 substep (c): it ignores the Raft-observed unhealthy
