@@ -1,0 +1,38 @@
+[16:22:21] B-20 sweep start: zero-parameter mean-RTT detector in the advisor slot
+[16:22:21] output: /mnt/d/fabric-d2/results/b20_sweep_20260903-162221
+[16:22:21] === run 1/6: N=7 f=3 ===
+[16:22:28]   advisor up: 1788420148.392 Bt=[3] r=0 cap=2 unresp=[] scores=o1:0.85(rtt1) o2:0.85(rtt0) o3:0.42(rtt20
+[16:22:28]   bt.json age 0s
+[16:22:28]   running x1_closedloop.sh 7 4 10 200
+[16:52:48]   run 1/6 done: 21 result lines
+[16:52:48] === run 2/6: N=9 f=4 ===
+[16:52:55]   advisor up: 1788421975.116 Bt=[3] r=0 cap=3 unresp=[] scores=o1:0.85(rtt1) o2:0.85(rtt0) o3:0.42(rtt11
+[16:52:55]   bt.json age 0s
+[16:52:55]   running x1_closedloop.sh 9 4 10 200
+[17:24:15]   run 2/6 done: 23 result lines
+[17:24:15] === run 3/6: N=11 f=5 ===
+[17:24:22]   advisor up: 1788423862.387 Bt=[3] r=0 cap=4 unresp=[] scores=o1:0.85(rtt1) o2:0.85(rtt0) o3:0.42(rtt82
+[17:24:22]   bt.json age 0s
+[17:24:22]   running x1_closedloop.sh 11 4 10 200
+[17:56:33]   run 3/6 done: 25 result lines
+[17:56:33] === run 4/6: N=15 f=7 ===
+[17:56:40]   advisor up: 1788425800.346 Bt=[3, 9] r=0 cap=6 unresp=[] scores=o1:0.85(rtt0) o2:0.85(rtt0) o3:0.42(rt
+[17:56:40]   bt.json age 0s
+[17:56:40]   running x1_closedloop.sh 15 4 10 200
+[21:41:04] === resume: N=15, 21, 21 ===
+[21:41:04] === run 4/6: N=15 f=7 ===
+[21:41:11]   advisor up: 1788439271.377 Bt=[] r=0 cap=6 unresp=[] scores=o1:0.85(rtt1) o2:0.85(rtt0) o3:0.85(rtt1) 
+[21:41:11]   bt.json age 0s
+[21:41:11]   running x1_closedloop.sh 15 4 10 200
+[22:16:01]   run 4/6 done: 12 result lines
+[22:16:01] === run 5/6: N=21 f=10 ===
+[22:16:08]   advisor up: 1788441368.096 Bt=[3, 11] r=0 cap=9 unresp=[] scores=o1:0.85(rtt1) o2:0.85(rtt0) o3:0.42(r
+[22:16:08]   bt.json age 0s
+[22:16:08]   running x1_closedloop.sh 21 4 10 200
+[22:55:11]   run 5/6 done: 12 result lines
+[22:55:11] === run 6/6: N=21 f=10 ===
+[22:55:18]   advisor up: 1788443717.694 Bt=[3, 10, 17] r=0 cap=9 unresp=[] scores=o1:0.85(rtt0) o2:0.85(rtt0) o3:0.
+[22:55:18]   bt.json age 1s
+[22:55:18]   running x1_closedloop.sh 21 4 10 200
+[23:33:42]   run 6/6 done: 12 result lines
+[23:33:42] resume complete

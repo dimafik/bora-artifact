@@ -115,6 +115,21 @@ We left the script as it ran rather than correcting it. The deployed checkpoint
 was trained by this code, and a corrected split here would describe a model the
 shipped weights are not.
 
+## The detector-swap sweep
+
+`02_results_raw/b20_sweep_20260903-162221/` is the closed-loop campaign run a
+second time with a zero-parameter mean-RTT threshold where the Transformer
+normally sits. Six runs, N = 7, 9, 11, 15, 21, 21, four seeds of ten elections
+each: 240 forced elections per arm, the same size as the published campaign.
+The target wins 24/240 unguarded and 0/240 under the threshold, matching the
+learned advisor. That directory's README states what the run does and does not
+show; the short version is that it establishes the bound, not the detector.
+
+The advisor's per-cycle log ships gzipped (53,031 lines, 13 MB raw, 0.4 MB
+compressed) because the precision figures rest on it and a summary would not
+let a reader check them. `partial_N15_run4.log` is an aborted first attempt at
+N=15, kept as a record and deliberately outside the aggregator's file glob.
+
 ## The two detection runs, and which one the paper uses
 
 `02_results_raw/` holds two runs from the same session, and the paper reports

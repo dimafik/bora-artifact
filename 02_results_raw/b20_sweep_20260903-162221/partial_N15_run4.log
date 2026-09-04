@@ -1,0 +1,43 @@
+X1 closed loop: N=15 f=7 cap=5 m=2 targets=[3,11] chance=14.3%
+seeds=4 elec=10 delay=200ms
+budget: ~25s/election, attack window 85m
+  daemon gate OK: bt.json 0s old, r=0 cap=6 consistent with f=7
+===== N=15 bring-up =====
+generated crypto-config-orderer-15node.yaml, configtx-15node.yaml, 15node-raft.yaml for N=15 (orderers orderer.example.com, orderer2.example.com, orderer3.example.com, orderer4.example.com, orderer5.example.com, orderer6.example.com, orderer7.example.com, orderer8.example.com, orderer9.example.com, orderer10.example.com, orderer11.example.com, orderer12.example.com, orderer13.example.com, orderer14.example.com, orderer15.example.com)
+org1.example.com
+org2.example.com
+orderers: 15
+[34m2026-09-03 17:56:48.011 KST 0007 INFO[0m [common.tools.configtxgen] [34;1mdoOutputBlock[0m -> Writing genesis block
+ Container peer0.org2.example.com  Started
+ Container orderer15.example.com  Started
+containers up: 15 orderers
+===== channel join (15 orderers + 2 peers) =====
+  orderer1: Status: 201
+  orderer2: Status: 201
+  orderer3: Status: 201
+  orderer4: Status: 201
+  orderer5: Status: 201
+  orderer6: Status: 201
+  orderer7: Status: 201
+  orderer8: Status: 201
+  orderer9: Status: 201
+  orderer10: Status: 201
+  orderer11: Status: 201
+  orderer12: Status: 201
+  orderer13: Status: 201
+  orderer14: Status: 201
+  orderer15: Status: 201
+  orderers on channel: 15/15
+===== deploy BORA v4 binary + sidecar to 15 orderers =====
+  sidecars: 15/15
+ATTACK_ONSET=1788426009.980563112 targets=[3,11]
+  A_vanilla s1: target 0/10  live 10/10  (W0=1 Wp=0 W1=9 W1wins=0)
+  B_oracle s1: target 0/10  live 10/10  (W0=0 Wp=0 W1=10 W1wins=0)
+  C_predictor s1: target 0/10  live 10/10  (W0=0 Wp=0 W1=10 W1wins=0)
+  A_vanilla s2: target 3/10  live 10/10  (W0=0 Wp=0 W1=10 W1wins=3)
+  B_oracle s2: target 0/10  live 10/10  (W0=0 Wp=0 W1=10 W1wins=0)
+  C_predictor s2: target 0/10  live 10/10  (W0=0 Wp=0 W1=10 W1wins=0)
+  A_vanilla s3: target 2/10  live 10/10  (W0=0 Wp=0 W1=10 W1wins=2)
+  B_oracle s3: target 0/10  live 10/10  (W0=0 Wp=0 W1=10 W1wins=0)
+  C_predictor s3: target 0/10  live 10/10  (W0=0 Wp=0 W1=10 W1wins=0)
+  A_vanilla s4: target 2/10  live 10/10  (W0=0 Wp=0 W1=10 W1wins=2)
