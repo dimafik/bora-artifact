@@ -1,8 +1,13 @@
-# RETRACTED NUMBERS.  The AUC series 0.774/0.748/0.733/0.819 hardcoded below
-# is the figure Section V-F now retracts: it came from a single restart
-# initialised at autocorrelation 0.85.  Kept for provenance only.
-# Do not re-run to produce a figure; see recreate_fig_pgd_corrected.py.
-# Generates fig_loadsweep.pdf and fig_pgd.pdf from REAL measured data.
+# Generates fig_loadsweep.pdf from the measured E1/E2/E3 concurrency sweep.
+#
+# This file also drew the paper's old white-box figure, from the AUC series
+# 0.774/0.748/0.733/0.819. Section V-E retracts those numbers: they came from
+# a single restart initialised at autocorrelation 0.85, which never entered
+# the low-correlation region the search existed to explore. A header saying
+# 'do not re-run' is not enough for a script that still runs, so that half is
+# removed. The figure in the paper is Fig. 7, drawn by
+# 10_figures/revision/mk_fig_whitebox.py, which reads panel2_results.json
+# rather than hardcoding anything.
 # Style: muted academic palette + Arial (matches paper figures).
 import matplotlib
 matplotlib.use("Agg")
@@ -36,26 +41,3 @@ ax.grid(axis="y",ls=":",lw=0.5,color=GRAY,alpha=0.7)
 fig.tight_layout(pad=0.3)
 fig.savefig(OUT+r"\fig_loadsweep.pdf"); fig.savefig(OUT+r"\fig_loadsweep.png",dpi=150)
 print("loadsweep done")
-
-# ---------- Figure: white-box PGD adaptive adversary (mm_adaptive_results.txt) ----------
-rho=[0.0,0.3,0.6,0.8]; auc=[0.774,0.748,0.733,0.819]
-NONAD=0.923; CHANCE=0.5; OFF=0.536
-
-fig,ax=plt.subplots(figsize=(3.45,2.25))
-ax.axhline(NONAD,ls="--",lw=1.1,color=MUST)
-ax.text(0.0,NONAD+0.008,"non-adaptive (0.92)",fontsize=6.5,color=MUST)
-ax.axhline(CHANCE,ls=":",lw=1.1,color=GRAY)
-ax.text(0.0,CHANCE-0.05,"chance (0.5)",fontsize=6.5,color=GRAY)
-ax.plot(rho,auc,marker="o",ms=5,lw=1.7,color=NAVY,label="white-box PGD")
-wi=auc.index(min(auc))
-ax.annotate("worst case 0.73",xy=(rho[wi],auc[wi]),xytext=(0.40,0.60),
-            fontsize=7,color=BURG,
-            arrowprops=dict(arrowstyle="-",lw=0.6,color=BURG))
-ax.set_ylim(0.42,1.0); ax.set_xlim(-0.04,0.88)
-ax.set_xlabel("autocorrelation floor $\\rho_{\\min}$"); ax.set_ylabel("detection AUC")
-ax.legend(frameon=False,fontsize=7,loc="lower right")
-ax.spines["top"].set_visible(False); ax.spines["right"].set_visible(False)
-ax.grid(axis="y",ls=":",lw=0.5,color=GRAY,alpha=0.7)
-fig.tight_layout(pad=0.3)
-fig.savefig(OUT+r"\fig_pgd.pdf"); fig.savefig(OUT+r"\fig_pgd.png",dpi=150)
-print("pgd done")

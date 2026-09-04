@@ -1,7 +1,8 @@
 # RETRACTED NUMBERS.  The AUC series 0.774/0.748/0.733/0.819 hardcoded below
-# is the figure Section V-F now retracts: it came from a single restart
+# is the figure Section V-E now retracts: it came from a single restart
 # initialised at autocorrelation 0.85.  Kept for provenance only.
-# Do not re-run to produce a figure; see recreate_fig_pgd_corrected.py.
+# Do not re-run. The figure in the paper is Fig. 7, drawn by
+# 10_figures/revision/mk_fig_whitebox.py from panel2_results.json.
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
