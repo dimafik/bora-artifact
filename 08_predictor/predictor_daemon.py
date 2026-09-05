@@ -4,7 +4,7 @@
 
 Corrected 2026-09-03: an earlier version of this notice said this file was
 not used for any reported measurement. That is wrong. No closed-loop cap
-result came from it, but the in-loop detection trace of the paper's Fig. 6
+result came from it, but the in-loop detection trace of the paper's Fig. 4
 and Section V-B did: `02_results_raw/mldetect_20260611-171955/
 predictor_daemon.log` opens with `# daemon start thresh=0.65 fcap=2`, which
 is this file's signature -- predictor_daemon_n.py prints `cap_rule=f-r-1`
