@@ -50,7 +50,7 @@ fi
 # -------------------------------------------------------------------------
 # Step 2: Apply Chain.go patch
 # -------------------------------------------------------------------------
-echo "[Step 2/6] Applying ~30-line Chain.go patch..."
+echo "[Step 2/6] Applying 43-line Chain.go patch (see WHICH_BUILD.md; this v2.5 path is superseded)..."
 cd "$FABRIC_SRC"
 git checkout -- orderer/consensus/etcdraft/chain.go || true
 patch -p1 < "$PATCH_FILE" || {
