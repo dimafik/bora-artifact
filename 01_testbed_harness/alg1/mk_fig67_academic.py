@@ -1,13 +1,25 @@
-# RETRACTED NUMBERS.  The AUC series 0.774/0.748/0.733/0.819 hardcoded below
-# is the figure Section V-E now retracts: it came from a single restart
-# initialised at autocorrelation 0.85.  Kept for provenance only.
-# Do not re-run to produce a figure; see recreate_fig_pgd_corrected.py.
-"""Top-journal academic redraw of Fig.6 (ML-in-loop detection) and Fig.7
-(white-box PGD), from the SAME real data as before. Sober IEEE-Transactions
+# Draws TWO figures, and only one of them is live.
+#
+# LIVE, first half (to line 127): fig_detection_ac.pdf is the paper's Fig. 4,
+# the detector in the loop for Section V-B.  It reads the daemon log directly
+# and hardcodes nothing; the window it parses is the 158 cycles Section V-B
+# reports.  LOG below still names the path this was run from; the artifact
+# ships that same log at
+# 02_results_raw/mldetect_20260611-171955/predictor_daemon.log.
+#
+# RETRACTED, second half (from line 131): fig_pgd_ac.pdf hardcodes the AUC
+# series 0.774/0.748/0.733/0.819, which Section V-E retracts -- it came from a
+# single restart initialised at autocorrelation 0.85, so the search never
+# entered the low-correlation region it existed to explore.  Do not re-run
+# that half.  The paper's white-box figure is Fig. 7, drawn by
+# 10_figures/revision/mk_fig_whitebox.py from panel2_results.json.
+"""Top-journal academic redraw of the ML-in-loop detection figure (now Fig. 4)
+and the old white-box PGD figure, from the SAME real data as before. Sober
+IEEE-Transactions
 style: restrained palette (near-black + greys + one muted accent), distinguished
 by line-style/marker so it survives greyscale, regular-weight labels, inward
 ticks, minor ticks, no decorative colour fills, no callout chartjunk.
-Fig.7 has NO worst-case marker (per request).
+The white-box panel has NO worst-case marker (per request).
 Outputs: fig_detection_ac.pdf, fig_pgd_ac.pdf."""
 import re
 import numpy as np
@@ -45,7 +57,7 @@ def _finish(ax):
 
 
 # =====================================================================
-#  Fig.6 -- ML-in-the-loop detection (real predictor_daemon.log)
+#  Fig. 4 (LIVE) -- ML-in-the-loop detection (real predictor_daemon.log)
 # =====================================================================
 T0 = 1781166010.661344533
 T1 = 1781166060.930663452
@@ -117,7 +129,8 @@ plt.close(fig)
 print(f"detection: points={len(t)} det={det_t:.2f}s o3_min={min(sc[3]):.3f}")
 
 # =====================================================================
-#  Fig.7 -- white-box PGD (real mm_adaptive_results.txt); NO worst-case mark
+#  RETRACTED -- the old white-box PGD figure; superseded by Fig. 7, which
+#  10_figures/revision/mk_fig_whitebox.py draws from panel2_results.json
 # =====================================================================
 rho = np.array([0.0, 0.3, 0.6, 0.8])
 auc = np.array([0.774, 0.748, 0.733, 0.819])
