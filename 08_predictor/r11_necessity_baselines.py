@@ -2,7 +2,7 @@
 
 Reviewer 1 asks whether an attention model is required, or whether a standard
 lightweight discriminator would do. Table IV already answers half of it: on the
-sophisticated (moment-matched + AR(1)) adversary the S-Raft score threshold sits
+sophisticated (moment-matched + AR(1)) adversary the 'Threshold on Score' row sits
 at 0.50, the best of the per-channel mean/std statistics reaches 0.74, and the
 Transformer reaches 0.93. What it does not report is the middle of the ladder --
 a nonlinear model on those same statistics, and an order-aware model without

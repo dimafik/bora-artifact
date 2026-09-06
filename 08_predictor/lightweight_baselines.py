@@ -160,7 +160,8 @@ def main():
 
     # Reference model on the SAME test windows, so the comparison is like for
     # like. Its anomaly head is the byzantine detector; the score head predicts
-    # the S-Raft score and is not what R1-1 is about.
+    # the ranking score of the earlier project this model was first trained
+    # for, and is not what R1-1 is about.
     try:
         import torch
         sys.path.insert(0, str(HERE / "predictor"))
