@@ -3,7 +3,7 @@
 """Redraw Fig 7 (white-box PGD) from the corrected sweep.
 
 The figure previously in the manuscript plotted 0.774/0.748/0.733/0.819 -- the
-numbers Section V-F now retracts as an artefact of a single restart initialised
+numbers Section V-E now retracts as an artefact of a single restart initialised
 at autocorrelation 0.85.  Its generator (recreate_fig_pgd.py) hardcodes those
 values, so it must not be re-run.  This script instead reads the corrected run,
 panel2_results.json: hard projection back into the threat model after every

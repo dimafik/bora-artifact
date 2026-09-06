@@ -5,7 +5,7 @@
 # throughput-neutral under follower delay, so the only measurable benefit is a
 # lower leadership-acquisition rate for the target. The manuscript's answer is
 # the sentence "a slow leader throttles the channel however it came to hold the
-# term" -- and that sentence is not backed by a measurement. Section V-C measures
+# term" -- and that sentence is not backed by a measurement. Section V-D measures
 # delay on a FOLLOWER (15-25% loss). Nobody measured delay on the LEADER.
 #
 # If a degraded leader costs materially more than a degraded follower, then
@@ -14,11 +14,11 @@
 # and we must say so. Either way the number belongs in the paper.
 #
 # METHOD. Committed throughput is taken from ledger block-height growth over a
-# fixed window, the same confirmed-commit basis Section V-C uses, rather than
+# fixed window, the same confirmed-commit basis Section V-D uses, rather than
 # from the offered send rate.
 #
 #   Arm N  no delay            (ceiling for this host)
-#   Arm F  +DLY on a follower  (reproduces Section V-C)
+#   Arm F  +DLY on a follower  (reproduces Section V-D)
 #   Arm L  +DLY on the leader  (the missing measurement)
 #
 # A delayed leader may be deposed by vanilla Raft mid-window, which would end the

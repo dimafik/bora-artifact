@@ -107,7 +107,7 @@ three of val's four scenario blocks and two of test's four sit inside the
 training set, and the val/test metrics the script prints are optimistic.
 
 No number in the paper rests on them. Detection is measured live
-(`02_results_raw/mldetect_*`, `02_results_raw/x1_N*`), and Table VI comes from
+(`02_results_raw/mldetect_*`, `02_results_raw/x1_N*`), and Table IV comes from
 `08_predictor/r11_necessity_baselines.py`, which splits at seed offsets 0 and
 10,000 -- a gap the scenario stride of at most 3,000 cannot bridge.
 

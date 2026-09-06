@@ -1,7 +1,7 @@
 # BORA — TLA+ / TLAPS development
 
-Formal artefacts for Section IV-A (Theorem 1, Propositions 2 and 7) and
-Section IV-E of the IEEE TNSE submission.
+Formal artefacts for Section IV-A (Theorem 1, Proposition 2), Section IV-C
+(Proposition 7) and Section IV-E of the IEEE TNSE submission.
 
 ## What is here
 

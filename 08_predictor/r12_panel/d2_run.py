@@ -1,7 +1,9 @@
 """D2: does the model survive a change of cluster size, and does node order matter?
 
-The paper runs at N = 5, 7, 9, 11, 15, 21 and Section III-H covers joint-consensus
-reconfiguration, so the orderer count changes while the system is live.  A model
+The paper runs at N = 5, 7, 9, 11, 15, 21 and Section III-G covers
+reconfiguration -- Fabric rejects any update altering more than one consenter,
+so the change is a single ConfChange and no joint configuration is entered -- and
+the orderer count changes while the system is live.  A model
 whose input shape is tied to N is not a worse detector -- it is undeployable.
 That is a different kind of claim from AUC and we never tested it.
 
