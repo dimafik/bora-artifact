@@ -1,7 +1,16 @@
 #!/usr/bin/env bash
-# Robustness sweep for the two enabledness invariants: vary N and MaxTerm so the
-# result is not tied to one bounded instance.  Every cell must report
-# "Model checking completed. No error has been found."
+# Robustness sweep for the two enabledness invariants:
+#     N in {3,5,7,9}  x  MaxTerm in {2,3,5}   = 12 cells.
+#
+# Only N is a real axis.  The model gives each orderer one campaign --
+# Campaign(i) requires state[i] = "follower" and no action in Next returns a
+# node to follower -- so reachable terms never exceed 1 and MaxTerm never
+# binds.  The three MaxTerm columns therefore explore identical state graphs:
+# 68 / 432 / 2,368 / 12,032 distinct states at N = 3 / 5 / 7 / 9, the same in
+# every column.  That identity is the expected outcome, not a bug, and it is
+# why the paper calls the axis inert rather than reporting it as coverage.
+#
+# Every cell must report "Model checking completed. No error has been found."
 set -u
 cd "$(dirname "$0")" || exit 1
 JAVA="$HOME/jdk17/bin/java"

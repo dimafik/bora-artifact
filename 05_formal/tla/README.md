@@ -13,7 +13,7 @@ Section IV-E of the IEEE TNSE submission.
 | `BORA_pv.tla`, `BORA_pv_proof.tla` | the same refinement over a **per-voter** blacklist, `blacklist \in [Orderers -> SUBSET Orderers]`, views free to diverge | **TLAPS 48/48** |
 | `BORA_pv_excl.tla` | **Proposition 7**: while a quorum holds *i* and the advisor has not failed open, *i* never acquires a term | **TLAPS 64/64** |
 | `Liveness.tla` | **Proposition 2**: `SpecL => <>HasLeader` under weak fairness | **TLAPS 311/311, no axioms** |
-| `Enabledness.tla`, `En*.tla` | independent TLC check of the two action-enabledness facts, plus positive and negative controls for the `ENABLED` tactic | 12/12 models pass |
+| `Enabledness.tla`, `En*.tla` | independent TLC check of the two action-enabledness facts, plus positive and negative controls for the `ENABLED` tactic | 12/12 models pass (4 *N* x 3 `MaxTerm`; `MaxTerm` inert) |
 
 `PROOF_RESULT.txt` is the full run log, including the mutation check that shows
 the exclusion proof is not vacuous.
@@ -54,3 +54,8 @@ both action-enabledness facts are proved theorems rather than axioms.
 - Whether an honest quorum actually agrees inside a given election window. No
   protocol model can settle that; it is a deployment timing property and the
   paper reports it from the testbed.
+- **The `MaxTerm` axis.** `run_enabledness_sweep.sh` varies it and the paper
+  reports it, but it covers nothing: each orderer campaigns at most once, so
+  reachable terms are capped at 1 and all three values explore the same
+  states. The bounded check's real axis is *N*; the unbounded weight rests on
+  the TLAPS refinement.
