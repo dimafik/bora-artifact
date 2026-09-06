@@ -15,7 +15,7 @@ four fall inside the training set.  Metrics this script prints for val and test
 are therefore optimistic and should not be read as held-out performance.
 
 No number in the paper depends on them.  The detection results are live testbed
-measurements (02_results_raw/mldetect_*, x1_N*), and Table VI comes from
+measurements (02_results_raw/mldetect_*, x1_N*), and Table IV comes from
 r11_necessity_baselines.py, which splits at seed offsets 0 and 10,000 -- far
 enough apart that the scenario stride cannot bridge them.
 

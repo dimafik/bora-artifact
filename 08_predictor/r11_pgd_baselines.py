@@ -108,7 +108,7 @@ def auc(neg, pos):
 
 # --- differentiable feature maps ---------------------------------------------
 def summary_feats(X):
-    """Per-channel mean/std/min/max/slope: the statistics Table II searches over,
+    """Per-channel mean/std/min/max/slope: the statistics Table IV searches over,
     handed to the model jointly. 40 numbers for 8 channels."""
     tc = torch.arange(K, dtype=torch.float32) - (K - 1) / 2.0
     denom = (tc * tc).sum()

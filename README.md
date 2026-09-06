@@ -26,7 +26,7 @@ rest on.
 | Leader-vs-follower severity, 65% against 21% over 25 verified runs | `12_leader_severity/results/per_run_metrics.csv` |
 | ALR ablation at N=7 over 360 forced elections | `02_results_raw/r13_merged.csv` |
 | Physical five-host AWS: 147 guarded elections, 16 of them paired | `01_testbed_harness/alg1/xhost_bora_election.sh`, `02_results_raw/xhost_election_*`, `02_results_raw/mh_*` |
-| Table II — detector panel, incl. a 0-parameter statistic at AUC 1.00 | `08_predictor/r12_panel/panel2_results.json` |
+| Table IV — detector panel, incl. a 0-parameter statistic at AUC 1.00 | `08_predictor/r12_panel/panel2_results.json` |
 | White-box PGD, worst-case AUC 0.003 over 1,152 runs (paper Fig. 7) | `08_predictor/r12_panel/panel2_results.json`, `10_figures/revision/mk_fig_whitebox.py` |
 | Zero-parameter detector in the advisor slot: 0/240 forced elections, against 24/240 unguarded | `02_results_raw/b20_sweep_20260903-162221/`, `01_testbed_harness/alg1/b20_report.py` |
 | Safety 48/48 (global and per-voter), exclusion 64/64, liveness 311/311 (no axioms) | `05_formal/tla/tlapm_out/` (tlapm transcripts), `05_formal/tla/run_tlapm.sh` (regenerates them) |
@@ -40,7 +40,7 @@ evaluation protocol of Tramèr et al., under which that ordering is the point.
 
 - `08_predictor/r12_panel/PREREGISTRATION.md`, `PREREG_R1R2.md`, `PREREG_D1D2.md`
 - `12_leader_severity/prereg/PREREG_R25C.md`, `PREREG_R25D.md` and their addenda,
-  with `.sha256` alongside — these are the ones Section V-C cites when it reports
+  with `.sha256` alongside — these are the ones Section V-D cites when it reports
   the clean-bracket threshold as a material confound
 
 Runs that were discarded are kept rather than deleted, with the reason recorded

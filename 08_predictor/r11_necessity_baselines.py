@@ -1,7 +1,7 @@
 """R1-1: extend the paper's own necessity table with lightweight discriminators.
 
 Reviewer 1 asks whether an attention model is required, or whether a standard
-lightweight discriminator would do. Table II already answers half of it: on the
+lightweight discriminator would do. Table IV already answers half of it: on the
 sophisticated (moment-matched + AR(1)) adversary the S-Raft score threshold sits
 at 0.50, the best of the per-channel mean/std statistics reaches 0.74, and the
 Transformer reaches 0.93. What it does not report is the middle of the ladder --
@@ -43,7 +43,7 @@ N_TRACES, N_TICKS = 40, 4000                          # necessity_proof.py defau
 
 
 def summarise(x):
-    """The statistic vector Table II's 'best single feature' row searches over,
+    """The statistic vector Table IV's 'best single feature' row searches over,
     handed to a model all at once instead of one at a time, plus min/max/slope."""
     n, L, C = x.shape
     tc = np.arange(L, dtype=np.float64) - (L - 1) / 2.0
