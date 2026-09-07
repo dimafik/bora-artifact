@@ -105,6 +105,12 @@ print("node.go patched (v3.1.4)")
 PYEOF
 fi
 
+# Vote-Grant Predicate. The tick guard above is only half the election guard
+# Section V-C measures; the vote guard lives in its own script because it
+# patches a different call site (Consensus(), not the ticker). It is
+# idempotent and exits early if chain.go already carries it.
+python3 "$(dirname "$0")/patch_vote_reject.py"
+
 echo "[4/4] Build orderer binary..."
 cd $FABRIC_V3
 go build -o /tmp/orderer-bora-v3 ./cmd/orderer
