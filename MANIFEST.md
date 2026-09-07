@@ -200,17 +200,11 @@ in this repository references any of those paths: **0** (eight path
 patterns, swept). Removed 2026-09-06.
 
 That check looked inside this repository and nowhere else, and it was not
-enough. A later audit found that the manuscript itself cited one of the
-removed files: Section V-F reported a capacity sweep from 2,273 to 3e5
-parameters, and 2,273 is a parameter count in
-`simulation/gen_fig7_v40_ucurve.py`. Reading that file settled the question the
-path sweep could not. The sweep trains a Transformer at six sizes on a *PBFT*
-moment-matched benchmark at NE16, and cites a "Theorem 3 corollary" this paper
-does not have. It was never a measurement on the Fabric etcdraft testbed the
-rest of the evaluation runs on. The claim has been withdrawn from the paper
-rather than the files restored, so the removal stands and nothing in the
-manuscript now depends on them. If you are looking for a capacity sweep in
-Section V-F, that is why there is none.
+enough: the manuscript cited one of the removed files, the capacity sweep in
+`simulation/gen_fig7_v40_ucurve.py`. That sweep was run on a PBFT benchmark
+rather than on this paper's Fabric testbed, so the claim was withdrawn from the
+paper rather than the files restored. The removal stands and nothing in the
+manuscript depends on them.
 
 Kept deliberately, and why: `08_predictor/predictor/` is the training code
 the deployed checkpoint came from and this manifest cites it above;
