@@ -164,11 +164,12 @@ mentioning BORA: **0**; times the BORA manuscript references that directory:
 
 A caveat on that test. This project's own working directory was named
 `IS-Raft-LAC` before the system was renamed to BORA, and that fragment still
-appears in 36 files here: 15 TLC logs, 12 shell scripts, 8 Python scripts and
-one text file. Those paths refer to *this* work, not to the removed paper, so
-"files mentioning BORA: 0" shows only that the rename post-dates them. The logs
-are kept verbatim because they are records of runs that actually happened;
-editing them would misrepresent what was executed.
+appears in 36 files here: 15 TLC logs, 12 shell scripts, 7 Python scripts, one
+text file, and this manifest. (`git grep -l IS-Raft-LAC | wc -l`.) Those paths
+refer to *this* work, not to the removed paper, so "files mentioning BORA: 0"
+shows only that the rename post-dates them. The logs are kept verbatim because
+they are records of runs that actually happened; editing them would
+misrepresent what was executed.
 
 `09_runbook_aws` (34 files) was removed on the same grounds. Its README is
 "5-Hour AWS Fabric Live Experiment — Schedulable Byzantine Consensus", its
@@ -181,6 +182,29 @@ terraform, no ansible, no packer. Checked before removal — files in
 `09_runbook_aws` mentioning BORA: **3** (`caliper/benchmark-e{1,2,3}.yaml`);
 times anything else in this repository referenced those three: **0**; times the
 BORA manuscript references that directory: **0**. Removed 2026-09-03.
+
+173 files under `08_predictor/` were removed on the same grounds: its old
+`README.md` and five design documents (`PREDICTOR_SPEC.md`,
+`THEORETICAL_FOUNDATION.md`, `WHY_AI_NECESSARY.md`,
+`AUGMENTATION_THEOREM.md`, `AWS_EXPERIMENT_DESIGN_v26.md`), `paper/`
+(4 files), `tla/` (3) and `simulation/` (160). They belong to an earlier
+project of ours built on a different consensus algorithm, and their
+vocabulary describes the opposite of what BORA does: that README opened
+with a thesis of learning a sub-leader ranking function *inside* the
+consensus path, and a table whose "Blockchain core touched?" row read
+"Yes -- consensus ranking function". BORA is a bounded advisor outside
+that path that can only remove candidacy. `paper/` additionally held draft
+manuscript sections for that other project, and `tla/` a specification
+`05_formal/` supersedes. Checked before removal -- times any remaining file
+in this repository references any of those paths: **0** (eight path
+patterns, swept). Removed 2026-09-06.
+
+Kept deliberately, and why: `08_predictor/predictor/` is the training code
+the deployed checkpoint came from and this manifest cites it above;
+`08_predictor/deploy/` holds the Dockerfile, helm chart and multi-region
+manifests that Section III-H uses; `model_*/`, `data_small/` and
+`necessity_output/` are read by scripts that remain. A new
+`08_predictor/README.md` maps what is left to the claim each part supports.
 
 ## Not included, by policy
 
