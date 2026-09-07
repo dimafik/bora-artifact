@@ -96,6 +96,22 @@ the revision. How it was checked, so the claim above can be rechecked:
   `27.3.1`, matching the `host_os` and `host_memory_gb_allocated_to_docker`
   fields recorded in `02_results_raw/archive/*/metadata.json` from June 2026.
 
+Those metadata files carry more than environment fields, and the rest of what
+they carry describes a different manuscript. Their `title`,
+`current_version`, `section_using_archives` and `paper_table` fields name the
+June 2026 paper that preceded BORA -- a different title, sections VII and VIII,
+and tables `tab:d2-conc`, `tab:d2-caliper`, `tab:d2-attack`, `tab:d2-alg1` and
+`tab:d2-saturation`. This paper has no such tables and its sections run I to
+VII. The fields are kept as written because they record what each run was for
+at the time it was made, which is what makes the archive usable as provenance
+at all.
+
+What this paper takes from that archive is narrow: the environment fields
+above, the ~530 tx/s ceiling from `5node_saturation_delta_2026-06-08`, and the
+clean rate sweep in `5node_caliper_clean_2026-06-07` that Section V-D's
+throughput paragraph sits beside. Nothing else in it is cited, and no table in
+this paper is named by a `paper_table` field.
+
 The genuine split is in software, not hardware. The exclusion, throughput and
 closed-loop results run against **Fabric v3.1.4** (`alg1/build_v3.sh`,
 `build_v4.sh`). The one exception is the ~530 tx/s commit ceiling, which comes

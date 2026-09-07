@@ -1,4 +1,17 @@
-"""Add cross-references to delta in all existing archive metadata.json files."""
+"""Add cross-references to delta in all existing archive metadata.json files.
+
+SUPERSEDED -- do not re-run against this paper. The RELATED table below
+and the paper block at the end write `paper_table`, `title` and
+`current_version` fields that name the June 2026 manuscript: a different
+title, sections VII and VIII, and tables tab:d2-conc / tab:d2-caliper /
+tab:d2-attack / tab:d2-alg1 / tab:d2-saturation. BORA has none of those
+tables and its sections run I to VII, so re-running this would restamp the
+archive with pointers into a paper that no longer exists in that form.
+
+It is kept because the metadata files it wrote are the archive's provenance
+record, and this is the script that wrote them. See the README's
+Environment section for what this paper actually takes from the archive.
+"""
 import json
 from pathlib import Path
 
