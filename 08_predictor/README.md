@@ -16,7 +16,7 @@ first if you are checking a number rather than re-running a script.
 | Fig. 7 — white-box PGD, worst case over 1,152 runs | `r12_panel/panel2_results.json`, `worst_case` and `sweep` |
 | Section V-E — the moment-matched adversary | `mm_train.py`, `mm_feas.py`, `mm_analyze.py`, `mm_adaptive.py`, `best_mm.pt` |
 | R1-1 — does the task need a Transformer? | `lightweight_baselines.py`, `r11_necessity_baselines.py`, `r11_mm_baselines.py`, `r11_pgd_baselines.py`, `r11_pgd_strong.py` and their `.json` outputs |
-| Section III-H — Kubernetes deployment | `deploy/` (Dockerfile, compose, helm chart, multi-region manifests) |
+| Section III-H — Kubernetes deployment | `deploy/` holds a Dockerfile, a compose file, a Helm chart and multi-region manifests. **None was deployed or measured.** Section III-H says the design carries to Kubernetes and that no Kubernetes artefact forms part of this evaluation; these are here so that claim can be read against something rather than taken on trust. |
 | Deployed checkpoint provenance | `predictor/` (the training code, kept as it
 ran and still using the earlier project's vocabulary in its comments; see `../MANIFEST.md` on its train/val/test split, which is optimistic and which no paper number rests on), `model_full/`, `model_small/`, `model_xl/`, `model_xl2/` |
 
