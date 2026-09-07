@@ -23,6 +23,7 @@ rest on.
 | Four missed leader replacements in 480 guarded elections, none in 240 unguarded | `02_results_raw/x1_*/elections.csv` (the `live` column) |
 | No target campaign inside a guarded election: 42 of 44 events, all unguarded | `02_results_raw/x1_*/logs/`, `01_testbed_harness/alg1/x1_campaign_audit.py` |
 | Detection in 3.1 s, no false positive over 158 cycles | `02_results_raw/mldetect_20260611-171955/predictor_daemon.log` |
+| All 21 unguarded wins had the target already in B_t at election start | `02_results_raw/x1_*/elections.csv` (`target_won`, `hits`, `list`) |
 | Leader-vs-follower severity, 65% against 21% over 25 verified runs | `12_leader_severity/results/per_run_metrics.csv` |
 | ALR ablation at N=7 over 360 forced elections | `02_results_raw/r13_merged.csv` |
 | Physical five-host AWS: 147 guarded elections, 16 of them paired | `01_testbed_harness/alg1/xhost_bora_election.sh`, `02_results_raw/xhost_election_*`, `02_results_raw/mh_*` |
