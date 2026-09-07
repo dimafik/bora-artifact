@@ -13,8 +13,9 @@ out-of-process Python sidecar. Components implemented:
                      (avoids rebuilding the etcdraft orderer binary while
                      achieving the same observable effect on the consensus path)
 
-The classic ~30-line patch to etcdraft Chain.go (paper §VI.A) consults a
-Unix-domain socket; our sidecar instead applies the blacklist by pausing
+The election-guard patch to etcdraft (Section III-F; 85 added lines across
+chain.go and node.go, see ../alg1/WHICH_BUILD.md) consults a
+Unix-domain socket; this sidecar instead applies the blacklist by pausing
 the orderer container at the Docker level. This yields the same consensus
 effect (the node temporarily stops participating in Raft voting) without
 requiring a rebuilt Fabric binary, making the experiment reproducible on

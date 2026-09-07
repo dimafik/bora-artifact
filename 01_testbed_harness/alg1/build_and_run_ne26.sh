@@ -127,7 +127,10 @@ cat > "$OUT_DIR/SUMMARY.md" <<EOF
 **Seeds per phase**: $SEEDS
 **Concurrency points**: ${CONCURRENCY_POINTS[*]}
 
-**Patch summary**: ~30-line addition to orderer/consensus/etcdraft/chain.go:
+**Patch summary**: 43-line addition across chain.go and node.go -- the tick
+guard only. The vote-grant predicate is not applied by this superseded v2.5
+path, and the struct field it needs is not either, so it does not compile.
+See WHICH_BUILD.md.
   - shouldYieldElection() Unix-socket consultation before campaign()
   - Fail-open on socket-unreachable / fail_open flag set
 
