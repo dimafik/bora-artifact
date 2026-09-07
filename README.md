@@ -51,8 +51,25 @@ completion and was void.
 
 ## What is not here
 
-Bulk transcripts and rendered assets that no number depends on, listed with
-sizes in `MANIFEST.md`. They regenerate from the scripts included here.
+Bulk transcripts and rendered assets, listed with sizes in `MANIFEST.md`.
+They regenerate from the scripts included here.
+
+One set of numbers in the paper does not: the follower-delay throughput
+percentages of Section V-D -- the 23% loss at 200-500 tx/s, the 9% at
+100 tx/s, the +/-4% and 8% figures for the guarded arm, and the 1.1%
+agreement across the twelve paired EC2 comparisons. Those come from a
+rate-based clean-versus-attack comparison whose transcripts are not in this
+package. What is here is each side separately and not the pairing: the clean
+rate sweep in `02_results_raw/archive/5node_caliper_clean_2026-06-07`
+(93.9 / 281.18 / 468.38 TPS at rate-100/300/500), and a delay-injection
+study in `02_results_raw/archive/5node_attack_2026-06-07` that sweeps
+concurrency rather than rate. A reader can check the clean side and the
+shape of the attack, and cannot recompute the percentages themselves.
+
+The election result those percentages sit beside *is* here and is the claim
+the section rests on: 74 forced elections across the load sweep with the
+target at zero (`02_results_raw/loadsweep_*`), and the leader-versus-follower
+severity study in `12_leader_severity/`.
 
 Private keys and credentials are excluded by pattern and the package was
 re-scanned after assembly; the scan found none.
