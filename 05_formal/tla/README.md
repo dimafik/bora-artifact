@@ -7,7 +7,7 @@ Formal artefacts for Section IV-A (Theorem 1, Proposition 2), Section IV-C
 
 | File | What it establishes | Result |
 |---|---|---|
-| `BORA.tla`, `BORA.cfg` | the augmented state machine; bounded model check at *N*=5, *f*=2, `MaxTerm`=3 | TLC, no violation |
+| `BORA.tla`, `BORA.cfg` | the augmented state machine; bounded model check at *N*=5, *f*=2, `MaxTerm`=3 | TLC, no violation — 66,849 states generated, 7,008 distinct, depth 12 |
 | `BORA_MC.tla` | model-check wrapper | — |
 | `BORA_proof.tla` | **Theorem 1**: `Spec => Vanilla!Spec`, a step-simulation refinement, **unbounded** | **TLAPS 48/48** |
 | `BORA_pv.tla`, `BORA_pv_proof.tla` | the same refinement over a **per-voter** blacklist, `blacklist \in [Orderers -> SUBSET Orderers]`, views free to diverge | **TLAPS 48/48** |

@@ -31,6 +31,7 @@ rest on.
 | White-box PGD, worst-case AUC 0.003 over 1,152 runs (paper Fig. 7) | `08_predictor/r12_panel/panel2_results.json`, `10_figures/revision/mk_fig_whitebox.py` |
 | Zero-parameter detector in the advisor slot: 0/240 forced elections, against 24/240 unguarded | `02_results_raw/b20_sweep_20260903-162221/`, `01_testbed_harness/alg1/b20_report.py` |
 | Safety 48/48 (global and per-voter), exclusion 64/64, liveness 311/311 (no axioms) | `05_formal/tla/tlapm_out/` (tlapm transcripts), `05_formal/tla/run_tlapm.sh` (regenerates them) |
+| Bounded safety model check: 66,849 states generated, 7,008 distinct, depth 12, no violation | `05_formal/tla/tlc_out/BORA.log` |
 | Convergence rate | `05_formal/prism/` |
 | What an evasive attack actually does (not in the paper) | `11_potency/` |
 
