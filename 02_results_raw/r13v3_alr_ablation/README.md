@@ -59,7 +59,8 @@ and a wrong prediction becomes a protocol event, one for one.
 safety violations; what changes is leaderless time, which reaches **2.90x**
 vanilla Raft for arm D at p=20% (174 s against 60 s). That ratio is against arm
 A. Against C it is 2.64x, because C itself sits within a few per cent of
-vanilla throughout.
+vanilla throughout. Section VI cites the 2.90x against vanilla; the 2.64x
+appears only here.
 
 ## A word on "forced leader changes"
 
