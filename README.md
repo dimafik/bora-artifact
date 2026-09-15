@@ -21,14 +21,14 @@ rest on.
 | Advice cap `\|B_t\| < f-r` held over 1,439 published advice observations | `02_results_raw/x1_*/elections.csv` (the `cap`/`size` columns) |
 | The same cap audited against a rising `r`, 300 samples at N=11 | `02_results_raw/x1c_*/cap_audit.csv` |
 | Four missed leader replacements in 480 guarded elections, none in 240 unguarded | `02_results_raw/x1_*/elections.csv` (the `live` column) |
-| No target campaign inside a guarded election: 42 of 44 events, all unguarded | `02_results_raw/x1_*/logs/`, `01_testbed_harness/alg1/x1_campaign_audit.py` |
+| No campaign by a blacklisted node inside a guarded election window (the guarded count is zero under every delimitation; totals range 35–69 by definition) | `01_testbed_harness/alg1/x1_campaign_audit.py`; the per-arm raft logs (736 MB) are kept on the testbed host, not shipped |
 | Detection in 3.1 s, no false positive over 158 cycles | `02_results_raw/mldetect_20260611-171955/predictor_daemon.log` |
 | All 21 unguarded wins had the target already in B_t at election start | `02_results_raw/x1_*/elections.csv` (`target_won`, `hits`, `list`) |
-| Leader-vs-follower severity, 65% against 21% over 25 verified runs | `12_leader_severity/results/per_run_metrics.csv` |
-| ALR ablation at N=7 over 360 forced elections | `02_results_raw/r13_merged.csv` |
+| Leader-vs-follower severity: a degraded leader stalled 13 of 36 runs (95–100% of submissions failed), median 14% failures, latency 17×; a degraded follower failed nothing in 33 of 36 | `12_leader_severity/results/per_run_metrics.csv`, the per-run `summary.txt` success/failure columns |
+| ALR ablation at N=7 over 360 scheduled forced elections (159 demotions) | `02_results_raw/r13v3_alr_ablation/` (`r13_merged.csv` is the discarded v2 design) |
 | Physical five-host AWS: 147 guarded elections, 16 of them paired | `01_testbed_harness/alg1/xhost_bora_election.sh`, `02_results_raw/xhost_election_*`, `02_results_raw/mh_*` |
 | Table IV — detector panel, incl. a 0-parameter statistic at AUC 1.00 | `08_predictor/r12_panel/panel2_results.json` |
-| White-box PGD, worst-case AUC 0.003 over 1,152 runs (paper Fig. 7) | `08_predictor/r12_panel/panel2_results.json`, `10_figures/revision/mk_fig_whitebox.py` |
+| White-box PGD, worst-case AUC 0.003 over 1,152 runs (paper Fig. 6) | `08_predictor/r12_panel/panel2_results.json`, `10_figures/revision/mk_fig_whitebox.py` |
 | Zero-parameter detector in the advisor slot: 0/240 forced elections, against 24/240 unguarded | `02_results_raw/b20_sweep_20260903-162221/`, `01_testbed_harness/alg1/b20_report.py` |
 | Safety 48/48 (global and per-voter), exclusion 64/64, liveness 311/311 (no axioms) | `05_formal/tla/tlapm_out/` (tlapm transcripts), `05_formal/tla/run_tlapm.sh` (regenerates them) |
 | Bounded safety model check: 66,849 states generated, 7,008 distinct, depth 12, no violation | `05_formal/tla/tlc_out/BORA.log` |
@@ -54,22 +54,20 @@ completion and was void.
 Bulk transcripts and rendered assets, listed with sizes in `MANIFEST.md`.
 They regenerate from the scripts included here.
 
-One set of numbers in the paper does not: the follower-delay throughput
-percentages of Section V-D -- the 23% loss at 200-500 tx/s, the 9% at
-100 tx/s, the +/-4% and 8% figures for the guarded arm, and the 1.1%
-agreement across the twelve paired EC2 comparisons. Those come from a
-rate-based clean-versus-attack comparison whose transcripts are not in this
-package. What is here is each side separately and not the pairing: the clean
-rate sweep in `02_results_raw/archive/5node_caliper_clean_2026-06-07`
-(93.9 / 281.18 / 468.38 TPS at rate-100/300/500), and a delay-injection
-study in `02_results_raw/archive/5node_attack_2026-06-07` that sweeps
-concurrency rather than rate. A reader can check the clean side and the
-shape of the attack, and cannot recompute the percentages themselves.
+An earlier version of this section said the follower-delay figures of
+Section V-D and the EC2 1.1% agreement could not be recomputed from this
+package. They can: `02_results_raw/auto6h_run/MASTER_SUMMARY.txt` (EXP-B, three
+seeds, clean/attack/guarded) holds the 23%, 9%, +/-4% and 8%, and
+`02_results_raw/mh_final_N{5,7,9,11}.txt` the twelve EC2 pairs. Every
+transaction committed in every EXP-B arm; the 23% and 9% are Caliper's rate
+figure, which falls because the slowest commits stretch its time span, and
+Section V-D now reports them that way.
 
-The election result those percentages sit beside *is* here and is the claim
-the section rests on: 74 forced elections across the load sweep with the
-target at zero (`02_results_raw/loadsweep_*`), and the leader-versus-follower
-severity study in `12_leader_severity/`.
+The election results beside them are here too: 74 forced elections on an idle
+cluster with the target at zero (`02_results_raw/loadsweep_*`; Caliper
+committed nothing because the chaincode was not deployed on that network, so
+there was no ordering load), and the leader-versus-follower severity study in
+`12_leader_severity/`.
 
 Private keys and credentials are excluded by pattern and the package was
 re-scanned after assembly; the scan found none.
@@ -116,8 +114,9 @@ The genuine split is in software, not hardware. The exclusion, throughput and
 closed-loop results run against **Fabric v3.1.4** (`alg1/build_v3.sh`,
 `build_v4.sh`). The one exception is the ~530 tx/s commit ceiling, which comes
 from `02_results_raw/archive/5node_saturation_delta_2026-06-08`
-(`TPS_mean 527.77`) on **Fabric v2.5.10**; it is retained because it is the only
-saturation measurement taken, and the paper says so where it is used.
+(`TPS_mean 527.77`) on **Fabric v2.5.10**; it is retained as that host's
+ceiling. The patched v3.1.4 build later reached 555–595 tx/s on the same host by
+the same measure (`02_results_raw/auto6h_run/`, EXP-B clean, rate-600/700).
 
 ## Reproducing
 

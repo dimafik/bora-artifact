@@ -2,8 +2,15 @@
 #
 # LIVE, first half (to line 127): fig_detection_ac.pdf is the paper's Fig. 4,
 # the detector in the loop for Section V-B.  It reads the daemon log directly
-# and hardcodes nothing; the window it parses is the 158 cycles Section V-B
-# reports.  LOG below still names the path this was run from; the artifact
+# and hardcodes nothing.
+#
+# CORRECTED: LOG used to be D:\fabric-d2\results\predictor_daemon.log, the
+# running daemon's own file.  The filter below is a lower bound only, so that
+# read ~54 s of cycles the daemon logged after the harness had already stopped
+# -- the figure spanned ~137 s while Section V-B reports a single 84 s run --
+# and that file is 236 MB and excluded from the artifact, so the figure could
+# not be regenerated from what ships.  LOG now names the per-run copy, which
+# holds exactly the 158 cycles Section V-B reports and is in the artifact.
 # ships that same log at
 # 02_results_raw/mldetect_20260611-171955/predictor_daemon.log.
 #
@@ -21,6 +28,7 @@ by line-style/marker so it survives greyscale, regular-weight labels, inward
 ticks, minor ticks, no decorative colour fills, no callout chartjunk.
 The white-box panel has NO worst-case marker (per request).
 Outputs: fig_detection_ac.pdf, fig_pgd_ac.pdf."""
+import os
 import re
 import numpy as np
 import matplotlib as mpl
@@ -62,7 +70,9 @@ def _finish(ax):
 T0 = 1781166010.661344533
 T1 = 1781166060.930663452
 THRESH = 0.65
-LOG = r"D:\fabric-d2\results\predictor_daemon.log"
+LOG = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                   "..", "..", "02_results_raw",
+                   "mldetect_20260611-171955", "predictor_daemon.log")
 
 t, sc = [], {i: [] for i in range(1, 6)}
 for line in open(LOG):
@@ -93,7 +103,7 @@ ax.text((T1 - T0) / 2, 0.945, r"$+500$ ms delay on $o_3$", ha="center",
 
 # blacklist threshold (thin dashed) + plain label
 ax.axhline(THRESH, color=INK, ls=(0, (5, 3)), lw=0.8, zorder=1)
-ax.text(t.max(), THRESH + 0.012, "blacklist threshold", fontsize=6.4,
+ax.text(t.max() + 2.0, THRESH + 0.012, "blacklist threshold", fontsize=6.4,
         color="#444444", ha="right", va="bottom")
 
 # healthy orderers: thin grey (one legend proxy)
@@ -115,7 +125,7 @@ if det_t is not None:
 ax.set_xlabel("Time relative to attack onset (s)")
 ax.set_ylabel("Predicted leader-suitability score")
 ax.set_ylim(0.3, 0.97)
-ax.set_xlim(t.min(), t.max())
+ax.set_xlim(t.min(), t.max() + 2.0)   # 2 s margin: the recovery step sits at the end
 _finish(ax)
 
 leg = ax.legend(
@@ -130,8 +140,13 @@ print(f"detection: points={len(t)} det={det_t:.2f}s o3_min={min(sc[3]):.3f}")
 
 # =====================================================================
 #  RETRACTED -- the old white-box PGD figure; superseded by Fig. 7, which
-#  10_figures/revision/mk_fig_whitebox.py draws from panel2_results.json
+#  10_figures/revision/mk_fig_whitebox.py draws from panel2_results.json.
+#  A header is not enough for a script that runs, so this half now exits
+#  instead of redrawing a withdrawn figure.  Nothing below is reachable.
 # =====================================================================
+raise SystemExit("Fig. 4 written.  The white-box half is retracted; Fig. 7 is "
+                 "drawn by 10_figures/revision/mk_fig_whitebox.py.")
+
 rho = np.array([0.0, 0.3, 0.6, 0.8])
 auc = np.array([0.774, 0.748, 0.733, 0.819])
 NONAD, CHANCE = 0.923, 0.50

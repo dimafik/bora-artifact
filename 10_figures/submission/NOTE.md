@@ -22,7 +22,7 @@ state in their headers, and draw in their output panels, something like:
 * There is no temperature scaling anywhere in the model.
 * The reference capacity point's own parameter count settles it. A 2-layer,
   `d_model=32`, `FFN=64`, 5-channel encoder with a `Linear(32,1)` head is
-  **17,313** parameters, which is the number the paper reports. A `Linear(32,2)`
+  **17,313** parameters, which is the number an earlier draft of the paper reported; the revision describes only the evaluated 141,067-parameter instance. A `Linear(32,2)`
   head would make it **17,346**. The deployed 4-layer, `d_model=64`, 8-channel
   instance is **141,067**, confirmed against `torch`.
 * The deployed advisor (`01_testbed_harness/alg1/predictor_daemon_n.py`) reads

@@ -1,0 +1,29 @@
+[03:44:03] isolation: reps=3 tps=300 dur=60s delay=+200ms
+[03:44:26]   leader = orderer2  (must not be 3 for any of these to mean what they say)
+[03:44:26] ===== rep 1 =====
+  A_clean_r1 succ=18008   fail=0       tput=290.2   lat=2.06
+  B_delay_r1 succ=5745    fail=12263   tput=254.5   lat=11.73
+  C_delay_bl_r1 succ=5813    fail=12195   tput=274.8   lat=7.15
+[03:49:31]   leader after rep 1 = orderer2
+[03:49:31] ===== rep 2 =====
+  A_clean_r2 succ=18008   fail=0       tput=290.2   lat=2.06
+  B_delay_r2 succ=5806    fail=12202   tput=278.1   lat=6.80
+  C_delay_bl_r2 succ=5467    fail=12541   tput=277.4   lat=11.62
+[03:54:29]   leader after rep 2 = orderer2
+[03:54:29] ===== rep 3 =====
+  A_clean_r3 succ=18008   fail=0       tput=290.2   lat=2.06
+  B_delay_r3 succ=5868    fail=12140   tput=275.6   lat=6.79
+  C_delay_bl_r3 succ=3215    fail=14793   tput=278.1   lat=36.06
+[03:59:29]   leader after rep 3 = orderer2
+[03:59:29] ===== done =====
+cond,success,fail,throughput,latency
+A_clean_r1,18008,0,290.2,2.06
+B_delay_r1,5745,12263,254.5,11.73
+C_delay_bl_r1,5813,12195,274.8,7.15
+A_clean_r2,18008,0,290.2,2.06
+B_delay_r2,5806,12202,278.1,6.80
+C_delay_bl_r2,5467,12541,277.4,11.62
+A_clean_r3,18008,0,290.2,2.06
+B_delay_r3,5868,12140,275.6,6.79
+C_delay_bl_r3,3215,14793,278.1,36.06
+[03:59:29] artifacts: /mnt/d/fabric-d2/results/expB_iso_20260914-034403

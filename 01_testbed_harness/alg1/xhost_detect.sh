@@ -7,8 +7,8 @@
 set -u
 KEY=/tmp/bk.pem; chmod 600 "$KEY" 2>/dev/null
 SSH="ssh -i $KEY -o StrictHostKeyChecking=no -o ConnectTimeout=15 -o BatchMode=yes"
-H1=3.35.4.99           # orderer1 host (probe runs here)
-H3=52.78.62.61         # orderer3 host (attack target)
+H1=13.125.206.225   # orderer1 host (probe runs here)
+H3=3.34.197.230     # orderer3 host (attack target)
 PRIV=(172.31.39.233 172.31.44.2 172.31.37.115 172.31.46.160 172.31.39.145)
 OUT=/mnt/d/fabric-d2/results/xhost_detect_$(date +%H%M%S); mkdir -p "$OUT"
 
@@ -24,7 +24,7 @@ def rtt(ip):
         return 1000.0
     return (time.time()-t)*1000.0
 with open("/tmp/feed.csv","w") as f:
-    for k in range(200):
+    for k in range(320):
         row=[f"{time.time():.3f}"]+[f"{rtt(ip):.3f}" for ip in TARGETS]
         f.write(",".join(row)+"\n"); f.flush()
         time.sleep(0.3)
@@ -32,18 +32,27 @@ PY
 $SSH ubuntu@$H1 'cat > /tmp/probe.py' < /tmp/probe.py
 echo "=== start probe on orderer1 host (background) ==="
 $SSH ubuntu@$H1 'nohup python3 /tmp/probe.py >/tmp/probe.log 2>&1 & echo started'
-sleep 22   # ~70 ticks baseline
+sleep 45   # ~150 ticks baseline
 echo "=== inject netem 40ms+-10ms on orderer3 host primary iface (--network host => orderer's iface) ==="
 IF=$($SSH ubuntu@$H3 "ip route get 8.8.8.8 | grep -oP 'dev \K\S+' | head -1")
 echo "  orderer3 iface=$IF"
 $SSH ubuntu@$H3 "sudo tc qdisc replace dev $IF root netem delay 40ms 10ms distribution normal && echo netem-applied; tc qdisc show dev $IF | grep -o 'netem.*'"
-echo "ATTACK_ONSET_TICK~70"
-sleep 42   # ~130 ticks attack
+QD=$($SSH ubuntu@$H3 "tc qdisc show dev $IF | grep -o 'netem.*'" 2>/dev/null || true)
+if [ -z "$QD" ]; then
+  echo "FATAL: netem did not apply -- this run is discarded." >&2
+  $SSH ubuntu@$H1 'pkill -f probe.py' >/dev/null 2>&1
+  exit 1
+fi
+echo "  netem verified: $QD"
+PING=$($SSH ubuntu@$H1 "ping -c 3 -q ${PRIV[2]} 2>/dev/null | tail -1")
+echo "  orderer3 round-trip check: $PING"
+echo "ATTACK_ONSET_TICK~150"
+sleep 52   # ~170 ticks attack
 echo "=== clear netem ==="
 $SSH ubuntu@$H3 "sudo tc qdisc del dev $IF root 2>/dev/null; echo netem-cleared"
 $SSH ubuntu@$H1 'pkill -f probe.py 2>/dev/null; wc -l /tmp/feed.csv'
 $SSH ubuntu@$H1 'cat /tmp/feed.csv' > "$OUT/feed.csv"
 echo "feed rows: $(wc -l < "$OUT/feed.csv")"
-echo "=== quick separation: mean RTT(ms) baseline(ticks1-65) vs attack(ticks75-) per orderer ==="
-awk -F, 'NR>=1&&NR<=65{for(i=2;i<=6;i++)b[i]+=$i;nb++} NR>=75{for(i=2;i<=6;i++)a[i]+=$i;na++} END{for(i=2;i<=6;i++)printf "  orderer%d: base=%.3f attack=%.3f\n",i-1,b[i]/nb,a[i]/na}' "$OUT/feed.csv"
+echo "=== quick separation: mean RTT(ms) baseline(ticks1-145) vs attack(ticks160-) per orderer ==="
+awk -F, 'NR>=1&&NR<=145{for(i=2;i<=6;i++)b[i]+=$i;nb++} NR>=160{for(i=2;i<=6;i++)a[i]+=$i;na++} END{for(i=2;i<=6;i++)printf "  orderer%d: base=%.3f attack=%.3f\n",i-1,b[i]/nb,a[i]/na}' "$OUT/feed.csv"
 echo "XHOST_DETECT_DONE feed=$OUT/feed.csv"

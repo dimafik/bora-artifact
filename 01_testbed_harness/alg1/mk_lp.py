@@ -1,3 +1,10 @@
+# WITHDRAWN (2026-09-16). The figure this script draws (fig_loadsweep.pdf, the
+# submitted Fig. 6) is withdrawn from the paper: its CLI sweep invoked the
+# chaincode without waiting for commit and reused asset keys across concurrency
+# levels, so half of every point's invocations were rejected as duplicates.
+# Kept for provenance; it exits before drawing anything.
+raise SystemExit('mk_lp.py: figure withdrawn; see the header')
+
 # Generates fig_loadsweep.pdf from the measured E1/E2/E3 concurrency sweep.
 #
 # This file also drew the paper's old white-box figure, from the AUC series

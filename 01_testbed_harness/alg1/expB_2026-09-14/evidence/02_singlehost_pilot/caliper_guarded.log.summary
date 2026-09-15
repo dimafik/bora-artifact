@@ -1,0 +1,61 @@
+2026.09.13-15:52:29.386 info  [caliper] [cli-launch-manager] 	Binding specification is present, performing binding for "fabric:fabric-gateway"
+2026.09.13-15:52:29.388 warn  [caliper] [bind] 	Working directory is not specified. Current path: "/hyperledger/caliper/workspace"
+2026.09.13-15:52:29.388 info  [caliper] [bind] 	User-provided arguments for npm: "-g"
+2026.09.13-15:52:29.389 info  [caliper] [bind] 	Binding for fabric@fabric-gateway. This might take some time...
+2026.09.13-15:52:29.389 info  [caliper] [bind] 	Using working directory: /hyperledger/caliper/workspace
+2026.09.13-15:52:29.389 info  [caliper] [bind] 	Calling npm with: install -g @hyperledger/fabric-gateway@1.5.0 @grpc/grpc-js@1.10.3
+
+added 82 packages in 6s
+
+4 packages are looking for funding
+  run `npm fund` for details
+npm notice 
+npm notice New major version of npm available! 10.2.4 -> 12.0.2
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v12.0.2>
+npm notice Run `npm install -g npm@12.0.2` to update!
+npm notice 
+2026.09.13-15:52:35.379 info  [caliper] [cli-launch-manager] 	Set workspace path: /hyperledger/caliper/workspace
+2026.09.13-15:52:35.379 info  [caliper] [cli-launch-manager] 	Set benchmark configuration path: /hyperledger/caliper/workspace/benchmarks/_expb.yaml
+2026.09.13-15:52:35.379 info  [caliper] [cli-launch-manager] 	Set network configuration path: /hyperledger/caliper/workspace/networks/fabric-5node.yaml
+2026.09.13-15:52:35.379 info  [caliper] [cli-launch-manager] 	Set SUT type: fabric
+2026.09.13-15:52:35.383 info  [caliper] [benchmark-validator] 	No observer specified, will default to `none`
+2026.09.13-15:52:35.383 info  [caliper] [caliper-engine] 	Starting benchmark flow
+2026.09.13-15:52:35.384 info  [caliper] [caliper-engine] 	Skipping start commands due to benchmark flow conditioning
+2026.09.13-15:52:35.384 info  [caliper] [caliper-engine] 	Skipping initialization phase due to benchmark flow conditioning
+2026.09.13-15:52:35.384 info  [caliper] [caliper-engine] 	Skipping install smart contract phase due to benchmark flow conditioning
+2026.09.13-15:52:35.681 info  [caliper] [FabricConnectorFactory] 	Initializing peer gateway connector compatible with installed fabric-gateway SDK: 1.5.0
+2026.09.13-15:52:35.722 info  [caliper] [IdentityManager] 	Adding User1 (admin=false) as User1 for organization Org1MSP
+2026.09.13-15:52:35.731 info  [caliper] [IdentityManager] 	Adding User1 (admin=false) as _Org2MSP_User1 for organization Org2MSP
+2026.09.13-15:52:35.733 info  [caliper] [monitor.js] 	No resource monitors specified
+2026.09.13-15:52:35.734 info  [caliper] [default-observer] 	Observer interval set to 5000 milliseconds
+2026.09.13-15:52:35.735 info  [caliper] [round-orchestrator] 	Preparing worker connections
+2026.09.13-15:52:35.736 info  [caliper] [worker-orchestrator] 	Launching worker 1 of 4
+2026.09.13-15:52:35.738 info  [caliper] [worker-orchestrator] 	Launching worker 2 of 4
+2026.09.13-15:52:35.739 info  [caliper] [worker-orchestrator] 	Launching worker 3 of 4
+2026.09.13-15:52:35.739 info  [caliper] [worker-orchestrator] 	Launching worker 4 of 4
+2026.09.13-15:52:35.740 info  [caliper] [worker-orchestrator] 	Messenger not configured, entering configure phase...
+2026.09.13-15:52:35.741 info  [caliper] [worker-orchestrator] 	No existing workers detected, entering worker launch phase...
+2026.09.13-15:52:35.741 info  [caliper] [worker-orchestrator] 	Waiting for 4 workers to be connected...
+2026.09.13-15:52:35.976 info  [caliper] [cli-launch-worker] 	Worker is a locally forked process, skipping the binding step, already performed by the manager process
+2026.09.13-15:52:35.976 info  [caliper] [cli-launch-worker] 	Worker is a locally forked process, skipping the binding step, already performed by the manager process
+... [6396 lines total, truncated for the artifact]
+Details:
+2026.09.13-15:56:09.634 error [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [CreateAsset] using arguments [bench_w3_r0_7256_1789314901523,red,100,alice,42],  with error: CommitStatusError: 4 DEADLINE_EXCEEDED: Deadline exceeded
+Details:
+2026.09.13-15:56:09.634 error [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [CreateAsset] using arguments [bench_w3_r0_7241_1789314901224,red,100,alice,42],  with error: CommitStatusError: 4 DEADLINE_EXCEEDED: Deadline exceeded
+Details:
+2026.09.13-15:56:09.636 error [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [CreateAsset] using arguments [bench_w0_r0_7207_1789314900544,red,100,alice,42],  with error: CommitStatusError: 4 DEADLINE_EXCEEDED: Deadline exceeded
+Details:
+2026.09.13-15:56:09.637 error [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [CreateAsset] using arguments [bench_w2_r0_7253_1789314901465,red,100,alice,42],  with error: CommitStatusError: 4 DEADLINE_EXCEEDED: Deadline exceeded
+Details:
+2026.09.13-15:56:09.637 error [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [CreateAsset] using arguments [bench_w3_r0_7259_1789314901585,red,100,alice,42],  with error: CommitStatusError: 4 DEADLINE_EXCEEDED: Deadline exceeded
+Details:
+2026.09.13-15:56:09.645 error [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [CreateAsset] using arguments [bench_w1_r0_7255_1789314901506,red,100,alice,42],  with error: CommitStatusError: 4 DEADLINE_EXCEEDED: Deadline exceeded
+Details:
+2026.09.13-15:56:09.646 error [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [CreateAsset] using arguments [bench_w0_r0_7209_1789314900584,red,100,alice,42],  with error: CommitStatusError: 4 DEADLINE_EXCEEDED: Deadline exceeded
+Details:
+2026.09.13-15:56:09.646 error [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [CreateAsset] using arguments [bench_w0_r0_7262_1789314901648,red,100,alice,42],  with error: CommitStatusError: 4 DEADLINE_EXCEEDED: Deadline exceeded
+Details:
+2026.09.13-15:56:09.647 error [caliper] [connectors/peer-gateway/PeerGateway] 	Failed to perform submit transaction [CreateAsset] using arguments [bench_w0_r0_7239_1789314901184,red,100,alice,42],  with error: CommitStatusError: 4 DEADLINE_EXCEEDED: Deadline exceeded
+Details:
+2026.09.13-15:56:11.438 info  [caliper] [default-observer] 	[expb-200 Round 0 Transaction Info] - Submitted: 42823 Succ: 35842 Fail:3105 Unfinished:3876

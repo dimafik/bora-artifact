@@ -57,12 +57,16 @@ uses neither.
   the blacklist.
 
 `120309` is the run described in the response letter under "Corrections we made
-without being asked". It is why the submitted claim that exclusion held in
-"every forced election at N = 5, 7, 9" was withdrawn: we could not evidence the
-word *every*. What the run is not is evidence about the guard, because its
-*unguarded* arm scored 3/20 as well and the cluster completed all 40 of its
-elections. A guard that had failed would leave the two arms looking like the
-baseline of some other run, not like each other.
+without being asked" (item 2). Its guarded arm scored 3/20, the chance share of a
+six-candidate field and exactly what a guard that had failed open would produce.
+Why is not recorded: diagnostics written within minutes of it checked whether the
+sidecars survived pause/unpause, and the next run (`121812`, the one in Fig. 5(a))
+scored 0/20, but the harness of `120309` was later overwritten. It is counted as a
+guard failure of unrecorded cause. The same history exists at N = 5: on the day of
+`finalsupp_20260611-144542`, five development runs (`leaderacq4_*`, `leaderacq6_*`,
+`votereject_*`) showed no exclusion (guarded 8/47, unguarded 10/47); their healers
+judged a sidecar alive by its socket file, which a dead sidecar leaves behind.
+`finalsupp` is the first run whose harness checked the sidecar process.
 
 Why the two arms match is not recoverable from this package. `nsweep.sh` prints
 `sidecars: <k>/<N>` at bring-up but does not write it to `summary.txt`, so the
@@ -146,6 +150,48 @@ Both ship. The selection rule is the one stated: a run whose baseline is already
 contaminated at T0 cannot measure detection latency from a clean state. The
 reported figures are therefore a single 84 s run, which the paper now says in a
 footnote.
+
+## The September 2026 cross-host runs
+
+Three directories were added after the first release, all measured on a
+five-host EC2 cluster with one orderer per instance, the load generator on a
+machine of its own, `netem` given an explicit `limit 10000`, and a bounded-state
+Caliper workload. That rig holds a clean baseline to **0.069%** over an hour and
+44 consecutive measurements. Each carries its own README; this is the map.
+
+| directory | what it measures | where it lands |
+|---|---|---|
+| `01_testbed_harness/alg1/xhost_detect_2026-09-13/` | detection latency, held fraction and false positives across hosts, three runs | **the manuscript** — the Section V-B sentence reporting 3.3-4.6 s, 92-94% held and 0 of 2,028, and the Section V-A inventory line that no longer says detection rests on one host |
+| `11_potency/xhost_remeasure_2026-09-14/` | what the evasion sequences do to the ordering service, re-measured on instrumentation that removes three of the original's four objections | **the response letter only**, R3-S4. The fourth objection stands and no rig fixes it |
+| `01_testbed_harness/alg1/expB_2026-09-14/` | whether the guard buys measurable throughput over a horizon containing forced elections — six runs | **nowhere.** No claim in the paper or the letter rests on it |
+
+The rig scripts these share are in `01_testbed_harness/alg1/`
+(`xhost_setup_all.sh`, `xhost_calibrate.sh`, `xhost_caliper.sh`,
+`xhost_caliper_net.sh`, `xhost_cc_or.sh`, `local_setup.sh`,
+`score_xhost.py`, `score_xhost2.py`) rather than copied into each run
+directory; one-shot drivers live with the run they produced.
+
+Two things in these directories are corrections rather than additions, and are
+recorded here because they change what an earlier file said.
+
+- **`netem`'s default queue.** Runs before 2026-09-14 injected delay with
+  `tc qdisc replace ... netem delay ${d}ms`, which takes a queue of 1000
+  packets. Above roughly `limit / delay` packets per second that queue overflows
+  and netem drops, so the injected fault is delay *and* loss. Measured with the
+  default, a +200 ms delayed follower appeared to cost 68% of clean throughput;
+  with `limit 10000` it costs **0.14%** (that re-calibration's Caliper output was
+  not archived). The September campaign runs set the limit explicitly; the
+  isolation control `expB_2026-09-14/evidence/04_isolation_no_elections/` did not
+  read the qdisc back and is void as a delay measurement.
+  `expB_2026-09-14/evidence/03_xhost_pilot_default_queue/` is the run that
+  shows the artifact.
+- **A mislabelled results file.** `11_potency/xhost_remeasure_2026-09-14/
+  potency_xhost.sh` read Caliper's *max* latency into a column called `lat_avg`
+  and its *min* into one called `lat_max`, and never recorded the average at
+  all — the number the response letter reports. The parser is fixed and
+  `results.csv` is re-derived from `caliper_lines.txt`, the instrument's own
+  output, which ships beside it. Success, failure and block counts are
+  unchanged and were checked row by row.
 
 ## Deliberately omitted
 

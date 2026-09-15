@@ -1,0 +1,39 @@
+[00:48:24] Experiment B pilot: N=7 elections=10 load=200tx/s delay=+200ms target=orderer3
+[00:48:24] output: /mnt/d/fabric-d2/results/expB_pilot_20260914-004824
+[00:48:24] ===== SKIP_SETUP=1: reusing the cluster that is already up =====
+[00:48:24]   precondition OK: chaincode committed, height=132, 7 orderers up
+[00:48:24] ===== injecting +200ms on orderer3.example.com for 36m =====
+[00:48:31]   pumba up: 439e2cecf204
+[00:48:31] ===== arm vanilla  (B_t = []) =====
+[00:48:33]   caliper up, 270s round; 40s warm-up before the first election
+[00:49:14]   arm vanilla starts at height 207
+[00:49:34]   e1: leader 2 -> 6  h 209->1028
+[00:49:54]   e2: leader 6 -> 7  h 1071->1572
+[00:50:11]   e3: leader 7 -> 2  h 1591->1884
+[00:50:31]   e4: leader 2 -> 4  h 1906->2241
+[00:50:51]   e5: leader 4 -> 7  h 2257->2614
+[00:51:09]   e6: leader 7 -> 6  h 2632->2816
+[00:51:26]   e7: leader 6 -> 5  h 2833->3028
+[00:51:47]   e8: leader 5 -> 6  h 3046->3498
+[00:52:05]   e9: leader 6 -> 4  h 3515->3830
+[00:52:22]   e10: leader 4 -> 1  h 3845->4031
+[00:52:22]   >>> arm vanilla: height 207 -> 4035  (+3828 blocks in 188s), target led 0/10
+[00:52:26] ===== arm guarded  (B_t = [3]) =====
+[00:52:28]   caliper up, 270s round; 40s warm-up before the first election
+[00:53:09]   arm guarded starts at height 4972
+[00:53:28]   e1: leader 1 -> 2  h 4987->5263
+[00:53:48]   e2: leader 2 -> 6  h 5278->5571
+[00:54:06]   e3: leader 6 -> 5  h 5584->5920
+[00:54:23]   e4: leader 5 -> 2  h 5933->6106
+[00:54:39]   e5: leader 2 -> 1  h 6118->6442
+[00:54:59]   e6: leader 1 -> 6  h 6455->6885
+[00:55:15]   e7: leader 6 -> 2  h 6902->7191
+[00:55:35]   e8: leader 2 -> 7  h 7206->7588
+[00:55:53]   e9: leader 7 -> 5  h 7603->7783
+[00:56:14]   e10: leader 5 -> 6  h 7802->8204
+[00:56:14]   >>> arm guarded: height 4972 -> 8208  (+3236 blocks in 185s), target led 0/10
+[00:56:25] ===== pilot done =====
+arm,height_start,height_end,blocks,seconds,blocks_per_s,target_terms
+vanilla,207,4035,3828,188,20.3617,0
+guarded,4972,8208,3236,185,17.4919,0
+[00:56:25] artifacts: /mnt/d/fabric-d2/results/expB_pilot_20260914-004824

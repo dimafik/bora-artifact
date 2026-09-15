@@ -17,7 +17,7 @@ envelope.
 
 | arm | target wins | 95% Wilson | liveness |
 |---|---|---|---|
-| `A_vanilla` (unguarded) | **24/240** | [0, 14.4%] | 240/240 |
+| `A_vanilla` (unguarded) | **24/240** | [6.8, 14.4%] | 240/240 |
 | `B_oracle` (operator-supplied) | 0/240 | [0, 1.6%] | 240/240 |
 | `C_predictor` (**zero-parameter**) | **0/240** | [0, 1.6%] | 240/240 |
 
