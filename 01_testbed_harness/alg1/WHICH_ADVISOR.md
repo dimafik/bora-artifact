@@ -18,8 +18,10 @@ conclude the paper and the code disagree. This file says which is which.
 
 **The cap.** `predictor_daemon_n.py` applies substep (c) as written,
 `cap = max(0, f - r - 1)`, and logs `r` and the applied cap every cycle;
-`02_results_raw/cap_audit/` checks all 50,440 of them. The two `meanrtt` files
-copy that code unchanged. `08_predictor/predictor_daemon.py` applies a *static*
+the two `meanrtt` files copy that cap path unchanged, and
+`02_results_raw/cap_audit/` checks the 50,440 cycles logged by the B-20
+threshold daemon (`predictor_daemon_meanrtt_wsl.py`), all at r = 0. The original
+closed-loop daemon log (247 MB) is not shipped. `08_predictor/predictor_daemon.py` applies a *static*
 `fcap=2` that ignores `r`, which is why its header marks it superseded and why
 no closed-loop cap result comes from it. `sidecar.py` uses a configured
 `f_cap` and likewise ignores `r`.

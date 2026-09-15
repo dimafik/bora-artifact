@@ -1,0 +1,80 @@
+[12:58:51] Experiment B campaign: seeds=2 elections=100 load=300tx/s delay=+200ms pool=500
+[12:58:51] output: /mnt/d/fabric-d2/results/expB_camp_20260914-125851
+[12:58:58]   leader=0 height=81449
+[12:58:58] ########## seed 1 ##########
+[12:58:58]   --- bracket s1_pre ---
+| s1_pre | 18008 | 0    | 300.1           | 2.05            | 0.05            | 0.11            | 290.2            |
+[13:00:26] ===== seed 1 arm s1_vanilla  (B_t = []) =====
+[13:00:31]   netem on: netem 8001: root refcnt 3 limit 10000 delay 200ms
+[13:00:31]   caliper up 2950s; 60 s warm-up
+[13:06:51]   e10/100 (target led 0 so far)
+[13:12:08]   e20/100 (target led 1 so far)
+[13:17:32]   e30/100 (target led 2 so far)
+[13:22:55]   e40/100 (target led 3 so far)
+[13:28:17]   e50/100 (target led 5 so far)
+[13:33:50]   e60/100 (target led 6 so far)
+[13:39:20]   e70/100 (target led 6 so far)
+[13:44:57]   e80/100 (target led 6 so far)
+[13:50:35]   e90/100 (target led 8 so far)
+[13:55:51]   e100/100 (target led 9 so far)
+[13:55:54]   >>> seed 1 s1_vanilla: succ=325204 fail=559804 tput=293.6  height 84743->119365 (+34622)  target led 9/100
+[13:55:57]   --- bracket s1_mid ---
+| s1_mid | 17839 | 169  | 300.1           | 2.22            | 0.05            | 0.40            | 290.2            |
+[13:57:25] ===== seed 1 arm s1_guarded  (B_t = [3]) =====
+[13:57:30]   netem on: netem 8002: root refcnt 3 limit 10000 delay 200ms
+[13:57:30]   caliper up 2950s; 60 s warm-up
+[14:04:14]   e10/100 (target led 0 so far)
+[14:10:00]   e20/100 (target led 0 so far)
+[14:15:52]   e30/100 (target led 0 so far)
+[14:21:49]   e40/100 (target led 0 so far)
+[14:27:48]   e50/100 (target led 0 so far)
+[14:33:54]   e60/100 (target led 0 so far)
+[14:40:05]   e70/100 (target led 0 so far)
+[14:46:16]   e80/100 (target led 0 so far)
+[14:51:48]   e90/100 (target led 0 so far)
+[14:57:12]   e100/100 (target led 0 so far)
+[14:57:15]   >>> seed 1 s1_guarded: succ=306652 fail=578356 tput=296.5  height 122613->156016 (+33403)  target led 0/100
+[14:57:19]   --- bracket s1_post ---
+| s1_post | 18008 | 0    | 300.1           | 7.11            | 0.05            | 0.11            | 290.2            |
+[14:58:47] ########## seed 2 ##########
+[14:58:47]   --- bracket s2_pre ---
+| s2_pre | 18008 | 0    | 300.1           | 2.07            | 0.05            | 0.10            | 290.1            |
+[15:00:15] ===== seed 2 arm s2_guarded  (B_t = [3]) =====
+[15:00:20]   netem on: netem 8003: root refcnt 3 limit 10000 delay 200ms
+[15:00:20]   caliper up 2950s; 60 s warm-up
+[15:07:42]   e10/100 (target led 0 so far)
+[15:14:09]   e20/100 (target led 0 so far)
+[15:21:04]   e30/100 (target led 0 so far)
+[15:27:49]   e40/100 (target led 0 so far)
+[15:34:42]   e50/100 (target led 0 so far)
+[15:41:42]   e60/100 (target led 0 so far)
+[15:48:42]   e70/100 (target led 0 so far)
+[15:54:49]   e80/100 (target led 0 so far)
+[16:00:39]   e90/100 (target led 0 so far)
+[16:06:25]   e100/100 (target led 0 so far)
+[16:06:28]   >>> seed 2 s2_guarded: succ=337268 fail=547740 tput=292.4  height 161097->198801 (+37704)  target led 0/100
+[16:06:32]   --- bracket s2_mid ---
+| s2_mid | 18008 | 0    | 300.1           | 2.06            | 0.05            | 0.11            | 290.2            |
+[16:08:01] ===== seed 2 arm s2_vanilla  (B_t = []) =====
+[16:08:06]   netem on: netem 8004: root refcnt 3 limit 10000 delay 200ms
+[16:08:07]   caliper up 2950s; 60 s warm-up
+[16:16:08]   e10/100 (target led 0 so far)
+[16:23:24]   e20/100 (target led 0 so far)
+[16:30:55]   e30/100 (target led 0 so far)
+[16:38:37]   e40/100 (target led 2 so far)
+[16:46:24]   e50/100 (target led 3 so far)
+[16:54:13]   e60/100 (target led 3 so far)
+[17:01:14]   e70/100 (target led 5 so far)
+[17:07:40]   e80/100 (target led 6 so far)
+[17:14:02]   e90/100 (target led 8 so far)
+[17:20:15]   e100/100 (target led 9 so far)
+[17:20:18]   >>> seed 2 s2_vanilla: succ=359801 fail=525207 tput=297.6  height 202069->243067 (+40998)  target led 9/100
+[17:20:22]   --- bracket s2_post ---
+| s2_post | 18008 | 0    | 300.1           | 2.12            | 0.05            | 0.18            | 290.0            |
+[17:21:51] ===== campaign done =====
+seed,arm,success,failed,throughput,height_start,height_end,blocks,seconds,target_terms,elections
+1,s1_vanilla,325204,559804,293.6,84743,119365,34622,3257,9,100
+1,s1_guarded,306652,578356,296.5,122613,156016,33403,3519,0,100
+2,s2_guarded,337268,547740,292.4,161097,198801,37704,3902,0,100
+2,s2_vanilla,359801,525207,297.6,202069,243067,40998,4266,9,100
+[17:21:51] artifacts: /mnt/d/fabric-d2/results/expB_camp_20260914-125851

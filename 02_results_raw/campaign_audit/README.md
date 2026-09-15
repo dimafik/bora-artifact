@@ -62,5 +62,5 @@ The counts cannot be re-derived from what ships in this repository.
 and those containers are recreated at every N bring-up -- the ones running on
 the testbed now belong to the most recent bring-up, not to the runs in the
 table. The election windows ship (`elections.csv` in each run directory) and
-the script ships; the raft container logs are ephemeral and do not. This file
+the script ships; the per-arm raft logs are preserved on the testbed host (`x1_*/logs/`, 736 MB) but are not shipped. This file
 is the recorded output.

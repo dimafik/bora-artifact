@@ -5,7 +5,9 @@
 // (non-probabilistic) TLA+/TLAPS cannot express.  Within BORA's eligible
 // set E_t = { i : i \notin B_t } (the minimum-hold rule keeps |E_t| >=
 // ceil((N+1)/2) for the hold window; blacklisted nodes withhold their
-// campaign but still grant votes), the surviving nodes run vanilla Raft's
+// campaign; whether they grant votes does not matter, since E_t is already a
+// majority -- on the testbed a frozen tick keeps the CheckQuorum lease unexpired
+// and they ignore vote requests), the surviving nodes run vanilla Raft's
 // randomised election timeout.  Each round, every eligible candidate draws
 // a uniform timeout slot in {0,..,W-1}; the candidate with the UNIQUE
 // smallest slot times out first and wins; a tie for the smallest slot is a
@@ -18,7 +20,7 @@
 // =====================================================================
 dtmc
 
-const int NE;           // |E_t| eligible candidates (3,4,5 for N=5, |B_t|<=2)
+const int NE;           // |E_t| eligible candidates (3,4,5; at N=5 the cap keeps |E_t|>=4, no adversary modelled)
 
 module elect
   i    : [0..NE] init 0;  // candidates that have drawn a slot this round

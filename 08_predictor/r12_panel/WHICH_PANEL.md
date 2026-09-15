@@ -64,7 +64,7 @@ values are under `sweep["rho_0.0"]["worst_auc"]` and so on; the top-level
 | 1D-CNN | 0.2277 | 0.9656 | 1.0000 | 1.0000 |
 
 Section V-E reads two comparisons off this table: ours furthest below chance at
-every floor above 0 (0.039 against the GRU's 0.232 at rho=0.3), and level with
+every floor above 0 (0.039 against the next-lowest, the MLP's 0.215, at rho=0.3), and level with
 the GRU at rho=0 (0.003 against 0.002). Both round from the values above.
 
 Here the ordering is real and it runs the other way from the saturated panel:

@@ -1,0 +1,25 @@
+model params: 141067
+  seed1  Tc=100.0 std=False fitted     th=0.8130 lat=2.19   held=163/170 fp=0/680
+  seed1  Tc=100.0 std=False transplant th=0.6500 lat=4.57   held=156/170 fp=0/680
+  seed1  Tc=100.0 std=True  fitted     th=0.6827 lat=None   held=0/170 fp=0/680
+  seed1  Tc=100.0 std=True  transplant th=0.6500 lat=None   held=0/170 fp=0/680
+  seed1  Tc=5.0   std=False fitted     th=0.4443 lat=2.19   held=163/170 fp=0/680
+  seed1  Tc=5.0   std=False transplant th=0.6500 lat=1.84   held=164/170 fp=0/680
+  seed1  Tc=5.0   std=True  fitted     th=0.4242 lat=None   held=0/170 fp=0/680
+  seed1  Tc=5.0   std=True  transplant th=0.6500 lat=0.0    held=170/170 fp=680/680
+  seed2  Tc=100.0 std=False fitted     th=0.8463 lat=1.86   held=164/170 fp=56/680
+  seed2  Tc=100.0 std=False transplant th=0.6500 lat=3.26   held=160/170 fp=0/680
+  seed2  Tc=100.0 std=True  fitted     th=0.6829 lat=None   held=0/170 fp=0/680
+  seed2  Tc=100.0 std=True  transplant th=0.6500 lat=None   held=0/170 fp=0/680
+  seed2  Tc=5.0   std=False fitted     th=0.7950 lat=1.86   held=164/170 fp=56/680
+  seed2  Tc=5.0   std=False transplant th=0.6500 lat=1.86   held=164/170 fp=56/680
+  seed2  Tc=5.0   std=True  fitted     th=0.4242 lat=None   held=0/170 fp=0/680
+  seed2  Tc=5.0   std=True  transplant th=0.6500 lat=0.0    held=170/170 fp=680/680
+  seed3  Tc=100.0 std=False fitted     th=0.8466 lat=1.84   held=161/167 fp=1/668
+  seed3  Tc=100.0 std=False transplant th=0.6500 lat=3.52   held=156/167 fp=0/668
+  seed3  Tc=100.0 std=True  fitted     th=0.6829 lat=None   held=0/167 fp=0/668
+  seed3  Tc=100.0 std=True  transplant th=0.6500 lat=None   held=0/167 fp=0/668
+  seed3  Tc=5.0   std=False fitted     th=0.8291 lat=1.84   held=161/167 fp=5/668
+  seed3  Tc=5.0   std=False transplant th=0.6500 lat=1.84   held=161/167 fp=0/668
+  seed3  Tc=5.0   std=True  fitted     th=0.4242 lat=None   held=0/167 fp=0/668
+  seed3  Tc=5.0   std=True  transplant th=0.6500 lat=0.0    held=167/167 fp=668/668

@@ -12,8 +12,8 @@ by design.
 | Fig. 3 | `fig_prism_convergence.pdf` | `../01_testbed_harness/alg1/make_g1_g2.py` (first half) | `../01_testbed_harness/alg1/prism_sweep.txt` | no — absolute path |
 | Fig. 4 | `fig_detection_ac.pdf` | `../01_testbed_harness/alg1/mk_fig67_academic.py` (**first half only**) | `../02_results_raw/mldetect_20260611-171955/predictor_daemon.log` | no — absolute path |
 | Fig. 5 | `fig_exclusion_stack.pdf` | `../01_testbed_harness/alg1/mk_fig_exclusion_stack.py` | counts inline (7/36, 0/36, 7/20, 0/20, 4/20, 0/20, 2/16, 0/16); raw logs under `../02_results_raw/` | no — absolute path |
-| Fig. 6 | `fig_loadsweep.pdf` | `../01_testbed_harness/alg1/mk_lp.py` | E1/E2/E3 sweep values inline | no — absolute path |
-| Fig. 7 | `revision/fig_whitebox.pdf` | `revision/mk_fig_whitebox.py` | `../08_predictor/r12_panel/panel2_results.json` | **yes** |
+| (withdrawn) | `fig_loadsweep.pdf` | `../01_testbed_harness/alg1/mk_lp.py` | E1/E2/E3 sweep values inline | disabled — the figure was withdrawn in the revision: its CLI sweep never waited for commit and reused asset keys across concurrency levels |
+| Fig. 6 | `revision/fig_whitebox.pdf` | `revision/mk_fig_whitebox.py` | `../08_predictor/r12_panel/panel2_results.json` | **yes** |
 
 "Runs as shipped: no" means only that the script names the absolute path it was
 run from rather than the copy in this artifact. The data is here, at the path in

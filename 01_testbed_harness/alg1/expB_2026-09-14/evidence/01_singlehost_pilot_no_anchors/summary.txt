@@ -1,0 +1,46 @@
+[00:34:05] Experiment B pilot: N=7 elections=10 load=200tx/s delay=+200ms target=orderer3
+[00:34:05] output: /mnt/d/fabric-d2/results/expB_pilot_20260914-003405
+[00:34:05] ===== bring-up N=7 =====
+[00:36:04] ===== join peers to mychannel =====
+[00:36:13]   peer0.org1.example.com joined
+[00:36:13]   peer0.org2.example.com joined
+[00:36:13] ===== deploy chaincode 'basic' =====
+[00:37:32]   deployed
+[00:37:33]   precondition OK: chaincode committed, height=4, 7 orderers up
+[00:37:33] ===== injecting +200ms on orderer3.example.com for 36m =====
+[00:37:39]   pumba up: 7e7d3609f0bb
+[00:37:39] ===== arm vanilla  (B_t = []) =====
+[00:37:42]   caliper up, 270s round; 40s warm-up before the first election
+[00:38:22]   arm vanilla starts at height 4
+[00:38:39]   e1: leader 3 -> 1  h 4->4
+[00:38:59]   e2: leader 1 -> 7  h 4->4
+[00:39:16]   e3: leader 7 -> 3   <-- TARGET LEADS  h 4->4
+[00:39:35]   e4: leader 3 -> 6  h 4->4
+[00:39:53]   e5: leader 6 -> 5  h 4->4
+[00:40:10]   e6: leader 5 -> 3   <-- TARGET LEADS  h 4->4
+[00:40:30]   e7: leader 3 -> 7  h 4->4
+[00:40:47]   e8: leader 7 -> 5  h 4->4
+[00:41:04]   e9: leader 5 -> 3   <-- TARGET LEADS  h 4->4
+[00:41:20]   e10: leader 3 -> 2  h 4->4
+[00:41:21]   >>> arm vanilla committed NOTHING (delta=0) -- measurement invalid
+[00:41:21]   >>> arm vanilla: height 4 -> 4  (+0 blocks in 178s), target led 3/10
+[00:41:24] ===== arm guarded  (B_t = [3]) =====
+[00:41:27]   caliper up, 270s round; 40s warm-up before the first election
+[00:42:07]   arm guarded starts at height 4
+[00:42:27]   e1: leader 2 -> 6  h 4->4
+[00:42:43]   e2: leader 6 -> 1  h 4->4
+[00:43:03]   e3: leader 1 -> 4  h 4->4
+[00:43:19]   e4: leader 4 -> 2  h 4->4
+[00:43:39]   e5: leader 2 -> 6  h 4->4
+[00:43:56]   e6: leader 6 -> 2  h 4->4
+[00:44:15]   e7: leader 2 -> 5  h 4->4
+[00:44:31]   e8: leader 5 -> 2  h 4->4
+[00:44:51]   e9: leader 2 -> 7  h 4->4
+[00:45:07]   e10: leader 7 -> 2  h 4->4
+[00:45:08]   >>> arm guarded committed NOTHING (delta=0) -- measurement invalid
+[00:45:08]   >>> arm guarded: height 4 -> 4  (+0 blocks in 181s), target led 0/10
+[00:45:18] ===== pilot done =====
+arm,height_start,height_end,blocks,seconds,blocks_per_s,target_terms
+vanilla,4,4,0,178,0.0000,3
+guarded,4,4,0,181,0.0000,0
+[00:45:18] artifacts: /mnt/d/fabric-d2/results/expB_pilot_20260914-003405
