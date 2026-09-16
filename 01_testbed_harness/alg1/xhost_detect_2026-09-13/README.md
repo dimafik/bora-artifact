@@ -22,7 +22,11 @@ interface partway through and verified before the run continues.
 
 `../score_xhost2.py`, offline, with the deployed predictor
 (`08_predictor/model_small/best.pt`, 141,067 parameters — the model the
-manuscript describes). Decision rules were fixed before any result was read:
+manuscript describes). The onset, detection and false-positive rules below were
+fixed before scoring. The threshold was not: the pre-registered rule was a 2%
+quantile of the clean scores, which raised false positives on all three feeds,
+and the transplanted 0.65 was adopted after that result was read (Section V-B
+and the response letter state it the same way):
 
 | | rule |
 |---|---|
@@ -70,6 +74,7 @@ mean 8 / s.d. 3 erases the magnitude difference the score head reads, and
 
 | Tc | theta | held | false positives |
 |---|---|---|---|
+(standardised windows only; the raw Tc = 5 re-fit gives 0, 56 and 5 false positives across the three feeds)
 | 100 | 0.65 and re-fitted | 0/170 | 0/680 |
 | **5** | **0.65** | **170/170** | **680/680** |
 | 5 | re-fitted | 0/170 | 0/680 |

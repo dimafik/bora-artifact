@@ -62,5 +62,7 @@ The counts cannot be re-derived from what ships in this repository.
 and those containers are recreated at every N bring-up -- the ones running on
 the testbed now belong to the most recent bring-up, not to the runs in the
 table. The election windows ship (`elections.csv` in each run directory) and
-the script ships; the per-arm raft logs are preserved on the testbed host (`x1_*/logs/`, 736 MB) but are not shipped. This file
+the script ships, but run offline it reports no campaigns at all, and it reads
+the target column as a single node id, so the multi-target runs (`3;9`, `3;9;17`)
+stop it; the per-arm raft logs are preserved on the testbed host (`x1_*/logs/`, 736 MB) but are not shipped. This file
 is the recorded output.
