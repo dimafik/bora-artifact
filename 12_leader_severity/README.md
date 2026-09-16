@@ -37,7 +37,9 @@ leader is deposed within seconds, which destroys the condition being measured.
 figure, which counts failed transactions as throughput. Counted in committed and
 failed transactions from the same logs, at 500 tx/s a degraded **leader** failed a
 median 14% of submissions and stalled (95–100% failed) in **13 of 36** runs — the
-R25D primary — with latency 17× the clean arm; a degraded **follower** failed no
+R25D primary — with mean latency 17× the clean arm before it, though the clean
+bracket run after it had itself slowed 6× (median over runs), so arm order
+accounts for much of that ratio; a degraded **follower** failed no
 transaction in **33 of 36** runs, its "21% loss" being latency, not lost commits.
 Those are the figures the paper reports. The table is kept as recorded.
 

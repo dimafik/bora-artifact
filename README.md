@@ -24,7 +24,7 @@ rest on.
 | No campaign by a blacklisted node inside a guarded election window (the guarded count is zero under every delimitation; totals range 35–69 by definition) | `01_testbed_harness/alg1/x1_campaign_audit.py`; the per-arm raft logs (736 MB) are kept on the testbed host, not shipped |
 | Detection in 3.1 s, no false positive over 158 cycles | `02_results_raw/mldetect_20260611-171955/predictor_daemon.log` |
 | All 21 unguarded wins had the target already in B_t at election start | `02_results_raw/x1_*/elections.csv` (`target_won`, `hits`, `list`) |
-| Leader-vs-follower severity: a degraded leader stalled 13 of 36 runs (95–100% of submissions failed), median 14% failures, latency 17×; a degraded follower failed nothing in 33 of 36 | `12_leader_severity/results/per_run_metrics.csv`, the per-run `summary.txt` success/failure columns |
+| Leader-vs-follower severity: a degraded leader stalled 13 of 36 runs (95–100% of submissions failed), median 14% failures, mean latency 17× the preceding clean arm (the clean bracket after it had itself slowed 6×); a degraded follower failed nothing in 33 of 36 | `12_leader_severity/results/per_run_metrics.csv`, the per-run `summary.txt` success/failure columns |
 | ALR ablation at N=7 over 360 scheduled forced elections (159 demotions) | `02_results_raw/r13v3_alr_ablation/` (`r13_merged.csv` is the discarded v2 design) |
 | Physical five-host AWS: 147 guarded elections, 16 of them paired | `01_testbed_harness/alg1/xhost_bora_election.sh`, `02_results_raw/xhost_election_*`, `02_results_raw/mh_*` |
 | Table IV — detector panel, incl. a 0-parameter statistic at AUC 1.00 | `08_predictor/r12_panel/panel2_results.json` |

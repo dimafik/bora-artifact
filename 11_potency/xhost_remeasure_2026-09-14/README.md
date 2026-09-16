@@ -45,7 +45,7 @@ same ~500 ms marginal, only orderer3's lag-1 autocorrelation varying.
 | healthy_white | 0.026 | −0.005 |
 | pgd_rho_0.0 | 0.059 | −0.007 |
 | pgd_rho_0.3 | 0.316 | 0.001 |
-| pgd_rho_0.6 | 0.603 | 0.015 |
+| pgd_rho_0.6 | 0.604 | 0.015 |
 | pgd_rho_0.8 | 0.798 | −0.009 |
 | attack_class_ar1 | 0.886 | −0.011 |
 
@@ -75,7 +75,7 @@ row against the file as it was written.
 | healthy_white | 0.026 | 27,008 | 0 | 0.490 s |
 | **pgd_rho_0.0** (white-box AUC 0.003) | 0.059 | 27,008 | 0 | **0.490 s** |
 | pgd_rho_0.3 | 0.316 | 27,008 | 0 | 0.483 s |
-| pgd_rho_0.6 | 0.603 | 27,008 | 0 | 0.480 s |
+| pgd_rho_0.6 | 0.604 | 27,008 | 0 | 0.480 s |
 | pgd_rho_0.8 | 0.798 | 27,008 | 0 | 0.477 s |
 | attack_class_ar1 | 0.886 | 27,008 | 0 | 0.477 s |
 
