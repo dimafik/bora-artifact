@@ -1,0 +1,224 @@
+{
+ "paper_run": {
+  "cells": 12,
+  "recorded": 159,
+  "policies": {
+   "hold0_cool0": {
+    "kept": 159,
+    "fp": 159,
+    "tp": 0
+   },
+   "hold0_cool15": {
+    "kept": 93,
+    "fp": 93,
+    "tp": 0
+   },
+   "hold0_cool30": {
+    "kept": 66,
+    "fp": 66,
+    "tp": 0
+   },
+   "hold0_cool60": {
+    "kept": 42,
+    "fp": 42,
+    "tp": 0
+   },
+   "hold1_cool0": {
+    "kept": 159,
+    "fp": 159,
+    "tp": 0
+   },
+   "hold1_cool15": {
+    "kept": 93,
+    "fp": 93,
+    "tp": 0
+   },
+   "hold1_cool30": {
+    "kept": 66,
+    "fp": 66,
+    "tp": 0
+   },
+   "hold1_cool60": {
+    "kept": 42,
+    "fp": 42,
+    "tp": 0
+   },
+   "hold3_cool0": {
+    "kept": 159,
+    "fp": 159,
+    "tp": 0
+   },
+   "hold3_cool15": {
+    "kept": 93,
+    "fp": 93,
+    "tp": 0
+   },
+   "hold3_cool30": {
+    "kept": 66,
+    "fp": 66,
+    "tp": 0
+   },
+   "hold3_cool60": {
+    "kept": 42,
+    "fp": 42,
+    "tp": 0
+   },
+   "hold5_cool0": {
+    "kept": 158,
+    "fp": 158,
+    "tp": 0
+   },
+   "hold5_cool15": {
+    "kept": 92,
+    "fp": 92,
+    "tp": 0
+   },
+   "hold5_cool30": {
+    "kept": 66,
+    "fp": 66,
+    "tp": 0
+   },
+   "hold5_cool60": {
+    "kept": 42,
+    "fp": 42,
+    "tp": 0
+   },
+   "hold10_cool0": {
+    "kept": 62,
+    "fp": 62,
+    "tp": 0
+   },
+   "hold10_cool15": {
+    "kept": 48,
+    "fp": 48,
+    "tp": 0
+   },
+   "hold10_cool30": {
+    "kept": 39,
+    "fp": 39,
+    "tp": 0
+   },
+   "hold10_cool60": {
+    "kept": 30,
+    "fp": 30,
+    "tp": 0
+   }
+  },
+  "by_rate": {
+   "5": 41,
+   "10": 58,
+   "20": 60
+  }
+ },
+ "all_three_runs": {
+  "cells": 15,
+  "recorded": 168,
+  "policies": {
+   "hold0_cool0": {
+    "kept": 168,
+    "fp": 168,
+    "tp": 0
+   },
+   "hold0_cool15": {
+    "kept": 98,
+    "fp": 98,
+    "tp": 0
+   },
+   "hold0_cool30": {
+    "kept": 70,
+    "fp": 70,
+    "tp": 0
+   },
+   "hold0_cool60": {
+    "kept": 44,
+    "fp": 44,
+    "tp": 0
+   },
+   "hold1_cool0": {
+    "kept": 168,
+    "fp": 168,
+    "tp": 0
+   },
+   "hold1_cool15": {
+    "kept": 98,
+    "fp": 98,
+    "tp": 0
+   },
+   "hold1_cool30": {
+    "kept": 70,
+    "fp": 70,
+    "tp": 0
+   },
+   "hold1_cool60": {
+    "kept": 44,
+    "fp": 44,
+    "tp": 0
+   },
+   "hold3_cool0": {
+    "kept": 168,
+    "fp": 168,
+    "tp": 0
+   },
+   "hold3_cool15": {
+    "kept": 98,
+    "fp": 98,
+    "tp": 0
+   },
+   "hold3_cool30": {
+    "kept": 70,
+    "fp": 70,
+    "tp": 0
+   },
+   "hold3_cool60": {
+    "kept": 44,
+    "fp": 44,
+    "tp": 0
+   },
+   "hold5_cool0": {
+    "kept": 167,
+    "fp": 167,
+    "tp": 0
+   },
+   "hold5_cool15": {
+    "kept": 97,
+    "fp": 97,
+    "tp": 0
+   },
+   "hold5_cool30": {
+    "kept": 70,
+    "fp": 70,
+    "tp": 0
+   },
+   "hold5_cool60": {
+    "kept": 44,
+    "fp": 44,
+    "tp": 0
+   },
+   "hold10_cool0": {
+    "kept": 69,
+    "fp": 69,
+    "tp": 0
+   },
+   "hold10_cool15": {
+    "kept": 52,
+    "fp": 52,
+    "tp": 0
+   },
+   "hold10_cool30": {
+    "kept": 43,
+    "fp": 43,
+    "tp": 0
+   },
+   "hold10_cool60": {
+    "kept": 32,
+    "fp": 32,
+    "tp": 0
+   }
+  },
+  "by_rate": {
+   "5": 41,
+   "10": 58,
+   "20": 69
+  }
+ }
+}
