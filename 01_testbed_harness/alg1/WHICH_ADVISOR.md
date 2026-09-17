@@ -28,11 +28,14 @@ closed-loop daemon log (247 MB) is not shipped. `08_predictor/predictor_daemon.p
 no closed-loop cap result comes from it. `sidecar.py` uses a configured
 `f_cap` and likewise ignores `r`.
 
-**The fail-open counter.** Algorithm 1 substep (d) counts consecutive rounds in
-which `B_t` came out empty and, on reaching `K_fail`, emits an explicit
-`fail_open` flag. `sidecar.py` instead counts consecutive ticks whose *mean
-confidence* falls below `tau_conf` and returns an empty set without the flag --
-a different trigger and a different payload. `predictor_daemon_n.py` runs
+**The fail-open counter.** Algorithm 1 substep (d) counts consecutive ticks
+whose *mean confidence* falls below `theta_conf` and, on reaching `K_fail`,
+emits an explicit `fail_open` flag. `sidecar.py` uses the same trigger
+(`low_conf_streak` against `tau_conf`) but returns an empty set without the
+flag, so the trigger agrees and the payload does not. Earlier versions of the
+paper described the trigger as counting rounds in which `B_t` came out empty;
+that was a mis-transcription of this code and the paper has been corrected to
+match it. `predictor_daemon_n.py` runs
 neither: it emits a fixed `fail_open: False`. That gap is not hidden, it is
 what Section II means by "the evaluated build does not realise it. It emits a
 fixed fail-open flag instead of running the counter." The counter is a design
