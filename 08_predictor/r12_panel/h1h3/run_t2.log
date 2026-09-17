@@ -1,0 +1,105 @@
+T2 search data (3000, 21, 60) / (1200, 21, 60) / (2000, 21, 60)
+   hand   trial00 base+lagpair+timing+group/rf val 0.6247
+   hand   trial01 base+lagpair+timing+group/rf val 0.6247
+   hand   trial02 base+lagpair+timing+group/logistic val 0.6348
+   hand   trial03 base+lagpair/gb              val 0.5155
+   hand   trial04 base/logistic                val 0.5197
+   hand   trial05 base+lagpair+timing+group/gb val 0.6145
+   hand   trial06 base+timing+group/logistic   val 0.6294
+   hand   trial07 base+lagpair/rf              val 0.5155
+   hand   trial08 base+timing+group/rf         val 0.6284
+   hand   trial09 base+lagpair+timing+group/gb val 0.5933
+   hand   trial10 base+timing+group/rf         val 0.6247
+   hand   trial11 base+lagpair+timing+group/logistic val 0.6314
+  -> hand       val 0.6348 test 0.6340
+   per-node   trial00 d32  L1 h4 lr3e-04 drop0.0 val 0.4913 (0.4 min)
+   per-node   trial01 d96  L2 h4 lr3e-04 drop0.1 val 0.4985 (2.4 min)
+   per-node   trial02 d32  L1 h8 lr3e-03 drop0.2 val 0.5080 (0.5 min)
+   per-node   trial03 d64  L3 h4 lr1e-03 drop0.0 val 0.4994 (0.7 min)
+   per-node   trial04 d96  L3 h8 lr3e-04 drop0.1 val 0.5210 (3.5 min)
+   per-node   trial05 d96  L2 h4 lr3e-03 drop0.2 val 0.4999 (4.4 min)
+   per-node   trial06 d64  L2 h4 lr3e-04 drop0.0 val 0.5133 (0.6 min)
+   per-node   trial07 d64  L3 h4 lr1e-03 drop0.1 val 0.4914 (3.2 min)
+   per-node   trial08 d96  L1 h4 lr1e-03 drop0.1 val 0.4983 (1.4 min)
+   per-node   trial09 d64  L3 h8 lr3e-04 drop0.0 val 0.5136 (0.8 min)
+   per-node   trial10 d32  L2 h4 lr3e-03 drop0.0 val 0.4992 (0.3 min)
+   per-node   trial11 d96  L2 h2 lr1e-03 drop0.0 val 0.4993 (1.0 min)
+  -> per-node   val 0.5210 test 0.5032
+   deepsets   trial00 d32  L1 h4 lr3e-03 drop0.2 val 0.5220 (0.8 min)
+   deepsets   trial01 d96  L2 h2 lr3e-03 drop0.0 val 0.5342 (1.6 min)
+   deepsets   trial02 d96  L2 h4 lr1e-03 drop0.0 val 0.5361 (1.7 min)
+   deepsets   trial03 d96  L1 h8 lr1e-03 drop0.0 val 0.5247 (1.5 min)
+   deepsets   trial04 d32  L2 h4 lr3e-03 drop0.2 val 0.5355 (2.8 min)
+   deepsets   trial05 d96  L2 h8 lr1e-03 drop0.1 val 0.5498 (8.1 min)
+   deepsets   trial06 d64  L3 h2 lr1e-03 drop0.0 val 0.5382 (2.7 min)
+   deepsets   trial07 d96  L2 h8 lr3e-03 drop0.2 val 0.5490 (4.8 min)
+   deepsets   trial08 d96  L2 h2 lr3e-04 drop0.2 val 0.5549 (3.7 min)
+   deepsets   trial09 d32  L1 h4 lr3e-04 drop0.1 val 0.5271 (2.3 min)
+   deepsets   trial10 d32  L1 h2 lr3e-04 drop0.2 val 0.5295 (1.6 min)
+   deepsets   trial11 d96  L2 h8 lr3e-03 drop0.2 val 0.5398 (7.1 min)
+  -> deepsets   val 0.5549 test 0.5277
+   gru-nodes  trial00 d96  L3 h4 lr3e-03 drop0.1 val 0.5198 (8.6 min)
+   gru-nodes  trial01 d32  L2 h4 lr3e-03 drop0.2 val 0.5243 (2.9 min)
+   gru-nodes  trial02 d32  L3 h2 lr3e-03 drop0.1 val 0.5337 (2.4 min)
+   gru-nodes  trial03 d96  L1 h2 lr1e-03 drop0.0 val 0.5052 (2.1 min)
+   gru-nodes  trial04 d64  L1 h8 lr3e-03 drop0.1 val 0.5215 (2.4 min)
+   gru-nodes  trial05 d64  L1 h2 lr3e-03 drop0.2 val 0.5157 (3.0 min)
+   gru-nodes  trial06 d32  L1 h8 lr3e-03 drop0.0 val 0.5266 (1.5 min)
+   gru-nodes  trial07 d96  L3 h8 lr3e-03 drop0.0 val 0.5265 (5.0 min)
+   gru-nodes  trial08 d96  L2 h8 lr3e-04 drop0.2 val 0.5067 (9.5 min)
+   gru-nodes  trial09 d32  L1 h8 lr3e-03 drop0.0 val 0.5079 (0.8 min)
+   gru-nodes  trial10 d32  L2 h2 lr3e-04 drop0.0 val 0.5039 (1.7 min)
+   gru-nodes  trial11 d64  L3 h8 lr1e-03 drop0.1 val 0.5223 (7.1 min)
+  -> gru-nodes  val 0.5337 test 0.5002
+   relation   trial00 d32  L1 h8 lr1e-03 drop0.1 val 0.5234 (1.3 min)
+   relation   trial01 d96  L3 h2 lr1e-03 drop0.0 val 0.4967 (19.6 min)
+   relation   trial02 d32  L2 h2 lr3e-04 drop0.2 val 0.5046 (2.3 min)
+   relation   trial03 d32  L1 h8 lr3e-03 drop0.2 val 0.5132 (1.5 min)
+   relation   trial04 d64  L2 h2 lr3e-03 drop0.1 val 0.5023 (5.7 min)
+   relation   trial05 d96  L3 h8 lr1e-03 drop0.2 val 0.5169 (16.0 min)
+   relation   trial06 d64  L3 h2 lr1e-03 drop0.0 val 0.5146 (7.9 min)
+   relation   trial07 d32  L2 h4 lr3e-03 drop0.2 val 0.5292 (3.3 min)
+   relation   trial08 d96  L2 h4 lr1e-03 drop0.0 val 0.5116 (6.3 min)
+   relation   trial09 d96  L3 h4 lr3e-04 drop0.1 val 0.5131 (11.4 min)
+   relation   trial10 d96  L1 h2 lr3e-03 drop0.0 val 0.4966 (5.6 min)
+   relation   trial11 d96  L2 h8 lr3e-04 drop0.0 val 0.4837 (6.6 min)
+  -> relation   val 0.5292 test 0.4967
+   attention  trial00 d64  L1 h8 lr1e-03 drop0.0 val 0.5073 (1.8 min)
+   attention  trial01 d96  L1 h8 lr1e-03 drop0.2 val 0.5248 (4.6 min)
+   attention  trial02 d32  L3 h8 lr3e-04 drop0.1 val 0.5244 (13.5 min)
+   attention  trial03 d32  L3 h4 lr3e-03 drop0.2 val 0.5261 (9.7 min)
+   attention  trial04 d32  L2 h8 lr3e-03 drop0.2 val 0.5441 (7.9 min)
+   attention  trial05 d32  L3 h4 lr1e-03 drop0.2 val 0.5054 (6.7 min)
+   attention  trial06 d64  L2 h2 lr1e-03 drop0.2 val 0.5300 (3.5 min)
+   attention  trial07 d32  L3 h4 lr3e-04 drop0.1 val 0.5331 (5.7 min)
+   attention  trial08 d64  L3 h2 lr3e-04 drop0.2 val 0.4912 (5.5 min)
+   attention  trial09 d64  L1 h4 lr1e-03 drop0.2 val 0.5121 (5.5 min)
+   attention  trial10 d32  L3 h8 lr3e-04 drop0.1 val 0.5218 (13.8 min)
+   attention  trial11 d96  L1 h2 lr3e-03 drop0.2 val 0.5009 (2.6 min)
+  -> attention  val 0.5441 test 0.5213
+   confirm hand       seed1 0.6203
+   confirm hand       seed2 0.6106
+   confirm hand       seed3 0.6341
+   confirm per-node   seed1 0.4916
+   confirm per-node   seed2 0.5103
+   confirm per-node   seed3 0.4887
+   confirm deepsets   seed1 0.5136
+   confirm deepsets   seed2 0.5310
+   confirm deepsets   seed3 0.4929
+   confirm gru-nodes  seed1 0.5111
+   confirm gru-nodes  seed2 0.4962
+   confirm gru-nodes  seed3 0.4742
+   confirm relation   seed1 0.5083
+   confirm relation   seed2 0.5104
+   confirm relation   seed3 0.4994
+   confirm attention  seed1 0.5085
+   confirm attention  seed2 0.5094
+   confirm attention  seed3 0.4845
+
+T2 summary (test of the validation-selected config, then 3 fresh seeds)
+  hand       test 0.634   confirm 0.622 +- 0.012
+  per-node   test 0.503   confirm 0.497 +- 0.012
+  deepsets   test 0.528   confirm 0.512 +- 0.019
+  gru-nodes  test 0.500   confirm 0.494 +- 0.019
+  relation   test 0.497   confirm 0.506 +- 0.006
+  attention  test 0.521   confirm 0.501 +- 0.014

@@ -1,0 +1,1308 @@
+{
+ "search": [
+  {
+   "model": "hand",
+   "trial": 0,
+   "cfg": {
+    "blocks": [
+     "base",
+     "lagpair",
+     "timing",
+     "group"
+    ],
+    "clf": "rf"
+   },
+   "val": 0.9940777777777777
+  },
+  {
+   "model": "hand",
+   "trial": 1,
+   "cfg": {
+    "blocks": [
+     "base",
+     "lagpair",
+     "timing",
+     "group"
+    ],
+    "clf": "rf"
+   },
+   "val": 0.9940777777777777
+  },
+  {
+   "model": "hand",
+   "trial": 2,
+   "cfg": {
+    "blocks": [
+     "base",
+     "lagpair",
+     "timing",
+     "group"
+    ],
+    "clf": "logistic"
+   },
+   "val": 0.986025
+  },
+  {
+   "model": "hand",
+   "trial": 3,
+   "cfg": {
+    "blocks": [
+     "base",
+     "lagpair"
+    ],
+    "clf": "gb"
+   },
+   "val": 0.7598944444444444
+  },
+  {
+   "model": "hand",
+   "trial": 4,
+   "cfg": {
+    "blocks": [
+     "base"
+    ],
+    "clf": "logistic"
+   },
+   "val": 0.8065694444444444
+  },
+  {
+   "model": "hand",
+   "trial": 5,
+   "cfg": {
+    "blocks": [
+     "base",
+     "lagpair",
+     "timing",
+     "group"
+    ],
+    "clf": "gb"
+   },
+   "val": 0.9936722222222222
+  },
+  {
+   "model": "hand",
+   "trial": 6,
+   "cfg": {
+    "blocks": [
+     "base",
+     "timing",
+     "group"
+    ],
+    "clf": "logistic"
+   },
+   "val": 0.986625
+  },
+  {
+   "model": "hand",
+   "trial": 7,
+   "cfg": {
+    "blocks": [
+     "base",
+     "lagpair"
+    ],
+    "clf": "rf"
+   },
+   "val": 0.7699722222222222
+  },
+  {
+   "model": "hand",
+   "trial": 8,
+   "cfg": {
+    "blocks": [
+     "base",
+     "timing",
+     "group"
+    ],
+    "clf": "rf"
+   },
+   "val": 0.9941444444444445
+  },
+  {
+   "model": "hand",
+   "trial": 9,
+   "cfg": {
+    "blocks": [
+     "base",
+     "lagpair",
+     "timing",
+     "group"
+    ],
+    "clf": "gb"
+   },
+   "val": 0.9930666666666667
+  },
+  {
+   "model": "hand",
+   "trial": 10,
+   "cfg": {
+    "blocks": [
+     "base",
+     "timing",
+     "group"
+    ],
+    "clf": "rf"
+   },
+   "val": 0.9941180555555555
+  },
+  {
+   "model": "hand",
+   "trial": 11,
+   "cfg": {
+    "blocks": [
+     "base",
+     "lagpair",
+     "timing",
+     "group"
+    ],
+    "clf": "logistic"
+   },
+   "val": 0.9877666666666667
+  },
+  {
+   "model": "per-node",
+   "trial": 0,
+   "cfg": {
+    "d": 32,
+    "layers": 1,
+    "heads": 4,
+    "drop": 0.0,
+    "lr": 0.0003,
+    "wd": 0.01,
+    "bs": 64,
+    "aug_perm": true,
+    "aug_jit": 0.05,
+    "smooth": 0.1
+   },
+   "val": 0.5798944444444445
+  },
+  {
+   "model": "per-node",
+   "trial": 1,
+   "cfg": {
+    "d": 96,
+    "layers": 2,
+    "heads": 4,
+    "drop": 0.1,
+    "lr": 0.0003,
+    "wd": 0.01,
+    "bs": 32,
+    "aug_perm": true,
+    "aug_jit": 0.05,
+    "smooth": 0.0
+   },
+   "val": 0.6726277777777778
+  },
+  {
+   "model": "per-node",
+   "trial": 2,
+   "cfg": {
+    "d": 32,
+    "layers": 1,
+    "heads": 8,
+    "drop": 0.2,
+    "lr": 0.003,
+    "wd": 0.0,
+    "bs": 64,
+    "aug_perm": true,
+    "aug_jit": 0.0,
+    "smooth": 0.0
+   },
+   "val": 0.6714277777777777
+  },
+  {
+   "model": "per-node",
+   "trial": 3,
+   "cfg": {
+    "d": 64,
+    "layers": 3,
+    "heads": 4,
+    "drop": 0.0,
+    "lr": 0.001,
+    "wd": 0.0,
+    "bs": 64,
+    "aug_perm": false,
+    "aug_jit": 0.0,
+    "smooth": 0.1
+   },
+   "val": 0.6719805555555556
+  },
+  {
+   "model": "per-node",
+   "trial": 4,
+   "cfg": {
+    "d": 96,
+    "layers": 3,
+    "heads": 8,
+    "drop": 0.1,
+    "lr": 0.0003,
+    "wd": 0.05,
+    "bs": 32,
+    "aug_perm": true,
+    "aug_jit": 0.0,
+    "smooth": 0.1
+   },
+   "val": 0.6774888888888889
+  },
+  {
+   "model": "per-node",
+   "trial": 5,
+   "cfg": {
+    "d": 96,
+    "layers": 2,
+    "heads": 4,
+    "drop": 0.2,
+    "lr": 0.003,
+    "wd": 0.01,
+    "bs": 64,
+    "aug_perm": false,
+    "aug_jit": 0.0,
+    "smooth": 0.0
+   },
+   "val": 0.6531638888888889
+  },
+  {
+   "model": "per-node",
+   "trial": 6,
+   "cfg": {
+    "d": 64,
+    "layers": 2,
+    "heads": 4,
+    "drop": 0.0,
+    "lr": 0.0003,
+    "wd": 0.0,
+    "bs": 32,
+    "aug_perm": false,
+    "aug_jit": 0.0,
+    "smooth": 0.0
+   },
+   "val": 0.6591777777777778
+  },
+  {
+   "model": "per-node",
+   "trial": 7,
+   "cfg": {
+    "d": 64,
+    "layers": 3,
+    "heads": 4,
+    "drop": 0.1,
+    "lr": 0.001,
+    "wd": 0.01,
+    "bs": 32,
+    "aug_perm": false,
+    "aug_jit": 0.05,
+    "smooth": 0.1
+   },
+   "val": 0.6677194444444444
+  },
+  {
+   "model": "per-node",
+   "trial": 8,
+   "cfg": {
+    "d": 96,
+    "layers": 1,
+    "heads": 4,
+    "drop": 0.1,
+    "lr": 0.001,
+    "wd": 0.0,
+    "bs": 32,
+    "aug_perm": true,
+    "aug_jit": 0.05,
+    "smooth": 0.0
+   },
+   "val": 0.6714555555555556
+  },
+  {
+   "model": "per-node",
+   "trial": 9,
+   "cfg": {
+    "d": 64,
+    "layers": 3,
+    "heads": 8,
+    "drop": 0.0,
+    "lr": 0.0003,
+    "wd": 0.05,
+    "bs": 32,
+    "aug_perm": true,
+    "aug_jit": 0.0,
+    "smooth": 0.1
+   },
+   "val": 0.6685944444444445
+  },
+  {
+   "model": "per-node",
+   "trial": 10,
+   "cfg": {
+    "d": 32,
+    "layers": 2,
+    "heads": 4,
+    "drop": 0.0,
+    "lr": 0.003,
+    "wd": 0.05,
+    "bs": 32,
+    "aug_perm": false,
+    "aug_jit": 0.05,
+    "smooth": 0.1
+   },
+   "val": 0.6573972222222222
+  },
+  {
+   "model": "per-node",
+   "trial": 11,
+   "cfg": {
+    "d": 96,
+    "layers": 2,
+    "heads": 2,
+    "drop": 0.0,
+    "lr": 0.001,
+    "wd": 0.0,
+    "bs": 64,
+    "aug_perm": false,
+    "aug_jit": 0.0,
+    "smooth": 0.1
+   },
+   "val": 0.6811277777777778
+  },
+  {
+   "model": "deepsets",
+   "trial": 0,
+   "cfg": {
+    "d": 32,
+    "layers": 1,
+    "heads": 4,
+    "drop": 0.2,
+    "lr": 0.003,
+    "wd": 0.01,
+    "bs": 64,
+    "aug_perm": false,
+    "aug_jit": 0.0,
+    "smooth": 0.0
+   },
+   "val": 0.9179027777777777
+  },
+  {
+   "model": "deepsets",
+   "trial": 1,
+   "cfg": {
+    "d": 96,
+    "layers": 2,
+    "heads": 2,
+    "drop": 0.0,
+    "lr": 0.003,
+    "wd": 0.0,
+    "bs": 64,
+    "aug_perm": false,
+    "aug_jit": 0.05,
+    "smooth": 0.0
+   },
+   "val": 0.9299777777777778
+  },
+  {
+   "model": "deepsets",
+   "trial": 2,
+   "cfg": {
+    "d": 96,
+    "layers": 2,
+    "heads": 4,
+    "drop": 0.0,
+    "lr": 0.001,
+    "wd": 0.05,
+    "bs": 32,
+    "aug_perm": true,
+    "aug_jit": 0.05,
+    "smooth": 0.0
+   },
+   "val": 0.9417027777777778
+  },
+  {
+   "model": "deepsets",
+   "trial": 3,
+   "cfg": {
+    "d": 96,
+    "layers": 1,
+    "heads": 8,
+    "drop": 0.0,
+    "lr": 0.001,
+    "wd": 0.05,
+    "bs": 32,
+    "aug_perm": false,
+    "aug_jit": 0.05,
+    "smooth": 0.0
+   },
+   "val": 0.95475
+  },
+  {
+   "model": "deepsets",
+   "trial": 4,
+   "cfg": {
+    "d": 32,
+    "layers": 2,
+    "heads": 4,
+    "drop": 0.2,
+    "lr": 0.003,
+    "wd": 0.01,
+    "bs": 32,
+    "aug_perm": false,
+    "aug_jit": 0.0,
+    "smooth": 0.1
+   },
+   "val": 0.9153055555555556
+  },
+  {
+   "model": "deepsets",
+   "trial": 5,
+   "cfg": {
+    "d": 96,
+    "layers": 2,
+    "heads": 8,
+    "drop": 0.1,
+    "lr": 0.001,
+    "wd": 0.05,
+    "bs": 64,
+    "aug_perm": false,
+    "aug_jit": 0.05,
+    "smooth": 0.0
+   },
+   "val": 0.9101944444444444
+  },
+  {
+   "model": "deepsets",
+   "trial": 6,
+   "cfg": {
+    "d": 64,
+    "layers": 3,
+    "heads": 2,
+    "drop": 0.0,
+    "lr": 0.001,
+    "wd": 0.05,
+    "bs": 64,
+    "aug_perm": false,
+    "aug_jit": 0.05,
+    "smooth": 0.0
+   },
+   "val": 0.917
+  },
+  {
+   "model": "deepsets",
+   "trial": 7,
+   "cfg": {
+    "d": 96,
+    "layers": 2,
+    "heads": 8,
+    "drop": 0.2,
+    "lr": 0.003,
+    "wd": 0.0,
+    "bs": 64,
+    "aug_perm": false,
+    "aug_jit": 0.0,
+    "smooth": 0.1
+   },
+   "val": 0.9125333333333333
+  },
+  {
+   "model": "deepsets",
+   "trial": 8,
+   "cfg": {
+    "d": 96,
+    "layers": 2,
+    "heads": 2,
+    "drop": 0.2,
+    "lr": 0.0003,
+    "wd": 0.0,
+    "bs": 32,
+    "aug_perm": true,
+    "aug_jit": 0.05,
+    "smooth": 0.0
+   },
+   "val": 0.9148805555555556
+  },
+  {
+   "model": "deepsets",
+   "trial": 9,
+   "cfg": {
+    "d": 32,
+    "layers": 1,
+    "heads": 4,
+    "drop": 0.1,
+    "lr": 0.0003,
+    "wd": 0.05,
+    "bs": 64,
+    "aug_perm": false,
+    "aug_jit": 0.05,
+    "smooth": 0.0
+   },
+   "val": 0.8977722222222222
+  },
+  {
+   "model": "deepsets",
+   "trial": 10,
+   "cfg": {
+    "d": 32,
+    "layers": 1,
+    "heads": 2,
+    "drop": 0.2,
+    "lr": 0.0003,
+    "wd": 0.01,
+    "bs": 32,
+    "aug_perm": false,
+    "aug_jit": 0.0,
+    "smooth": 0.1
+   },
+   "val": 0.8987277777777778
+  },
+  {
+   "model": "deepsets",
+   "trial": 11,
+   "cfg": {
+    "d": 96,
+    "layers": 2,
+    "heads": 8,
+    "drop": 0.2,
+    "lr": 0.003,
+    "wd": 0.05,
+    "bs": 64,
+    "aug_perm": false,
+    "aug_jit": 0.05,
+    "smooth": 0.0
+   },
+   "val": 0.9017694444444444
+  },
+  {
+   "model": "gru-nodes",
+   "trial": 0,
+   "cfg": {
+    "d": 96,
+    "layers": 3,
+    "heads": 4,
+    "drop": 0.1,
+    "lr": 0.003,
+    "wd": 0.05,
+    "bs": 32,
+    "aug_perm": true,
+    "aug_jit": 0.0,
+    "smooth": 0.0
+   },
+   "val": 0.636725
+  },
+  {
+   "model": "gru-nodes",
+   "trial": 1,
+   "cfg": {
+    "d": 32,
+    "layers": 2,
+    "heads": 4,
+    "drop": 0.2,
+    "lr": 0.003,
+    "wd": 0.0,
+    "bs": 64,
+    "aug_perm": false,
+    "aug_jit": 0.05,
+    "smooth": 0.1
+   },
+   "val": 0.8395611111111111
+  },
+  {
+   "model": "gru-nodes",
+   "trial": 2,
+   "cfg": {
+    "d": 32,
+    "layers": 3,
+    "heads": 2,
+    "drop": 0.1,
+    "lr": 0.003,
+    "wd": 0.05,
+    "bs": 32,
+    "aug_perm": true,
+    "aug_jit": 0.05,
+    "smooth": 0.0
+   },
+   "val": 0.8716777777777778
+  },
+  {
+   "model": "gru-nodes",
+   "trial": 3,
+   "cfg": {
+    "d": 96,
+    "layers": 1,
+    "heads": 2,
+    "drop": 0.0,
+    "lr": 0.001,
+    "wd": 0.0,
+    "bs": 32,
+    "aug_perm": false,
+    "aug_jit": 0.05,
+    "smooth": 0.1
+   },
+   "val": 0.8356833333333333
+  },
+  {
+   "model": "gru-nodes",
+   "trial": 4,
+   "cfg": {
+    "d": 64,
+    "layers": 1,
+    "heads": 8,
+    "drop": 0.1,
+    "lr": 0.003,
+    "wd": 0.01,
+    "bs": 32,
+    "aug_perm": false,
+    "aug_jit": 0.0,
+    "smooth": 0.1
+   },
+   "val": 0.8492388888888889
+  },
+  {
+   "model": "gru-nodes",
+   "trial": 5,
+   "cfg": {
+    "d": 64,
+    "layers": 1,
+    "heads": 2,
+    "drop": 0.2,
+    "lr": 0.003,
+    "wd": 0.01,
+    "bs": 32,
+    "aug_perm": false,
+    "aug_jit": 0.0,
+    "smooth": 0.1
+   },
+   "val": 0.8320444444444445
+  },
+  {
+   "model": "gru-nodes",
+   "trial": 6,
+   "cfg": {
+    "d": 32,
+    "layers": 1,
+    "heads": 8,
+    "drop": 0.0,
+    "lr": 0.003,
+    "wd": 0.01,
+    "bs": 32,
+    "aug_perm": false,
+    "aug_jit": 0.05,
+    "smooth": 0.1
+   },
+   "val": 0.8219166666666666
+  },
+  {
+   "model": "gru-nodes",
+   "trial": 7,
+   "cfg": {
+    "d": 96,
+    "layers": 3,
+    "heads": 8,
+    "drop": 0.0,
+    "lr": 0.003,
+    "wd": 0.05,
+    "bs": 64,
+    "aug_perm": false,
+    "aug_jit": 0.05,
+    "smooth": 0.1
+   },
+   "val": 0.5634472222222222
+  },
+  {
+   "model": "gru-nodes",
+   "trial": 8,
+   "cfg": {
+    "d": 96,
+    "layers": 2,
+    "heads": 8,
+    "drop": 0.2,
+    "lr": 0.0003,
+    "wd": 0.0,
+    "bs": 32,
+    "aug_perm": true,
+    "aug_jit": 0.0,
+    "smooth": 0.0
+   },
+   "val": 0.8465722222222222
+  },
+  {
+   "model": "gru-nodes",
+   "trial": 9,
+   "cfg": {
+    "d": 32,
+    "layers": 1,
+    "heads": 8,
+    "drop": 0.0,
+    "lr": 0.003,
+    "wd": 0.0,
+    "bs": 64,
+    "aug_perm": false,
+    "aug_jit": 0.0,
+    "smooth": 0.0
+   },
+   "val": 0.8376972222222222
+  },
+  {
+   "model": "gru-nodes",
+   "trial": 10,
+   "cfg": {
+    "d": 32,
+    "layers": 2,
+    "heads": 2,
+    "drop": 0.0,
+    "lr": 0.0003,
+    "wd": 0.05,
+    "bs": 32,
+    "aug_perm": true,
+    "aug_jit": 0.0,
+    "smooth": 0.0
+   },
+   "val": 0.8013861111111111
+  },
+  {
+   "model": "gru-nodes",
+   "trial": 11,
+   "cfg": {
+    "d": 64,
+    "layers": 3,
+    "heads": 8,
+    "drop": 0.1,
+    "lr": 0.001,
+    "wd": 0.05,
+    "bs": 32,
+    "aug_perm": false,
+    "aug_jit": 0.0,
+    "smooth": 0.1
+   },
+   "val": 0.8769694444444445
+  },
+  {
+   "model": "relation",
+   "trial": 0,
+   "cfg": {
+    "d": 32,
+    "layers": 1,
+    "heads": 8,
+    "drop": 0.1,
+    "lr": 0.001,
+    "wd": 0.0,
+    "bs": 32,
+    "aug_perm": false,
+    "aug_jit": 0.0,
+    "smooth": 0.1
+   },
+   "val": 0.8924027777777778
+  },
+  {
+   "model": "relation",
+   "trial": 1,
+   "cfg": {
+    "d": 96,
+    "layers": 3,
+    "heads": 2,
+    "drop": 0.0,
+    "lr": 0.001,
+    "wd": 0.01,
+    "bs": 64,
+    "aug_perm": true,
+    "aug_jit": 0.0,
+    "smooth": 0.0
+   },
+   "val": 0.9298527777777778
+  },
+  {
+   "model": "relation",
+   "trial": 2,
+   "cfg": {
+    "d": 32,
+    "layers": 2,
+    "heads": 2,
+    "drop": 0.2,
+    "lr": 0.0003,
+    "wd": 0.0,
+    "bs": 64,
+    "aug_perm": false,
+    "aug_jit": 0.0,
+    "smooth": 0.1
+   },
+   "val": 0.7723111111111111
+  },
+  {
+   "model": "relation",
+   "trial": 3,
+   "cfg": {
+    "d": 32,
+    "layers": 1,
+    "heads": 8,
+    "drop": 0.2,
+    "lr": 0.003,
+    "wd": 0.05,
+    "bs": 32,
+    "aug_perm": true,
+    "aug_jit": 0.05,
+    "smooth": 0.1
+   },
+   "val": 0.9004777777777778
+  },
+  {
+   "model": "relation",
+   "trial": 4,
+   "cfg": {
+    "d": 64,
+    "layers": 2,
+    "heads": 2,
+    "drop": 0.1,
+    "lr": 0.003,
+    "wd": 0.0,
+    "bs": 32,
+    "aug_perm": false,
+    "aug_jit": 0.0,
+    "smooth": 0.1
+   },
+   "val": 0.9018138888888889
+  },
+  {
+   "model": "relation",
+   "trial": 5,
+   "cfg": {
+    "d": 96,
+    "layers": 3,
+    "heads": 8,
+    "drop": 0.2,
+    "lr": 0.001,
+    "wd": 0.0,
+    "bs": 32,
+    "aug_perm": false,
+    "aug_jit": 0.0,
+    "smooth": 0.1
+   },
+   "val": 0.9256916666666667
+  },
+  {
+   "model": "relation",
+   "trial": 6,
+   "cfg": {
+    "d": 64,
+    "layers": 3,
+    "heads": 2,
+    "drop": 0.0,
+    "lr": 0.001,
+    "wd": 0.0,
+    "bs": 32,
+    "aug_perm": false,
+    "aug_jit": 0.05,
+    "smooth": 0.0
+   },
+   "val": 0.9210944444444444
+  },
+  {
+   "model": "relation",
+   "trial": 7,
+   "cfg": {
+    "d": 32,
+    "layers": 2,
+    "heads": 4,
+    "drop": 0.2,
+    "lr": 0.003,
+    "wd": 0.01,
+    "bs": 32,
+    "aug_perm": true,
+    "aug_jit": 0.05,
+    "smooth": 0.0
+   },
+   "val": 0.5562861111111111
+  },
+  {
+   "model": "relation",
+   "trial": 8,
+   "cfg": {
+    "d": 96,
+    "layers": 2,
+    "heads": 4,
+    "drop": 0.0,
+    "lr": 0.001,
+    "wd": 0.01,
+    "bs": 64,
+    "aug_perm": true,
+    "aug_jit": 0.0,
+    "smooth": 0.1
+   },
+   "val": 0.9064638888888888
+  },
+  {
+   "model": "relation",
+   "trial": 9,
+   "cfg": {
+    "d": 96,
+    "layers": 3,
+    "heads": 4,
+    "drop": 0.1,
+    "lr": 0.0003,
+    "wd": 0.01,
+    "bs": 64,
+    "aug_perm": false,
+    "aug_jit": 0.0,
+    "smooth": 0.0
+   },
+   "val": 0.9156277777777778
+  },
+  {
+   "model": "relation",
+   "trial": 10,
+   "cfg": {
+    "d": 96,
+    "layers": 1,
+    "heads": 2,
+    "drop": 0.0,
+    "lr": 0.003,
+    "wd": 0.01,
+    "bs": 64,
+    "aug_perm": true,
+    "aug_jit": 0.0,
+    "smooth": 0.1
+   },
+   "val": 0.8917916666666666
+  },
+  {
+   "model": "relation",
+   "trial": 11,
+   "cfg": {
+    "d": 96,
+    "layers": 2,
+    "heads": 8,
+    "drop": 0.0,
+    "lr": 0.0003,
+    "wd": 0.0,
+    "bs": 32,
+    "aug_perm": false,
+    "aug_jit": 0.05,
+    "smooth": 0.0
+   },
+   "val": 0.9052222222222223
+  },
+  {
+   "model": "attention",
+   "trial": 0,
+   "cfg": {
+    "d": 64,
+    "layers": 1,
+    "heads": 8,
+    "drop": 0.0,
+    "lr": 0.001,
+    "wd": 0.0,
+    "bs": 64,
+    "aug_perm": false,
+    "aug_jit": 0.05,
+    "smooth": 0.0
+   },
+   "val": 0.9464166666666667
+  },
+  {
+   "model": "attention",
+   "trial": 1,
+   "cfg": {
+    "d": 96,
+    "layers": 1,
+    "heads": 8,
+    "drop": 0.2,
+    "lr": 0.001,
+    "wd": 0.01,
+    "bs": 64,
+    "aug_perm": true,
+    "aug_jit": 0.0,
+    "smooth": 0.0
+   },
+   "val": 0.8281222222222222
+  },
+  {
+   "model": "attention",
+   "trial": 2,
+   "cfg": {
+    "d": 32,
+    "layers": 3,
+    "heads": 8,
+    "drop": 0.1,
+    "lr": 0.0003,
+    "wd": 0.05,
+    "bs": 32,
+    "aug_perm": true,
+    "aug_jit": 0.05,
+    "smooth": 0.1
+   },
+   "val": 0.7939888888888889
+  },
+  {
+   "model": "attention",
+   "trial": 3,
+   "cfg": {
+    "d": 32,
+    "layers": 3,
+    "heads": 4,
+    "drop": 0.2,
+    "lr": 0.003,
+    "wd": 0.05,
+    "bs": 32,
+    "aug_perm": true,
+    "aug_jit": 0.05,
+    "smooth": 0.0
+   },
+   "val": 0.5536986111111111
+  },
+  {
+   "model": "attention",
+   "trial": 4,
+   "cfg": {
+    "d": 32,
+    "layers": 2,
+    "heads": 8,
+    "drop": 0.2,
+    "lr": 0.003,
+    "wd": 0.0,
+    "bs": 32,
+    "aug_perm": true,
+    "aug_jit": 0.05,
+    "smooth": 0.1
+   },
+   "val": 0.5708875
+  },
+  {
+   "model": "attention",
+   "trial": 5,
+   "cfg": {
+    "d": 32,
+    "layers": 3,
+    "heads": 4,
+    "drop": 0.2,
+    "lr": 0.001,
+    "wd": 0.0,
+    "bs": 64,
+    "aug_perm": true,
+    "aug_jit": 0.0,
+    "smooth": 0.1
+   },
+   "val": 0.8918166666666667
+  },
+  {
+   "model": "attention",
+   "trial": 6,
+   "cfg": {
+    "d": 64,
+    "layers": 2,
+    "heads": 2,
+    "drop": 0.2,
+    "lr": 0.001,
+    "wd": 0.05,
+    "bs": 64,
+    "aug_perm": false,
+    "aug_jit": 0.05,
+    "smooth": 0.1
+   },
+   "val": 0.5453319444444444
+  },
+  {
+   "model": "attention",
+   "trial": 7,
+   "cfg": {
+    "d": 32,
+    "layers": 3,
+    "heads": 4,
+    "drop": 0.1,
+    "lr": 0.0003,
+    "wd": 0.01,
+    "bs": 32,
+    "aug_perm": true,
+    "aug_jit": 0.05,
+    "smooth": 0.1
+   },
+   "val": 0.8061083333333333
+  },
+  {
+   "model": "attention",
+   "trial": 8,
+   "cfg": {
+    "d": 64,
+    "layers": 3,
+    "heads": 2,
+    "drop": 0.2,
+    "lr": 0.0003,
+    "wd": 0.01,
+    "bs": 32,
+    "aug_perm": true,
+    "aug_jit": 0.0,
+    "smooth": 0.0
+   },
+   "val": 0.5061166666666667
+  },
+  {
+   "model": "attention",
+   "trial": 9,
+   "cfg": {
+    "d": 64,
+    "layers": 1,
+    "heads": 4,
+    "drop": 0.2,
+    "lr": 0.001,
+    "wd": 0.01,
+    "bs": 32,
+    "aug_perm": true,
+    "aug_jit": 0.05,
+    "smooth": 0.1
+   },
+   "val": 0.7899722222222222
+  },
+  {
+   "model": "attention",
+   "trial": 10,
+   "cfg": {
+    "d": 32,
+    "layers": 3,
+    "heads": 8,
+    "drop": 0.1,
+    "lr": 0.0003,
+    "wd": 0.05,
+    "bs": 32,
+    "aug_perm": false,
+    "aug_jit": 0.0,
+    "smooth": 0.0
+   },
+   "val": 0.5495972222222222
+  },
+  {
+   "model": "attention",
+   "trial": 11,
+   "cfg": {
+    "d": 96,
+    "layers": 1,
+    "heads": 2,
+    "drop": 0.2,
+    "lr": 0.003,
+    "wd": 0.05,
+    "bs": 32,
+    "aug_perm": true,
+    "aug_jit": 0.0,
+    "smooth": 0.1
+   },
+   "val": 0.5248138888888889
+  }
+ ],
+ "winner": {
+  "hand": {
+   "cfg": {
+    "blocks": [
+     "base",
+     "timing",
+     "group"
+    ],
+    "clf": "rf"
+   },
+   "val": 0.9941444444444445,
+   "test": 0.993416
+  },
+  "per-node": {
+   "cfg": {
+    "d": 96,
+    "layers": 2,
+    "heads": 2,
+    "drop": 0.0,
+    "lr": 0.001,
+    "wd": 0.0,
+    "bs": 64,
+    "aug_perm": false,
+    "aug_jit": 0.0,
+    "smooth": 0.1
+   },
+   "val": 0.6811277777777778,
+   "test": 0.633179
+  },
+  "deepsets": {
+   "cfg": {
+    "d": 96,
+    "layers": 1,
+    "heads": 8,
+    "drop": 0.0,
+    "lr": 0.001,
+    "wd": 0.05,
+    "bs": 32,
+    "aug_perm": false,
+    "aug_jit": 0.05,
+    "smooth": 0.0
+   },
+   "val": 0.95475,
+   "test": 0.955327
+  },
+  "gru-nodes": {
+   "cfg": {
+    "d": 64,
+    "layers": 3,
+    "heads": 8,
+    "drop": 0.1,
+    "lr": 0.001,
+    "wd": 0.05,
+    "bs": 32,
+    "aug_perm": false,
+    "aug_jit": 0.0,
+    "smooth": 0.1
+   },
+   "val": 0.8769694444444445,
+   "test": 0.852267
+  },
+  "relation": {
+   "cfg": {
+    "d": 96,
+    "layers": 3,
+    "heads": 2,
+    "drop": 0.0,
+    "lr": 0.001,
+    "wd": 0.01,
+    "bs": 64,
+    "aug_perm": true,
+    "aug_jit": 0.0,
+    "smooth": 0.0
+   },
+   "val": 0.9298527777777778,
+   "test": 0.918042
+  },
+  "attention": {
+   "cfg": {
+    "d": 64,
+    "layers": 1,
+    "heads": 8,
+    "drop": 0.0,
+    "lr": 0.001,
+    "wd": 0.0,
+    "bs": 64,
+    "aug_perm": false,
+    "aug_jit": 0.05,
+    "smooth": 0.0
+   },
+   "val": 0.9464166666666667,
+   "test": 0.942054
+  }
+ },
+ "confirm": {
+  "hand": [
+   0.995128,
+   0.995884,
+   0.99328
+  ],
+  "per-node": [
+   0.635127,
+   0.663248,
+   0.642197
+  ],
+  "deepsets": [
+   0.932043,
+   0.955662,
+   0.949575
+  ],
+  "gru-nodes": [
+   0.848323,
+   0.882919,
+   0.887411
+  ],
+  "relation": [
+   0.900513,
+   0.903115,
+   0.903329
+  ],
+  "attention": [
+   0.864264,
+   0.888476,
+   0.84851
+  ]
+ }
+}

@@ -1,0 +1,101 @@
+== H1-H3
+H1 1st   F1_level     hand 0.663  attention 0.485  best other net 0.505
+H1 1st   F2_decorr    hand 1.000  attention 0.991  best other net 1.000
+H1 1st   F3_lag       hand 1.000  attention 0.127  best other net 0.999
+H1 1st   F4_partial   hand 0.999  attention 0.967  best other net 0.996
+H1 1st   F5_burst     hand 0.995  attention 0.599  best other net 0.960
+H2 1st   3+2          hand 0.646  attention 0.499  best other net 0.504
+H2 1st   4+3          hand 0.569  attention 0.511  best other net 0.515
+H2 1st   6+5          hand 0.551  attention 0.497  best other net 0.535
+H3 1st   N5           hand 0.959  attention 0.605  best other net 0.926
+H3 1st   N5-shuf      hand 0.953  attention 0.601  best other net 0.924
+H3 1st   N7           hand 0.958  attention 0.630  best other net 0.931
+H3 1st   N7-shuf      hand 0.957  attention 0.629  best other net 0.928
+H3 1st   N11          hand 0.962  attention 0.661  best other net 0.922
+H3 1st   N11-shuf     hand 0.954  attention 0.643  best other net 0.921
+H3 1st   N21          hand 0.946  attention 0.682  best other net 0.897
+H3 1st   N21-shuf     hand 0.947  attention 0.691  best other net 0.890
+H1 2nd   F1_level     hand 0.710  attention 0.289  best other net 0.342
+H1 2nd   F2_decorr    hand 1.000  attention 1.000  best other net 1.000
+H1 2nd   F3_lag       hand 1.000  attention 0.995  best other net 0.998
+H1 2nd   F4_partial   hand 0.999  attention 0.996  best other net 0.999
+H1 2nd   F5_burst     hand 0.997  attention 0.962  best other net 0.962
+H2 2nd   3+2          hand 0.642  attention 0.510  best other net 0.524
+H2 2nd   4+3          hand 0.592  attention 0.503  best other net 0.578
+H2 2nd   6+5          hand 0.569  attention 0.521  best other net 0.581
+H3 2nd   N5           hand 0.961  attention 0.953  best other net 0.957
+H3 2nd   N5-shuf      hand 0.956  attention 0.950  best other net 0.955
+H3 2nd   N7           hand 0.959  attention 0.951  best other net 0.953
+H3 2nd   N7-shuf      hand 0.961  attention 0.958  best other net 0.959
+H3 2nd   N11          hand 0.963  attention 0.957  best other net 0.957
+H3 2nd   N11-shuf     hand 0.958  attention 0.958  best other net 0.957
+H3 2nd   N21          hand 0.950  attention 0.957  best other net 0.950
+H3 2nd   N21-shuf     hand 0.950  attention 0.959  best other net 0.948
+
+== T1 (confirm, 3 seeds)
+  hand       0.995 +- 0.001
+  per-node   0.647 +- 0.015
+  deepsets   0.946 +- 0.012
+  gru-nodes  0.873 +- 0.021
+  relation   0.902 +- 0.002
+  attention  0.867 +- 0.020
+
+== T2 (confirm, 3 seeds)
+  hand       0.622 +- 0.012
+  per-node   0.497 +- 0.012
+  deepsets   0.512 +- 0.019
+  gru-nodes  0.494 +- 0.019
+  relation   0.506 +- 0.006
+  attention  0.501 +- 0.014
+
+== E-A real attribution (top-1, chance 0.143)
+  raw   hand       1.000 +- 0.000
+  raw   per-node   1.000 +- 0.000
+  raw   deepsets   1.000 +- 0.000
+  raw   relation   1.000 +- 0.000
+  raw   attention  1.000 +- 0.000
+  norm  hand       0.173 +- 0.153
+  norm  per-node   0.498 +- 0.427
+  norm  deepsets   0.504 +- 0.431
+  norm  relation   0.503 +- 0.429
+  norm  attention  0.499 +- 0.429
+
+== E-B advisor swap (real feeds)
+  seed1  A0_transformer     detect 4.57 s  held 156/170  fp 0/680
+  seed1  A1_level_k3        detect 2.85 s  held 161/170  fp 0/680
+  seed1  A2_relational_k6   detect 2.85 s  held 161/170  fp 0/680
+  seed2  A0_transformer     detect 3.26 s  held 160/170  fp 0/680
+  seed2  A1_level_k3        detect 2.91 s  held 161/170  fp 0/680
+  seed2  A2_relational_k6   detect 2.91 s  held 161/170  fp 0/680
+  seed3  A0_transformer     detect 3.52 s  held 156/167  fp 0/668
+  seed3  A1_level_k3        detect 2.83 s  held 158/167  fp 0/668
+  seed3  A2_relational_k6   detect 2.83 s  held 158/167  fp 0/668
+
+== E-C worst-case advisor: 1539 of 1539 elections keep a majority
+
+== E-D cost
+  deployed_transformer   params 141067   infer 1.963 ms
+  axial_attention        params 146305   infer 3.379 ms
+  deepsets               params 87809    infer 2.711 ms
+  hand_bank_logistic     params 34       infer 1.047 ms
+  level_rule             params 0        infer 0.025 ms
+
+== E-E train N=7 -> test N=9 (top-1, chance 0.111)
+  raw   hand       1.000 +- 0.000
+  raw   per-node   1.000 +- 0.000
+  raw   deepsets   1.000 +- 0.000
+  raw   relation   1.000 +- 0.000
+  raw   attention  1.000 +- 0.000
+  norm  hand       0.425 +- 0.012
+  norm  per-node   0.913 +- 0.000
+  norm  deepsets   0.912 +- 0.006
+  norm  relation   0.908 +- 0.005
+  norm  attention  0.901 +- 0.006
+
+== E-G mimicry sweep (3 seeds)
+  beta 0.50  hand 0.941+-0.005  attention 0.521+-0.017  deepsets 0.680+-0.040
+  beta 0.60  hand 0.695+-0.024  attention 0.492+-0.029  deepsets 0.559+-0.018
+  beta 0.75  hand 0.547+-0.012  attention 0.573+-0.137  deepsets 0.484+-0.015
+  beta 0.80  hand 0.527+-0.032  attention 0.537+-0.020  deepsets 0.522+-0.012
+  beta 0.90  hand 0.616+-0.047  attention 0.676+-0.274  deepsets 0.644+-0.196
+  beta 1.00  hand 0.666+-0.009  attention 0.734+-0.235  deepsets 0.976+-0.016

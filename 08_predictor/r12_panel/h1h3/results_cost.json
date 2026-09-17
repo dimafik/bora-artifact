@@ -1,0 +1,25 @@
+{
+ "deployed_transformer": {
+  "params": 141067,
+  "infer_ms": 1.963
+ },
+ "axial_attention": {
+  "params": 146305,
+  "infer_ms": 3.379,
+  "train_s_per_3_epochs": 12.2
+ },
+ "deepsets": {
+  "params": 87809,
+  "infer_ms": 2.711
+ },
+ "hand_bank_logistic": {
+  "params": 34,
+  "infer_ms": 1.047,
+  "fit_s": 0.09,
+  "features": 33
+ },
+ "level_rule": {
+  "params": 0,
+  "infer_ms": 0.0254
+ }
+}

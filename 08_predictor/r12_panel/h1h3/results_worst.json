@@ -1,0 +1,51 @@
+{
+ "elections": 1539,
+ "holds": 1539,
+ "byN": {
+  "11": {
+   "n": 239,
+   "holds": 239,
+   "min_eligible": 7,
+   "caps": [
+    4
+   ],
+   "max_emitted": 2
+  },
+  "15": {
+   "n": 338,
+   "holds": 338,
+   "min_eligible": 9,
+   "caps": [
+    6
+   ],
+   "max_emitted": 2
+  },
+  "21": {
+   "n": 480,
+   "holds": 480,
+   "min_eligible": 12,
+   "caps": [
+    9
+   ],
+   "max_emitted": 3
+  },
+  "7": {
+   "n": 243,
+   "holds": 243,
+   "min_eligible": 5,
+   "caps": [
+    2
+   ],
+   "max_emitted": 1
+  },
+  "9": {
+   "n": 239,
+   "holds": 239,
+   "min_eligible": 6,
+   "caps": [
+    3
+   ],
+   "max_emitted": 1
+  }
+ }
+}

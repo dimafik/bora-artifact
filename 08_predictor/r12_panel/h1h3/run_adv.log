@@ -1,0 +1,15 @@
+beta 0.00  trained {'hand': 1.0, 'attention': 0.999, 'deepsets': 0.998}   transfer-from-0 {'hand': 1.0, 'attention': 0.999, 'deepsets': 0.998}
+beta 0.25  trained {'hand': 1.0, 'attention': 0.998, 'deepsets': 0.939}   transfer-from-0 {'hand': 0.989, 'attention': 0.965, 'deepsets': 0.957}
+beta 0.50  trained {'hand': 0.932, 'attention': 0.462, 'deepsets': 0.702}   transfer-from-0 {'hand': 0.613, 'attention': 0.723, 'deepsets': 0.74}
+beta 0.75  trained {'hand': 0.51, 'attention': 0.485, 'deepsets': 0.495}   transfer-from-0 {'hand': 0.484, 'attention': 0.476, 'deepsets': 0.505}
+beta 0.90  trained {'hand': 0.562, 'attention': 0.991, 'deepsets': 0.893}   transfer-from-0 {'hand': 0.51, 'attention': 0.498, 'deepsets': 0.499}
+beta 1.00  trained {'hand': 0.654, 'attention': 0.997, 'deepsets': 0.966}   transfer-from-0 {'hand': 0.546, 'attention': 0.536, 'deepsets': 0.577}
+
+E-G: mimicry sweep (AUC)
+beta     defender retrained       defender trained at beta=0
+0.00     hand 1.000 att 0.999 ds 0.998   hand 1.000 att 0.999 ds 0.998
+0.25     hand 1.000 att 0.998 ds 0.939   hand 0.989 att 0.965 ds 0.957
+0.50     hand 0.932 att 0.462 ds 0.702   hand 0.613 att 0.723 ds 0.740
+0.75     hand 0.510 att 0.485 ds 0.495   hand 0.484 att 0.476 ds 0.505
+0.90     hand 0.562 att 0.991 ds 0.893   hand 0.510 att 0.498 ds 0.499
+1.00     hand 0.654 att 0.997 ds 0.966   hand 0.546 att 0.536 ds 0.577

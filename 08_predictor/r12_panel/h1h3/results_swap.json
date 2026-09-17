@@ -1,0 +1,80 @@
+{
+ "seed1": {
+  "A0_transformer": {
+   "detect_s": 4.57,
+   "held": 156,
+   "attack_cycles": 170,
+   "fp": 0,
+   "fp_windows": 680
+  },
+  "onset_tick": 147,
+  "onset_note": "from scores2.json; A1/A2 threshold a statistic close to the onset rule, so their latency is optimistic",
+  "ticks": 317,
+  "A1_level_k3": {
+   "detect_s": 2.8459999561309814,
+   "held": 161,
+   "attack_cycles": 170,
+   "fp": 0,
+   "fp_windows": 680
+  },
+  "A2_relational_k6": {
+   "detect_s": 2.8459999561309814,
+   "held": 161,
+   "attack_cycles": 170,
+   "fp": 0,
+   "fp_windows": 680
+  }
+ },
+ "seed2": {
+  "A0_transformer": {
+   "detect_s": 3.26,
+   "held": 160,
+   "attack_cycles": 170,
+   "fp": 0,
+   "fp_windows": 680
+  },
+  "onset_tick": 147,
+  "onset_note": "from scores2.json; A1/A2 threshold a statistic close to the onset rule, so their latency is optimistic",
+  "ticks": 317,
+  "A1_level_k3": {
+   "detect_s": 2.9070000648498535,
+   "held": 161,
+   "attack_cycles": 170,
+   "fp": 0,
+   "fp_windows": 680
+  },
+  "A2_relational_k6": {
+   "detect_s": 2.9070000648498535,
+   "held": 161,
+   "attack_cycles": 170,
+   "fp": 0,
+   "fp_windows": 680
+  }
+ },
+ "seed3": {
+  "A0_transformer": {
+   "detect_s": 3.52,
+   "held": 156,
+   "attack_cycles": 167,
+   "fp": 0,
+   "fp_windows": 668
+  },
+  "onset_tick": 148,
+  "onset_note": "from scores2.json; A1/A2 threshold a statistic close to the onset rule, so their latency is optimistic",
+  "ticks": 315,
+  "A1_level_k3": {
+   "detect_s": 2.825000047683716,
+   "held": 158,
+   "attack_cycles": 167,
+   "fp": 0,
+   "fp_windows": 668
+  },
+  "A2_relational_k6": {
+   "detect_s": 2.825000047683716,
+   "held": 158,
+   "attack_cycles": 167,
+   "fp": 0,
+   "fp_windows": 668
+  }
+ }
+}

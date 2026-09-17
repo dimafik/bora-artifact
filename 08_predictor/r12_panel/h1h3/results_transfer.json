@@ -1,0 +1,80 @@
+{
+ "raw/seed0": {
+  "hand": 1.0,
+  "hand_in_domain": 1.0,
+  "chance_N9": 0.1111111111111111,
+  "per-node": 1.0,
+  "per-node_in_domain": 1.0,
+  "deepsets": 1.0,
+  "deepsets_in_domain": 1.0,
+  "relation": 1.0,
+  "relation_in_domain": 1.0,
+  "attention": 1.0,
+  "attention_in_domain": 1.0
+ },
+ "raw/seed1": {
+  "hand": 1.0,
+  "hand_in_domain": 1.0,
+  "chance_N9": 0.1111111111111111,
+  "per-node": 1.0,
+  "per-node_in_domain": 1.0,
+  "deepsets": 1.0,
+  "deepsets_in_domain": 1.0,
+  "relation": 1.0,
+  "relation_in_domain": 1.0,
+  "attention": 1.0,
+  "attention_in_domain": 1.0
+ },
+ "raw/seed2": {
+  "hand": 1.0,
+  "hand_in_domain": 1.0,
+  "chance_N9": 0.1111111111111111,
+  "per-node": 1.0,
+  "per-node_in_domain": 1.0,
+  "deepsets": 1.0,
+  "deepsets_in_domain": 1.0,
+  "relation": 1.0,
+  "relation_in_domain": 1.0,
+  "attention": 1.0,
+  "attention_in_domain": 1.0
+ },
+ "norm/seed0": {
+  "hand": 0.41836734693877553,
+  "hand_in_domain": 0.3173431734317343,
+  "chance_N9": 0.1111111111111111,
+  "per-node": 0.9132653061224489,
+  "per-node_in_domain": 0.922509225092251,
+  "deepsets": 0.9081632653061225,
+  "deepsets_in_domain": 0.9188191881918819,
+  "relation": 0.9132653061224489,
+  "relation_in_domain": 0.9206642066420664,
+  "attention": 0.9081632653061225,
+  "attention_in_domain": 0.9188191881918819
+ },
+ "norm/seed1": {
+  "hand": 0.4387755102040816,
+  "hand_in_domain": 0.017369727047146403,
+  "chance_N9": 0.1111111111111111,
+  "per-node": 0.9132653061224489,
+  "per-node_in_domain": 0.06575682382133995,
+  "deepsets": 0.9183673469387755,
+  "deepsets_in_domain": 0.062034739454094295,
+  "relation": 0.9030612244897959,
+  "relation_in_domain": 0.06575682382133995,
+  "attention": 0.8979591836734694,
+  "attention_in_domain": 0.060794044665012405
+ },
+ "norm/seed2": {
+  "hand": 0.41836734693877553,
+  "hand_in_domain": 0.1827956989247312,
+  "chance_N9": 0.1111111111111111,
+  "per-node": 0.9132653061224489,
+  "per-node_in_domain": 0.5827956989247312,
+  "deepsets": 0.9081632653061225,
+  "deepsets_in_domain": 0.5698924731182796,
+  "relation": 0.9081632653061225,
+  "relation_in_domain": 0.5731182795698925,
+  "attention": 0.8979591836734694,
+  "attention_in_domain": 0.5795698924731183
+ }
+}
