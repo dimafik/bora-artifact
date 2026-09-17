@@ -1,0 +1,27 @@
+beta 0.50 seed 0  hand 0.935  attention 0.503  deepsets 0.635  (3.9 min)
+beta 0.50 seed 1  hand 0.941  attention 0.525  deepsets 0.714  (3.2 min)
+beta 0.50 seed 2  hand 0.945  attention 0.536  deepsets 0.690  (2.4 min)
+beta 0.60 seed 0  hand 0.708  attention 0.481  deepsets 0.542  (2.0 min)
+beta 0.60 seed 1  hand 0.667  attention 0.526  deepsets 0.558  (3.3 min)
+beta 0.60 seed 2  hand 0.709  attention 0.470  deepsets 0.578  (1.8 min)
+beta 0.75 seed 0  hand 0.547  attention 0.487  deepsets 0.492  (1.2 min)
+beta 0.75 seed 1  hand 0.559  attention 0.501  deepsets 0.493  (1.9 min)
+beta 0.75 seed 2  hand 0.535  attention 0.731  deepsets 0.467  (4.1 min)
+beta 0.80 seed 0  hand 0.564  attention 0.516  deepsets 0.531  (1.7 min)
+beta 0.80 seed 1  hand 0.510  attention 0.556  deepsets 0.526  (1.8 min)
+beta 0.80 seed 2  hand 0.506  attention 0.538  deepsets 0.508  (1.8 min)
+beta 0.90 seed 0  hand 0.646  attention 0.490  deepsets 0.867  (3.4 min)
+beta 0.90 seed 1  hand 0.640  attention 0.991  deepsets 0.562  (3.3 min)
+beta 0.90 seed 2  hand 0.562  attention 0.548  deepsets 0.502  (2.2 min)
+beta 1.00 seed 0  hand 0.667  attention 0.549  deepsets 0.987  (3.1 min)
+beta 1.00 seed 1  hand 0.674  attention 0.654  deepsets 0.984  (4.3 min)
+beta 1.00 seed 2  hand 0.656  attention 0.999  deepsets 0.957  (4.0 min)
+
+E-G confirmed (mean +- sd over 3 seeds)
+beta     hand bank        attention        deepsets        
+0.50     0.941 +- 0.005   0.521 +- 0.017   0.680 +- 0.040  
+0.60     0.695 +- 0.024   0.492 +- 0.029   0.559 +- 0.018  
+0.75     0.547 +- 0.012   0.573 +- 0.137   0.484 +- 0.015  
+0.80     0.527 +- 0.032   0.537 +- 0.020   0.522 +- 0.012  
+0.90     0.616 +- 0.047   0.676 +- 0.274   0.644 +- 0.196  
+1.00     0.666 +- 0.009   0.734 +- 0.235   0.976 +- 0.016  

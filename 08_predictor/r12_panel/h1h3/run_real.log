@@ -1,0 +1,50 @@
+N=7 one-hot segments: 18
+raw/seed0 train (2907, 7, 60) val (646, 7, 60) test (542, 7, 60) (segments 12/3/3)
+   hand 1.000
+   per-node   1.000 (0.1 min)
+   deepsets   1.000 (0.1 min)
+   relation   1.000 (0.2 min)
+   attention  1.000 (0.1 min)
+raw/seed1 train (2463, 7, 60) val (826, 7, 60) test (806, 7, 60) (segments 12/3/3)
+   hand 1.000
+   per-node   1.000 (0.0 min)
+   deepsets   1.000 (0.1 min)
+   relation   1.000 (0.2 min)
+   attention  1.000 (0.1 min)
+raw/seed2 train (2339, 7, 60) val (826, 7, 60) test (930, 7, 60) (segments 12/3/3)
+   hand 1.000
+   per-node   1.000 (0.0 min)
+   deepsets   1.000 (0.1 min)
+   relation   1.000 (0.2 min)
+   attention  1.000 (0.1 min)
+norm/seed0 train (2907, 7, 60) val (646, 7, 60) test (542, 7, 60) (segments 12/3/3)
+   hand 0.328
+   per-node   0.915 (0.1 min)
+   deepsets   0.921 (0.2 min)
+   relation   0.917 (0.3 min)
+   attention  0.919 (0.4 min)
+norm/seed1 train (2463, 7, 60) val (826, 7, 60) test (806, 7, 60) (segments 12/3/3)
+   hand 0.022
+   per-node   0.062 (0.1 min)
+   deepsets   0.061 (0.2 min)
+   relation   0.061 (0.4 min)
+   attention  0.061 (0.3 min)
+norm/seed2 train (2339, 7, 60) val (826, 7, 60) test (930, 7, 60) (segments 12/3/3)
+   hand 0.168
+   per-node   0.516 (0.2 min)
+   deepsets   0.530 (0.4 min)
+   relation   0.530 (0.5 min)
+   attention  0.516 (0.4 min)
+done
+d 0.022
+   per-node   0.062 (0.1 min)
+   deepsets   0.061 (0.3 min)
+   relation   0.061 (0.4 min)
+   attention  0.061 (0.2 min)
+norm/seed2 train (2339, 7, 60) val (826, 7, 60) test (930, 7, 60) (segments 12/3/3)
+   hand 0.168
+   per-node   0.516 (0.2 min)
+   deepsets   0.530 (0.4 min)
+   relation   0.530 (0.5 min)
+   attention  0.516 (0.3 min)
+done

@@ -1,0 +1,44 @@
+
+=== H1
+cond        per-node        hand-fold       hand-full       deepsets        gru-nodes       relation        attention       
+F1_level    0.471±0.020     0.663±0.016     0.761±0.020     0.349±0.010     0.505±0.016     0.415±0.101     0.485±0.081     
+F2_decorr   0.333±0.014     1.000±0.000     1.000±0.000     1.000±0.000     0.946±0.061     0.966±0.046     0.991±0.012     
+F3_lag      0.521±0.028     1.000±0.000     1.000±0.001     0.999±0.001     0.136±0.091     0.126±0.034     0.127±0.055     
+F4_partial  0.344±0.004     0.999±0.000     0.999±0.000     0.996±0.002     0.887±0.058     0.884±0.104     0.967±0.030     
+F5_burst    0.496±0.036     0.995±0.001     0.994±0.001     0.960±0.011     0.431±0.110     0.482±0.101     0.599±0.274     
+-- decision (threshold 0.03)
+  F1_level     att 0.485 | best non-att 0.505 (gru-nodes) | hand-fold 0.663 -> hand bank suffices
+  F2_decorr    att 0.991 | best non-att 1.000 (deepsets) | hand-fold 1.000 -> hand bank suffices
+  F3_lag       att 0.127 | best non-att 0.999 (deepsets) | hand-fold 1.000 -> hand bank suffices
+  F4_partial   att 0.967 | best non-att 0.996 (deepsets) | hand-fold 0.999 -> hand bank suffices
+  F5_burst     att 0.599 | best non-att 0.960 (deepsets) | hand-fold 0.995 -> hand bank suffices
+
+=== H2
+cond        per-node        hand-fold       hand-full       deepsets        gru-nodes       relation        attention       
+3+2         0.503±0.010     0.646±0.016     0.642±0.018     0.504±0.001     0.497±0.018     0.494±0.014     0.499±0.018     
+4+3         0.498±0.034     0.569±0.033     0.562±0.042     0.515±0.020     0.497±0.008     0.481±0.006     0.511±0.026     
+6+5         0.509±0.026     0.551±0.027     0.543±0.018     0.535±0.032     0.514±0.010     0.502±0.047     0.497±0.044     
+-- decision (threshold 0.03)
+  3+2          att 0.499 | best non-att 0.504 (deepsets) | hand-fold 0.646 -> hand bank suffices
+  4+3          att 0.511 | best non-att 0.515 (deepsets) | hand-fold 0.569 -> hand bank suffices
+  6+5          att 0.497 | best non-att 0.535 (deepsets) | hand-fold 0.551 -> hand bank suffices
+
+=== H3
+cond        per-node        hand-fold       hand-full       deepsets        gru-nodes       relation        attention       
+N5          0.468±0.020     0.959±0.003     -               0.926±0.003     0.601±0.029     0.725±0.171     0.605±0.035     
+N5-shuf     0.472±0.019     0.953±0.004     -               0.924±0.002     0.591±0.028     0.723±0.180     0.601±0.038     
+N7          0.443±0.024     0.958±0.003     -               0.931±0.005     0.616±0.008     0.744±0.162     0.630±0.040     
+N7-shuf     0.446±0.018     0.957±0.006     -               0.928±0.005     0.633±0.025     0.747±0.155     0.629±0.033     
+N11         0.436±0.021     0.962±0.003     -               0.922±0.009     0.663±0.013     0.749±0.145     0.661±0.034     
+N11-shuf    0.434±0.037     0.954±0.002     -               0.921±0.002     0.637±0.015     0.744±0.150     0.643±0.030     
+N21         0.392±0.037     0.946±0.005     -               0.897±0.014     0.683±0.024     0.756±0.117     0.682±0.017     
+N21-shuf    0.402±0.020     0.947±0.003     -               0.890±0.013     0.676±0.007     0.761±0.103     0.691±0.017     
+-- decision (threshold 0.03)
+  N5           att 0.605 | best non-att 0.926 (deepsets) | hand-fold 0.959 -> hand bank suffices
+  N5-shuf      att 0.601 | best non-att 0.924 (deepsets) | hand-fold 0.953 -> hand bank suffices
+  N7           att 0.630 | best non-att 0.931 (deepsets) | hand-fold 0.958 -> hand bank suffices
+  N7-shuf      att 0.629 | best non-att 0.928 (deepsets) | hand-fold 0.957 -> hand bank suffices
+  N11          att 0.661 | best non-att 0.922 (deepsets) | hand-fold 0.962 -> hand bank suffices
+  N11-shuf     att 0.643 | best non-att 0.921 (deepsets) | hand-fold 0.954 -> hand bank suffices
+  N21          att 0.682 | best non-att 0.897 (deepsets) | hand-fold 0.946 -> hand bank suffices
+  N21-shuf     att 0.691 | best non-att 0.890 (deepsets) | hand-fold 0.947 -> hand bank suffices
