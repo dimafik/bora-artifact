@@ -1,0 +1,56 @@
+[12:29:08] R1-2 Phase 3  N=7 seeds=2 dwell=300s rates=10 20 hold=10s cooldown=60s
+[12:29:08]   question: with the degraded orderer AS leader, what does each eviction policy do?
+[12:29:08] OUT=/mnt/d/fabric-d2/results/r13p3_N7_0917-122908
+[12:29:22]   attack OK
+DAEMON_UP N=7 f=3
+[12:30:14] cell A_p10_s1
+[12:32:10]   target seated after 8 attempts
+[12:37:18]   -> demote=0 (TP=0 FP=0) target_tenure=226s leaderless=0s end_leader=3 safety=0
+[12:37:19] cell D_p10_s1
+[12:37:23]   target seated after 0 attempts
+[12:42:30]   -> demote=6 (TP=1 FP=5) target_tenure=6s leaderless=14s end_leader=4 safety=0
+[12:42:32] cell P_p10_s1
+[12:47:32]   target seated after 21 attempts
+[12:52:39]   -> demote=1 (TP=1 FP=0) target_tenure=12s leaderless=2s end_leader=7 safety=0
+[12:52:41] cell A_p20_s1
+[12:54:36]   target seated after 8 attempts
+[12:59:44]   -> demote=0 (TP=0 FP=0) target_tenure=224s leaderless=0s end_leader=3 safety=0
+[12:59:45] cell D_p20_s1
+[12:59:49]   target seated after 0 attempts
+[13:04:56]   -> demote=1 (TP=1 FP=0) target_tenure=6s leaderless=2s end_leader=6 safety=0
+[13:04:58] cell P_p20_s1
+[13:05:16]   target seated after 1 attempts
+[13:10:24]   -> demote=4 (TP=1 FP=3) target_tenure=12s leaderless=12s end_leader=1 safety=0
+[13:10:24] cell A_p10_s2
+[13:10:56]   target seated after 2 attempts
+[13:16:04]   -> demote=0 (TP=0 FP=0) target_tenure=226s leaderless=0s end_leader=3 safety=0
+[13:16:05] cell D_p10_s2
+[13:16:09]   target seated after 0 attempts
+[13:21:17]   -> demote=4 (TP=1 FP=3) target_tenure=6s leaderless=8s end_leader=7 safety=0
+[13:21:18] cell P_p10_s2
+[13:21:36]   target seated after 1 attempts
+[13:26:45]   -> demote=1 (TP=1 FP=0) target_tenure=14s leaderless=2s end_leader=6 safety=0
+[13:26:47] cell A_p20_s2
+[13:27:19]   target seated after 2 attempts
+[13:32:27]   -> demote=0 (TP=0 FP=0) target_tenure=226s leaderless=0s end_leader=3 safety=0
+[13:32:28] cell D_p20_s2
+[13:32:32]   target seated after 0 attempts
+[13:37:40]   -> demote=2 (TP=1 FP=1) target_tenure=6s leaderless=4s end_leader=6 safety=0
+[13:37:41] cell P_p20_s2
+[13:43:37]   target seated after 25 attempts
+[13:48:44]   -> demote=2 (TP=1 FP=1) target_tenure=12s leaderless=6s end_leader=6 safety=0
+[13:48:47] netem after teardown: qdisc noqueue 0: root refcnt 2 
+[13:48:47] done -> /mnt/d/fabric-d2/results/r13p3_N7_0917-122908/cells.csv
+arm  rate  seed  dwell_s  demotions  demote_TP  demote_FP  target_tenure_s  leaderless_s  target_leader_at_end  seat_attempts  repaired  safety_viol
+A    10    1     300      0          0          0          226              0             3                     8              0         0
+D    10    1     300      6          1          5          6                14            4                     0              0         0
+P    10    1     300      1          1          0          12               2             7                     21             0         0
+A    20    1     300      0          0          0          224              0             3                     8              0         0
+D    20    1     300      1          1          0          6                2             6                     0              0         0
+P    20    1     300      4          1          3          12               12            1                     1              0         0
+A    10    2     300      0          0          0          226              0             3                     2              0         0
+D    10    2     300      4          1          3          6                8             7                     0              0         0
+P    10    2     300      1          1          0          14               2             6                     1              0         0
+A    20    2     300      0          0          0          226              0             3                     2              0         0
+D    20    2     300      2          1          1          6                4             6                     0              0         0
+P    20    2     300      2          1          1          12               6             6                     25             0         0

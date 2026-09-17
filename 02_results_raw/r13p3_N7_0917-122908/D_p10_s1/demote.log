@@ -1,0 +1,6 @@
+1789616249.111245141 demote leader=3 cause=TP bl=[1 3 ] true=[3 ]
+1789616301.283010561 demote leader=4 cause=FP bl=[3 4 ] true=[3 ]
+1789616396.007159394 demote leader=6 cause=FP bl=[3 6 ] true=[3 ]
+1789616453.869692341 demote leader=1 cause=FP bl=[1 3 ] true=[3 ]
+1789616503.372768719 demote leader=4 cause=FP bl=[3 4 ] true=[3 ]
+1789616536.988310319 demote leader=7 cause=FP bl=[3 7 ] true=[3 ]
