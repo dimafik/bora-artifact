@@ -1,0 +1,4 @@
+1789641937.232521940 demote leader=3 cause=TP new=5 bl=[2 3 ] true=[3 ]
+1789642051.100120669 demote leader=5 cause=FP new=4 bl=[3 5 ] true=[3 ]
+1789642066.043660370 demote leader=4 cause=FP new=1 bl=[3 4 ] true=[3 ]
+1789642219.459602480 demote leader=1 cause=FP new=6 bl=[1 3 ] true=[3 ]

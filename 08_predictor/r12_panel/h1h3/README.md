@@ -22,9 +22,37 @@ injected delay to ride the cluster's own jitter, the advisors fail in sequence:
 
 Three seeds per cell (`run_adv2.py`, `run_rules_sweep.py`). A threshold on the
 level is at chance the moment the level cue is gone; a zero-parameter correlation
-rule holds to a quarter of full mimicry; the hand bank to a half; at full mimicry
-only a learned model still separates. That ordering is the case for a learned
-advisor, and Section V-C states it.
+rule holds to a quarter of full mimicry; the hand bank to a half; past that point
+nothing we measured separates, learned or not.
+
+**The beta = 1.0 cell is a property of this generator rather than of mimicry,
+and we no longer read it as one.** `window()` injects
+`d = amp * |beta*c_hat + (1-beta)*e + 1.0|`, so at beta = 1 the independent
+component `e` drops out entirely and the delay becomes a *deterministic*
+rectification of the cluster's own common mode: the attacked node is a folded
+function of a signal every healthy node follows affinely. Nothing has to be
+learned to see that fold. Fitting `z_i ~ 1 + lz_i + lz_i^2` per window by least
+squares -- three coefficients, nothing trained across windows -- and taking the
+worst node separates the same test windows at
+
+| beta | 0.50 | 0.60 | 0.75 | 0.80 | 0.90 | 1.00 |
+|---|---|---|---|---|---|---|
+| quadratic term, max over nodes | 0.632 | 0.674 | 0.844 | 0.861 | 0.949 | **0.986** |
+| rectified basis `relu(-lz-1)` | 0.643 | 0.719 | 0.914 | 0.953 | 0.994 | **0.998** |
+
+on the same seeds and the same test windows -- `rule_corr` reproduces the
+`results_rules_sweep.json` column to three decimals, which is the check that the
+two harnesses are on the same data. The second row uses the generator's own
+offset and is therefore informed by it; the first does not, and still beats
+every advisor in the table above from beta = 0.75 up, including the band where
+the table reports that everything fails. The docstring's claim that the delay
+"is the same at every beta" also does not hold exactly: its standard deviation
+runs 0.759 at beta = 0.5 against 0.964 at beta = 0 and beta = 1, which accounts
+for much of the U shape.
+
+The sweep therefore bounds the *threshold's* operating envelope. It is not a
+case for a learned detector, and Section V-C no longer cites any cell of it as
+one.
 
 **It is not a case for attention.** Attention led in none of the ten
 measurements. A first pass gave it 0.991 and 0.997 at beta 0.9 and 1.0; three

@@ -1,0 +1,55 @@
+cells: 36
+
+=== by arm (36 cells, six seeds) ===
+policy                                 cells    TP    FP  tenure_s  leaderless   settle   safety
+Active-Leader Rule (as shipped)           12     0     0     219.2         0.0       60        0
+evict on every flag                       12    12    21       5.0         0.5       60        0
+evict after 10 s hold, one a minute       12    12    14       5.3         0.2       60        0
+
+=== by injected false-positive rate ===
+arm    rate   cells    TP    FP  tenure_s  leaderless
+A      10%        6     0     0     220.3         0.0
+A      20%        6     0     0     218.0         0.0
+D      10%        6     6    12       4.3         0.7
+D      20%        6     6     9       5.7         0.3
+P      10%        6     6     8       5.3         0.3
+P      20%        6     6     6       5.3         0.0
+
+=== per cell ===
+arm  rate  seed    TP   FP   tenure  leaderless   end
+A    10    1        0    0      222           0     3
+A    10    2        0    0      218           0     3
+A    10    3        0    0      220           0     3
+A    10    4        0    0      222           0     3
+A    10    5        0    0      220           0     3
+A    10    6        0    0      220           0     3
+A    20    1        0    0      220           0     3
+A    20    2        0    0      224           0     3
+A    20    3        0    0      222           0     3
+A    20    4        0    0      220           0     3
+A    20    5        0    0      224           0     3
+A    20    6        0    0      198           0     3
+D    10    1        1    1        6           0     5
+D    10    2        1    5        4           4     6
+D    10    3        1    2        4           0     4
+D    10    4        1    1        4           0     4
+D    10    5        1    0        4           0     7
+D    10    6        1    3        4           0     5
+D    20    1        1    2        6           2     6
+D    20    2        1    0        6           0     7
+D    20    3        1    0        6           0     6
+D    20    4        1    4        4           0     7
+D    20    5        1    0        6           0     7
+D    20    6        1    3        6           0     4
+P    10    1        1    3        4           0     6
+P    10    2        1    0        6           0     2
+P    10    3        1    1        4           0     7
+P    10    4        1    1        6           0     4
+P    10    5        1    3        6           2     7
+P    10    6        1    0        6           0     5
+P    20    1        1    0        4           0     6
+P    20    2        1    0        6           0     6
+P    20    3        1    2        6           0     6
+P    20    4        1    2        6           0     7
+P    20    5        1    1        4           0     7
+P    20    6        1    1        6           0     7

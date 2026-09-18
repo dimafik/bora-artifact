@@ -1,0 +1,68 @@
+[22:33:27] R1-2 Phase 4 (v5 binary, system-side demotion)  N=7 seeds=5..6 dwell=300s rates=10 20 hold=10s cooldown=60s
+[22:33:27]   question: with the degraded orderer AS leader, what does each eviction policy do?
+[22:33:27] OUT=/mnt/d/fabric-d2/results/r13p4_N7_0917-223327
+[22:33:39]   attack OK
+DAEMON_UP N=7 f=3
+[22:34:31] cell A_p10_s5
+[22:34:35]   target seated after 0 attempts
+[22:36:01]   settled after 60s
+[22:41:06]   -> demote=0 (TP=0 FP=0) target_tenure=220s leaderless=0s end_leader=3 safety=0
+[22:41:07] cell D_p10_s5
+[22:41:11]   target seated after 0 attempts
+[22:42:36]   settled after 60s
+[22:47:41]   -> demote=1 (TP=1 FP=0) target_tenure=4s leaderless=0s end_leader=7 safety=0
+[22:47:43] cell P_p10_s5
+[22:49:52]   target seated after 9 attempts
+[22:51:17]   settled after 60s
+[22:56:22]   -> demote=4 (TP=1 FP=3) target_tenure=6s leaderless=2s end_leader=7 safety=0
+[22:56:23] cell A_p20_s5
+[22:56:55]   target seated after 2 attempts
+[22:58:22]   settled after 60s
+[23:03:27]   -> demote=0 (TP=0 FP=0) target_tenure=224s leaderless=0s end_leader=3 safety=0
+[23:03:29] cell D_p20_s5
+[23:03:33]   target seated after 0 attempts
+[23:04:59]   settled after 60s
+[23:10:04]   -> demote=1 (TP=1 FP=0) target_tenure=6s leaderless=0s end_leader=7 safety=0
+[23:10:06] cell P_p20_s5
+[23:10:38]   target seated after 2 attempts
+[23:12:05]   settled after 60s
+[23:17:10]   -> demote=2 (TP=1 FP=1) target_tenure=4s leaderless=0s end_leader=7 safety=0
+[23:17:11] cell A_p10_s6
+[23:17:57]   target seated after 3 attempts
+[23:19:22]   settled after 60s
+[23:24:27]   -> demote=0 (TP=0 FP=0) target_tenure=220s leaderless=0s end_leader=3 safety=0
+[23:24:28] cell D_p10_s6
+[23:24:32]   target seated after 0 attempts
+[23:25:57]   settled after 60s
+[23:31:02]   -> demote=4 (TP=1 FP=3) target_tenure=4s leaderless=0s end_leader=5 safety=0
+[23:31:03] cell P_p10_s6
+[23:31:35]   target seated after 2 attempts
+[23:33:01]   settled after 60s
+[23:38:06]   -> demote=1 (TP=1 FP=0) target_tenure=6s leaderless=0s end_leader=5 safety=0
+[23:38:08] cell A_p20_s6
+[23:38:54]   target seated after 3 attempts
+[23:40:21]   settled after 60s
+[23:45:27]   -> demote=0 (TP=0 FP=0) target_tenure=198s leaderless=0s end_leader=3 safety=0
+[23:45:29] cell D_p20_s6
+[23:45:34]   target seated after 0 attempts
+[23:47:08]   settled after 60s
+[23:52:15]   -> demote=4 (TP=1 FP=3) target_tenure=6s leaderless=0s end_leader=4 safety=0
+[23:52:17] cell P_p20_s6
+[23:52:50]   target seated after 2 attempts
+[23:54:22]   settled after 60s
+[23:59:29]   -> demote=2 (TP=1 FP=1) target_tenure=6s leaderless=0s end_leader=7 safety=0
+[23:59:32] netem after teardown: qdisc noqueue 0: root refcnt 2 
+[23:59:32] done -> /mnt/d/fabric-d2/results/r13p4_N7_0917-223327/cells.csv
+arm  rate  seed  dwell_s  demotions  demote_TP  demote_FP  target_tenure_s  leaderless_s  target_leader_at_end  seat_attempts  settle_s  repaired  safety_viol
+A    10    5     300      0          0          0          220              0             3                     0              60        0         0
+D    10    5     300      1          1          0          4                0             7                     0              60        0         0
+P    10    5     300      4          1          3          6                2             7                     9              60        0         0
+A    20    5     300      0          0          0          224              0             3                     2              60        0         0
+D    20    5     300      1          1          0          6                0             7                     0              60        0         0
+P    20    5     300      2          1          1          4                0             7                     2              60        0         0
+A    10    6     300      0          0          0          220              0             3                     3              60        0         0
+D    10    6     300      4          1          3          4                0             5                     0              60        0         0
+P    10    6     300      1          1          0          6                0             5                     2              60        0         0
+A    20    6     300      0          0          0          198              0             3                     3              60        0         0
+D    20    6     300      4          1          3          6                0             4                     0              60        0         0
+P    20    6     300      2          1          1          6                0             7                     2              60        0         0

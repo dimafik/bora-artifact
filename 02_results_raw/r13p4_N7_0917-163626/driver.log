@@ -1,0 +1,112 @@
+[16:36:26] R1-2 Phase 4 (v5 binary, system-side demotion)  N=7 seeds=6 dwell=300s rates=10 20 hold=10s cooldown=60s
+[16:36:26]   question: with the degraded orderer AS leader, what does each eviction policy do?
+[16:36:26] OUT=/mnt/d/fabric-d2/results/r13p4_N7_0917-163626
+[16:36:39]   attack OK
+DAEMON_UP N=7 f=3
+[16:37:31] cell A_p10_s1
+[16:37:35]   target seated after 0 attempts
+[16:39:04]   settled after 60s
+[16:44:08]   -> demote=0 (TP=0 FP=0) target_tenure=222s leaderless=0s end_leader=3 safety=0
+[16:44:09] cell D_p10_s1
+[16:44:13]   target seated after 0 attempts
+[16:45:42]   settled after 60s
+[16:50:46]   -> demote=2 (TP=1 FP=1) target_tenure=6s leaderless=0s end_leader=5 safety=0
+[16:50:48] cell P_p10_s1
+[16:51:34]   target seated after 3 attempts
+[16:53:01]   settled after 60s
+[16:58:06]   -> demote=4 (TP=1 FP=3) target_tenure=4s leaderless=0s end_leader=6 safety=0
+[16:58:07] cell A_p20_s1
+[16:59:20]   target seated after 5 attempts
+[17:00:48]   settled after 60s
+[17:05:52]   -> demote=0 (TP=0 FP=0) target_tenure=220s leaderless=0s end_leader=3 safety=0
+[17:05:54] cell D_p20_s1
+[17:05:58]   target seated after 0 attempts
+[17:07:25]   settled after 60s
+[17:12:30]   -> demote=3 (TP=1 FP=2) target_tenure=6s leaderless=2s end_leader=6 safety=0
+[17:12:31] cell P_p20_s1
+[17:13:03]   target seated after 2 attempts
+[17:14:30]   settled after 60s
+[17:19:35]   -> demote=1 (TP=1 FP=0) target_tenure=4s leaderless=0s end_leader=6 safety=0
+[17:19:36] cell A_p10_s2
+[17:20:50]   target seated after 5 attempts
+[17:22:19]   settled after 60s
+[17:27:23]   -> demote=0 (TP=0 FP=0) target_tenure=218s leaderless=0s end_leader=3 safety=0
+[17:27:24] cell D_p10_s2
+[17:27:28]   target seated after 0 attempts
+[17:28:56]   settled after 60s
+[17:34:01]   -> demote=6 (TP=1 FP=5) target_tenure=4s leaderless=4s end_leader=6 safety=0
+[17:34:02] cell P_p10_s2
+[17:34:34]   target seated after 2 attempts
+[17:36:01]   settled after 60s
+[17:41:06]   -> demote=1 (TP=1 FP=0) target_tenure=6s leaderless=0s end_leader=2 safety=0
+[17:41:06] cell A_p20_s2
+[17:42:47]   target seated after 7 attempts
+[17:44:15]   settled after 60s
+[17:49:20]   -> demote=0 (TP=0 FP=0) target_tenure=224s leaderless=0s end_leader=3 safety=0
+[17:49:21] cell D_p20_s2
+[17:49:25]   target seated after 0 attempts
+[17:50:52]   settled after 60s
+[17:55:57]   -> demote=1 (TP=1 FP=0) target_tenure=6s leaderless=0s end_leader=7 safety=0
+[17:55:58] cell P_p20_s2
+[17:56:16]   target seated after 1 attempts
+[17:57:43]   settled after 60s
+[18:02:47]   -> demote=1 (TP=1 FP=0) target_tenure=6s leaderless=0s end_leader=6 safety=0
+[18:02:49] cell A_p10_s3
+[18:04:03]   target seated after 5 attempts
+[18:05:30]   settled after 60s
+[18:10:34]   -> demote=0 (TP=0 FP=0) target_tenure=220s leaderless=0s end_leader=3 safety=0
+[18:10:36] cell D_p10_s3
+[18:10:40]   target seated after 0 attempts
+[18:12:09]   settled after 60s
+[18:17:13]   -> demote=3 (TP=1 FP=2) target_tenure=4s leaderless=0s end_leader=4 safety=0
+[18:17:14] cell P_p10_s3
+[18:18:57]   target seated after 7 attempts
+[18:20:24]   settled after 60s
+[18:25:28]   -> demote=2 (TP=1 FP=1) target_tenure=4s leaderless=0s end_leader=7 safety=0
+[18:25:29] cell A_p20_s3
+[18:29:58]   target seated after 19 attempts
+[18:31:26]   settled after 60s
+[18:36:30]   -> demote=0 (TP=0 FP=0) target_tenure=222s leaderless=0s end_leader=3 safety=0
+[18:36:32] cell D_p20_s3
+[18:36:35]   target seated after 0 attempts
+[18:38:04]   settled after 60s
+[18:43:08]   -> demote=1 (TP=1 FP=0) target_tenure=6s leaderless=0s end_leader=6 safety=0
+[18:43:09] cell P_p20_s3
+[18:44:23]   target seated after 5 attempts
+[18:45:49]   settled after 60s
+[18:50:54]   -> demote=3 (TP=1 FP=2) target_tenure=6s leaderless=0s end_leader=6 safety=0
+[18:50:55] cell A_p10_s4
+[18:52:37]   target seated after 7 attempts
+[18:54:04]   settled after 60s
+[18:59:08]   -> demote=0 (TP=0 FP=0) target_tenure=222s leaderless=0s end_leader=3 safety=0
+[18:59:10] cell D_p10_s4
+[18:59:13]   target seated after 0 attempts
+[19:00:41]   settled after 60s
+[19:05:45]   -> demote=2 (TP=1 FP=1) target_tenure=4s leaderless=0s end_leader=4 safety=0
+[19:05:47] cell P_p10_s4
+[19:06:46]   target seated after 4 attempts
+[19:08:14]   settled after 60s
+[19:13:19]   -> demote=2 (TP=1 FP=1) target_tenure=6s leaderless=0s end_leader=4 safety=0
+[19:13:20] cell A_p20_s4
+[19:15:16]   target seated after 8 attempts
+[19:16:44]   settled after 60s
+[19:21:48]   -> demote=0 (TP=0 FP=0) target_tenure=220s leaderless=0s end_leader=3 safety=0
+[19:21:50] cell D_p20_s4
+[19:21:54]   target seated after 0 attempts
+[19:23:19]   settled after 60s
+[19:28:24]   -> demote=5 (TP=1 FP=4) target_tenure=4s leaderless=0s end_leader=7 safety=0
+[19:28:25] cell P_p20_s4
+[19:29:24]   target seated after 4 attempts
+[19:30:51]   settled after 60s
+[19:35:55]   -> demote=3 (TP=1 FP=2) target_tenure=6s leaderless=0s end_leader=7 safety=0
+[19:35:57] cell A_p10_s5
+[19:37:24]   target seated after 6 attempts
+[19:38:52]   settled after 60s
+[19:43:56]   -> demote=0 (TP=0 FP=0) target_tenure=222s leaderless=0s end_leader=3 safety=0
+[19:43:58] cell D_p10_s5
+[19:44:01]   target seated after 0 attempts
+[19:45:28]   settled after 60s
+[19:50:33]   -> demote=4 (TP=1 FP=3) target_tenure=6s leaderless=0s end_leader=6 safety=0
+[19:50:34] cell P_p10_s5
+[19:50:52]   target seated after 1 attempts
+[19:50:57]   GATE FAIL: injector silent
