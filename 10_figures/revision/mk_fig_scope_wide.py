@@ -260,8 +260,8 @@ BLOCK_H = ROWS_PER_BLOCK + 6.2      # block pitch, y
 GX = NCOLS + 1.4                    # gauge column, offset from the block
 FACT = {("sweep", "A_vanilla"): "no advice in force",
         ("swap", "A_vanilla"): "no advice in force",
-        ("sweep", "B_oracle"): "$\\mathcal{B}_t$ = the degraded set, %d/240",
-        ("sweep", "C_predictor"): "$\\mathcal{B}_t$ = the degraded set, %d/240",
+        ("sweep", "B_oracle"): "matched the degraded set, %d/240",
+        ("sweep", "C_predictor"): "matched the degraded set, %d/240",
         ("swap", "B_oracle"): "%d of 240 began before detection",
         ("swap", "C_predictor"): "%d of 240 began before detection"}
 for bi, (camp, arm, lab) in enumerate(BLOCKS):
@@ -294,12 +294,12 @@ for bi, (camp, arm, lab) in enumerate(BLOCKS):
                                         facecolor=NAVY if k < sz else "none",
                                         edgecolor=MUTED if k >= sz else "none",
                                         linewidth=0.4, alpha=0.9 if k < sz else 0.55))
-            axA.text(bx + GX + cp * 0.66 + 0.45, cy + 0.35, "%d/%d" % (sz, cp),
-                     ha="left", va="center", fontsize=5.2, color=MUTED)
+            axA.text(bx + GX + cp * 0.66 + 0.55, cy + 0.35, "%d/%d" % (sz, cp),
+                     ha="left", va="center", fontsize=6.4, color=MUTED)
         yy += rows + 0.5
     if budget[camp][arm]:
-        axA.text(bx + GX, by - 0.75, "$|\\mathcal{B}_t|$ of cap", ha="left",
-                 va="baseline", fontsize=5.2, color=MUTED)
+        axA.text(bx + GX, by - 2.40, "blacklist/cap", ha="left",
+                 va="baseline", fontsize=6.0, color=MUTED)
     _lab = axA.text(bx, by - 3.75, lab, ha="left", va="baseline", fontsize=6.4,
                     color=INK)
     if (camp, arm) == ("swap", "B_oracle"):
@@ -311,7 +311,7 @@ for bi, (camp, arm, lab) in enumerate(BLOCKS):
     _f = FACT[(camp, arm)]
     if "%d" in _f:
         _f = _f % (exact[(camp, arm)] if camp == "sweep" else early[(camp, arm)])
-    axA.text(bx, by - 1.05, _f, ha="left", va="baseline", fontsize=5.9,
+    axA.text(bx, by - 1.05, _f, ha="left", va="baseline", fontsize=6.2,
              color=MUTED)
     if bi % 3 == 0:
         axA.text(bx - 5.4, by + ROWS_PER_BLOCK / 2.0 - 0.3, CAMP[camp],
