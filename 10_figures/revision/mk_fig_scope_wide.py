@@ -408,7 +408,7 @@ fig.legend(handles=[Rectangle((0, 0), 1, 1, color=c, alpha=0.9) for c in OCOL],
                    "target acquired leadership",
                    "no leader inside the read window"],
            fontsize=6, frameon=False, loc="upper left",
-           bbox_to_anchor=(_pa.x0 + 0.055, _pa.y0 - 0.030), ncol=3,
+           bbox_to_anchor=(_pa.x0 + 0.055, _pa.y0 + 0.008), ncol=3,
            handlelength=0.85, handleheight=0.8, columnspacing=1.3,
            borderpad=0, handletextpad=0.32)
 for ax, letter, title in ((axB, "(b)", "elections, by cluster size"),
