@@ -300,7 +300,11 @@ for bi, (camp, arm, lab) in enumerate(BLOCKS):
     if budget[camp][arm]:
         axA.text(bx + GX, by - 0.75, "$|\\mathcal{B}_t|$ of cap", ha="left",
                  va="baseline", fontsize=5.2, color=MUTED)
-    axA.text(bx, by - 3.75, lab, ha="left", va="baseline", fontsize=6.4, color=INK)
+    _lab = axA.text(bx, by - 3.75, lab, ha="left", va="baseline", fontsize=6.4,
+                    color=INK)
+    if (camp, arm) == ("swap", "B_oracle"):
+        # drawn for completeness; Section V-D reports this campaign as 480
+        UNREPORTED = (_lab, by - 3.75)
     axA.text(bx, by - 2.40, "%d acquired" % acq if acq else "none acquired",
              ha="left", va="baseline", fontsize=6.4,
              color=BURG if acq else MUTED, fontweight="bold" if acq else "normal")
@@ -362,6 +366,8 @@ axC.set_xscale("log")
 axC.set_xlim(0.8, 6000)
 axC.set_xticks([1, 10, 100, 1000])
 axC.set_xticklabels(["1", "10", "100", "1,000"], fontsize=6)
+axC.set_xlabel("evaluated, log scale \u2014 one unit per row", fontsize=6,
+               color=MUTED, labelpad=1.5)
 axC.set_ylim(-0.7, len(ADV) - 0.3)
 axC.tick_params(length=2, pad=2)
 for sp in ("top", "right", "left"):
@@ -397,6 +403,13 @@ axD.legend(handles=[Rectangle((0, 0), 1, 1, color=c, alpha=0.9) for c in BCOL],
            handleheight=0.8, labelspacing=0.16, borderpad=0, handletextpad=0.32)
 
 fig.canvas.draw()
+# the tag sits a fixed gap after the label, measured from the label as drawn
+_lt, _ly = UNREPORTED
+_r = fig.canvas.get_renderer()
+_x1 = axA.transData.inverted().transform(
+    _lt.get_window_extent(renderer=_r).corners()[2])[0]
+axA.text(_x1 + 1.6, _ly, "not reported as evidence", ha="left", va="baseline",
+         fontsize=5.6, color=MUTED, style="italic")
 _pa = axA.get_position()
 fig.text(0.012, _pa.y1 + 0.036, "(a)", ha="left", va="bottom", fontsize=7.4,
          color=INK)
