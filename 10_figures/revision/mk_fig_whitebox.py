@@ -8,10 +8,20 @@
 # AUC 0.003. R3-S4 counted the 0.73 as a strength, so the withdrawn floor is
 # drawn here rather than left to the letter.
 #
+# Two variants:
+#   (default)  fig_whitebox.pdf        -- draws the withdrawn 0.73 line, for the
+#                                          marked revision, where a reviewer can
+#                                          see what replaced the claim they read
+#   --clean    fig_whitebox_clean.pdf  -- omits it, for the clean submission,
+#                                          whose reader has no prior version to
+#                                          reconcile; the correction history
+#                                          belongs in the response letter
+#
 # Read straight from the artifact so the figure cannot drift from the data:
 #   08_predictor/r12_panel/panel2_results.json  (8 families x 144 runs = 1,152)
 import json
 import os
+import sys
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -31,10 +41,12 @@ rcParams["mathtext.bf"] = "Arial:bold"
 
 NAVY = "#25405c"; BURG = "#8a3a45"; SLATE = "#5b6670"; MUST = "#b08428"
 
+CLEAN = "--clean" in sys.argv
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "..", "..", "08_predictor", "r12_panel",
                    "panel2_results.json")
-OUT = os.path.join(HERE, "fig_whitebox.pdf")
+OUT = os.path.join(HERE, "fig_whitebox_clean.pdf" if CLEAN
+                   else "fig_whitebox.pdf")
 
 panel = json.load(open(SRC, encoding="utf-8"))
 rhos = sorted(panel[0]["sweep"], key=lambda k: float(k.split("_")[1]))
@@ -52,9 +64,10 @@ ax.plot(x, auc["random forest / summary stats"], color=MUST, lw=1.1,
         ls=(0, (4, 2)), marker="s", ms=3)
 ax.plot(x, auc[ours], color=NAVY, lw=1.6, marker="o", ms=3.4)
 ax.axhline(0.5, color="#999999", lw=0.6, ls=(0, (1, 2)))
-ax.axhline(0.73, color=BURG, lw=0.8, ls=(0, (5, 2)))
-ax.text(0.805, 0.735, "submitted floor 0.73, withdrawn", color=BURG,
-        fontsize=6.3, ha="right", va="bottom")
+if not CLEAN:
+    ax.axhline(0.73, color=BURG, lw=0.8, ls=(0, (5, 2)))
+    ax.text(0.805, 0.735, "submitted floor 0.73, withdrawn", color=BURG,
+            fontsize=6.3, ha="right", va="bottom")
 ax.text(0.805, 0.505, "chance", color="#777777", fontsize=6.3,
         ha="right", va="bottom")
 ax.annotate("0.003", xy=(0.0, 0.0027), xytext=(0.045, 0.115), color=NAVY,
