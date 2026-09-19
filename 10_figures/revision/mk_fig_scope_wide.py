@@ -274,7 +274,7 @@ for bi, (camp, arm, lab) in enumerate(BLOCKS):
         for k, v in enumerate(vals):
             _blk = (k % NCOLS) // 10 + (k // NCOLS)    # seed-block parity
             _gap = 0.7 if (k % NCOLS) >= 10 else 0.0
-            _al = 0.95 if v else (0.86 if _blk % 2 == 0 else 0.62)
+            _al = 0.95 if v else (0.78 if _blk % 2 == 0 else 0.55)
             axA.add_patch(Rectangle((bx + (k % NCOLS) * 1.0 + _gap,
                                      by + y + (k // NCOLS) * 1.0), 0.80, 0.80,
                                     facecolor=OCOL[v], linewidth=0, alpha=_al))
