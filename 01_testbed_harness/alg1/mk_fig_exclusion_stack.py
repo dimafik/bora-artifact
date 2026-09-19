@@ -93,7 +93,7 @@ for ax, cfgs, title in ((axes[0], LEFT, "(a) operator-supplied blacklist"),
             hi = max(h for h, _, _ in hits)
             dy = sum(d for _, d, _ in hits) / len(hits)
             col = hits[-1][2]
-            ax.text(hi + 1.2, y + dy, txt, fontsize=6.8, color=col, va="center")
+            ax.text(hi + 1.2, y + dy, txt, fontsize=7.3, color=col, va="center")
     ax.set_yticks(ys)
     ax.set_yticklabels([c[0] for c in cfgs], fontsize=7.5)
     ax.set_ylim(-0.6, len(cfgs) - 0.4)
@@ -112,7 +112,7 @@ axes[1].legend(handles=[
     Line2D([0], [0], color=SLATE, marker="^", markerfacecolor="white", lw=1.4,
            label="operator-supplied"),
     Line2D([0], [0], color=NAVY, marker="s", lw=1.4, label="detector-produced")],
-    loc="lower right", fontsize=6.5, frameon=False, handlelength=1.6)
+    loc="lower right", fontsize=7.3, frameon=False, handlelength=1.6)
 
 fig.tight_layout(pad=0.4)
 fig.savefig(OUT, bbox_inches="tight")

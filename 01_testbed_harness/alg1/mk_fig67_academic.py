@@ -103,7 +103,7 @@ ax.text((T1 - T0) / 2, 0.945, r"$+500$ ms delay on $o_3$", ha="center",
 
 # blacklist threshold (thin dashed) + plain label
 ax.axhline(THRESH, color=INK, ls=(0, (5, 3)), lw=0.8, zorder=1)
-ax.text(t.max() + 2.0, THRESH + 0.012, "blacklist threshold", fontsize=6.4,
+ax.text(t.max() + 2.0, THRESH + 0.012, "blacklist threshold", fontsize=6.6,
         color="#444444", ha="right", va="bottom")
 
 # healthy orderers: thin grey (one legend proxy)
