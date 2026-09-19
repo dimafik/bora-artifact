@@ -255,9 +255,9 @@ NCOLS = 20                          # cells across one block
 OCOL = [NAVY, BURG, MUST]
 ROWS_PER_BLOCK = sum(max(1, len(outcome["sweep"]["A_vanilla"][n]) // NCOLS)
                      for n in CELL_N) + 0.5 * (len(CELL_N) - 1)
-BLOCK_W = NCOLS + 12.0              # block pitch, x  (gap carries the gauges)
+BLOCK_W = NCOLS + 12.5              # block pitch, x  (gap carries the gauges)
 BLOCK_H = ROWS_PER_BLOCK + 6.2      # block pitch, y
-GX = NCOLS + 1.4                    # gauge column, offset from the block
+GX = NCOLS + 1.9                    # gauge column, offset from the block
 FACT = {("sweep", "A_vanilla"): "no advice in force",
         ("swap", "A_vanilla"): "no advice in force",
         ("sweep", "B_oracle"): "matched the degraded set, %d/240",
@@ -272,7 +272,8 @@ for bi, (camp, arm, lab) in enumerate(BLOCKS):
         vals = outcome[camp][arm][n]
         acq += sum(v == 1 for v in vals)
         for k, v in enumerate(vals):
-            axA.add_patch(Rectangle((bx + (k % NCOLS) * 1.0,
+            _gap = 0.5 if (k % NCOLS) >= 10 else 0.0   # ten-election seed block
+            axA.add_patch(Rectangle((bx + (k % NCOLS) * 1.0 + _gap,
                                      by + y + (k // NCOLS) * 1.0), 0.80, 0.80,
                                     facecolor=OCOL[v], linewidth=0,
                                     alpha=0.95 if v else 0.82))
