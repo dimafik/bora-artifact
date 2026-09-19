@@ -281,7 +281,7 @@ for bi, (camp, arm, lab) in enumerate(BLOCKS):
         rows = max(1, len(vals) // NCOLS)
         if bi % 3 == 0:
             axA.text(bx - 0.8, by + y + rows / 2.0 - 0.1, "$N$=%d" % n, ha="right",
-                     va="center", fontsize=5.8, color=MUTED)
+                     va="center", fontsize=6.2, color=MUTED)
         y += rows + 0.5
     # the advisory budget the guard actually held, one gauge per cluster size
     yy = 0
@@ -301,7 +301,7 @@ for bi, (camp, arm, lab) in enumerate(BLOCKS):
         yy += rows + 0.5
     if budget[camp][arm]:
         axA.text(bx + GX, by - 2.40, "blacklist/cap", ha="left",
-                 va="baseline", fontsize=6.0, color=MUTED)
+                 va="baseline", fontsize=6.2, color=MUTED)
     _lab = axA.text(bx, by - 3.75, lab, ha="left", va="baseline", fontsize=6.4,
                     color=INK)
     if (camp, arm) == ("swap", "B_oracle"):
@@ -337,20 +337,20 @@ for yi, n in zip(ypos, NS):
         left += v
         axB.barh(yi, 5, left=left, height=0.62, color=SURF, linewidth=0)
         left += 5
-    axB.text(left + 12, yi, f"{sum(byN[n].values()):,}", va="center", fontsize=6,
+    axB.text(left + 12, yi, f"{sum(byN[n].values()):,}", va="center", fontsize=6.2,
              color=INK)
 axB.set_ylim(-0.62, len(NS) - 0.38)
 axB.set_yticks(ypos)
-axB.set_yticklabels([f"$N$={n}" for n in NS], fontsize=6.1)
+axB.set_yticklabels([f"$N$={n}" for n in NS], fontsize=6.2)
 axB.set_xlim(0, max(sum(byN[n].values()) for n in NS) * 1.24)
 axB.set_xticks([0, 200, 400])
-axB.tick_params(length=2, pad=2, labelsize=6)
+axB.tick_params(length=2, pad=2, labelsize=6.2)
 for sp in ("top", "right", "left"):
     axB.spines[sp].set_visible(False)
 axB.xaxis.grid(True, color=GRID, lw=0.5)
 axB.set_axisbelow(True)
 axB.legend(handles=[Rectangle((0, 0), 1, 1, color=c, alpha=0.88) for _, c in GROUPS],
-           labels=[g for g, _ in GROUPS], fontsize=6, frameon=False,
+           labels=[g for g, _ in GROUPS], fontsize=6.2, frameon=False,
            loc="upper left", bbox_to_anchor=(-0.215, -0.16), ncol=1,
            handlelength=0.85, handleheight=0.8, labelspacing=0.16,
            borderpad=0, handletextpad=0.32)
@@ -360,15 +360,15 @@ yv = list(range(len(ADV)))[::-1]
 for yi, (lab, v, unit, col) in zip(yv, ADV):
     axC.plot([1, v], [yi, yi], color=GRID, lw=0.8, zorder=1, solid_capstyle="round")
     axC.plot(v, yi, "o", ms=4.4, mfc=col, mec=SURF, mew=0.5, zorder=3)
-    axC.text(v * 1.45, yi + 0.13, f"{v:,}", va="center", fontsize=6, color=INK)
-    axC.text(v * 1.45, yi - 0.20, unit, va="center", fontsize=6, color=MUTED)
+    axC.text(v * 1.45, yi + 0.13, f"{v:,}", va="center", fontsize=6.2, color=INK)
+    axC.text(v * 1.45, yi - 0.20, unit, va="center", fontsize=6.2, color=MUTED)
 axC.set_yticks(yv)
-axC.set_yticklabels([a[0] for a in ADV], fontsize=6)
+axC.set_yticklabels([a[0] for a in ADV], fontsize=6.2)
 axC.set_xscale("log")
 axC.set_xlim(0.8, 6000)
 axC.set_xticks([1, 10, 100, 1000])
-axC.set_xticklabels(["1", "10", "100", "1,000"], fontsize=6)
-axC.set_xlabel("evaluated, log scale \u2014 one unit per row", fontsize=6,
+axC.set_xticklabels(["1", "10", "100", "1,000"], fontsize=6.2)
+axC.set_xlabel("evaluated, log scale \u2014 one unit per row", fontsize=6.2,
                color=MUTED, labelpad=1.5)
 axC.set_ylim(-0.7, len(ADV) - 0.3)
 axC.tick_params(length=2, pad=2)
@@ -386,12 +386,12 @@ for ri, (data, lab, lcol) in enumerate(((FOLL, "delayed\nfollower", NAVY),
         cx, cy = i % NCOL, i // NCOL
         axD.add_patch(Rectangle((cx, base * 4.0 + (2 - cy) * 1.0), 0.74, 0.74,
                                 facecolor=BCOL[b], alpha=0.9, linewidth=0))
-    axD.text(-0.6, base * 4.0 + 1.37, lab, ha="right", va="center", fontsize=6,
+    axD.text(-0.6, base * 4.0 + 1.37, lab, ha="right", va="center", fontsize=6.2,
              color=lcol, linespacing=1.15)
     n_st = sum(1 for b in data if b == 2)
     axD.text(NCOL + 0.3, base * 4.0 + 1.37,
              ("%d of %d\nstalled" % (n_st, len(data))) if n_st else "none\nstalled",
-             ha="left", va="center", fontsize=6, linespacing=1.15,
+             ha="left", va="center", fontsize=6.2, linespacing=1.15,
              color=BURG if n_st else MUTED)
 axD.set_xlim(-0.6, NCOL + 3.6)
 axD.set_ylim(-1.5, 7.2)
@@ -400,7 +400,7 @@ axD.set_xticks([]); axD.set_yticks([])
 for sp in ("top", "right", "left", "bottom"):
     axD.spines[sp].set_visible(False)
 axD.legend(handles=[Rectangle((0, 0), 1, 1, color=c, alpha=0.9) for c in BCOL],
-           labels=BNAME, fontsize=6, frameon=False, loc="upper left",
+           labels=BNAME, fontsize=6.2, frameon=False, loc="upper left",
            bbox_to_anchor=(-0.08, 0.10), ncol=1, handlelength=0.85,
            handleheight=0.8, labelspacing=0.16, borderpad=0, handletextpad=0.32)
 
@@ -411,7 +411,7 @@ _r = fig.canvas.get_renderer()
 _x1 = axA.transData.inverted().transform(
     _lt.get_window_extent(renderer=_r).corners()[2])[0]
 axA.text(_x1 + 1.6, _ly, "not reported as evidence", ha="left", va="baseline",
-         fontsize=5.6, color=MUTED, style="italic")
+         fontsize=6.2, color=MUTED, style="italic")
 _pa = axA.get_position()
 fig.text(0.012, _pa.y1 + 0.036, "(a)", ha="left", va="bottom", fontsize=7.4,
          color=INK)
@@ -422,7 +422,7 @@ fig.legend(handles=[Rectangle((0, 0), 1, 1, color=c, alpha=0.9) for c in OCOL],
            labels=["leader replaced, target excluded",
                    "target acquired leadership",
                    "no leader inside the read window"],
-           fontsize=6, frameon=False, loc="upper center",
+           fontsize=6.2, frameon=False, loc="upper center",
            bbox_to_anchor=(0.5 * (_pa.x0 + _pa.x1), _pa.y0 + 0.008), ncol=3,
            handlelength=0.85, handleheight=0.8, columnspacing=1.3,
            borderpad=0, handletextpad=0.32)

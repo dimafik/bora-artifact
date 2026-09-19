@@ -29,7 +29,7 @@ from matplotlib import rcParams
 from matplotlib.lines import Line2D
 
 rcParams["font.family"] = "Arial"
-rcParams["font.size"] = 8
+rcParams["font.size"] = 9.0
 rcParams["axes.linewidth"] = 0.7
 rcParams["pdf.fonttype"] = 42
 # mathtext defaults to DejaVu, which would put the axis label's rho in a
