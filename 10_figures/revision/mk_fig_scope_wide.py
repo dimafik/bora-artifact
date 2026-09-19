@@ -415,8 +415,8 @@ axA.text(_x1 + 1.6, _ly, "not reported as evidence", ha="left", va="baseline",
 _pa = axA.get_position()
 fig.text(0.012, _pa.y1 + 0.036, "(a)", ha="left", va="bottom", fontsize=7.4,
          color=INK)
-fig.text(0.052, _pa.y1 + 0.036, "every forced election of the two sweeps, one "
-         "square each, by campaign, arm and cluster size",
+fig.text(0.052, _pa.y1 + 0.036, "every forced election of the two sweeps on the single-host "
+         "testbed, one square each, by campaign, arm and cluster size",
          ha="left", va="bottom", fontsize=6.6, color=INK)
 fig.legend(handles=[Rectangle((0, 0), 1, 1, color=c, alpha=0.9) for c in OCOL],
            labels=["leader replaced, target excluded",
@@ -427,7 +427,7 @@ fig.legend(handles=[Rectangle((0, 0), 1, 1, color=c, alpha=0.9) for c in OCOL],
            handlelength=0.85, handleheight=0.8, columnspacing=1.3,
            borderpad=0, handletextpad=0.32)
 for ax, letter, title in ((axB, "(b)", "elections, by cluster size"),
-                          (axC, "(c)", "what the adversary was allowed"),
+                          (axC, "(c)", "what each evidence class covers"),
                           (axD, "(d)", "what the excluded node cost")):
     p = ax.get_position()
     fig.text(p.x0 - 0.082, p.y1 + 0.030, letter, ha="left", va="bottom",
