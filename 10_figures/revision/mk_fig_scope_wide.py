@@ -36,6 +36,7 @@ import matplotlib.pyplot as plt
 from matplotlib import rcParams
 from matplotlib.patches import Rectangle, FancyBboxPatch
 from matplotlib.lines import Line2D
+from matplotlib.legend_handler import HandlerTuple
 import matplotlib.dates as mdates
 
 rcParams["font.family"] = "Arial"
@@ -418,14 +419,29 @@ fig.text(0.012, _pa.y1 + 0.036, "(a)", ha="left", va="bottom", fontsize=7.4,
 fig.text(0.052, _pa.y1 + 0.036, "every forced election of the two sweeps on the single-host "
          "testbed, one square each, by campaign, arm and cluster size",
          ha="left", va="bottom", fontsize=6.6, color=INK)
-fig.legend(handles=[Rectangle((0, 0), 1, 1, color=c, alpha=0.9) for c in OCOL],
-           labels=["leader replaced, target excluded",
+# The navy cells are drawn in two shades, so the navy key carries both: the
+# banding is the seed block, not a second outcome, and the key has to say so
+# or the reader infers a distinction that is not there.
+_key = [(Rectangle((0, 0), 1, 1, color=NAVY, alpha=0.78),
+         Rectangle((0, 0), 1, 1, color=NAVY, alpha=0.55)),
+        Rectangle((0, 0), 1, 1, color=BURG, alpha=0.9),
+        Rectangle((0, 0), 1, 1, color=MUST, alpha=0.9)]
+_leg = fig.legend(handles=_key,
+           labels=["leader replaced, target excluded "
+                   "(shades alternate by seed block)",
                    "target acquired leadership",
                    "no leader inside the read window"],
+           handler_map={tuple: HandlerTuple(ndivide=None, pad=0.18)},
            fontsize=6.2, frameon=False, loc="upper center",
            bbox_to_anchor=(0.5 * (_pa.x0 + _pa.x1), _pa.y0 + 0.008), ncol=3,
            handlelength=0.85, handleheight=0.8, columnspacing=1.3,
            borderpad=0, handletextpad=0.32)
+fig.canvas.draw()
+_lw = _leg.get_window_extent(renderer=fig.canvas.get_renderer())
+print("legend width %.2f in of %.2f in figure (left %.3f, right %.3f)"
+      % (_lw.width / fig.dpi, fig.get_figwidth(),
+         _lw.x0 / (fig.dpi * fig.get_figwidth()),
+         _lw.x1 / (fig.dpi * fig.get_figwidth())))
 for ax, letter, title in ((axB, "(b)", "elections, by cluster size"),
                           (axC, "(c)", "what each evidence class covers"),
                           (axD, "(d)", "what the excluded node cost")):
