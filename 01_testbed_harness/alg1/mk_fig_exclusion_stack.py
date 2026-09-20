@@ -47,7 +47,11 @@ def wilson(k, n, z=1.96):
 
 # (label, baseline k/n, guarded k/n)
 LEFT = [("$N{=}5$ single-host", (7, 36), (0, 36)),
-        ("$N{=}7$ scaling ",    (7, 20), (0, 20)),
+        # both N=7 bring-ups, pooled: 121812 (7/20 vs 0/20) and 120309
+        # (3/20 vs 3/20).  120309 was previously left out with no recorded
+        # reason; the operator campaign logs no advisor-readiness for any
+        # run, so the criterion that would exclude it excludes them all.
+        ("$N{=}7$ scaling ",    (10, 40), (3, 40)),
         ("$N{=}9$ scaling ",    (4, 20), (0, 20)),
         ("physical 5-host AWS", (2, 16), (0, 16))]
 

@@ -105,6 +105,7 @@ JUNE_DIRS = ("ne26_*", "detection_latency_*", "mldetect_*", "finalsupp_*",
              "nsweep_*", "loadsweep_*", "leaderacq*", "leaderscn*",
              "votereject_*", "corrected_*")
 for d, n in (("finalsupp_20260611-144542", 5), ("nsweep_N7_121812", 7),
+             ("nsweep_N7_120309", 7),
              ("nsweep_N9_122911", 9), ("xhost_election_154824", 5),
              ("xhost_t2_180044", 5), ("xhost_t2_182159", 5),
              ("xhost_t2b_184054", 5)):
@@ -112,7 +113,9 @@ for d, n in (("finalsupp_20260611-144542", 5), ("nsweep_N7_121812", 7),
 
 for f in glob.glob(os.path.join(RAW, "r13*", "**", "elections.csv"), recursive=True):
     excl["eviction-policy ablation"] += sum(1 for _ in csv.DictReader(open(f)))
-for d in ("nsweep_N7_115333", "nsweep_N7_120309"):
+# 115333 only: no election in it changed the leader (live 0/10), so it
+# carries no forced election to count.  120309 is now in the corpus above.
+for d in ("nsweep_N7_115333",):
     p = os.path.join(RAW, d, "elections.log")
     if os.path.exists(p):
         excl["runs excluded by name"] += sum(1 for _ in open(p))
