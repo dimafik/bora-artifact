@@ -158,9 +158,14 @@ for p, seeds in (("r13p4_N7_0917-163626", {1, 2, 3, 4}),
     if os.path.exists(f):
         EV_CELLS += sum(1 for r in csv.DictReader(open(f))
                         if int(r["seed"]) in seeds and r["demotions"] not in ("-", ""))
-ADV = [("steady $+200$ ms delay", TOTAL_EL, "forced elections", NAVY),
+# Row 1 is the whole exclusion corpus, not one fault: 315 of the 1,515 are
+# the operator-supplied campaign, which carries no injected delay, as
+# Fig. 5(a)'s caption states.  Labelling the row "+200 ms" contradicted it.
+# Row 3 drops the beta: the text uses beta for consistency/robustness and
+# never defines a mimicry beta, so one letter was carrying two meanings.
+ADV = [("exclusion corpus", TOTAL_EL, "forced elections", NAVY),
        ("injected false positives", EV_CELLS, "policy cells", NAVY),
-       ("mimicry sweep, $\\beta$ 0–1", MIMICRY, "advisor-seed cells", MUST),
+       ("mimicry sweep, 0 to full", MIMICRY, "advisor-seed cells", MUST),
        ("white-box PGD", PGD, "attack runs", MUST)]
 
 # ========================================================== (a) every election
