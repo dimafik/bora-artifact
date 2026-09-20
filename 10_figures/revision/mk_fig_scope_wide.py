@@ -37,6 +37,7 @@ from matplotlib import rcParams
 from matplotlib.patches import Rectangle, FancyBboxPatch
 from matplotlib.lines import Line2D
 from matplotlib.legend_handler import HandlerTuple
+import matplotlib.patheffects as pe
 import matplotlib.dates as mdates
 
 rcParams["font.family"] = "Arial"
@@ -160,7 +161,7 @@ for p, seeds in (("r13p4_N7_0917-163626", {1, 2, 3, 4}),
 ADV = [("steady $+200$ ms delay", TOTAL_EL, "forced elections", NAVY),
        ("injected false positives", EV_CELLS, "policy cells", NAVY),
        ("mimicry sweep, $\\beta$ 0–1", MIMICRY, "advisor-seed cells", MUST),
-       ("white-box PGD", PGD, "projected attack runs", MUST)]
+       ("white-box PGD", PGD, "attack runs", MUST)]
 
 # ========================================================== (a) every election
 # One cell per forced election of the two sweeps, from the per-election rows of
@@ -357,16 +358,28 @@ axB.legend(handles=[Rectangle((0, 0), 1, 1, color=c, alpha=0.88) for _, c in GRO
            borderpad=0, handletextpad=0.32)
 
 # ---- (c) adversaries -------------------------------------------------------
+# The unit each row counts goes under the row's name, on the left, not after
+# the marker.  The axis is 130 px wide and the longest unit was 81 of them, so
+# on the right the long units ran out of the panel and butted against (d).  On
+# the left they cost nothing: each is narrower than the widest row name, which
+# the gap to (b) already holds.  Only the value stays on the right, and a value
+# is never wider than 22 px.
 yv = list(range(len(ADV)))[::-1]
+CLAB, CLEFT = [], []                         # checked against (c) and (b) below
+_lx = -0.031                                 # the tick pad, in axes coords
 for yi, (lab, v, unit, col) in zip(yv, ADV):
     axC.plot([1, v], [yi, yi], color=GRID, lw=0.8, zorder=1, solid_capstyle="round")
     axC.plot(v, yi, "o", ms=4.4, mfc=col, mec=SURF, mew=0.5, zorder=3)
-    axC.text(v * 1.45, yi + 0.13, f"{v:,}", va="center", fontsize=6.2, color=INK)
-    axC.text(v * 1.45, yi - 0.20, unit, va="center", fontsize=6.2, color=MUTED)
+    CLEFT += [axC.text(_lx, yi + 0.13, lab, transform=axC.get_yaxis_transform(),
+                       ha="right", va="center", fontsize=6.2, color=INK),
+              axC.text(_lx, yi - 0.20, unit, transform=axC.get_yaxis_transform(),
+                       ha="right", va="center", fontsize=6.2, color=MUTED)]
+    CLAB.append((v, axC.text(v * 1.30, yi, f"{v:,}", va="center",
+                             fontsize=6.2, color=INK, zorder=4)))
 axC.set_yticks(yv)
-axC.set_yticklabels([a[0] for a in ADV], fontsize=6.2)
+axC.set_yticklabels([""] * len(yv))
 axC.set_xscale("log")
-axC.set_xlim(0.8, 6000)
+axC.set_xlim(0.8, 20000)   # room for the value label, not for data
 axC.set_xticks([1, 10, 100, 1000])
 axC.set_xticklabels(["1", "10", "100", "1,000"], fontsize=6.2)
 axC.set_xlabel("evaluated, log scale \u2014 one unit per row", fontsize=6.2,
@@ -406,9 +419,31 @@ axD.legend(handles=[Rectangle((0, 0), 1, 1, color=c, alpha=0.9) for c in BCOL],
            handleheight=0.8, labelspacing=0.16, borderpad=0, handletextpad=0.32)
 
 fig.canvas.draw()
+_r = fig.canvas.get_renderer()
+
+# A label wider than its panel is not an error anywhere in matplotlib: it just
+# runs into the neighbour, which is how (c)'s units reached (d).  Measured, so
+# that a longer string later fails loudly instead of quietly.
+_cx1 = axC.get_window_extent(renderer=_r).x1
+for _v, _t in CLAB:
+    _ov = _t.get_window_extent(renderer=_r).x1 - _cx1
+    if _ov > 0:
+        print("WARNING: (c) value %s overruns the panel by %.1f px"
+              % (_t.get_text(), _ov))
+# and on the left, against what (b) actually draws.  (c)'s row names have always
+# reached over (b)'s axes box; that is harmless until they meet one of (b)'s
+# end-of-bar labels, which is what happened on the bottom row, where N=21 fills
+# the axis.  So compare ink with ink, not with the box.
+for _t in CLEFT:
+    _a = _t.get_window_extent(renderer=_r)
+    for _bt in axB.texts:
+        _b = _bt.get_window_extent(renderer=_r)
+        if _a.x0 < _b.x1 and _b.x0 < _a.x1 and _a.y0 < _b.y1 and _b.y0 < _a.y1:
+            print("WARNING: (c) label %r overlaps (b) label %r"
+                  % (_t.get_text(), _bt.get_text()))
+
 # the tag sits a fixed gap after the label, measured from the label as drawn
 _lt, _ly = UNREPORTED
-_r = fig.canvas.get_renderer()
 _x1 = axA.transData.inverted().transform(
     _lt.get_window_extent(renderer=_r).corners()[2])[0]
 axA.text(_x1 + 1.6, _ly, "not reported as evidence", ha="left", va="baseline",
