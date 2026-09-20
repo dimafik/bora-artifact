@@ -27,7 +27,9 @@ styles={3:(FOREST,"o","$|E_t|{=}3$  ($E[$rounds$]{=}2.7$)"),
 
 fig,ax=plt.subplots(figsize=(3.4,2.5))
 ax.axhline(1.0,ls=(0,(4,3)),lw=0.8,color=SLATE,alpha=0.8)
-ax.text(14.3,1.012,"w.p. 1",fontsize=7.5,color=SLATE,ha="right")
+# The dashed line is the asymptote, not a value any finite k reaches; "w.p. 1"
+# sat beside curves that are visually at 1 by k=15 and read as their endpoint.
+ax.text(14.3,1.012,"limit 1",fontsize=7.5,color=SLATE,ha="right")
 for ne in (5,4,3):
     xs=[1]+sorted(data[ne]); ys=[q[ne]]+[data[ne][x] for x in sorted(data[ne])]
     c,mk,lab=styles[ne]
