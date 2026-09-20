@@ -161,7 +161,7 @@ for p, seeds in (("r13p4_N7_0917-163626", {1, 2, 3, 4}),
     if os.path.exists(f):
         EV_CELLS += sum(1 for r in csv.DictReader(open(f))
                         if int(r["seed"]) in seeds and r["demotions"] not in ("-", ""))
-# Row 1 is the whole exclusion corpus, not one fault: 315 of the 1,515 are
+# Row 1 is the whole exclusion corpus, not one fault: 355 of the 1,555 are
 # the operator-supplied campaign, which carries no injected delay, as
 # Fig. 5(a)'s caption states.  Labelling the row "+200 ms" contradicted it.
 # Row 3 drops the beta: the text uses beta for consistency/robustness and
