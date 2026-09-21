@@ -28,8 +28,14 @@ EXTENDS BORA_pv, TLAPS, FiniteSets, Integers, Sequences
 (* The hypothesis of the proposition, read off the current state: some      *)
 (* quorum of voters all hold i in their own local blacklist.               *)
 (***************************************************************************)
+(* The quorum excludes i itself: a Raft candidate votes for itself and that   *)
+(* vote passes no vote guard, so a quorum counted WITH the candidate would   *)
+(* model a guard stronger than the deployed one.  At N=5 a blacklist held by *)
+(* {i,A,B} still lets i reach three votes -- its own, C's and D's.  This is  *)
+(* the hypothesis Proposition 7 states, and BORA_pv_excl repeats it verbatim *)
+(* so that the j # i step discharges from the definitions alone.             *)
 QuorumHolds(i) ==
-    \E Q \in SUBSET Orderers : IsQuorum(Q) /\ \A j \in Q : i \in blacklist[j]
+    \E Q \in SUBSET (Orderers \ {i}) : IsQuorum(Q) /\ \A j \in Q : i \in blacklist[j]
 
 (***************************************************************************)
 (* Acquisition, as a step: some term that had no leader now has i. This is  *)
