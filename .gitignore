@@ -34,3 +34,9 @@ __pycache__/
 
 # rendered previews of 10_figures/revision (the .pdf is what the paper draws)
 10_figures/revision/*.png
+
+# TLC writes a trace module and its binary beside the spec on a violation;
+# the readable counterexample is in BORA_pv_MC_RESULT.txt.
+*_TTrace_*.tla
+*_TTrace_*.bin
+states/
