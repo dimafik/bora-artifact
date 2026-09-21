@@ -70,11 +70,11 @@ It establishes, by exhaustive search of a small instance, that the corrected
 property holds of the corrected model and that the previous statement was
 false rather than merely imprecise.
 
-It does NOT replace the proof.  The TLAPS obligations must still be re-run
-before the paper's counts are asserted for this model:
+It does NOT replace the proof.  The TLAPS obligations were re-run on the
+corrected model the same day and both closed with their previous counts:
 
-    tlapm --cleanfp BORA_pv_proof.tla     (48 expected)
-    tlapm --cleanfp BORA_pv_excl.tla      (64 expected)
+    tlapm --cleanfp BORA_pv_proof.tla  ->  All 48 obligations proved.  (1.97s)
+    tlapm --cleanfp BORA_pv_excl.tla   ->  All 64 obligations proved.  (5.83s)
 
-Environment: TLC from tla2tools.jar shipped in this directory, OpenJDK 25.
-tlapm is not installed on the machine that produced this file.
+Environment: TLC from tla2tools.jar shipped in this directory, OpenJDK 25;
+tlapm from ~/tlaps/bin under Ubuntu 22.04.3 (WSL).  See PROOF_RESULT.txt.

@@ -143,6 +143,21 @@ guard reads a QUORUM of views.
 
   Exclusion (BORA_pv_excl.tla):
       tlapm --cleanfp -> "All 64 obligations proved."  EXIT=0.
+
+  RE-RUN 2026-09-21 after the self-vote correction.  A Raft candidate votes for
+  itself and that vote passes no vote guard, so BecomeLeader's guard and
+  QuorumHolds, which both read "\E Q \in SUBSET Orderers", modelled a guard
+  stronger than the deployed one: a quorum CONTAINING the candidate disabled
+  BecomeLeader, forbidding an acquisition the implementation allows.  Both now
+  read SUBSET (Orderers \ {i}).  Counts are unchanged, which is the point --
+  the correction changed what the quorum ranges over, not the proof structure,
+  and BORA_pv_excl's <4>2 step discharges j # i from the two definitions being
+  the same formula.
+      tlapm --cleanfp BORA_pv_proof.tla -> "All 48 obligations proved."  1.97s
+      tlapm --cleanfp BORA_pv_excl.tla  -> "All 64 obligations proved."  5.83s
+      tlapm at ~/tlaps/bin/tlapm under Ubuntu 22.04.3 (WSL).
+  BORA_pv_MC.tla additionally model-checks the corrected property with TLC and
+  shows the pre-correction statement is violated; see BORA_pv_MC_RESULT.txt.
     THEOREM Exclusion_PV_Thm ==
       Spec => [][ (QuorumHolds(i) /\ ~failOpen) => ~Acquires(i) ]_vars
     This is Proposition 7 of the paper, verbatim.  NON-VACUITY was checked by
