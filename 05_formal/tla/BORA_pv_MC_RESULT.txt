@@ -1,0 +1,80 @@
+BORA_pv_MC — finite model check of the per-voter exclusion property
+==================================================================
+
+Why this file exists.  BORA_pv_excl.tla EXTENDS TLAPS and therefore cannot be
+run under TLC; BORA_pv_MC.tla restates the same property without it, so the
+correction below can be checked by model checking as well as by proof.
+
+What was corrected.  A Raft candidate votes for itself and that vote passes no
+vote guard.  BORA_pv's BecomeLeader guard and BORA_pv_excl's QuorumHolds both
+read
+
+    \E Q \in SUBSET Orderers : IsQuorum(Q) /\ \A j \in Q : i \in blacklist[j]
+
+so a quorum CONTAINING the candidate disabled BecomeLeader.  That models a
+guard stronger than the deployed one: the implementation cannot gate the
+candidate's own vote.  Both now read SUBSET (Orderers \ {i}).
+
+Instance
+--------
+    N = 3, F = 2, MaxTerm = 1, Values = {v1}, Orderers = {1,2,3}
+    CONSTRAINT MCConstraint   (log =< 1, history =< 1, blSeq =< 2,
+                               commitIndex =< 1)
+
+N = 3 is the smallest size at which the gap is visible: the majority is 2, so a
+quorum that counts the candidate leaves a single peer refusing.
+
+Run 1 — corrected model, corrected property
+-------------------------------------------
+    java -cp tla2tools.jar tlc2.TLC -workers 4 \
+         -config BORA_pv_MC.cfg BORA_pv_MC.tla
+
+    PROPERTY ExclusionOthers
+      [][ \A i : (QuorumOthers(i) /\ ~failOpen) => ~Acquires(i) ]_vars
+
+    Model checking completed. No error has been found.
+    196849 states generated, 5388 distinct states found, 0 states left on queue.
+    Complete state graph, depth 9.  Finished in 01s.
+
+Run 2 — corrected model, the property as it read BEFORE the correction
+-----------------------------------------------------------------------
+    java -cp tla2tools.jar tlc2.TLC -workers 4 \
+         -config BORA_pv_MC_any.cfg BORA_pv_MC.tla
+
+    PROPERTY ExclusionAny
+      [][ \A i : (QuorumAny(i) /\ ~failOpen) => ~Acquires(i) ]_vars
+
+    Error: Action property ExclusionAny is violated.
+
+    Counterexample, five states, failOpen = FALSE throughout:
+
+      1  initial
+      2  Campaign(1)                     node 1 becomes a candidate
+      3  BoundedIntelligence             blacklist = << {}, {}, {1} >>
+      4  BoundedIntelligence             blacklist = << {1}, {}, {1} >>
+      5  BecomeLeader(1)                 node 1 acquires leadership
+
+    At state 4 the only quorum holding node 1 is {1,3}, which contains node 1
+    itself; voter 2 does not hold it.  The quorum of OTHER voters would be
+    {2,3}, and that does not hold.  So the old hypothesis is satisfied while
+    the corrected guard correctly permits the acquisition -- which is what the
+    deployment does, since node 1's own vote is never gated.
+
+    Note that failOpen is FALSE in every state: the counterexample needs no
+    guard failure at all.  This matches Proposition 3, which already noted that
+    a transfer-initiated candidacy bypasses the tick guard.
+
+What this does and does not establish
+-------------------------------------
+It establishes, by exhaustive search of a small instance, that the corrected
+property holds of the corrected model and that the previous statement was
+false rather than merely imprecise.
+
+It does NOT replace the proof.  The TLAPS obligations must still be re-run
+before the paper's counts are asserted for this model:
+
+    tlapm --cleanfp BORA_pv_proof.tla     (48 expected)
+    tlapm --cleanfp BORA_pv_excl.tla      (64 expected)
+
+Environment: TLC from tla2tools.jar shipped in this directory, OpenJDK 25.
+tlapm is not installed on the machine that produced this file.
