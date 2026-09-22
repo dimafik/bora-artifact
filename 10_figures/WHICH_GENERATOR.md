@@ -11,9 +11,10 @@ by design.
 | Fig. 2 | `fig_process_views.pdf` | `submission/fix_fig_process_views.py` | `submission/fig_process_views_pre_fix.png` | yes |
 | Fig. 3 | `fig_prism_convergence.pdf` | `../01_testbed_harness/alg1/make_g1_g2.py` (first half) | `../01_testbed_harness/alg1/prism_sweep.txt` | no — absolute path |
 | Fig. 4 | `fig_detection_ac.pdf` | `../01_testbed_harness/alg1/mk_fig67_academic.py` (**first half only**) | `../02_results_raw/mldetect_20260611-171955/predictor_daemon.log` | no — absolute path |
-| Fig. 5 | `fig_exclusion_stack.pdf` | `../01_testbed_harness/alg1/mk_fig_exclusion_stack.py` | counts inline (7/36, 0/36, 7/20, 0/20, 4/20, 0/20, 2/16, 0/16); raw logs under `../02_results_raw/` | no — absolute path |
+| Fig. 5 | `fig_exclusion_stack.pdf` | `../01_testbed_harness/alg1/mk_fig_exclusion_stack.py` | counts inline (7/36, 0/36, 10/40, 3/40, 4/20, 0/20, 2/16, 0/16); raw logs under `../02_results_raw/` | no — absolute path |
 | (withdrawn) | `fig_loadsweep.pdf` | `../01_testbed_harness/alg1/mk_lp.py` | E1/E2/E3 sweep values inline | disabled — the figure was withdrawn in the revision: its CLI sweep never waited for commit and reused asset keys across concurrency levels |
-| Fig. 6 | `revision/fig_whitebox.pdf` | `revision/mk_fig_whitebox.py` | `../08_predictor/r12_panel/panel2_results.json` | **yes** |
+| Fig. 6 | `revision/fig_scope_wide.pdf` | `revision/mk_fig_scope_wide.py` | `../02_results_raw/x1_N*/elections.csv`, `../02_results_raw/r13*/**/elections.csv`, `../08_predictor/r12_panel/` | **yes** — prints its own counts (1,440 cells, 45 acquired, 1,555 cited, 0/480 guarded, 21 unguarded, 1,152 PGD) |
+| Fig. 7 | `revision/fig_whitebox_clean.pdf` | `revision/mk_fig_whitebox.py` | `../08_predictor/r12_panel/panel2_results.json` | **yes** — the paper ships the *clean* variant, without the 0.73 reference line the marked copy carries |
 
 "Runs as shipped: no" means only that the script names the absolute path it was
 run from rather than the copy in this artifact. The data is here, at the path in
@@ -74,3 +75,12 @@ It reads `08_predictor/r12_panel/panel2_results.json` directly -- 8 families x
 reports. See `08_predictor/r12_panel/WHICH_PANEL.md` for which column of that
 file feeds Fig. 7 and which feeds Table IV. The two retracted scripts hardcode
 their values and must not be re-run to produce a figure.
+
+## Fig. 6 and Fig. 7 were renumbered during the revision
+
+The scope figure was added in the revision and took number 6, which moved the
+white-box figure to 7. This table listed the white-box figure as Fig. 6 until
+2026-09-22 and had no row at all for the scope figure -- the one that carries
+the corpus counts, and so the one an audit is most likely to look for. Both are
+fixed above. The paper includes `fig_whitebox_clean.pdf`; `fig_whitebox.pdf` is
+the marked-copy variant that draws the 0.73 reference line.
