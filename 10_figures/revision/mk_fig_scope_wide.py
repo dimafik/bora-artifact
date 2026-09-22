@@ -272,8 +272,8 @@ FACT = {("sweep", "A_vanilla"): "no advice in force",
         ("swap", "A_vanilla"): "no advice in force",
         ("sweep", "B_oracle"): "matched the degraded set, %d/240",
         ("sweep", "C_predictor"): "matched the degraded set, %d/240",
-        ("swap", "B_oracle"): "%d of 240 began before detection",
-        ("swap", "C_predictor"): "%d of 240 began before detection"}
+        ("swap", "B_oracle"): "%d of 240 began with the list incomplete",
+        ("swap", "C_predictor"): "%d of 240 began with the list incomplete"}
 for bi, (camp, arm, lab) in enumerate(BLOCKS):
     bx = (bi % 3) * BLOCK_W
     by = (bi // 3) * BLOCK_H

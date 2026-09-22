@@ -4,7 +4,7 @@ Algorithm 1 substep (c) emits
 
     B_t <- top(p_t, H_t, max(f - r - 1, 0))
 
-where `r` is the Raft-observed unhealthy count. Two things follow. The emitted
+where `r` is the advisor-observed unhealthy count. Two things follow. The emitted
 blacklist obeys `|B_t| <= max(f - r - 1, 0)`, which implies the `|B_t| < f`
 that `BORA.tla`'s `BoundedCap` and the safety proof use. And the budget
 contracts as the cluster degrades, reaching zero *before* `r` reaches `f`: the

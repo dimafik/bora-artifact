@@ -12,7 +12,7 @@ instead. The defect below did not touch that measurement: one orderer was
 degraded, so |B_t| never exceeded 1 and the static cap never bound.
 
 This early version applies a static cap `[:FCAP]` with FCAP=2, which is wrong in
-two ways against Algorithm 1 substep (c): it ignores the Raft-observed unhealthy
+two ways against Algorithm 1 substep (c): it ignores the advisor-observed unhealthy
 count r, and the constant itself admits |B_t| <= f rather than |B_t| < f. The
 defect never showed up in practice because every campaign injected a single
 degraded orderer, so |B_t| never exceeded 1.

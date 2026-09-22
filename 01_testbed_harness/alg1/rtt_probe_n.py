@@ -7,7 +7,7 @@ nsweep.sh gport() and gen_nnode.py PORT:
 9050 is skipped because the peers and orderer CA own 9051/9052/9054.
 
 A failed connect returns the sentinel RTT_FAIL (ms). The BORA predictor daemon
-uses that sentinel to derive r, the Raft-observed unhealthy count, which caps the
+uses that sentinel to derive r, the advisor-observed unhealthy count, which caps the
 blacklist at |B_t| < f - r (Definition 1, Algorithm 1 substep (c)).
 """
 import socket, time, os

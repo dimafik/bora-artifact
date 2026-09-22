@@ -45,7 +45,7 @@ N="${1:?need N}"; SEEDS="${2:-10}"; NE="${3:-12}"; DLY="${4:-200}"
 F=$(( (N - 1) / 2 ))
 
 # r = 1: the harness forces each election by pausing the current leader, so one
-# orderer is Raft-observed unhealthy for the whole election window.
+# orderer is advisor-observed unhealthy for the whole election window.
 R_EXPECT=1
 CAP=$(( F - R_EXPECT - 1 ))
 M=$(( (N - 1 + 3) / 6 ))                     # round((N-1)/6)

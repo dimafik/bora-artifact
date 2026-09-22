@@ -11,7 +11,7 @@ Formal artefacts for Section IV-A (Theorem 1, Proposition 2), Section IV-C
 | `BORA_MC.tla` | model-check wrapper | — |
 | `BORA_proof.tla` | **Theorem 1**: `Spec => Vanilla!Spec`, a step-simulation refinement, **unbounded** | **TLAPS 48/48** |
 | `BORA_pv.tla`, `BORA_pv_proof.tla` | the same refinement over a **per-voter** blacklist, `blacklist \in [Orderers -> SUBSET Orderers]`, views free to diverge | **TLAPS 48/48** |
-| `BORA_pv_excl.tla` | **Proposition 7**: while a quorum holds *i* and the advisor has not failed open, *i* never acquires a term | **TLAPS 64/64** |
+| `BORA_pv_excl.tla` | **Proposition 7**: while a quorum holds *i* and the advisor has not failed open, *i* never acquires leadership | **TLAPS 64/64** |
 | `Liveness.tla` | **Proposition 2**: `SpecL => <>HasLeader` under weak fairness | **TLAPS 311/311, no axioms** |
 | `Enabledness.tla`, `En*.tla` | independent TLC check of the two action-enabledness facts, plus positive and negative controls for the `ENABLED` tactic | 12/12 models pass (4 *N* x 3 `MaxTerm`; `MaxTerm` inert) |
 

@@ -7,7 +7,7 @@ Algorithm 1 emits
 
 so the contract at emission is |B_t| <= max(f - r - 1, 0), which implies the
 |B_t| < f that BORA.tla's BoundedCap and the safety proof use. r is the
-Raft-observed unhealthy count, so the cap contracts as the cluster degrades and
+advisor-observed unhealthy count, so the cap contracts as the cluster degrades and
 reaches zero before r reaches f: the advisor stands down rather than compounding
 a real failure.
 

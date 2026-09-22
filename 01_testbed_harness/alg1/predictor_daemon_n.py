@@ -7,7 +7,7 @@ Differences from predictor_daemon.py, all required by the X1 design:
 
   2. Spec-conformant cap.  Algorithm 1 substep (c) is
          B_t <- top(p_t, H_t, f - r - 1)
-     where r is the Raft-observed unhealthy count (Definition 1).  The original
+     where r is the advisor-observed unhealthy count (Definition 1).  The original
      applied a static [:FCAP] with FCAP=2, which both ignored r and admitted
      |B_t| = f rather than |B_t| < f.  Both are fixed here.
 
@@ -89,7 +89,7 @@ def scores_and_r(rows):
             r = np.array([float(x[col]) for x in rows], dtype=np.float64)
         except (IndexError, ValueError):
             continue
-        # r: Raft-observed unhealthy count, from follower-observable telemetry
+        # r: advisor-observed unhealthy count, from follower-observable telemetry
         tail = r[-UNRESP_W:]
         if len(tail) and (tail >= UNRESP_MS).mean() >= UNRESP_FRAC:
             unresp.append(i)
