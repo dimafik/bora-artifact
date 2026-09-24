@@ -24,7 +24,7 @@ interface partway through and verified before the run continues.
 (`08_predictor/model_small/best.pt`, 141,067 parameters — the model the
 manuscript describes). The onset, detection and false-positive rules below were
 fixed before scoring. The threshold was not: the pre-registered rule was a 2%
-quantile of the clean scores, which raised false positives on all three feeds,
+quantile of the clean scores, which raised false positives on two of the three feeds (56/680 and 1/668),
 and the transplanted 0.65 was adopted after that result was read (Section V-B
 and the response letter state it the same way):
 
