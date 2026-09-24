@@ -1,6 +1,7 @@
 # 12 — What a degraded *leader* costs (campaigns R25C and R25D)
 
-Answers the revision question of whether keeping a degraded orderer out of the candidate pool yields a system-level benefit.
+Answers the revision question of whether keeping a degraded orderer out of
+the candidate pool yields a system-level benefit.
 
 BORA keeps a degraded orderer out of the candidate pool. Until this campaign the
 manuscript never measured what that prevents. It reported a **single run**

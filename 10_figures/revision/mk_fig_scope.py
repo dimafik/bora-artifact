@@ -1,7 +1,8 @@
 # Campaign scope, drawn from the artefact.  Single column, for the body.
 #
 # The revision had to show that the claims match the actual scope of the
-# model, the formalisation and the empirical evidence.  The formalization axis is answered by Table III, whose Scope column
+# model, the formalisation and the empirical evidence.  The formalisation
+# axis is answered by Table III, whose Scope column
 # states what each result is proved over; a figure of obligation counts cannot
 # replace that and is not attempted here.  The manuscript has no figure for the
 # other two axes, so this one carries them:
