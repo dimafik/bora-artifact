@@ -270,10 +270,10 @@ BLOCK_H = ROWS_PER_BLOCK + 6.2      # block pitch, y
 GX = NCOLS + 2.1                    # gauge column, offset from the block
 FACT = {("sweep", "A_vanilla"): "no advice in force",
         ("swap", "A_vanilla"): "no advice in force",
-        ("sweep", "B_oracle"): "matched the degraded set, %d/240",
-        ("sweep", "C_predictor"): "matched the degraded set, %d/240",
-        ("swap", "B_oracle"): "%d of 240 began with the list incomplete",
-        ("swap", "C_predictor"): "%d of 240 began with the list incomplete"}
+        ("sweep", "B_oracle"): "= degraded set, %d/240",
+        ("sweep", "C_predictor"): "= degraded set, %d/240",
+        ("swap", "B_oracle"): "list incomplete at start: %d/240",
+        ("swap", "C_predictor"): "list incomplete at start: %d/240"}
 for bi, (camp, arm, lab) in enumerate(BLOCKS):
     bx = (bi % 3) * BLOCK_W
     by = (bi // 3) * BLOCK_H
@@ -454,7 +454,7 @@ for _t in CLEFT:
 _lt, _ly = UNREPORTED
 _x1 = axA.transData.inverted().transform(
     _lt.get_window_extent(renderer=_r).corners()[2])[0]
-axA.text(_x1 + 1.6, _ly, "not reported as evidence", ha="left", va="baseline",
+axA.text(_x1 + 1.6, _ly, "not counted", ha="left", va="baseline",
          fontsize=6.2, color=MUTED, style="italic")
 _pa = axA.get_position()
 fig.text(0.012, _pa.y1 + 0.036, "(a)", ha="left", va="bottom", fontsize=7.4,
